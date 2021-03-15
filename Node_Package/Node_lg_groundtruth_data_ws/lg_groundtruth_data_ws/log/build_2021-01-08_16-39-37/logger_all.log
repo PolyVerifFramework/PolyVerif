@@ -1,0 +1,134 @@
+[0.286s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.287s] DEBUG:colcon:Parsed command line arguments: Namespace(ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f7affbf7390>>, merge_install=False, metas=['./colcon.meta'], mixin=None, mixin_files=None, mixin_verb=('build',), packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=6, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f7affbf7390>, verb_name='build', verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f7affbf7748>)
+[0.302s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.302s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.303s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.303s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.303s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.303s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.303s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/acclivis_linux2/script/lg_groundtruth_data_ws'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/lg_sub_groundtruth) by extensions ['ignore', 'ignore_ament_install']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/lg_sub_groundtruth) by extension 'ignore'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/lg_sub_groundtruth) by extension 'ignore_ament_install'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/lg_sub_groundtruth) by extensions ['colcon_pkg']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/lg_sub_groundtruth) by extension 'colcon_pkg'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/lg_sub_groundtruth) by extensions ['colcon_meta']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/lg_sub_groundtruth) by extension 'colcon_meta'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/lg_sub_groundtruth) by extensions ['ros']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/lg_sub_groundtruth) by extension 'ros'
+[0.329s] DEBUG:colcon.colcon_core.package_identification:Package 'src/lg_sub_groundtruth' with type 'ros.ament_python' and name 'lg_sub_groundtruth'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[0.338s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.338s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.338s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.338s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.338s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.377s] Level 5:colcon.colcon_core.verb:set package 'lg_sub_groundtruth' build argument 'cmake_args' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'lg_sub_groundtruth' build argument 'cmake_target' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'lg_sub_groundtruth' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'lg_sub_groundtruth' build argument 'cmake_clean_cache' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'lg_sub_groundtruth' build argument 'cmake_clean_first' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'lg_sub_groundtruth' build argument 'cmake_force_configure' from command line to 'False'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'lg_sub_groundtruth' build argument 'ament_cmake_args' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'lg_sub_groundtruth' build argument 'catkin_cmake_args' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'lg_sub_groundtruth' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.379s] DEBUG:colcon.colcon_core.verb:Building package 'lg_sub_groundtruth' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth', 'merge_install': False, 'path': '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth', 'symlink_install': False, 'test_result_base': None}
+[0.380s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.395s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.395s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth' with build type 'ament_python'
+[0.395s] Level 1:colcon.colcon_core.shell:create_environment_hook('lg_sub_groundtruth', 'ament_prefix_path')
+[0.404s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.404s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/hook/ament_prefix_path.ps1'
+[0.405s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/hook/ament_prefix_path.dsv'
+[0.405s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/hook/ament_prefix_path.sh'
+[0.406s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.406s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.415s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/dashing'
+[0.795s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth'
+[0.796s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.797s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.809s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/dashing'
+[0.863s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth': PYTHONPATH=/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lg_sub_groundtruth build --build-base /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed
+[1.467s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth' returned '0': PYTHONPATH=/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lg_sub_groundtruth build --build-base /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed
+[1.469s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth' for CMake module files
+[1.469s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth' for CMake config files
+[1.470s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib'
+[1.470s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/bin'
+[1.470s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/pkgconfig/lg_sub_groundtruth.pc'
+[1.471s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages'
+[1.471s] Level 1:colcon.colcon_core.shell:create_environment_hook('lg_sub_groundtruth', 'pythonpath')
+[1.471s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/hook/pythonpath.ps1'
+[1.472s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/hook/pythonpath.dsv'
+[1.472s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/hook/pythonpath.sh'
+[1.473s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lg_sub_groundtruth)
+[1.473s] INFO:colcon.colcon_core.shell:Creating package script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/package.ps1'
+[1.474s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/package.dsv'
+[1.475s] INFO:colcon.colcon_core.shell:Creating package script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/package.sh'
+[1.475s] INFO:colcon.colcon_core.shell:Creating package script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/package.bash'
+[1.476s] INFO:colcon.colcon_core.shell:Creating package script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/lg_sub_groundtruth/package.zsh'
+[1.477s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/share/colcon-core/packages/lg_sub_groundtruth)
+[1.480s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.482s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.482s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.482s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.490s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[1.491s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.491s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.491s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.500s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[1.500s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.501s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/local_setup.ps1'
+[1.502s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/_local_setup_util_ps1.py'
+[1.503s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/setup.ps1'
+[1.516s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/local_setup.sh'
+[1.517s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/_local_setup_util_sh.py'
+[1.517s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/setup.sh'
+[1.525s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/local_setup.bash'
+[1.526s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/setup.bash'
+[1.551s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/local_setup.zsh'
+[1.551s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/setup.zsh'

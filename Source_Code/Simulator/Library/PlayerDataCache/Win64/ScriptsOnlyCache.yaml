@@ -1,0 +1,319 @@
+ScriptsOnlyBuild:
+  usedScripts:
+    Simulator.Editor.dll:
+    - Simulator.Editor.Build
+    Simulator.Network.Core.dll:
+    - Simulator.Network.Core.Components.DistributedObject
+    - Simulator.Network.Core.Components.DistributedRigidbody
+    - Simulator.Network.Core.Configs.NetworkSettings
+    Simulator.dll:
+    - AgentDropDown
+    - AgentManager
+    - CameraManager
+    - EnvironmentEffectsManager
+    - InfoTextOnClick
+    - MapManager
+    - NPCManager
+    - NPCMetaData
+    - PedestrianController
+    - PedestrianManager
+    - RadarMesh
+    - RainVolume
+    - RangeTrigger
+    - SignalLight
+    - Simulator.Analysis.AnalysisManager
+    - Simulator.Api.ApiManager
+    - Simulator.Components.Clouds
+    - Simulator.Controllable.ControllableManager
+    - Simulator.Map.MapHolder
+    - Simulator.Map.MapIntersection
+    - Simulator.Map.MapJunction
+    - Simulator.Map.MapLane
+    - Simulator.Map.MapLaneSection
+    - Simulator.Map.MapLine
+    - Simulator.Map.MapOrigin
+    - Simulator.Map.MapPedestrian
+    - Simulator.Map.MapSign
+    - Simulator.Map.MapSignal
+    - Simulator.Sensors.AnalysisSensor
+    - Simulator.Sensors.CanBusSensor
+    - Simulator.Sensors.ClockSensor
+    - Simulator.Sensors.ColorCameraSensor
+    - Simulator.Sensors.ControlCalibrationSensor
+    - Simulator.Sensors.CruiseControlSensor
+    - Simulator.Sensors.DepthCameraSensor
+    - Simulator.Sensors.GpsInsSensor
+    - Simulator.Sensors.GpsOdometrySensor
+    - Simulator.Sensors.GpsSensor
+    - Simulator.Sensors.GroundTruth2DSensor
+    - Simulator.Sensors.GroundTruth2DVisualizer
+    - Simulator.Sensors.GroundTruth3DSensor
+    - Simulator.Sensors.GroundTruth3DVisualizer
+    - Simulator.Sensors.ImuSensor
+    - Simulator.Sensors.KeyboardControlSensor
+    - Simulator.Sensors.LidarSensor
+    - Simulator.Sensors.ManualControlSensor
+    - Simulator.Sensors.RadarSensor
+    - Simulator.Sensors.SegmentationCameraSensor
+    - Simulator.Sensors.SignalSensor
+    - Simulator.Sensors.TransformSensor
+    - Simulator.Sensors.UI.Visualizer
+    - Simulator.Sensors.UI.VisualizerToggle
+    - Simulator.Sensors.UltrasonicSensor
+    - Simulator.Sensors.VehicleControlSensor
+    - Simulator.Sensors.VehicleOdometrySensor
+    - Simulator.Sensors.VehicleStateSensor
+    - Simulator.Sensors.WheelControlSensor
+    - Simulator.Utilities.RuntimeSettings
+    - Simulator.Utilities.SpawnInfo
+    - Simulator.VehicleInfo
+    - SimulatorCameraController
+    - SimulatorManager
+    - TimeOfDayBuilding
+    - TimeOfDayLight
+    - UIManager
+    - VehicleActions
+    - VehicleController
+    - VehicleSMI
+    - VisualizerTFLabel
+    - VisualizerWindowDrag
+    - VisualizerWindowResize
+    Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
+    - UnityEditor.Tilemaps.SceneViewGridManager
+    - UnityEditor.Tilemaps.TileDragAndDropManager
+    Unity.InputSystem.dll:
+    - UnityEngine.InputSystem.InputSettings
+    - UnityEngine.InputSystem.InputSystemObject
+    - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    Unity.Postprocessing.Runtime.dll:
+    - UnityEngine.Rendering.PostProcessing.PostProcessLayer
+    - UnityEngine.Rendering.PostProcessing.PostProcessResources
+    Unity.RenderPipelines.Core.Runtime.dll:
+    - UnityEngine.Rendering.Volume
+    - UnityEngine.Rendering.VolumeProfile
+    Unity.RenderPipelines.HighDefinition.Editor.dll:
+    - UnityEditor.Rendering.HighDefinition.HDProjectSettings
+    Unity.RenderPipelines.HighDefinition.Runtime.dll:
+    - UnityEngine.Rendering.HighDefinition.AmbientOcclusion
+    - UnityEngine.Rendering.HighDefinition.Bloom
+    - UnityEngine.Rendering.HighDefinition.ContactShadows
+    - UnityEngine.Rendering.HighDefinition.DiffusionProfileSettings
+    - UnityEngine.Rendering.HighDefinition.Exposure
+    - UnityEngine.Rendering.HighDefinition.Fog
+    - UnityEngine.Rendering.HighDefinition.HDAdditionalCameraData
+    - UnityEngine.Rendering.HighDefinition.HDAdditionalLightData
+    - UnityEngine.Rendering.HighDefinition.HDRISky
+    - UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset
+    - UnityEngine.Rendering.HighDefinition.HDRenderPipelineEditorResources
+    - UnityEngine.Rendering.HighDefinition.HDShadowSettings
+    - UnityEngine.Rendering.HighDefinition.MotionBlur
+    - UnityEngine.Rendering.HighDefinition.PhysicallyBasedSky
+    - UnityEngine.Rendering.HighDefinition.RenderPipelineResources
+    - UnityEngine.Rendering.HighDefinition.ScreenSpaceReflection
+    - UnityEngine.Rendering.HighDefinition.Tonemapping
+    - UnityEngine.Rendering.HighDefinition.VisualEnvironment
+    Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
+    - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.AspectRatioFitter
+    - UnityEngine.UI.Button
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
+    - UnityEngine.UI.Dropdown
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
+    - UnityEngine.UI.HorizontalLayoutGroup
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.Outline
+    - UnityEngine.UI.RawImage
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Shadow
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
+    - UnityEngine.UI.VerticalLayoutGroup
+  sceneClasses:
+    Assets/External/Environments/CubeTown/CubeTown.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 29
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 21096}
+    - Class: 114
+      Script: {instanceID: 21674}
+    - Class: 114
+      Script: {instanceID: 21966}
+    - Class: 114
+      Script: {instanceID: 22582}
+    - Class: 114
+      Script: {instanceID: 23242}
+    - Class: 114
+      Script: {instanceID: 23342}
+    - Class: 114
+      Script: {instanceID: 23706}
+    - Class: 114
+      Script: {instanceID: 24650}
+    - Class: 114
+      Script: {instanceID: 24888}
+    - Class: 114
+      Script: {instanceID: 25148}
+    - Class: 114
+      Script: {instanceID: 25334}
+    - Class: 114
+      Script: {instanceID: 25362}
+    - Class: 114
+      Script: {instanceID: 26952}
+    - Class: 114
+      Script: {instanceID: 27222}
+    - Class: 114
+      Script: {instanceID: 27578}
+    - Class: 114
+      Script: {instanceID: 27932}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 238
+      Script: {instanceID: 0}
+    - Class: 363
+      Script: {instanceID: 0}
+  scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Simulator.dll
+    namespaceName: 
+    className: TimeOfDayLight
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Simulator.dll
+    namespaceName: 
+    className: TimeOfDayBuilding
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Simulator.dll
+    namespaceName: 
+    className: RainVolume
+  - hash:
+      serializedVersion: 2
+      Hash: 4b7c43299d3bdd5bcc5a33241cd52d6d
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapIntersection
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Simulator.dll
+    namespaceName: 
+    className: SignalLight
+  - hash:
+      serializedVersion: 2
+      Hash: c16ddda10b226a1876c92fe016989011
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapOrigin
+  - hash:
+      serializedVersion: 2
+      Hash: 1f1ff5d9e570eb277f2e05498b34ebce
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapHolder
+  - hash:
+      serializedVersion: 2
+      Hash: d69e003b2e3bea6c307e2d173b8c5177
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapSignal
+  - hash:
+      serializedVersion: 2
+      Hash: 3190e4ae71d91c9ad6384dcd01e46ad1
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapLine
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Utilities
+    className: SpawnInfo
+  - hash:
+      serializedVersion: 2
+      Hash: 340cce0160453ca7071722d334f88de6
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapPedestrian
+  - hash:
+      serializedVersion: 2
+      Hash: 473b4fd92be98ee97f0730dea4f4e734
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapJunction
+  - hash:
+      serializedVersion: 2
+      Hash: 23d0df1c247efc3d55d3f88192765640
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapLane
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapLaneSection
+  - hash:
+      serializedVersion: 2
+      Hash: fbd4e348d79367059e98b87dcaefd3b3
+    assemblyName: Simulator.dll
+    namespaceName: Simulator.Map
+    className: MapSign
+  - hash:
+      serializedVersion: 2
+      Hash: 302f9c8b61ac53eb557119ffa6465d5c
+    assemblyName: Unity.RenderPipelines.HighDefinition.Runtime.dll
+    namespaceName: UnityEngine.Rendering.HighDefinition
+    className: HDAdditionalLightData
+  platform: 19
+  scenePathNames:
+  - Assets/External/Environments/CubeTown/CubeTown.unity
+  playerPath: /home/acclivis/rahul/lg_simulator_pro/build/AssetBundles/Environments/85223835-3c0d-49a8-ab82-bbc7d1c4db37_environment_main_windows

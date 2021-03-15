@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/PKG-INFO
+../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt
+../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/dependency_links.txt
+../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/entry_points.txt
+../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/requires.txt
+../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/top_level.txt
+../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/zip-safe
+lg_sub_groundtruth/__init__.py
+lg_sub_groundtruth/lg_gt3d_subscriber.py
+resource/lg_sub_groundtruth
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

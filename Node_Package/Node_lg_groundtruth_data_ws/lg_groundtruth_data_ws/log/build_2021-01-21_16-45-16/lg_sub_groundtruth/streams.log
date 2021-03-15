@@ -1,0 +1,29 @@
+[0.549s] Invoking command in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth': PYTHONPATH=/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lg_sub_groundtruth build --build-base /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed
+[0.917s] running egg_info
+[0.918s] writing ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/PKG-INFO
+[0.919s] writing dependency_links to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/dependency_links.txt
+[0.919s] writing entry points to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/entry_points.txt
+[0.919s] writing requirements to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/requires.txt
+[0.919s] writing top-level names to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/top_level.txt
+[0.988s] reading manifest file '../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt'
+[0.995s] writing manifest file '../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt'
+[0.996s] running build
+[0.996s] running build_py
+[0.996s] copying lg_sub_groundtruth/lg_gt3d_subscriber.py -> /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build/lib/lg_sub_groundtruth
+[0.996s] running install
+[0.997s] running install_lib
+[0.998s] copying /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build/lib/lg_sub_groundtruth/lg_gt3d_subscriber.py -> /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth
+[0.998s] byte-compiling /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth/lg_gt3d_subscriber.py to lg_gt3d_subscriber.cpython-36.pyc
+[0.999s]   File "/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth/lg_gt3d_subscriber.py", line 287
+[0.999s]     report_file.write("LG bounding box center cordinate's : " + str(x_center) +" , "+ str(y_center) +" , "+ str(z_center) "\n")
+[0.999s]                                                                                                                              ^
+[1.000s] SyntaxError: invalid syntax
+[1.000s] 
+[1.000s] running install_data
+[1.000s] running install_egg_info
+[1.002s] removing '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth-0.0.0-py3.6.egg-info' (and everything under it)
+[1.002s] Copying ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info to /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth-0.0.0-py3.6.egg-info
+[1.003s] running install_scripts
+[1.022s] Installing lg_gt3d_subscriber script to /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/lg_sub_groundtruth
+[1.023s] writing list of installed files to '/home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log'
+[1.057s] Invoked command in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth' returned '0': PYTHONPATH=/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lg_sub_groundtruth build --build-base /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed

@@ -1,0 +1,153 @@
+[0.311s] Invoking command in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth': PYTHONPATH=/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lg_sub_groundtruth build --build-base /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed
+[0.610s] running egg_info
+[0.610s] writing ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/PKG-INFO
+[0.611s] writing dependency_links to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/dependency_links.txt
+[0.611s] writing entry points to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/entry_points.txt
+[0.611s] writing requirements to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/requires.txt
+[0.611s] writing top-level names to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/top_level.txt
+[0.645s] reading manifest file '../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt'
+[0.646s] writing manifest file '../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt'
+[0.647s] running build
+[0.647s] running build_py
+[0.647s] running install
+[0.647s] running install_lib
+[0.648s] byte-compiling /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth/lg_gt3d_subscriber.py to lg_gt3d_subscriber.cpython-36.pyc
+[0.668s]   File "/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth/lg_gt3d_subscriber.py", line 140
+[0.668s]     '''----------------------------------------------------------  
+[0.668s]   def polygon_clip(subjectPolygon, clipPolygon):
+[0.668s]    """ Clip a polygon with another polygon.
+[0.668s]    Ref: https://rosettacode.org/wiki/Sutherland-Hodgman_polygon_clipping#Python
+[0.668s]    Args:
+[0.668s]      subjectPolygon: a list of (x,y) 2d points, any polygon.
+[0.668s]      clipPolygon: a list of (x,y) 2d points, has to be *convex*
+[0.669s]    Note:
+[0.669s]      **points have to be counter-clockwise ordered**
+[0.669s]    Return:
+[0.669s]      a list of (x,y) vertex point for the intersection polygon."""
+[0.669s] 
+[0.669s]       def inside(p):
+[0.669s]           return(cp2[0]-cp1[0])*(p[1]-cp1[1]) > (cp2[1]-cp1[1])*(p[0]-cp1[0])
+[0.669s] 
+[0.669s]       def computeIntersection():
+[0.669s]           dc = [ cp1[0] - cp2[0], cp1[1] - cp2[1] ]
+[0.669s]           dp = [ s[0] - e[0], s[1] - e[1] ]
+[0.669s]           n1 = cp1[0] * cp2[1] - cp1[1] * cp2[0]
+[0.669s]           n2 = s[0] * e[1] - s[1] * e[0] 
+[0.669s]           n3 = 1.0 / (dc[0] * dp[1] - dc[1] * dp[0])
+[0.669s]           return [(n1*dp[0] - n2*dc[0]) * n3, (n1*dp[1] - n2*dc[1]) * n3]
+[0.669s] 
+[0.669s]       outputList = subjectPolygon
+[0.669s]       cp1 = clipPolygon[-1]
+[0.670s] 
+[0.670s]       for clipVertex in clipPolygon:
+[0.670s]          cp2 = clipVertex
+[0.670s]          inputList = outputList
+[0.670s]          outputList = []
+[0.670s]          s = inputList[-1]
+[0.670s]  
+[0.670s]          for subjectVertex in inputList:
+[0.670s]             e = subjectVertex
+[0.670s]             if inside(e):
+[0.670s]                if not inside(s):
+[0.670s]                   outputList.append(computeIntersection())
+[0.670s]                outputList.append(e)
+[0.670s]             elif inside(s):
+[0.670s]                outputList.append(computeIntersection())
+[0.670s]             s = e
+[0.670s]          cp1 = cp2
+[0.671s]          if len(outputList) == 0:
+[0.671s]              return None
+[0.671s]       return(outputList)
+[0.671s] 
+[0.671s]   def poly_area(x,y):
+[0.671s]     """ Ref: http://stackoverflow.com/questions/24467972/calculate-area-of-polygon-given-x-y-coordinates """
+[0.671s]       return 0.5*np.abs(np.dot(x,np.roll(y,1))-np.dot(y,np.roll(x,1)))
+[0.671s] 
+[0.671s]   def convex_hull_intersection(p1, p2):
+[0.671s]     """ Compute area of two convex hull's intersection area.
+[0.671s]         p1,p2 are a list of (x,y) tuples of hull vertices.
+[0.671s]         return a list of (x,y) for the intersection and its volume
+[0.671s]     """
+[0.671s]       inter_p = polygon_clip(p1,p2)
+[0.671s]       if inter_p is not None:
+[0.672s]           hull_inter = ConvexHull(inter_p)
+[0.672s]           return inter_p, hull_inter.volume
+[0.672s]       else:
+[0.672s]           return None, 0.0  
+[0.672s] 
+[0.672s]   def box3d_vol(corners):
+[0.672s]        ''' corners: (8,3) no assumption on axis direction '''
+[0.672s]                                                                    
+[0.672s]                                                 
+[0.672s]                                            
+[0.672s]                                                                                
+[0.672s]         
+[0.672s]                                                             
+[0.672s] running install_data
+[0.672s] running install_egg_info
+[0.672s] removing '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth-0.0.0-py3.6.egg-info' (and everything under it)
+[0.672s] Copying ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info to /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth-0.0.0-py3.6.egg-info
+[0.673s] running install_scripts
+[0.673s]                                                                
+[0.673s] Installing lg_gt3d_subscriber script to /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/lg_sub_groundtruth
+[0.673s] writing list of installed files to '/home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log'
+[0.680s]         
+[0.680s]                                                     
+[0.680s]           
+[0.680s]                                                                   
+[0.680s] 
+[0.680s]                     
+[0.680s]                                                                              
+[0.680s] 
+[0.680s]                                 
+[0.680s]                                                    
+[0.681s]                                            
+[0.681s]                                                 
+[0.681s]                                          
+[0.681s]                                                     
+[0.681s]                                                                          
+[0.681s] 
+[0.681s]                                  
+[0.681s]                            
+[0.681s] 
+[0.681s]                                     
+[0.681s]                          
+[0.681s]                                
+[0.681s]                         
+[0.681s]                           
+[0.681s]  
+[0.682s]                                         
+[0.682s]                              
+[0.682s]                          
+[0.682s]                                 
+[0.682s]                                                           
+[0.682s]                                    
+[0.682s]                            
+[0.682s]                                                        
+[0.682s]                  
+[0.682s]                   
+[0.682s]                                  
+[0.682s]                         
+[0.682s]                         
+[0.682s] 
+[0.682s]                      
+[0.682s]                                                                                                             
+[0.682s]                                                                       
+[0.682s] 
+[0.683s]                                        
+[0.683s]                                                             
+[0.683s]                                                           
+[0.683s]                                                                   
+[0.683s]        
+[0.683s]                                    
+[0.683s]                              
+[0.683s]                                           
+[0.683s]                                            
+[0.683s]            
+[0.683s]                             
+[0.683s] 
+[0.683s]                          
+[0.683s]                  ^
+[0.683s] SyntaxError: invalid syntax
+[0.683s] 
+[0.708s] Invoked command in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth' returned '0': PYTHONPATH=/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lg_sub_groundtruth build --build-base /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed

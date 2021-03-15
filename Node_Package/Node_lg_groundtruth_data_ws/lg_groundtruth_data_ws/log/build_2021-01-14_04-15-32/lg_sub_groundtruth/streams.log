@@ -1,0 +1,29 @@
+[0.427s] Invoking command in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth': PYTHONPATH=/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lg_sub_groundtruth build --build-base /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed
+[0.795s] running egg_info
+[0.796s] writing ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/PKG-INFO
+[0.796s] writing dependency_links to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/dependency_links.txt
+[0.798s] writing entry points to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/entry_points.txt
+[0.798s] writing requirements to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/requires.txt
+[0.798s] writing top-level names to ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/top_level.txt
+[0.835s] reading manifest file '../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt'
+[0.836s] writing manifest file '../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt'
+[0.836s] running build
+[0.836s] running build_py
+[0.836s] copying lg_sub_groundtruth/lg_gt3d_subscriber.py -> /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build/lib/lg_sub_groundtruth
+[0.836s] running install
+[0.837s] running install_lib
+[0.837s] copying /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build/lib/lg_sub_groundtruth/lg_gt3d_subscriber.py -> /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth
+[0.838s] byte-compiling /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth/lg_gt3d_subscriber.py to lg_gt3d_subscriber.cpython-36.pyc
+[0.839s]   File "/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth/lg_gt3d_subscriber.py", line 202
+[0.839s]     report_file.writelines("No. of Vehicle in the above timestamp : %s \n", % len(msg.detections))
+[0.839s]                                                                             ^
+[0.839s] SyntaxError: invalid syntax
+[0.839s] 
+[0.839s] running install_data
+[0.839s] running install_egg_info
+[0.841s] removing '/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth-0.0.0-py3.6.egg-info' (and everything under it)
+[0.842s] Copying ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info to /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth-0.0.0-py3.6.egg-info
+[0.842s] running install_scripts
+[0.863s] Installing lg_gt3d_subscriber script to /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/lg_sub_groundtruth
+[0.863s] writing list of installed files to '/home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log'
+[0.903s] Invoked command in '/home/acclivis_linux2/script/lg_groundtruth_data_ws/src/lg_sub_groundtruth' returned '0': PYTHONPATH=/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lg_sub_groundtruth build --build-base /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis_linux2/script/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed

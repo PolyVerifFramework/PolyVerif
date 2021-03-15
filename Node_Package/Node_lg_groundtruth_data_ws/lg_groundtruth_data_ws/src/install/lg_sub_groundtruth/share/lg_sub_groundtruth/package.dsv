@@ -1,0 +1,6 @@
+source;share/lg_sub_groundtruth/hook/pythonpath.ps1
+source;share/lg_sub_groundtruth/hook/pythonpath.dsv
+source;share/lg_sub_groundtruth/hook/pythonpath.sh
+source;share/lg_sub_groundtruth/hook/ament_prefix_path.ps1
+source;share/lg_sub_groundtruth/hook/ament_prefix_path.dsv
+source;share/lg_sub_groundtruth/hook/ament_prefix_path.sh

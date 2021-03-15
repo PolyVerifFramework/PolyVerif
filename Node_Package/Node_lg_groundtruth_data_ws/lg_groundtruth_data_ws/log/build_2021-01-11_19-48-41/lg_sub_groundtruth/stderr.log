@@ -1,0 +1,5 @@
+  File "/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth/lg_gt3d_subscriber.py", line 215
+    if len(autoware_boxes)-1 == c_autoware_boxes :
+                                                 ^
+SyntaxError: invalid syntax
+

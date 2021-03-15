@@ -1,0 +1,2 @@
+rain_0.9, fog_0.9, wetness_0.9 ,cloudiness_0.9, damage_0.9
+rain_0.1, fog_0.2, wetness_0.1 ,cloudiness_0.1, damage_0.1

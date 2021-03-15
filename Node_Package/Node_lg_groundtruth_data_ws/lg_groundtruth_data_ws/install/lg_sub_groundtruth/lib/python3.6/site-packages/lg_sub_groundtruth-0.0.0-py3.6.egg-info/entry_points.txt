@@ -1,0 +1,3 @@
+[console_scripts]
+lg_gt3d_subscriber = lg_sub_groundtruth.lg_gt3d_subscriber:main
+

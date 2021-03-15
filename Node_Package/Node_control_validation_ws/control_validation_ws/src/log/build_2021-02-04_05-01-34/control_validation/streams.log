@@ -1,0 +1,21 @@
+[0.392s] Invoking command in '/home/acclivis_linux2/script/control_validation_ws/src/control_validation': PYTHONPATH=/home/acclivis_linux2/script/control_validation_ws/src/install/control_validation/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/control_validation build --build-base /home/acclivis_linux2/script/control_validation_ws/src/build/control_validation/build install --prefix /home/acclivis_linux2/script/control_validation_ws/src/install/control_validation --record /home/acclivis_linux2/script/control_validation_ws/src/build/control_validation/install.log --single-version-externally-managed
+[0.674s] running egg_info
+[0.675s] writing ../build/control_validation/control_validation.egg-info/PKG-INFO
+[0.675s] writing dependency_links to ../build/control_validation/control_validation.egg-info/dependency_links.txt
+[0.675s] writing entry points to ../build/control_validation/control_validation.egg-info/entry_points.txt
+[0.675s] writing requirements to ../build/control_validation/control_validation.egg-info/requires.txt
+[0.676s] writing top-level names to ../build/control_validation/control_validation.egg-info/top_level.txt
+[0.724s] reading manifest file '../build/control_validation/control_validation.egg-info/SOURCES.txt'
+[0.725s] writing manifest file '../build/control_validation/control_validation.egg-info/SOURCES.txt'
+[0.725s] running build
+[0.725s] running build_py
+[0.725s] running install
+[0.725s] running install_lib
+[0.736s] running install_data
+[0.738s] running install_egg_info
+[0.743s] removing '/home/acclivis_linux2/script/control_validation_ws/src/install/control_validation/lib/python3.6/site-packages/control_validation-0.0.0-py3.6.egg-info' (and everything under it)
+[0.743s] Copying ../build/control_validation/control_validation.egg-info to /home/acclivis_linux2/script/control_validation_ws/src/install/control_validation/lib/python3.6/site-packages/control_validation-0.0.0-py3.6.egg-info
+[0.745s] running install_scripts
+[0.790s] Installing control_subscriber script to /home/acclivis_linux2/script/control_validation_ws/src/install/control_validation/lib/control_validation
+[0.791s] writing list of installed files to '/home/acclivis_linux2/script/control_validation_ws/src/build/control_validation/install.log'
+[0.842s] Invoked command in '/home/acclivis_linux2/script/control_validation_ws/src/control_validation' returned '0': PYTHONPATH=/home/acclivis_linux2/script/control_validation_ws/src/install/control_validation/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/control_validation build --build-base /home/acclivis_linux2/script/control_validation_ws/src/build/control_validation/build install --prefix /home/acclivis_linux2/script/control_validation_ws/src/install/control_validation --record /home/acclivis_linux2/script/control_validation_ws/src/build/control_validation/install.log --single-version-externally-managed

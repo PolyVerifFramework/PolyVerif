@@ -1,0 +1,334 @@
+//
+
+pipeline {
+
+  agent {
+    node {
+      label "unity3d-2019.3-vulkan"
+      customWorkspace "/home/jenkins/workspace/simulator-release-2019.3.15f1"
+    }
+  }
+
+  options {
+    gitLabConnection("${GITLAB_HOST}")
+    skipDefaultCheckout(true)
+    timestamps()
+  }
+
+  environment {
+    UNITY_USERNAME = credentials("UNITY_USERNAME")
+    UNITY_PASSWORD = credentials("UNITY_PASSWORD")
+    UNITY_SERIAL = credentials("UNITY_SERIAL")
+    CODE_SIGNING_PASSWORD = credentials("LGSVL_CODE_SIGNING_PASSWORD")
+    BUILD_BUNDLES = "true"
+    PYTHONUNBUFFERED = "1"
+    DISPLAY = ":0"
+    GIT_TAG = "${GIT_TAG}"
+    CODE_SIGNING_FILE = "/dev/urandom"
+    FORCE_REBUILD = "${FORCE_REBUILD}"
+    SIMULATOR_ENVIRONMENTS = "${SIMULATOR_ENVIRONMENTS_RELEASE}"
+    SIMULATOR_SENSORS = "${SIMULATOR_SENSORS_RELEASE}"
+    SIMULATOR_NPCS_REPOS = "${SIMULATOR_NPCS_REPOS_RELEASE}"
+    SIMULATOR_NPCS = "${SIMULATOR_NPCS_RELEASE}"
+  }
+
+  stages {
+    stage("Build environment") {
+        steps {
+            sh label:"SIMULATOR env vars", script:"printenv | sort | grep SIMULATOR"
+        }
+    }
+
+    stage("Git") {
+      steps {
+
+        mail to: "${SIMULATOR_RELEASE_EMAILS}", subject: "Starting ${GIT_TAG} release build", body: "Starting ${GIT_TAG} release build: ${BUILD_URL}"
+
+        script {
+          env.S3_DOWNLOAD_HOST = "${S3_RELEASE_DOWNLOAD_HOST}"
+          env.S3_BUCKET_NAME = "${S3_RELEASE_BUCKET_NAME}"
+          env.AWS_ACCESS_KEY_ID = "${AWS_RELEASE_ACCESS_KEY_ID}"
+          env.AWS_SECRET_ACCESS_KEY = "${AWS_RELEASE_SECRET_ACCESS_KEY}"
+        }
+
+        checkout([
+          $class: "GitSCM",
+          branches: [[name: "refs/tags/${GIT_TAG}"]],
+          browser: [$class: "GitLab", repoUrl: "https://${GITLAB_HOST}/HDRP/Simulator", version: env.GITLAB_VERSION],
+          extensions: [
+            [$class: "LocalBranch"],
+            [$class: "GitLFSPull"]
+          ],
+          userRemoteConfigs: [[
+            credentialsId: "auto-gitlab",
+            url: "git@${GITLAB_HOST}:HDRP/Simulator.git"
+          ]]
+        ])
+
+        sh label:"Cleanup Assets/External/Sensors", script:"""
+            cd Assets/External/Sensors
+            find .  -mindepth 1 -maxdepth 1  -type d | xargs rm -rf
+            git clean -xdf .
+        """
+
+        script {
+
+          def environments = env.SIMULATOR_ENVIRONMENTS.split(',')
+          for (int i=0; i<environments.size(); i++) {
+            def environment = environments[i]
+            checkout([
+              $class: "GitSCM",
+              branches: [[name: "refs/heads/master"]],
+              browser: [$class: "GitLab", repoUrl: "https://${GITLAB_HOST}/HDRP/Environments/${environment}", version: env.GITLAB_VERSION],
+              extensions: [
+                [$class: "RelativeTargetDirectory", relativeTargetDir: "Assets/External/Environments/${environment}"],
+                [$class: "LocalBranch"],
+                [$class: "GitLFSPull"]
+              ],
+              userRemoteConfigs: [[
+                credentialsId: "auto-gitlab",
+                url: "git@${GITLAB_HOST}:HDRP/Environments/${environment}.git"
+              ]]
+            ])
+          }
+
+          def vehicles = env.SIMULATOR_VEHICLES.split(',')
+          for (int i=0; i<vehicles.size(); i++) {
+            def vehicle = vehicles[i]
+            checkout([
+              $class: "GitSCM",
+              branches: [[name: "refs/heads/master"]],
+              browser: [$class: "GitLab", repoUrl: "https://${GITLAB_HOST}/HDRP/Vehicles/${vehicle}", version: env.GITLAB_VERSION],
+              extensions: [
+                [$class: "RelativeTargetDirectory", relativeTargetDir: "Assets/External/Vehicles/${vehicle}"],
+                [$class: "LocalBranch"],
+                [$class: "GitLFSPull"]
+              ],
+              userRemoteConfigs: [[
+                credentialsId: "auto-gitlab",
+                url: "git@${GITLAB_HOST}:HDRP/Vehicles/${vehicle}.git"
+              ]]
+            ])
+          }
+
+          def controllables = env.SIMULATOR_CONTROLLABLES.split(',')
+          for (int i=0; i<controllables.size(); i++) {
+            def controllable = controllables[i]
+            checkout([
+              $class: "GitSCM",
+              branches: [[name: "refs/heads/master"]],
+              browser: [$class: "GitLab", repoUrl: "https://${GITLAB_HOST}/HDRP/Controllables/${controllable}", version: env.GITLAB_VERSION],
+              extensions: [
+                [$class: "RelativeTargetDirectory", relativeTargetDir: "Assets/External/Controllables/${controllable}"],
+                [$class: "LocalBranch"],
+                [$class: "GitLFSPull"]
+              ],
+              userRemoteConfigs: [[
+                credentialsId: "auto-gitlab",
+                url: "git@${GITLAB_HOST}:HDRP/Controllables/${controllable}.git"
+              ]]
+            ])
+          }
+
+          def sensors = env.SIMULATOR_SENSORS.split(',')
+          def sim_sensors = []
+
+          for (int i=0; i<sensors.size(); i++) {
+            def sensor_git_ref = sensors[i].split(":")
+
+            def sensor = sensor_git_ref[0]
+            def git_ref = "refs/heads/master"
+
+            if (sensor_git_ref.size() > 1) {
+                git_ref = sensor_git_ref[1]
+            }
+
+            sim_sensors.add(sensor)
+
+            checkout([
+              $class: "GitSCM",
+              branches: [[name: "${git_ref}"]],
+              browser: [$class: "GitLab", repoUrl: "https://${GITLAB_HOST}/HDRP/Sensors/${sensor}", version: env.GITLAB_VERSION],
+              extensions: [
+                [$class: "RelativeTargetDirectory", relativeTargetDir: "Assets/External/Sensors/${sensor}"],
+                [$class: "LocalBranch"],
+                [$class: "GitLFSPull"]
+              ],
+              userRemoteConfigs: [[
+                credentialsId: "auto-gitlab",
+                url: "git@${GITLAB_HOST}:HDRP/Sensors/${sensor}.git"
+              ]]
+            ])
+          }
+
+
+          env.FORCE_REBUILD = "0"
+          env.GIT_COMMIT = sh(returnStdout: true, script: "git rev-parse HEAD").trim()
+          env.SIM_ENVIRONMENTS = sh(returnStdout: true, script: "./Jenkins/get-assets.sh Assets/External/Environments ${S3_DOWNLOAD_HOST} environment 1").trim()
+          env.SIM_VEHICLES = sh(returnStdout: true, script: "./Jenkins/get-assets.sh Assets/External/Vehicles ${S3_DOWNLOAD_HOST} vehicle 1").trim()
+          env.SIM_SENSORS = sim_sensors.join(",")
+        } // script
+
+        sh "rm -rf *.zip *.html *.xml *.log"
+
+        sh label:"SIMULATOR env vars", script:"printenv | grep -E 'SIMULATOR|^SIM_' | sort"
+      }
+    }
+
+    stage("Checkout NPCs") {
+      when {
+        not {
+            anyOf {
+                environment name: "SIMULATOR_NPCS_REPOS", value: ""
+                environment name: "SIMULATOR_NPCS", value: ""
+            }
+        }
+      }
+      steps {
+        script {
+          def npcs = env.SIMULATOR_NPCS_REPOS.split(',')
+          for (int i=0; i<npcs.size(); i++) {
+            def npc = npcs[i]
+            checkout([
+              $class: "GitSCM",
+              branches: [[name: "refs/heads/master"]],
+              browser: [$class: "GitLab", repoUrl: "https://${GITLAB_HOST}/HDRP/NPC/${npc}", version: env.GITLAB_VERSION],
+              extensions: [
+                [$class: "RelativeTargetDirectory", relativeTargetDir: "Assets/External/NPCs/${npc}"],
+                [$class: "LocalBranch"],
+                [$class: "GitLFSPull"]
+              ],
+              userRemoteConfigs: [[
+                credentialsId: "auto-gitlab",
+                url: "git@${GITLAB_HOST}:HDRP/NPC/${npc}.git"
+              ]]
+            ])
+          }
+        } // script
+      }
+    }
+
+    stage("Docker") {
+      environment {
+        DOCKER = credentials("Jenkins-Gitlab")
+      }
+      steps {
+        dir("Jenkins") {
+          sh """
+            docker login -u ${DOCKER_USR} -p ${DOCKER_PSW} ${GITLAB_HOST}:4567
+            docker-compose build build-simulator
+            docker-compose push build-simulator
+            docker-compose pull build-webui
+          """
+        }
+      }
+    }
+
+    stage("WebUI") {
+      steps {
+        dir("Jenkins") {
+          sh "UID=`id -u` docker-compose run --rm build-webui-p"
+        }
+      }
+    }
+
+    stage("Check") {
+      steps {
+        dir("Jenkins") {
+          sh "UID=`id -u` docker-compose run --rm build-simulator check"
+        }
+      }
+      post {
+        success {
+          archiveArtifacts "*-check-${GIT_TAG}.html"
+        }
+      }
+    }
+
+    stage("Test") {
+      steps {
+        dir("Jenkins") {
+          sh "UID=`id -u` docker-compose run --rm build-simulator test"
+        }
+      }
+      post {
+        success {
+          xunit([NUnit3(pattern: "*-test-${GIT_TAG}.xml", deleteOutputFiles: true)])
+        }
+      }
+    }
+
+    stage("Bundles") {
+      steps {
+        dir("Jenkins") {
+          script {
+            env.SIM_ENVIRONMENTS = sh(returnStdout: true, script: "./get-assets.sh ../Assets/External/Environments ${S3_DOWNLOAD_HOST} environment 0").trim()
+            env.SIM_VEHICLES = sh(returnStdout: true, script: "./get-assets.sh ../Assets/External/Vehicles ${S3_DOWNLOAD_HOST} vehicle 0").trim()
+          }
+          sh "UID=`id -u` docker-compose run --rm build-bundles"
+          sh "UID=`id -u` docker-compose run --rm upload-bundles | tee ../upload-bundles.log"
+          script {
+            env.SIM_ENVIRONMENTS = sh(returnStdout: true, script: "./get-assets.sh ../Assets/External/Environments ${S3_DOWNLOAD_HOST} environment 1").trim()
+            env.SIM_VEHICLES = sh(returnStdout: true, script: "./get-assets.sh ../Assets/External/Vehicles ${S3_DOWNLOAD_HOST} vehicle 1").trim()
+          }
+          sh "UID=`id -u` docker-compose run --rm save-bundle-links"
+        }
+      }
+
+      post {
+        success {
+          archiveArtifacts "*-bundles-${GIT_TAG}.html"
+        }
+      }
+    } // Bundles
+
+    stage("Windows") {
+
+      steps {
+        dir("Jenkins") {
+          withCredentials([file(credentialsId: "LGSVL_CODE_SIGNING_FILE", variable: "CODE_SIGNING_FILE")]) {
+            sh "UID=`id -u` docker-compose run --rm build-simulator windows"
+          }
+        }
+      }
+
+      post {
+        success {
+          archiveArtifacts "*-windows64-${GIT_TAG}.zip"
+        }
+      }
+
+    } // Windows
+
+    stage("Linux") {
+
+      steps {
+        dir("Jenkins") {
+          sh "UID=`id -u` docker-compose run --rm build-simulator linux"
+        }
+      }
+
+      post {
+        success {
+          archiveArtifacts "*-linux64-${GIT_TAG}.zip"
+        }
+      }
+
+    } // Linux
+
+  } // stages
+
+  post {
+    failure {
+      mail to: "${SIMULATOR_RELEASE_EMAILS}", subject: "Failed ${GIT_TAG} release build", body: "Failed ${GIT_TAG} release build: ${BUILD_URL}"
+    }
+    success {
+      mail to: "${SIMULATOR_RELEASE_EMAILS}", subject: "Finished ${GIT_TAG} release build", body: "Finished ${GIT_TAG} release build: ${BUILD_URL}"
+    }
+    always {
+        sh script:"zip logs-${GIT_TAG}-${BUILD_ID}.zip *.log || true", label:"Archive log files"
+        archiveArtifacts artifacts:"logs*.zip", allowEmptyArchive:true
+    }
+  }
+
+}

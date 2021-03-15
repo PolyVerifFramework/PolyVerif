@@ -1,0 +1,5 @@
+  File "/home/acclivis_linux2/script/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth/lg_gt3d_subscriber.py", line 202
+    report_file.writelines("No. of Vehicle in the above timestamp : %s \n", % len(msg.detections))
+                                                                            ^
+SyntaxError: invalid syntax
+

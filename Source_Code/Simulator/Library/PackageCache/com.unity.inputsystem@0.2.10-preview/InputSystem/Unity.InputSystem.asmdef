@@ -1,0 +1,10 @@
+{
+    "name": "Unity.InputSystem",
+    "references": [
+		"Unity.ugui"    	
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true
+}

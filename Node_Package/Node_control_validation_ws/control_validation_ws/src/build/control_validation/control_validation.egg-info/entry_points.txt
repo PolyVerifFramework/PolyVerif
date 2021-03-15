@@ -1,0 +1,3 @@
+[console_scripts]
+control_subscriber = control_validation.control_subscriber:main
+

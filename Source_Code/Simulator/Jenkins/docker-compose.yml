@@ -1,0 +1,116 @@
+version: "2.4"
+
+services:
+  build-webui:
+    image: node:10.15-slim
+    user: ${UID}
+    volumes:
+      - ..:/mnt
+      - /etc/localtime:/etc/localtime:ro
+    command: "/mnt/Jenkins/build-webui.sh pack"
+
+  build-webui-p:
+    image: node:10.15-slim
+    user: ${UID}
+    volumes:
+      - ..:/mnt
+      - /etc/localtime:/etc/localtime:ro
+    command: "/mnt/Jenkins/build-webui.sh pack-p"
+
+  build-simulator:
+    build: .
+    image: ${SIMULATOR_DOCKER_IMAGE}:2019.3.15f1
+    user: ${UID}
+    environment:
+      - S3_DOWNLOAD_HOST
+      - SIM_ENVIRONMENTS
+      - SIM_VEHICLES
+      - SIMULATOR_CONTROLLABLES
+      - SIM_SENSORS
+      - SIMULATOR_NPCS
+      - CLOUD_URL
+      - JENKINS_BUILD_ID
+      - GIT_COMMIT
+      - GIT_BRANCH
+      - GIT_TAG
+      - UNITY_USERNAME
+      - UNITY_PASSWORD
+      - UNITY_SERIAL
+      - CODE_SIGNING_PASSWORD
+      - DISPLAY
+      - XAUTHORITY=/tmp/.Xauthority
+    volumes:
+      - ..:/mnt
+      - /etc/localtime:/etc/localtime:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${HOME}/.Xauthority:/tmp/.Xauthority
+      - ${CODE_SIGNING_FILE}:/tmp/signing.p12
+    runtime: "nvidia"
+    privileged: true
+    entrypoint: "/mnt/Jenkins/build-simulator.sh"
+
+  save-bundle-links:
+    build: .
+    image: ${SIMULATOR_DOCKER_IMAGE}:2019.3.15f1
+    user: ${UID}
+    environment:
+      - SIM_ENVIRONMENTS
+      - SIM_VEHICLES
+      - S3_DOWNLOAD_HOST
+      - JENKINS_BUILD_ID
+      - GIT_COMMIT
+      - GIT_BRANCH
+      - GIT_TAG
+      - UNITY_USERNAME
+      - UNITY_PASSWORD
+      - UNITY_SERIAL
+      - DISPLAY
+      - XAUTHORITY=/tmp/.Xauthority
+    volumes:
+      - ..:/mnt
+      - /etc/localtime:/etc/localtime:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${HOME}/.Xauthority:/tmp/.Xauthority
+    runtime: "nvidia"
+    privileged: true
+    entrypoint: "/mnt/Jenkins/save-bundle-links.sh"
+
+  build-bundles:
+    build: .
+    image: ${SIMULATOR_DOCKER_IMAGE}:2019.3.15f1
+    user: ${UID}
+    environment:
+      - SIM_ENVIRONMENTS
+      - SIM_VEHICLES
+      - JENKINS_BUILD_ID
+      - GIT_COMMIT
+      - GIT_BRANCH
+      - GIT_TAG
+      - UNITY_USERNAME
+      - UNITY_PASSWORD
+      - UNITY_SERIAL
+      - DISPLAY
+      - XAUTHORITY=/tmp/.Xauthority
+    volumes:
+      - ..:/mnt
+      - /etc/localtime:/etc/localtime:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${HOME}/.Xauthority:/tmp/.Xauthority
+    runtime: "nvidia"
+    privileged: true
+    entrypoint: "/mnt/Jenkins/build-bundles.sh"
+
+  upload-bundles:
+    image: mesosphere/aws-cli
+    user: ${UID}
+    environment:
+      - SIM_ENVIRONMENTS
+      - SIM_VEHICLES
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - S3_BUCKET_NAME
+      - GIT_COMMIT
+    volumes:
+      - ..:/mnt
+      - /etc/localtime:/etc/localtime:ro
+    entrypoint: "/mnt/Jenkins/upload-bundles.sh"

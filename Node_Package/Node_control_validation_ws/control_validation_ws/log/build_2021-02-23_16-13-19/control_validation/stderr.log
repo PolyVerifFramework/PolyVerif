@@ -1,0 +1,5 @@
+  File "/home/acclivis/script/Node_control_validation_ws/control_validation_ws/install/control_validation/lib/python3.6/site-packages/control_validation/control_subscriber.py", line 23
+    global framenum = 0
+                    ^
+SyntaxError: invalid syntax
+

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/wall">
+        <file>back1.jpg</file>
+        <file>car_logo.PNG</file>
+    </qresource>
+</RCC>
