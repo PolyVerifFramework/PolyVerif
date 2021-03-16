@@ -32,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->b_run_scenario->setDisabled(true);
     ui->b_showreport->setDisabled(true);
     ui->b_sel_scenario->setDisabled(true);
+    ui->b_generatereport->setDisabled(true);
 
 
     ui->b_control_run_scenario->setDisabled(true);
@@ -119,6 +120,23 @@ void MainWindow::fileChanged(const QString & path){
     if(!this->textss.isEmpty()){
         qDebug() <<"Hello";
         ui->lbl_outputlog->setText("Log Information : " + this->textss.first());
+
+        if(this->textss.first() == "Report Generated"){
+            ui->b_showreport->setEnabled(true);
+            QMessageBox messageBox;
+            messageBox.setText("Report Generated, Click on Show Report");
+            messageBox.setFixedSize(500,200);
+            messageBox.exec();
+
+            QString p_logInfo = QDir::currentPath() + "/logfiles/logInfo.txt";
+            QFile fp(p_logInfo);
+            fp.open(QFile::Truncate | QIODevice::WriteOnly | QIODevice::Text);
+            fp.close();
+        }else if(true){
+            // Handle the more feedback on the UI
+
+        }
+
         this->textss.pop_front();
     }
 }
@@ -187,6 +205,7 @@ void MainWindow::on_checkBox_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
     ui->checkBox_3->setChecked(false);
+    ui->label_3->setEnabled(false);
     if(ui->checkBox_2->isChecked()){
         ui->gbox_DST_Suit->setVisible(true);
         ui->stackedWidget->setVisible(true);
@@ -219,9 +238,10 @@ void MainWindow::on_actionexit_triggered()
 void MainWindow::on_b_sel_scenario_clicked()
 {
     ui->treeWidget->clear();
+    ui->label_3->setEnabled(true);
     //ui->b_run_scenario->setEnabled(true);
     ui->listWidgetSceneSelectDSU->setEnabled(true);
-
+    static bool flag1 = true;
     // TODO path dynamic back one folder
     QDir directory ;
     QString curr_path = QDir::currentPath();
@@ -229,27 +249,53 @@ void MainWindow::on_b_sel_scenario_clicked()
     p_testCases = curr_path.left(pos) + "/Test_Cases/";
     qDebug() << "new path : " + p_testCases;
     directory.setPath(p_testCases) ;
-    bool flag = false;
+        bool flag = false;
+    //sne
+ if(flag1){
+    QFile fp1(p_testCases+"/scene.txt");
+    if (!fp1.open(QIODevice::ReadOnly))
+    {
+        qDebug() << "File not open";
+        QMessageBox msgBox;
+         msgBox.setText("Create scene.txt in Test_Cases Directory");
+         msgBox.exec();
+        return;
+    }
+    int m=1;
+
+    while (!fp1.atEnd()) {
+        QString str = fp1.readLine();
+        qDebug() <<"f_namee : "<<str;
+         str = str.remove('\n');
+    ui->listWidgetSceneSelectDSU->insertItem(m++,str);
+}
+    flag1 = false;
+}
+ qDebug() << "Directory :" << directory.currentPath();
     QTreeWidgetItem *root = new QTreeWidgetItem(ui->treeWidget);
     for(const QFileInfo &finfo : directory.entryInfoList()){
+       // qDebug()<< "Detected-"  << finfo.fileName();
+         QDir dir(finfo.absoluteFilePath());
         if(flag == false)
         {
-            QDir dir(finfo.absoluteFilePath());
+           // QDir dir(finfo.absoluteFilePath());
             root->setText(0,dir.dirName());
-            qDebug() << "In main dir : " << root->text(0) ;
+            //qDebug() << "In main dir : " << root->text(0) ;
             ui->treeWidget->addTopLevelItem(root);
             root->setCheckState(0,Qt::Unchecked); //optional
             flag = true;
         }//if_
         else
         {
-            QDir dir(finfo.absoluteFilePath());
+
             QTreeWidgetItem *child = new  QTreeWidgetItem();
             child->setText(0,dir.dirName());
             child->setCheckState(0,Qt::Unchecked);
             root->addChild(child);
+          //  qDebug() << "dir :--" <<child->text(0);
             if(finfo.isDir())
             {
+               qDebug() << "File name :"<<finfo.fileName();
                 QDir dir(finfo.absoluteFilePath());
                 if(dir.exists("config.txt")){
                     QDir d(finfo.absoluteFilePath());
@@ -290,6 +336,8 @@ void MainWindow::on_b_sel_scenario_clicked()
 
 void MainWindow::on_b_run_scenario_clicked()
 {
+    ui->b_showreport->setDisabled(true);
+    ui->treeWidget->setDisabled(true); //sne
     model->clear();
     ui->tableView->setModel(model);
     ui->lbl_d_Auto->setText("Detection range in Autoware(m/s): NA");
@@ -303,7 +351,9 @@ void MainWindow::on_b_run_scenario_clicked()
     QString dateTimeString = curr_DateTime.toString("dd_MM_yyyy__hh_mm_ss");
     QString curr_path = QDir::currentPath();
     QFile fp(curr_path + "/test_runner.sh");
-    fp.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Truncate);
+    //fp.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Truncate);
+
+    fp.open(QFile::Truncate | QIODevice::WriteOnly | QIODevice::Text);
     fp.setCurrentWriteChannel(0);
     QTextStream stream(&fp);
     stream << "#!/bin/sh \nset -eu\n";
@@ -311,7 +361,8 @@ void MainWindow::on_b_run_scenario_clicked()
     // TODO WeaterControl sitng need to be dynamic
     // Added the directory path for report
     //QString testcasepath = p_testCases + "/Weather_Control/";
-    QString testcasepath =  "/Test_Cases/Weather_Control/";
+    QString testcasepath = par;  //sne
+    qDebug() << "Complete Path"<<par;
     QString reportPath = "PolyReports/Validation_report/" + dateTimeString + "/";
 
     //sh ./support_files/validate_perception.sh &
@@ -321,7 +372,8 @@ void MainWindow::on_b_run_scenario_clicked()
     foreach(QString s,selected){
         int scenarioPos = s.indexOf(".");
         QString tCase = s.left(scenarioPos);
-        stream << "mkdir -p " << reportPath + tCase <<" && touch "<<reportPath + tCase+"/"+tCase + ".txt" <<"\n";
+        //stream << "mkdir -p " << reportPath + tCase <<" && touch "<<reportPath + tCase+"/"+tCase + ".txt" <<"\n";
+        stream << "mkdir -p " << reportPath + tCase <<" && touch "<<reportPath + tCase+"/"<<"\n";
         stream << "echo \""<< reportPath + tCase<<" \" > PolyReports/Validation_report/config.txt; \n";
         csv_ReportPath = reportPath + tCase;
         //stream << "sh ./support_files/validate_perception.sh & \n";
@@ -330,6 +382,7 @@ void MainWindow::on_b_run_scenario_clicked()
         stream << "python3 ." + testcasepath + s+"\n";
     }
     fp.close();
+    selected.clear();
     if(parameters.Script != ""){
         QString c_path = QDir::currentPath() + "/q_scenario_setup.sh";
         executeShell(c_path);
@@ -349,32 +402,41 @@ void MainWindow::executeShell(QString path){
 
 void MainWindow::on_b_stop_scenario_clicked()
 {
+    ui->b_generatereport->setEnabled(true);
+    ui->treeWidget->setEnabled(true);  //sne
 
+    // I think this sel-item-clr valiabel ot clear or some
+    // I faced once when i Click on the stop scenario
+
+    foreach (QTreeWidgetItem * m, sel_item_clr) {
+       m->setCheckState(0,Qt::Unchecked);
+    }
     QFile fp(QDir::currentPath() + "/test_runner.sh");
     fp.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Truncate);
     fp.close();
     ui->b_stop_scenario->setDisabled(true);
     ui->b_run_scenario->setEnabled(true);
-    ui->b_showreport->setEnabled(true);
+    ui->b_generatereport->setEnabled(true);
     QString c_path = QDir::currentPath() + "/stop_scenario.sh" ;
     executeShell(c_path);
     qDebug() << "Stoping scenario.." ;
 }
 
-void MainWindow::on_b_showreport_clicked()
+void MainWindow::on_b_generatereport_clicked()
 {
+    ui->b_generatereport->setDisabled(true);
     QString curr_path = QDir::currentPath();
     QString path = curr_path + "/q_perception_val_script.sh";
     executeShell(path);
+}
 
+void MainWindow::on_b_showreport_clicked()
+{
+
+    QString curr_path = QDir::currentPath();
     int pos = curr_path.lastIndexOf(QChar('/'));
     QString rp_filepath = curr_path.left(pos);
 
-    // int pos1 = rp_filepath.lastIndexOf(QChar('/'));
-    // QString rp1 = rp_filepath.left(pos1);
-
-
-    QThread::sleep(1);
     //csv_ReportPath = "PolyReports/Validation_report/" + dateTimeString + "/" + "TC_1";
     //model = new QStandardItemModel;
     QString rfile = rp_filepath + "/" + csv_ReportPath + "/rangeReport.csv";
@@ -427,6 +489,11 @@ void MainWindow::on_b_showreport_clicked()
 
 void MainWindow::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
 {
+   QTreeWidgetItem *p2 = item->parent();
+   //par=p.text(column);
+   QTreeWidgetItem *p1 = p2->parent();
+    sel_item_clr.append(item);
+   par= "/"+p1->text(column)+"/"+p2->text(column)+"/"; //sne
     Qt::CheckState p; //updted
     p = Qt::Unchecked; //updated
     QString str = item->text(column),mainstring;
@@ -448,7 +515,7 @@ void MainWindow::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
         //rain.insert(val);
         mainstring.append(val + " "); //updtaed
         mainstring.append(parameters.scene); //updated
-        parameters.rain = val;
+
         qDebug() << "Mainstring  : " << mainstring;
         if(item->checkState(column) == p){
             selected.remove(mainstring);
@@ -586,8 +653,8 @@ void MainWindow::on_b_control_run_scenario_clicked()
     // TODO :: run scenario for control validation
     QSet<QString>::iterator m;
     if(parameters.Script != ""){
-        QString c_path = QDir::currentPath() + "/q_scenario_setup.sh " +  parameters.Script + " " + parameters.rain + " " +parameters.fog + " "
-                + parameters.wetness + " " + parameters.damage +" " + parameters.scene;
+        //todo : need to add scenario
+        QString c_path = QDir::currentPath() + "/q_scenario_setup.sh " +  parameters.Script + " " + parameters.scene;
         qDebug()<<"Path :" << c_path ;
         executeShell(c_path);
         ui->b_control_run_scenario->setDisabled(true);
@@ -625,9 +692,6 @@ void MainWindow::on_treeWidgetControl_itemClicked(QTreeWidgetItem *item, int col
                 //scenarioArgs.append(c);
             }
             check_list.insert("Rain",val);
-            parameters.rain = val;
-            qDebug() << "parameter  : " << parameters.rain << " ";
-
         }
         //TO DO : for other parameters
         check_flag = true;
@@ -722,5 +786,4 @@ void MainWindow::on_b_control_validation_clicked()
     ui->b_control_validation->setDisabled(true);
     ui->b_control_showreport->setEnabled(true);
 }
-
 

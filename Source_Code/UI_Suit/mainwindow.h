@@ -13,6 +13,7 @@
 #include <QFileSystemWatcher>
 #include <QDateTime>
 #include <QStandardItemModel>
+#include <QListWidgetItem>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,11 +21,6 @@ QT_END_NAMESPACE
 
 typedef struct para_data{
     QString Script;
-    QString rain;
-    QString fog;
-    QString wetness;
-    QString cloudiness;
-    QString damage;
     QString scene;
 }ST;
 
@@ -45,7 +41,8 @@ public:
     QString p_testCases;
     QDateTime curr_DateTime;
     QString csv_ReportPath;
-
+    QString par;
+    QList<QTreeWidgetItem *> sel_item_clr;
     ~MainWindow();
 
 private slots:
@@ -100,6 +97,9 @@ private slots:
     void createTempRecordPath();
     void executeShell(QString path);
 
+
+
+    void on_b_generatereport_clicked();
 
 private:
     Ui::MainWindow *ui;

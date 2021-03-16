@@ -4,7 +4,7 @@ echo "Setting the Environment variables..." > Poly_Suite/logfiles/logInfo.txt
 
 source /opt/AutowareAuto/setup.bash
 source ros2-lgsvl-bridge/install/setup.bash
-source script/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/setup.bash 
+source Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/setup.bash 
 
 echo "Start running LGSVL Bridge" > Poly_Suite/logfiles/logInfo.txt
 sleep 1

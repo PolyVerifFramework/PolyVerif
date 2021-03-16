@@ -1,0 +1,24 @@
+[0.269s] Invoking command in '/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/src/lg_sub_groundtruth': PYTHONPATH=/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth build --build-base /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed
+[0.490s] running egg_info
+[0.491s] writing /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/PKG-INFO
+[0.491s] writing dependency_links to /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/dependency_links.txt
+[0.491s] writing entry points to /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/entry_points.txt
+[0.492s] writing requirements to /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/requires.txt
+[0.492s] writing top-level names to /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/top_level.txt
+[0.522s] reading manifest file '/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt'
+[0.524s] writing manifest file '/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt'
+[0.524s] running build
+[0.524s] running build_py
+[0.524s] copying lg_sub_groundtruth/lg_gt3d_subscriber.py -> /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build/lib/lg_sub_groundtruth
+[0.524s] running install
+[0.525s] running install_lib
+[0.525s] copying /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build/lib/lg_sub_groundtruth/lg_gt3d_subscriber.py -> /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth
+[0.526s] byte-compiling /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth/lg_gt3d_subscriber.py to lg_gt3d_subscriber.cpython-36.pyc
+[0.528s] running install_data
+[0.529s] running install_egg_info
+[0.530s] removing '/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth-0.0.0-py3.6.egg-info' (and everything under it)
+[0.530s] Copying /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info to /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages/lg_sub_groundtruth-0.0.0-py3.6.egg-info
+[0.531s] running install_scripts
+[0.548s] Installing lg_gt3d_subscriber script to /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/lg_sub_groundtruth
+[0.548s] writing list of installed files to '/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log'
+[0.564s] Invoked command in '/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/src/lg_sub_groundtruth' returned '0': PYTHONPATH=/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/lg_sub_groundtruth/lib/python3.6/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth build --build-base /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/build install --prefix /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/lg_sub_groundtruth --record /home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/install.log --single-version-externally-managed

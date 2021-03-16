@@ -17,7 +17,7 @@ from numpy import *
 import csv
 from .acquisition_structures import Objects_GTD
 from .acquisition_structures import Autoware_Objects
-
+import os
 lgstamp = 0
 autostamp = 0
 autoware_boxes = BoundingBoxArray.boxes
@@ -402,9 +402,14 @@ class PublishingSubscriber(Node):
       report_file.close() #to change file access modes   
        
 def main(args=None):
+  #time.sleep(1)
+  #os.kill(0, 9)
   observer = Observer()
   event_handler = Handler() 
   observer.schedule(event_handler, path='PolyReports/Validation_report/config.txt') 
+  if(observer.is_alive()):
+  	observer.stop()
+  	
   observer.start()
   
   print('Stopping the observer !!!!!')
@@ -431,6 +436,9 @@ def main(args=None):
  
   # Shutdown the ROS client library for Python
   rclpy.shutdown()
+
+  observer.join() 
+
  
 def run(args=None): 
   observer = Observer()
@@ -447,17 +455,6 @@ def run(args=None):
 
 
 if __name__ == '__main__':
-  # observer = Observer()
-  # event_handler = Handler() 
-  # observer.schedule(event_handler, path='PolyReports/Validation_report/config.txt') 
-  # observer.start() 
-  # try:
-  #   while True:
-  #       time.sleep(1)
-  # except:
-  #   self.observer.stop()
-  #   print('Error')
-  # observer.join()
   main()
 
 

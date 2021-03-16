@@ -8,6 +8,13 @@ setup.py
 ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/requires.txt
 ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/top_level.txt
 ../../build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/zip-safe
+/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/PKG-INFO
+/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt
+/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/dependency_links.txt
+/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/entry_points.txt
+/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/requires.txt
+/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/top_level.txt
+/home/acclivis/Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/zip-safe
 /home/acclivis/script/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/PKG-INFO
 /home/acclivis/script/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/SOURCES.txt
 /home/acclivis/script/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/build/lg_sub_groundtruth/lg_sub_groundtruth.egg-info/dependency_links.txt
