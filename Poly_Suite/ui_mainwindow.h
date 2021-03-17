@@ -87,6 +87,7 @@ public:
     QLabel *lbl_d_LG;
     QLabel *lbl_d_Succes;
     QLabel *lbl_d_Failure;
+    QLabel *label_4;
     QWidget *control_test_suit;
     QWidget *horizontalLayoutWidget_3;
     QHBoxLayout *layout_control_suit;
@@ -350,6 +351,9 @@ public:
 
         verticalLayout_2->addWidget(lbl_d_Failure);
 
+        label_4 = new QLabel(gbox_DST_Suit);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(590, 280, 101, 81));
         stackedWidget->addWidget(digital_semantic_suit);
         control_test_suit = new QWidget();
         control_test_suit->setObjectName(QStringLiteral("control_test_suit"));
@@ -480,10 +484,11 @@ public:
         b_generatereport->setText(QApplication::translate("MainWindow", "Generate Report", Q_NULLPTR));
         b_showreport->setText(QApplication::translate("MainWindow", "Show Report", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "     Report of Perception Validation", Q_NULLPTR));
-        lbl_d_Auto->setText(QApplication::translate("MainWindow", "Detection range in Autoware (m/s)  :", Q_NULLPTR));
-        lbl_d_LG->setText(QApplication::translate("MainWindow", "Detection range in LG (m/s)   :", Q_NULLPTR));
+        lbl_d_Auto->setText(QApplication::translate("MainWindow", "Detection range in Autoware (m)  :", Q_NULLPTR));
+        lbl_d_LG->setText(QApplication::translate("MainWindow", "Detection range in LG (m)   :", Q_NULLPTR));
         lbl_d_Succes->setText(QApplication::translate("MainWindow", "Detection Success Rate (%)   :", Q_NULLPTR));
         lbl_d_Failure->setText(QApplication::translate("MainWindow", "Detection Failure Rate (%)   :", Q_NULLPTR));
+        label_4->setText(QString());
         gbox_DST_Control_Suit->setTitle(QApplication::translate("MainWindow", "Control Test Suite", Q_NULLPTR));
         b_control_start_ade->setText(QApplication::translate("MainWindow", "Start ADE", Q_NULLPTR));
         b_control_stopAde->setText(QApplication::translate("MainWindow", "Stop ADE", Q_NULLPTR));
