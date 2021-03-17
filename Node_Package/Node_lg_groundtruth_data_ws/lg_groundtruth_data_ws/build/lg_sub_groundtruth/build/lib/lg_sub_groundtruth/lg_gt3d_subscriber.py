@@ -207,7 +207,6 @@ class PublishingSubscriber(Node):
       #    writer.writerow(autoware_percep_data)
       c_autoware_boxes = 0
       while len(autoware_boxes) > 0 :
-        print("file path from with open *********  : ",file_path)
         with open(file_path + '/Autoware_PerceptionData.csv','a', newline='') as csvfile:
             writer = csv.writer(csvfile)
             autoware_percep_data = Autoware_Objects(framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, True, False,
@@ -247,18 +246,12 @@ class PublishingSubscriber(Node):
             c_autoware_boxes = c_autoware_boxes + 1
 
   def perception_validation_IOU(self, msg):
-      report_file = open("script/validation_report/report_perception.txt",'a+') 
-      mini_report_file = open("script/validation_report/mini_report_perception.txt",'a+') 
-      #report_file.write("************************* Perception validation *************************\n") 
-      self.get_logger().info('************************* Perception validation *************************')
-
+    
       print(len(msg.detections))
       c_lg_bbox = 0
       while len(msg.detections) > 0:
             if lgstamp == autostamp :
-                report_file.write("************************* Perception validation *************************\n") 
                 self.get_logger().info('Time stamp matched for Lg frame and Autoware perception stack data : %s' %autostamp)
-                #report_file.write("Time stamp matched for Lg frame and Autoware perception stack data : %s" "\n" %autostamp) 
                 #print("Time stamp matched for Lg frame and Autoware perception stack data : ", autostamp)
                 # return the BoundingBox3D of lg simulator include(position, orientation, size)
                 lg_pos = msg.detections[c_lg_bbox].bbox.position.position
@@ -285,10 +278,7 @@ class PublishingSubscriber(Node):
                     #print("Autoware_Box : B_Box", " ::Index= ", c_autoware_boxes)
                     lg = str(msg.detections[c_lg_bbox].label) + " :: Index = " + str(c_lg_bbox)
                     self.get_logger().info('LG_Box Label : %s' %lg)
-                    #report_file.write("LG_Box Label : %s" "\n" %lg) 
-                    #self.get_logger().info('LG_Box Label : %s :: Index = %s ' %msg.detections[c_lg_bbox].label %c_lg_bbox)
                     self.get_logger().info('Autoware_Box : B_Box :: Index =  %s' %c_autoware_boxes)
-                    #report_file.write("Autoware_Box : B_Box :: Index =  %s" "\n" %c_autoware_boxes) 
                     ad_bbsize = autoware_boxes[c_autoware_boxes].size
                     ad_bbcentroid = autoware_boxes[c_autoware_boxes].centroid
                     #print("AD bounding box center : ",ad_bbcentroid.x, ad_bbcentroid.y, ad_bbcentroid.z)
@@ -326,27 +316,16 @@ class PublishingSubscriber(Node):
             if len(msg.detections)-1 == c_lg_bbox :
                break;
             c_lg_bbox = c_lg_bbox + 1
-      report_file.close() #to change file access modes   
-      mini_report_file.close()
 
   def itrate_data(self,msg):
       print("Checking time stamp data of lg with autoware : ")
       # Program to show various ways to read and 
       # write data in a file. 
-      #report_file = open("validation_report/validation_report.txt","a")       
-      report_file = open("script/validation_report/validation_report.txt",'a+') 
   
-      # \n is placed to indicate EOL (End of Line) 
-      report_file.write("Autoware perception data vehicle ID, stamp ID \n") 
-
       if lgstamp == autostamp :
          print("lgstamp : ",lgstamp)
          c_lg_bbox = 0
          print("\n\nNumber of box in lG Groundtruth data", len(msg.detections))
-         report_file.write("Time Stamp of Groundtruth and AD Stack Data : " + str(lgstamp) + "\n" )
-
-         report_file.write("No. of Vehicle in the above timestamp : " + str(len(msg.detections)) + "\n") 
-         #report_file.close()
          while len(msg.detections) > 0:
                # return the BoundingBox3D of lg simulator include(position, orientation, size)
                lg_pos = msg.detections[c_lg_bbox].bbox.position.position
@@ -365,8 +344,6 @@ class PublishingSubscriber(Node):
                #z_center = lg_pos.z + ((lg_size.z / 2) * lg_orient.z)
                #print("LG bounding box center : ",x_center,y_center, z_center)
 
-               report_file.write("Vehicle label : " + str(c_lg_bbox) + "\n") 
-               report_file.write("No. of detected data in AD Stack : " + str(len(autoware_boxes))+ "\n") 
                # Extract data from the autoware subscribe topic
                c_autoware_boxes = 0
                while len(autoware_boxes) > 0 :
@@ -399,7 +376,6 @@ class PublishingSubscriber(Node):
                print("auto_box : ",c_autoware_boxes)
       else:
          print("Timestamp of lg groundtruth doesn't match with the autoware ")
-      report_file.close() #to change file access modes   
        
 def main(args=None):
   #time.sleep(1)
@@ -411,11 +387,7 @@ def main(args=None):
   	observer.stop()
   	
   observer.start()
-  
-  print('Stopping the observer !!!!!')
-  #observer.join()
-
-  print('after join the observer !!!!!')
+  print('Observer is running !!!!!')
 
   # Initialize the rclpy library
   rclpy.init(args=args)
@@ -437,7 +409,7 @@ def main(args=None):
   # Shutdown the ROS client library for Python
   rclpy.shutdown()
 
-  #observer.join() 
+  observer.join() 
 
  
 def run(args=None): 
