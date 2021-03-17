@@ -10,6 +10,7 @@ import lgsvl
 import os
 import time
 import sys
+from pathlib import Path
 env = Env()
 
 
@@ -20,7 +21,8 @@ wetness = 0
 cloudiness = 0
 damage = 0
 scene = "SingleLaneRoad"
-file = open('pid','w');
+home = str(Path.home())
+file = open(home+'/pid','w');
 t = os.getpid()
 pid = str(t)
 file.write(pid)

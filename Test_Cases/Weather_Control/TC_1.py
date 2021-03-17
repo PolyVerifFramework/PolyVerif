@@ -11,9 +11,10 @@ import time
 import random
 import sys
 import os
+from pathlib import Path
 env = Env()
 
-
+print("TC_1 is running")
 # Taking arguments for weather parameters and scene
 rain = 0
 fog = 0
@@ -21,12 +22,13 @@ wetness = 0
 cloudiness = 0
 damage = 0
 scene = "BorregasAve"
-file = open('pid','w');
+home = str(Path.home())
+file = open(home+'/pid','w');
 t = os.getpid()
 pid = str(t)
 file.write(pid)
 file.close()
-
+print("pid : ",pid)
 if sys.argv[1]: 
    rain = float(sys.argv[1])
    fog = float(sys.argv[2])
