@@ -1,9 +1,9 @@
 #!/bin/bash
 
-pid=16728
+pid=9327
 
 echo "PID about to stop : $pid"
 kill -9 $pid
-sleep 10
+
 
 
