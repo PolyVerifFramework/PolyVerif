@@ -37,10 +37,9 @@ class Handler(FileSystemEventHandler):
             f_path = open('PolyReports/Validation_report/config.txt', 'r')
             path = f_path.readline()
             file_path = path.strip()
-            print("read path :  ",file_path)
             f_path.close()
 
-            print("file path modified : ",file_path)
+            print("New File Writing : ",file_path)
             with open(file_path + '/Objects_GTD_Perception.csv','w', newline='') as csvfile:
                  writer = csv.writer(csvfile)
                  objects_title = Objects_GTD("sensor_name", "frame_id", "timestamp_sec" ,"timestamp_nanosec", "available", "verified", "label", "position_x", "position_y" ,
@@ -68,13 +67,7 @@ class PublishingSubscriber(Node):
     path = f_path.readline()
     file_path = path.strip()
     f_path.close()
-    #self.observer = Observer()
 
-
-    """
-    Class constructor to set up the node
-    """
-   
     # Initiate the Node class's constructor and give it a name
     super().__init__('Perception_Validation')
     #super().__init__('publishing_subscriber')
@@ -138,7 +131,7 @@ class PublishingSubscriber(Node):
 
       lgstamp = msg.header.stamp.sec
       
-      print(framenum)
+      #print(framenum)
       # Process only frames which have groundtruth data in LG Simulator  
       if len(msg.detections) >  0:
         #self.itrate_data(msg) 
@@ -147,18 +140,16 @@ class PublishingSubscriber(Node):
         #objprecval.per_vali(msg)
       else:
          print("No vehicle in the LG Scene : ", len(msg.detections))
-         #self.get_logger().info('No vehicle available in the LG Scene : %s' %len(msg.detections))
       if len(msg.detections)==0:
          print("No Object")
          objects =  Objects_GTD("lidar", framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, False, False, "no_object", 0.0, 0.0 ,
                0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
-         #print(objects)
          with open(file_path + '/Objects_GTD_Perception.csv','a', newline='') as csvfile:
             writer = csv.writer(csvfile)          
             writer.writerow(objects)
       if len(msg.detections) >  0:
           c_lg_bbox = 0
-          print("number of box : ", len(msg.detections))
+          #print("number of box : ", len(msg.detections))
           while len(msg.detections) > 0:
             objects =  Objects_GTD("lidar", framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, True, False,
                   msg.detections[c_lg_bbox].label, 
@@ -185,7 +176,6 @@ class PublishingSubscriber(Node):
             if len(msg.detections)-1 == c_lg_bbox :
                   break;
             c_lg_bbox = c_lg_bbox + 1
-      #self.get_logger().info('Subscribed Data of LG Groundtruth Data : "%s"' % msg.detections['bbox'])  
       framenum = framenum+1
 
   def autoware_callback(self, msg):
@@ -251,7 +241,6 @@ class PublishingSubscriber(Node):
       c_lg_bbox = 0
       while len(msg.detections) > 0:
             if lgstamp == autostamp :
-                self.get_logger().info('Time stamp matched for Lg frame and Autoware perception stack data : %s' %autostamp)
                 #print("Time stamp matched for Lg frame and Autoware perception stack data : ", autostamp)
                 # return the BoundingBox3D of lg simulator include(position, orientation, size)
                 lg_pos = msg.detections[c_lg_bbox].bbox.position.position
@@ -277,8 +266,6 @@ class PublishingSubscriber(Node):
                     #print("LG_Box Label : ",msg.detections[c_lg_bbox].label, " ::Index= ", c_lg_bbox)
                     #print("Autoware_Box : B_Box", " ::Index= ", c_autoware_boxes)
                     lg = str(msg.detections[c_lg_bbox].label) + " :: Index = " + str(c_lg_bbox)
-                    self.get_logger().info('LG_Box Label : %s' %lg)
-                    self.get_logger().info('Autoware_Box : B_Box :: Index =  %s' %c_autoware_boxes)
                     ad_bbsize = autoware_boxes[c_autoware_boxes].size
                     ad_bbcentroid = autoware_boxes[c_autoware_boxes].centroid
                     #print("AD bounding box center : ",ad_bbcentroid.x, ad_bbcentroid.y, ad_bbcentroid.z)
@@ -287,29 +274,17 @@ class PublishingSubscriber(Node):
                     b = (ad_bbcentroid.x, ad_bbcentroid.y, 0)
                     dist = distance.euclidean(a, b)
                     diff_of_y = abs(y_center - ad_bbcentroid.y)
-                    print("diff_of_y : ",diff_of_y)
+                    #print("diff_of_y : ",diff_of_y)
                     #print("distance : ",dist)
                     if dist < 4 and diff_of_y < 2 :
-                        report_file.write("Time Stamp : "+ str(autostamp) +"\n") 
-                        mini_report_file.write("Time Stamp : "+ str(autostamp) +"\n") 
-                        mini_report_file.write("LG_Box Label :" + str(lg) + "\n") 
                         #print("LG bounding box center cordinate's : ", x_center,y_center, z_center)
                         log_lg = "LG bounding box center cordinate's : " + str(x_center) +" , "+ str(y_center) +" , "+ str(z_center)
-                        self.get_logger().info(log_lg)
-                        report_file.write(log_lg+"\n") 
                         #print("AD bounding box center cordinate's : ", ad_bbcentroid.x, ad_bbcentroid.y, ad_bbcentroid.z)
                         log_ad = "AD bounding box center cordinate's : " + str(ad_bbcentroid.x,) +" , "+ str(ad_bbcentroid.y) +" , "+ str(ad_bbcentroid.z)
-                        self.get_logger().info(log_ad)
-                        report_file.write(log_ad +"\n") 
                         #print("Distance between both the center's : ", dist)
                         log_adist = "Distance between both the center's : " + str(dist)
-                        self.get_logger().info(log_adist)
-                        report_file.write(log_adist +"\n") 
                         #print("Vehicle center of both data matched!!")
                         log_adist = "Vehicle center of both data matched!!\n\n "
-                        self.get_logger().info(log_adist)
-                        report_file.write(log_adist) 
-                        mini_report_file.write(log_adist) 
                     if len(autoware_boxes)-1 == c_autoware_boxes :
                         break;
                     c_autoware_boxes = c_autoware_boxes + 1
@@ -363,7 +338,6 @@ class PublishingSubscriber(Node):
                      (IOU_3d,IOU_2d) = self.box3d_iou(corners_3d_predict_ad,corners_3d_ground_lg)
                      print ("IOU :  ", IOU_3d,IOU_2d) #3d IoU/ 2d IoU of BEV(bird eye's view)
 
-                     report_file.write("Result intersection over union(IOU) : " + str(IOU_3d) +"  "+ str(IOU_2d) + "\n" ) 
                      if len(autoware_boxes)-1 == c_autoware_boxes :
                         break;
                      c_autoware_boxes = c_autoware_boxes + 1      
