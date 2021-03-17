@@ -62,14 +62,17 @@ void MainWindow::on_pblaunch_clicked()
     ui->lbl_outputlog->setText("Log Information : ADE and other component initilize, it may take while to start..");
     ui->b_StopAde->setEnabled(true);
     ui->b_sel_scenario->setEnabled(true);
+
+    fileWatcher();
+
+    createTempRecordPath();
+
     model = new QStandardItemModel;
 
     QString path = QDir::currentPath() + "/q_ade_start.sh";
     executeShell(path);
 
-    fileWatcher();
 
-    createTempRecordPath();
 }
 void MainWindow::createTempRecordPath(){
     //stream << "mkdir -p " << reportPath + tCase <<" && touch "<<reportPath + tCase+"/"+tCase + ".txt" <<"\n";
@@ -107,26 +110,30 @@ void MainWindow::fileWatcher(){
 // If any change happened in logInfo file it will update in the UI
 void MainWindow::fileChanged(const QString & path){
 
-    qDebug() << path;
+    qDebug() << "file changed : ",path;
     QFile file(path);
     if(file.open(QIODevice::ReadOnly)) {
         QTextStream in(&file);
         while (!in.atEnd()) {
             this->textss.append(in.readLine());
-            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            //std::this_thread::sleep_for(std::chrono::milliseconds(5));
 
         }
     }
     if(!this->textss.isEmpty()){
-        qDebug() <<"Hello";
+        qDebug() <<"Hello : ",this->textss.first() ;
         ui->lbl_outputlog->setText("Log Information : " + this->textss.first());
 
+//        if(this->textss.first() == "Report Generated"){
+//                    ui->b_showreport->setEnabled(true);
+//        }
         if(this->textss.first() == "Report Generated"){
             ui->b_showreport->setEnabled(true);
             QMessageBox messageBox;
             messageBox.setText("Report Generated, Click on Show Report");
             messageBox.setFixedSize(500,200);
             messageBox.exec();
+            qDebug() << "fReport Generated, Click on Show Report : ",this->textss.first();
 
             QString p_logInfo = QDir::currentPath() + "/logfiles/logInfo.txt";
             QFile fp(p_logInfo);
@@ -212,6 +219,12 @@ void MainWindow::on_checkBox_2_clicked()
         ui->pblaunch->setEnabled(true);
         ui->b_StopAde->setDisabled(true);
         ui->treeWidget->setDisabled(true);
+        ui->label_2->setDisabled(true);//
+        ui->lbl_d_Auto->setDisabled(true);
+        ui->lbl_d_LG->setDisabled(true);
+        ui->lbl_d_Failure->setDisabled(true);
+        ui->lbl_d_Succes->setDisabled(true);
+        ui->tableView->setDisabled(true);//
         ui->listWidgetSceneSelectDSU->setDisabled(true);
 
     }else{
@@ -265,34 +278,42 @@ void MainWindow::on_b_sel_scenario_clicked()
 
     while (!fp1.atEnd()) {
         QString str = fp1.readLine();
-        qDebug() <<"f_namee : "<<str;
          str = str.remove('\n');
     ui->listWidgetSceneSelectDSU->insertItem(m++,str);
 }
     flag1 = false;
 }
- qDebug() << "Directory :" << directory.currentPath();
+ //qDebug() << "Directory :" << directory.currentPath();
     QTreeWidgetItem *root = new QTreeWidgetItem(ui->treeWidget);
     for(const QFileInfo &finfo : directory.entryInfoList()){
+        qDebug()<< "Detected-"  << finfo.fileName();
+        if(finfo.fileName().contains(".."))
+          continue;
        // qDebug()<< "Detected-"  << finfo.fileName();
          QDir dir(finfo.absoluteFilePath());
+          qDebug()<< "absoluteFilePath-"  << finfo.absoluteFilePath();
+
+        if(finfo.isDir() == false)
+            continue;
         if(flag == false)
         {
            // QDir dir(finfo.absoluteFilePath());
             root->setText(0,dir.dirName());
-            //qDebug() << "In main dir : " << root->text(0) ;
+            qDebug() << "In main dir : " << root->text(0) ;
             ui->treeWidget->addTopLevelItem(root);
             root->setCheckState(0,Qt::Unchecked); //optional
             flag = true;
         }//if_
         else
         {
-
             QTreeWidgetItem *child = new  QTreeWidgetItem();
             child->setText(0,dir.dirName());
+             qDebug()<< "dir.dirName()-"  <<dir.dirName();
+
             child->setCheckState(0,Qt::Unchecked);
             root->addChild(child);
-          //  qDebug() << "dir :--" <<child->text(0);
+
+            qDebug() << "dir :--" <<child->text(0);
             if(finfo.isDir())
             {
                qDebug() << "File name :"<<finfo.fileName();
@@ -336,8 +357,18 @@ void MainWindow::on_b_sel_scenario_clicked()
 
 void MainWindow::on_b_run_scenario_clicked()
 {
+    //
+    ui->label_2->setDisabled(true);//
+    ui->lbl_d_Auto->setDisabled(true);
+    ui->lbl_d_LG->setDisabled(true);
+    ui->lbl_d_Failure->setDisabled(true);
+    ui->lbl_d_Succes->setDisabled(true);
+    ui->tableView->setDisabled(true);//
+    //
     ui->b_showreport->setDisabled(true);
     ui->treeWidget->setDisabled(true); //sne
+    ui->b_sel_scenario->setDisabled(true);
+    ui->b_generatereport->setDisabled(true);
     model->clear();
     ui->tableView->setModel(model);
     ui->lbl_d_Auto->setText("Detection range in Autoware(m/s): NA");
@@ -345,7 +376,7 @@ void MainWindow::on_b_run_scenario_clicked()
     ui->lbl_d_Succes->setText("Detection Success Rate(%) : NA");
     ui->lbl_d_Failure->setText("Detection Failure Rate(%) : NA");
 
-
+    qDebug() << "Selected items" <<selected;
     // TODO
     curr_DateTime = QDateTime::currentDateTime();
     QString dateTimeString = curr_DateTime.toString("dd_MM_yyyy__hh_mm_ss");
@@ -377,7 +408,7 @@ void MainWindow::on_b_run_scenario_clicked()
         stream << "echo \""<< reportPath + tCase<<" \" > PolyReports/Validation_report/config.txt; \n";
         csv_ReportPath = reportPath + tCase;
         //stream << "sh ./support_files/validate_perception.sh & \n";
-        //stream << "perception_pid=$! \n";
+        stream << "sleep 1 \n";
         stream << "echo \"Running Scenario :" << testcasepath +s<<" \" > ./Poly_Suite/logfiles/logInfo.txt; \n";
         stream << "python3 ." + testcasepath + s+"\n";
     }
@@ -396,7 +427,7 @@ void MainWindow::on_b_run_scenario_clicked()
 void MainWindow::executeShell(QString path){
     QProcess *process = new QProcess();
     process->execute(path);
-    //process->waitForFinished(300);
+    process->waitForFinished(100);
     delete process;
 }
 
@@ -404,26 +435,41 @@ void MainWindow::on_b_stop_scenario_clicked()
 {
     ui->b_generatereport->setEnabled(true);
     ui->treeWidget->setEnabled(true);  //sne
+    ui->b_sel_scenario->setEnabled(true);
+
 
     // I think this sel-item-clr valiabel ot clear or some
     // I faced once when i Click on the stop scenario
+    qDebug() << "Stop Scenario : before loop" ;
 
     foreach (QTreeWidgetItem * m, sel_item_clr) {
        m->setCheckState(0,Qt::Unchecked);
     }
+    qDebug() << "Stop Scenario : after loop" ;
+
     QFile fp(QDir::currentPath() + "/test_runner.sh");
     fp.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Truncate);
     fp.close();
+    qDebug() << "Stop Scenario : after clean test runner" ;
+
     ui->b_stop_scenario->setDisabled(true);
     ui->b_run_scenario->setEnabled(true);
     ui->b_generatereport->setEnabled(true);
     QString c_path = QDir::currentPath() + "/stop_scenario.sh" ;
     executeShell(c_path);
+    qDebug() << "Stop Scenario : after calling the calling script shr" ;
+
     qDebug() << "Stoping scenario.." ;
 }
 
 void MainWindow::on_b_generatereport_clicked()
 {
+    ui->label_2->setEnabled(true);//
+    ui->lbl_d_Auto->setEnabled(true);
+    ui->lbl_d_LG->setEnabled(true);
+    ui->lbl_d_Failure->setEnabled(true);
+    ui->lbl_d_Succes->setEnabled(true);
+    ui->tableView->setEnabled(true);//
     ui->b_generatereport->setDisabled(true);
     QString curr_path = QDir::currentPath();
     QString path = curr_path + "/q_perception_val_script.sh";
@@ -432,6 +478,7 @@ void MainWindow::on_b_generatereport_clicked()
 
 void MainWindow::on_b_showreport_clicked()
 {
+    //ui->b_generatereport->setDisabled(true);
 
     QString curr_path = QDir::currentPath();
     int pos = curr_path.lastIndexOf(QChar('/'));
@@ -480,6 +527,15 @@ void MainWindow::on_b_showreport_clicked()
             rData[i++] =line;
         }
         txtfile.close();
+        for(int m=0;m<4;m++)
+        {
+            if(rData[m].contains(".")){
+                int c=rData[m].indexOf('.');
+                c=c+2;
+                rData[m].truncate(c);
+                qDebug() << rData[m] ;
+            }
+        }
         ui->lbl_d_Auto->setText("Detection range in Autoware(m/s) : " + rData[0]);
         ui->lbl_d_LG->setText("Detection range in LG(m/s) : " + rData[1]);
         ui->lbl_d_Succes->setText("Detection Success Rate(%) : " + rData[2]);
@@ -489,21 +545,24 @@ void MainWindow::on_b_showreport_clicked()
 
 void MainWindow::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
 {
-   QTreeWidgetItem *p2 = item->parent();
-   //par=p.text(column);
-   QTreeWidgetItem *p1 = p2->parent();
-    sel_item_clr.append(item);
-   par= "/"+p1->text(column)+"/"+p2->text(column)+"/"; //sne
-    Qt::CheckState p; //updted
-    p = Qt::Unchecked; //updated
-    QString str = item->text(column),mainstring;
-    int pos = str.indexOf(":");
-    str = str.left(pos) + ".py";
-    parameters.Script = str.left(pos) + ".py";
-    qDebug() << "First click  : " << parameters.Script;
-    mainstring = parameters.Script + " "; //updated
+     QString str,mainstring;
     if(item->text(column).contains("rain"))
     {
+        //
+        qDebug() << "item clicked";
+       QTreeWidgetItem *p2 = item->parent();
+       QTreeWidgetItem *p1 = p2->parent();
+        sel_item_clr.append(item);
+       par= "/"+p1->text(column)+"/"+p2->text(column)+"/"; //sne
+        Qt::CheckState p; //updted
+        p = Qt::Unchecked; //updated
+       str = item->text(column);
+        int pos = str.indexOf(":");
+        str = str.left(pos) + ".py";
+        parameters.Script = str.left(pos) + ".py";
+        qDebug() << "First click  : " << parameters.Script;
+        mainstring = parameters.Script + " "; //updated
+        //
         QString tmp = item->text(column),val;
         foreach(QChar c, tmp){
             if(c == ',')
@@ -519,6 +578,7 @@ void MainWindow::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
         qDebug() << "Mainstring  : " << mainstring;
         if(item->checkState(column) == p){
             selected.remove(mainstring);
+             qDebug() << "item clicked 2";
             return;
         }
         Qt::CheckState t;
