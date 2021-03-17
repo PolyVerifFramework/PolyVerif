@@ -491,14 +491,14 @@
              <item>
               <widget class="QLabel" name="lbl_d_Auto">
                <property name="text">
-                <string>Detection range in Autoware (m/s)  :</string>
+                <string>Detection range in Autoware (m)  :</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="lbl_d_LG">
                <property name="text">
-                <string>Detection range in LG (m/s)   :</string>
+                <string>Detection range in LG (m)   :</string>
                </property>
               </widget>
              </item>
@@ -517,6 +517,19 @@
               </widget>
              </item>
             </layout>
+           </widget>
+           <widget class="QLabel" name="label_4">
+            <property name="geometry">
+             <rect>
+              <x>590</x>
+              <y>280</y>
+              <width>101</width>
+              <height>81</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
            </widget>
           </widget>
          </widget>

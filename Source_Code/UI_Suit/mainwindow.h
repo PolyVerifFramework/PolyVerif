@@ -14,6 +14,7 @@
 #include <QDateTime>
 #include <QStandardItemModel>
 #include <QListWidgetItem>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -43,6 +44,8 @@ public:
     QString csv_ReportPath;
     QString par;
     QList<QTreeWidgetItem *> sel_item_clr;
+    int counter;
+    QMovie *movie;
     ~MainWindow();
 
 private slots:

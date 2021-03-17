@@ -12,6 +12,7 @@
 #include <iostream>
 #include <thread>
 #include <QStandardItemModel>
+#include <QMovie>
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -58,6 +59,7 @@ QSize MainWindow::sizeHint() const
 void MainWindow::on_pblaunch_clicked()
 {
     this->startAde = true;
+    counter = 0;
     qDebug() << "Ade start ";
     ui->lbl_outputlog->setText("Log Information : ADE and other component initilize, it may take while to start..");
     ui->b_StopAde->setEnabled(true);
@@ -92,10 +94,6 @@ void MainWindow::createTempRecordPath(){
 // TODO path
 // Check the logInfo file if any change happened or not
 void MainWindow::fileWatcher(){
-    //QString curr_path = QDir::currentPath();
-    //int pos = curr_path.lastIndexOf(QChar('/'));
-    //QString p_logInfo = curr_path.left(pos) + "/logfiles/logInfo.txt";
-
     QString curr_path = QDir::currentPath();
     QString p_logInfo = curr_path + "/logfiles/logInfo.txt";
     qDebug() << "new path : " + p_logInfo;
@@ -103,7 +101,6 @@ void MainWindow::fileWatcher(){
     connect(watcher, SIGNAL(fileChanged(const QString &)), this, SLOT(fileChanged(const QString &)));
     if (QFile::exists(p_logInfo)) {
         watcher->addPath(p_logInfo);
-
     }
 }
 
@@ -129,16 +126,24 @@ void MainWindow::fileChanged(const QString & path){
 //        }
         if(this->textss.first() == "Report Generated"){
             ui->b_showreport->setEnabled(true);
-            QMessageBox messageBox;
-            messageBox.setText("Report Generated, Click on Show Report");
-            messageBox.setFixedSize(500,200);
-            messageBox.exec();
-            qDebug() << "fReport Generated, Click on Show Report : ",this->textss.first();
+            if(counter == 1){
+                counter = 2;
+                ui->label_4->clear();
+                ui->label_4->hide();
+                movie->stop();
+                delete movie;
+                QMessageBox messageBox;
+                messageBox.setText("Report Generated, Click on Show Report");
+                messageBox.setFixedSize(500,200);
+                messageBox.exec();
+                qDebug() << "fReport Generated, Click on Show Report : ",this->textss.first();
 
-            QString p_logInfo = QDir::currentPath() + "/logfiles/logInfo.txt";
-            QFile fp(p_logInfo);
-            fp.open(QFile::Truncate | QIODevice::WriteOnly | QIODevice::Text);
-            fp.close();
+                QString p_logInfo = QDir::currentPath() + "/logfiles/logInfo.txt";
+                QFile fp(p_logInfo);
+                fp.open(QFile::Truncate | QIODevice::WriteOnly | QIODevice::Text);
+                fp.close();
+            }
+
         }else if(true){
             // Handle the more feedback on the UI
 
@@ -158,11 +163,12 @@ void MainWindow::on_b_StopAde_clicked()
     ui->treeWidget->setDisabled(true);
     ui->listWidgetSceneSelectDSU->setDisabled(true);
     ui->b_showreport->setDisabled(true);
-
+    ui->b_generatereport->setDisabled(true);
+    counter = 0;
     model->clear();
     ui->tableView->setModel(model);
-    ui->lbl_d_Auto->setText("Detection range in Autoware(m/s) : NA");
-    ui->lbl_d_LG->setText("Detection range in LG(m/s) : NA");
+    ui->lbl_d_Auto->setText("Detection range in Autoware(m) : NA");
+    ui->lbl_d_LG->setText("Detection range in LG(m) : NA");
     ui->lbl_d_Succes->setText("Detection Success Rate(%) : NA" );
     ui->lbl_d_Failure->setText("Detection Failure Rate(%) : NA" );
     QFile fp(QDir::currentPath() + "/test_runner.sh");
@@ -173,15 +179,14 @@ void MainWindow::on_b_StopAde_clicked()
     //Rahul
     delete watcher;
     delete model;
+    delete movie;
+
 
     fileModify();
 }
 
+// function to clear the logfile
 void MainWindow::fileModify(){
-    //QString curr_path = QDir::currentPath();
-    //int pos = curr_path.lastIndexOf(QChar('/'));
-    //QString p_logInfo = curr_path.left(pos) + "/logfiles/logInfo.txt";
-
     QString curr_path = QDir::currentPath();
     QString p_logInfo = curr_path + "/logfiles/logInfo.txt";
     qDebug() << "new path : " + p_logInfo;
@@ -252,10 +257,8 @@ void MainWindow::on_b_sel_scenario_clicked()
 {
     ui->treeWidget->clear();
     ui->label_3->setEnabled(true);
-    //ui->b_run_scenario->setEnabled(true);
     ui->listWidgetSceneSelectDSU->setEnabled(true);
     static bool flag1 = true;
-    // TODO path dynamic back one folder
     QDir directory ;
     QString curr_path = QDir::currentPath();
     int pos = curr_path.lastIndexOf(QChar('/'));
@@ -265,39 +268,34 @@ void MainWindow::on_b_sel_scenario_clicked()
         bool flag = false;
     //sne
  if(flag1){
-    QFile fp1(p_testCases+"/scene.txt");
-    if (!fp1.open(QIODevice::ReadOnly))
-    {
-        qDebug() << "File not open";
-        QMessageBox msgBox;
-         msgBox.setText("Create scene.txt in Test_Cases Directory");
-         msgBox.exec();
-        return;
-    }
-    int m=1;
+        QFile fp1(p_testCases+"/scene.txt");
+        if (!fp1.open(QIODevice::ReadOnly))
+        {
+            qDebug() << "File not open";
+            QMessageBox msgBox;
+             msgBox.setText("Create scene.txt in Test_Cases Directory");
+             msgBox.exec();
+            return;
+        }
+        int m=1;
 
-    while (!fp1.atEnd()) {
-        QString str = fp1.readLine();
-         str = str.remove('\n');
-    ui->listWidgetSceneSelectDSU->insertItem(m++,str);
-}
-    flag1 = false;
-}
- //qDebug() << "Directory :" << directory.currentPath();
+        while (!fp1.atEnd()) {
+            QString str = fp1.readLine();
+             str = str.remove('\n');
+        ui->listWidgetSceneSelectDSU->insertItem(m++,str);
+        }
+        flag1 = false;
+    }
     QTreeWidgetItem *root = new QTreeWidgetItem(ui->treeWidget);
     for(const QFileInfo &finfo : directory.entryInfoList()){
-        qDebug()<< "Detected-"  << finfo.fileName();
         if(finfo.fileName().contains(".."))
           continue;
-       // qDebug()<< "Detected-"  << finfo.fileName();
          QDir dir(finfo.absoluteFilePath());
-          qDebug()<< "absoluteFilePath-"  << finfo.absoluteFilePath();
 
         if(finfo.isDir() == false)
             continue;
         if(flag == false)
         {
-           // QDir dir(finfo.absoluteFilePath());
             root->setText(0,dir.dirName());
             qDebug() << "In main dir : " << root->text(0) ;
             ui->treeWidget->addTopLevelItem(root);
@@ -308,12 +306,9 @@ void MainWindow::on_b_sel_scenario_clicked()
         {
             QTreeWidgetItem *child = new  QTreeWidgetItem();
             child->setText(0,dir.dirName());
-             qDebug()<< "dir.dirName()-"  <<dir.dirName();
-
             child->setCheckState(0,Qt::Unchecked);
             root->addChild(child);
 
-            qDebug() << "dir :--" <<child->text(0);
             if(finfo.isDir())
             {
                qDebug() << "File name :"<<finfo.fileName();
@@ -371,44 +366,32 @@ void MainWindow::on_b_run_scenario_clicked()
     ui->b_generatereport->setDisabled(true);
     model->clear();
     ui->tableView->setModel(model);
-    ui->lbl_d_Auto->setText("Detection range in Autoware(m/s): NA");
-    ui->lbl_d_LG->setText("Detection range in LG(m/s) : NA");
+    ui->lbl_d_Auto->setText("Detection range in Autoware(m): NA");
+    ui->lbl_d_LG->setText("Detection range in LG(m) : NA");
     ui->lbl_d_Succes->setText("Detection Success Rate(%) : NA");
     ui->lbl_d_Failure->setText("Detection Failure Rate(%) : NA");
-
+    counter = 1;
     qDebug() << "Selected items" <<selected;
     // TODO
     curr_DateTime = QDateTime::currentDateTime();
     QString dateTimeString = curr_DateTime.toString("dd_MM_yyyy__hh_mm_ss");
     QString curr_path = QDir::currentPath();
     QFile fp(curr_path + "/test_runner.sh");
-    //fp.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Truncate);
 
     fp.open(QFile::Truncate | QIODevice::WriteOnly | QIODevice::Text);
     fp.setCurrentWriteChannel(0);
     QTextStream stream(&fp);
     stream << "#!/bin/sh \nset -eu\n";
 
-    // TODO WeaterControl sitng need to be dynamic
-    // Added the directory path for report
-    //QString testcasepath = p_testCases + "/Weather_Control/";
     QString testcasepath = par;  //sne
-    qDebug() << "Complete Path"<<par;
     QString reportPath = "PolyReports/Validation_report/" + dateTimeString + "/";
-
-    //sh ./support_files/validate_perception.sh &
-    //mpid=$!
-    //echo $mpid
 
     foreach(QString s,selected){
         int scenarioPos = s.indexOf(".");
         QString tCase = s.left(scenarioPos);
-        //stream << "mkdir -p " << reportPath + tCase <<" && touch "<<reportPath + tCase+"/"+tCase + ".txt" <<"\n";
         stream << "mkdir -p " << reportPath + tCase <<" && touch "<<reportPath + tCase+"/"<<"\n";
         stream << "echo \""<< reportPath + tCase<<" \" > PolyReports/Validation_report/config.txt; \n";
         csv_ReportPath = reportPath + tCase;
-        //stream << "sh ./support_files/validate_perception.sh & \n";
-        stream << "sleep 1 \n";
         stream << "echo \"Running Scenario :" << testcasepath +s<<" \" > ./Poly_Suite/logfiles/logInfo.txt; \n";
         stream << "python3 ." + testcasepath + s+"\n";
     }
@@ -427,7 +410,7 @@ void MainWindow::on_b_run_scenario_clicked()
 void MainWindow::executeShell(QString path){
     QProcess *process = new QProcess();
     process->execute(path);
-    process->waitForFinished(100);
+    process->waitForFinished(200);
     delete process;
 }
 
@@ -437,20 +420,17 @@ void MainWindow::on_b_stop_scenario_clicked()
     ui->treeWidget->setEnabled(true);  //sne
     ui->b_sel_scenario->setEnabled(true);
 
-
-    // I think this sel-item-clr valiabel ot clear or some
-    // I faced once when i Click on the stop scenario
     qDebug() << "Stop Scenario : before loop" ;
 
-    foreach (QTreeWidgetItem * m, sel_item_clr) {
-       m->setCheckState(0,Qt::Unchecked);
-    }
+//    foreach (QTreeWidgetItem * m, sel_item_clr) {
+//       m->setCheckState(0,Qt::Unchecked);
+//    }
     qDebug() << "Stop Scenario : after loop" ;
 
-    QFile fp(QDir::currentPath() + "/test_runner.sh");
-    fp.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Truncate);
-    fp.close();
-    qDebug() << "Stop Scenario : after clean test runner" ;
+//    QFile fp(QDir::currentPath() + "/test_runner.sh");
+//    fp.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Truncate);
+//    fp.close();
+//    qDebug() << "Stop Scenario : after clean test runner" ;
 
     ui->b_stop_scenario->setDisabled(true);
     ui->b_run_scenario->setEnabled(true);
@@ -458,17 +438,20 @@ void MainWindow::on_b_stop_scenario_clicked()
     QString c_path = QDir::currentPath() + "/stop_scenario.sh" ;
     executeShell(c_path);
     qDebug() << "Stop Scenario : after calling the calling script shr" ;
-
-    qDebug() << "Stoping scenario.." ;
 }
 
 void MainWindow::on_b_generatereport_clicked()
 {
+    movie = new QMovie("spinner.gif");
+    ui->label_4->setMovie(movie);
+    ui->label_4->show();
+    movie->start();
     ui->label_2->setEnabled(true);//
     ui->lbl_d_Auto->setEnabled(true);
     ui->lbl_d_LG->setEnabled(true);
     ui->lbl_d_Failure->setEnabled(true);
     ui->lbl_d_Succes->setEnabled(true);
+
     ui->tableView->setEnabled(true);//
     ui->b_generatereport->setDisabled(true);
     QString curr_path = QDir::currentPath();
@@ -479,13 +462,11 @@ void MainWindow::on_b_generatereport_clicked()
 void MainWindow::on_b_showreport_clicked()
 {
     //ui->b_generatereport->setDisabled(true);
-
+    ui->b_showreport->setDisabled(true);
     QString curr_path = QDir::currentPath();
     int pos = curr_path.lastIndexOf(QChar('/'));
     QString rp_filepath = curr_path.left(pos);
 
-    //csv_ReportPath = "PolyReports/Validation_report/" + dateTimeString + "/" + "TC_1";
-    //model = new QStandardItemModel;
     QString rfile = rp_filepath + "/" + csv_ReportPath + "/rangeReport.csv";
     qDebug() << "complete path of range report : ",rfile;
     QFile file(rfile);
@@ -514,8 +495,8 @@ void MainWindow::on_b_showreport_clicked()
     QFile txtfile(txtreport);
     if ( !txtfile.open(QFile::ReadOnly | QFile::Text) ) {
         qDebug() << "File not exists";
-        ui->lbl_d_Auto->setText("Detection range in Autoware(m/s) : NA");
-        ui->lbl_d_LG->setText("Detection range in LG(m/s) : NA");
+        ui->lbl_d_Auto->setText("Detection range in Autoware(m) : NA");
+        ui->lbl_d_LG->setText("Detection range in LG(m) : NA");
         ui->lbl_d_Succes->setText("Detection Success Rate(%): NA");
         ui->lbl_d_Failure->setText("Detection Failure Rate(%) : NA");
     } else {
@@ -527,7 +508,8 @@ void MainWindow::on_b_showreport_clicked()
             rData[i++] =line;
         }
         txtfile.close();
-        for(int m=0;m<4;m++)
+
+        for(int m=2;m<4;m++)
         {
             if(rData[m].contains(".")){
                 int c=rData[m].indexOf('.');
@@ -536,8 +518,8 @@ void MainWindow::on_b_showreport_clicked()
                 qDebug() << rData[m] ;
             }
         }
-        ui->lbl_d_Auto->setText("Detection range in Autoware(m/s) : " + rData[0]);
-        ui->lbl_d_LG->setText("Detection range in LG(m/s) : " + rData[1]);
+        ui->lbl_d_Auto->setText("Detection range in Autoware(m) : " + rData[0]);
+        ui->lbl_d_LG->setText("Detection range in LG(m) : " + rData[1]);
         ui->lbl_d_Succes->setText("Detection Success Rate(%) : " + rData[2]);
         ui->lbl_d_Failure->setText("Detection Failure Rate(%) : " + rData[3]);
     }
