@@ -59,28 +59,25 @@ QSize MainWindow::sizeHint() const
 void MainWindow::on_pblaunch_clicked()
 {
     this->startAde = true;
+    movie = new QMovie("spinner.gif");
+    model = new QStandardItemModel;
+
     counter = 0;
-    qDebug() << "Ade start ";
     ui->lbl_outputlog->setText("Log Information : ADE and other component initilize, it may take while to start..");
     ui->b_StopAde->setEnabled(true);
     ui->b_sel_scenario->setEnabled(true);
 
     fileWatcher();
-
     createTempRecordPath();
-
-    model = new QStandardItemModel;
 
     QString path = QDir::currentPath() + "/q_ade_start.sh";
     executeShell(path);
-
-
 }
+
 void MainWindow::createTempRecordPath(){
     //stream << "mkdir -p " << reportPath + tCase <<" && touch "<<reportPath + tCase+"/"+tCase + ".txt" <<"\n";
 
     QString curr_path = QDir::currentPath();
-
     int pos = curr_path.lastIndexOf(QChar('/'));
     QString polyReportPath = curr_path.left(pos) + "/PolyReports/Validation_report/";
     QFile fp(polyReportPath + "/config.txt");
@@ -106,8 +103,6 @@ void MainWindow::fileWatcher(){
 
 // If any change happened in logInfo file it will update in the UI
 void MainWindow::fileChanged(const QString & path){
-
-    qDebug() << "file changed : ",path;
     QFile file(path);
     if(file.open(QIODevice::ReadOnly)) {
         QTextStream in(&file);
@@ -118,12 +113,7 @@ void MainWindow::fileChanged(const QString & path){
         }
     }
     if(!this->textss.isEmpty()){
-        qDebug() <<"Hello : ",this->textss.first() ;
         ui->lbl_outputlog->setText("Log Information : " + this->textss.first());
-
-//        if(this->textss.first() == "Report Generated"){
-//                    ui->b_showreport->setEnabled(true);
-//        }
         if(this->textss.first() == "Report Generated"){
             ui->b_showreport->setEnabled(true);
             if(counter == 1){
@@ -155,7 +145,6 @@ void MainWindow::fileChanged(const QString & path){
 
 void MainWindow::on_b_StopAde_clicked()
 {
-    qDebug() << "ADE Stopped  ";
     QString path = QDir::currentPath() + "/q_stopt.sh";
     executeShell(path);
     ui->b_sel_scenario->setDisabled(true);
@@ -165,24 +154,23 @@ void MainWindow::on_b_StopAde_clicked()
     ui->b_showreport->setDisabled(true);
     ui->b_generatereport->setDisabled(true);
     counter = 0;
-    model->clear();
-    ui->tableView->setModel(model);
+    ui->tableView->reset();
     ui->lbl_d_Auto->setText("Detection range in Autoware(m) : NA");
     ui->lbl_d_LG->setText("Detection range in LG(m) : NA");
     ui->lbl_d_Succes->setText("Detection Success Rate(%) : NA" );
     ui->lbl_d_Failure->setText("Detection Failure Rate(%) : NA" );
     QFile fp(QDir::currentPath() + "/test_runner.sh");
     fp.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Truncate);
-
+    fp.close();
     ui->lbl_outputlog->setText("Log Information : ADE Stop");
 
     //Rahul
     delete watcher;
     delete model;
-    delete movie;
+    //delete movie;
 
 
-    fileModify();
+    //fileModify();
 }
 
 // function to clear the logfile
@@ -299,14 +287,14 @@ void MainWindow::on_b_sel_scenario_clicked()
             root->setText(0,dir.dirName());
             qDebug() << "In main dir : " << root->text(0) ;
             ui->treeWidget->addTopLevelItem(root);
-            root->setCheckState(0,Qt::Unchecked); //optional
+           // root->setCheckState(0,Qt::Unchecked); //optional  1
             flag = true;
         }//if_
         else
         {
             QTreeWidgetItem *child = new  QTreeWidgetItem();
             child->setText(0,dir.dirName());
-            child->setCheckState(0,Qt::Unchecked);
+            //child->setCheckState(0,Qt::Unchecked);  2
             root->addChild(child);
 
             if(finfo.isDir())
@@ -352,7 +340,13 @@ void MainWindow::on_b_sel_scenario_clicked()
 
 void MainWindow::on_b_run_scenario_clicked()
 {
-    //
+    if(selected.isEmpty())
+    {
+        QMessageBox msg;
+        msg.setText("Please select the scenario!");
+        msg.exec();
+        return;
+    }
     ui->label_2->setDisabled(true);//
     ui->lbl_d_Auto->setDisabled(true);
     ui->lbl_d_LG->setDisabled(true);
@@ -420,12 +414,12 @@ void MainWindow::on_b_stop_scenario_clicked()
     ui->treeWidget->setEnabled(true);  //sne
     ui->b_sel_scenario->setEnabled(true);
 
-    qDebug() << "Stop Scenario : before loop" ;
-
-//    foreach (QTreeWidgetItem * m, sel_item_clr) {
-//       m->setCheckState(0,Qt::Unchecked);
-//    }
-    qDebug() << "Stop Scenario : after loop" ;
+    if(!sel_item_clr.isEmpty()){
+        qDebug() << "Clearing the list" ;
+        foreach (QTreeWidgetItem * m, sel_item_clr) {
+           m->setCheckState(0,Qt::Unchecked);
+        }
+    }
 
 //    QFile fp(QDir::currentPath() + "/test_runner.sh");
 //    fp.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Truncate);
@@ -442,7 +436,12 @@ void MainWindow::on_b_stop_scenario_clicked()
 
 void MainWindow::on_b_generatereport_clicked()
 {
-    movie = new QMovie("spinner.gif");
+    if(!sel_item_clr.isEmpty()){
+        qDebug() << "Clearing the list" ;
+        foreach (QTreeWidgetItem * m, sel_item_clr) {
+           m->setCheckState(0,Qt::Unchecked);
+        }
+    }
     ui->label_4->setMovie(movie);
     ui->label_4->show();
     movie->start();
