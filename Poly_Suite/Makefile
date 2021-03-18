@@ -395,6 +395,7 @@ compiler_rcc_clean:
 qrc_background.cpp: ../../rahul/QT_Project/UI_Suit/background.qrc \
 		/usr/lib/qt5/bin/rcc \
 		../../rahul/QT_Project/UI_Suit/car_logo.PNG \
+		../../rahul/QT_Project/UI_Suit/logo.png \
 		../../rahul/QT_Project/UI_Suit/back1.jpg
 	/usr/lib/qt5/bin/rcc -name background ../../rahul/QT_Project/UI_Suit/background.qrc -o qrc_background.cpp
 
