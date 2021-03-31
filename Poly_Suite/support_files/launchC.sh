@@ -6,6 +6,9 @@ source /opt/AutowareAuto/setup.bash
 source lgsvl_msgs/install/setup.bash
 source ros2-lgsvl-bridge/install/setup.bash
 source Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/setup.bash 
+source Node/Node_control_validation_ws/control_validation_ws/install/setup.bash 
+
+# TODO need to add source for control validation
 
 echo "Start running LGSVL Bridge" > Poly_Suite/logfiles/logInfo.txt
 #sleep 1
@@ -21,8 +24,11 @@ echo "LG Simulator Started.." > Poly_Suite/logfiles/logInfo.txt
 
 echo "Start Perception Validation Stack.." > Poly_Suite/logfiles/logInfo.txt
 sh ./Poly_Suite/support_files/validate_p.sh &
-#ros2 run lg_sub_groundtruth lg_gt3d_subscriber &
 echo "Perception Validation Stack Started.." > Poly_Suite/logfiles/logInfo.txt
+
+echo "Start Control Validation Stack.." > Poly_Suite/logfiles/logInfo.txt
+sh ./Poly_Suite/support_files/validate_c.sh &
+echo "Control Validation Stack Started.." > Poly_Suite/logfiles/logInfo.txt
 
 #sleep 5
 echo "Start running Rviz2" > Poly_Suite/logfiles/logInfo.txt

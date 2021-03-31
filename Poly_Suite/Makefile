@@ -51,14 +51,18 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../../rahul/QT_Project/UI_Suit/main.cpp \
-		../../rahul/QT_Project/UI_Suit/mainwindow.cpp qrc_background.cpp \
+		../../rahul/QT_Project/UI_Suit/mainwindow.cpp \
+		../../rahul/QT_Project/UI_Suit/reportwindow.cpp qrc_background.cpp \
 		qrc_splash.cpp \
-		moc_mainwindow.cpp
+		moc_mainwindow.cpp \
+		moc_reportwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
+		reportwindow.o \
 		qrc_background.o \
 		qrc_splash.o \
-		moc_mainwindow.o
+		moc_mainwindow.o \
+		moc_reportwindow.o
 DIST          = ../../rahul/QT_Project/UI_Suit/iou.py \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -147,8 +151,10 @@ DIST          = ../../rahul/QT_Project/UI_Suit/iou.py \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../../rahul/rahul/QT_Project/UI_Suit/suit.pro ../../rahul/QT_Project/UI_Suit/mainwindow.h ../../rahul/QT_Project/UI_Suit/main.cpp \
-		../../rahul/QT_Project/UI_Suit/mainwindow.cpp
+		../../rahul/rahul/QT_Project/UI_Suit/suit.pro ../../rahul/QT_Project/UI_Suit/mainwindow.h \
+		../../rahul/QT_Project/UI_Suit/reportwindow.h ../../rahul/QT_Project/UI_Suit/main.cpp \
+		../../rahul/QT_Project/UI_Suit/mainwindow.cpp \
+		../../rahul/QT_Project/UI_Suit/reportwindow.cpp
 QMAKE_TARGET  = suit
 DESTDIR       = 
 TARGET        = suit
@@ -157,7 +163,7 @@ TARGET        = suit
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_reportwindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../../rahul/QT_Project/UI_Suit/suit.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -363,9 +369,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../rahul/QT_Project/UI_Suit/background.qrc ../../rahul/QT_Project/UI_Suit/splash.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../rahul/QT_Project/UI_Suit/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../rahul/QT_Project/UI_Suit/main.cpp ../../rahul/QT_Project/UI_Suit/mainwindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../rahul/QT_Project/UI_Suit/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../../rahul/QT_Project/UI_Suit/mainwindow.h ../../rahul/QT_Project/UI_Suit/reportwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../rahul/QT_Project/UI_Suit/main.cpp ../../rahul/QT_Project/UI_Suit/mainwindow.cpp ../../rahul/QT_Project/UI_Suit/reportwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../rahul/QT_Project/UI_Suit/mainwindow.ui ../../rahul/QT_Project/UI_Suit/reportwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -411,22 +417,32 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_reportwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
-moc_mainwindow.cpp: ../../rahul/QT_Project/UI_Suit/mainwindow.h \
+	-$(DEL_FILE) moc_mainwindow.cpp moc_reportwindow.cpp
+moc_mainwindow.cpp: ../../rahul/QT_Project/UI_Suit/reportwindow.h \
+		../../rahul/QT_Project/UI_Suit/mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/acclivis/rahul/QT_Project/UI_Suit -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rahul/QT_Project/UI_Suit/mainwindow.h -o moc_mainwindow.cpp
 
+moc_reportwindow.cpp: ../../rahul/QT_Project/UI_Suit/reportwindow.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/acclivis/rahul/QT_Project/UI_Suit -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rahul/QT_Project/UI_Suit/reportwindow.h -o moc_reportwindow.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_make_all: ui_mainwindow.h ui_reportwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
+	-$(DEL_FILE) ui_mainwindow.h ui_reportwindow.h
 ui_mainwindow.h: ../../rahul/QT_Project/UI_Suit/mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../../rahul/QT_Project/UI_Suit/mainwindow.ui -o ui_mainwindow.h
+
+ui_reportwindow.h: ../../rahul/QT_Project/UI_Suit/reportwindow.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../../rahul/QT_Project/UI_Suit/reportwindow.ui -o ui_reportwindow.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -438,12 +454,18 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 ####### Compile
 
-main.o: ../../rahul/QT_Project/UI_Suit/main.cpp ../../rahul/QT_Project/UI_Suit/mainwindow.h
+main.o: ../../rahul/QT_Project/UI_Suit/main.cpp ../../rahul/QT_Project/UI_Suit/mainwindow.h \
+		../../rahul/QT_Project/UI_Suit/reportwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../rahul/QT_Project/UI_Suit/main.cpp
 
 mainwindow.o: ../../rahul/QT_Project/UI_Suit/mainwindow.cpp ../../rahul/QT_Project/UI_Suit/mainwindow.h \
+		../../rahul/QT_Project/UI_Suit/reportwindow.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../rahul/QT_Project/UI_Suit/mainwindow.cpp
+
+reportwindow.o: ../../rahul/QT_Project/UI_Suit/reportwindow.cpp ../../rahul/QT_Project/UI_Suit/reportwindow.h \
+		ui_reportwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o reportwindow.o ../../rahul/QT_Project/UI_Suit/reportwindow.cpp
 
 qrc_background.o: qrc_background.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_background.o qrc_background.cpp
@@ -453,6 +475,9 @@ qrc_splash.o: qrc_splash.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_reportwindow.o: moc_reportwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_reportwindow.o moc_reportwindow.cpp
 
 ####### Install
 

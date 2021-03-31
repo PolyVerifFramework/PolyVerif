@@ -1,1 +1,0 @@
-ADE Started, Now Entering into Docker..

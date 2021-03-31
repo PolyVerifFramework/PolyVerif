@@ -87,24 +87,38 @@ public:
     QLabel *lbl_d_LG;
     QLabel *lbl_d_Succes;
     QLabel *lbl_d_Failure;
-    QLabel *label_4;
+    QLabel *lblSpinner;
     QWidget *control_test_suit;
-    QWidget *horizontalLayoutWidget_3;
-    QHBoxLayout *layout_control_suit;
     QGroupBox *gbox_DST_Control_Suit;
-    QPushButton *b_control_start_ade;
-    QPushButton *b_control_stopAde;
-    QPushButton *b_control_showreport;
-    QPushButton *b_control_sel_scenario;
     QScrollArea *scrollControl_ScenarioList;
     QWidget *scrollAreaControlWidgetContents;
     QTreeWidget *treeWidgetControl;
+    QWidget *layoutWidget4;
+    QVBoxLayout *verticalLayout_4;
+    QLabel *label_5;
     QListWidget *listWidgetSceneSelect;
+    QWidget *layoutWidget5;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_16;
+    QPushButton *b_control_start_ade;
+    QSpacerItem *horizontalSpacer_13;
+    QPushButton *b_control_sel_scenario;
+    QSpacerItem *horizontalSpacer_14;
+    QPushButton *b_control_stopAde;
+    QSpacerItem *horizontalSpacer_15;
+    QWidget *layoutWidget6;
+    QHBoxLayout *horizontalLayout_4;
+    QSpacerItem *horizontalSpacer_12;
     QPushButton *b_control_run_scenario;
+    QSpacerItem *horizontalSpacer_17;
     QPushButton *b_control_stop_scenario;
+    QSpacerItem *horizontalSpacer_18;
     QPushButton *b_control_validation;
-    QTextBrowser *txtBrowser_control;
+    QSpacerItem *horizontalSpacer_19;
+    QPushButton *b_control_showreport;
+    QSpacerItem *horizontalSpacer_20;
     QLabel *label;
+    QTextBrowser *txtBrowser_control;
     QLabel *lbl_outputlog;
     QWidget *tab_2;
     QMenuBar *menubar;
@@ -147,7 +161,7 @@ public:
         gridWidget = new QWidget(tab);
         gridWidget->setObjectName(QStringLiteral("gridWidget"));
         gridWidget->setEnabled(true);
-        gridWidget->setGeometry(QRect(9, 9, 1241, 481));
+        gridWidget->setGeometry(QRect(0, 0, 1241, 481));
         sizePolicy.setHeightForWidth(gridWidget->sizePolicy().hasHeightForWidth());
         gridWidget->setSizePolicy(sizePolicy);
         horizontalWidget_4 = new QWidget(gridWidget);
@@ -184,7 +198,7 @@ public:
         checkBox_3->setFont(font2);
         stackedWidget = new QStackedWidget(gridWidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(353, 10, 881, 421));
+        stackedWidget->setGeometry(QRect(350, 0, 861, 471));
         sizePolicy.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
         stackedWidget->setSizePolicy(sizePolicy);
         sensor_analog_suit = new QWidget();
@@ -319,6 +333,10 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer_11);
 
+        b_showreport->raise();
+        b_run_scenario->raise();
+        b_stop_scenario->raise();
+        b_generatereport->raise();
         layoutWidget3 = new QWidget(gbox_DST_Suit);
         layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
         layoutWidget3->setGeometry(QRect(12, 242, 411, 161));
@@ -351,80 +369,135 @@ public:
 
         verticalLayout_2->addWidget(lbl_d_Failure);
 
-        label_4 = new QLabel(gbox_DST_Suit);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(590, 280, 101, 81));
+        lblSpinner = new QLabel(gbox_DST_Suit);
+        lblSpinner->setObjectName(QStringLiteral("lblSpinner"));
+        lblSpinner->setGeometry(QRect(590, 280, 101, 81));
         stackedWidget->addWidget(digital_semantic_suit);
         control_test_suit = new QWidget();
         control_test_suit->setObjectName(QStringLiteral("control_test_suit"));
         sizePolicy.setHeightForWidth(control_test_suit->sizePolicy().hasHeightForWidth());
         control_test_suit->setSizePolicy(sizePolicy);
-        horizontalLayoutWidget_3 = new QWidget(control_test_suit);
-        horizontalLayoutWidget_3->setObjectName(QStringLiteral("horizontalLayoutWidget_3"));
-        horizontalLayoutWidget_3->setGeometry(QRect(9, 9, 531, 381));
-        layout_control_suit = new QHBoxLayout(horizontalLayoutWidget_3);
-        layout_control_suit->setObjectName(QStringLiteral("layout_control_suit"));
-        layout_control_suit->setContentsMargins(0, 0, 0, 0);
-        gbox_DST_Control_Suit = new QGroupBox(horizontalLayoutWidget_3);
+        gbox_DST_Control_Suit = new QGroupBox(control_test_suit);
         gbox_DST_Control_Suit->setObjectName(QStringLiteral("gbox_DST_Control_Suit"));
+        gbox_DST_Control_Suit->setGeometry(QRect(0, 0, 871, 361));
         sizePolicy.setHeightForWidth(gbox_DST_Control_Suit->sizePolicy().hasHeightForWidth());
         gbox_DST_Control_Suit->setSizePolicy(sizePolicy);
-        b_control_start_ade = new QPushButton(gbox_DST_Control_Suit);
-        b_control_start_ade->setObjectName(QStringLiteral("b_control_start_ade"));
-        b_control_start_ade->setGeometry(QRect(10, 40, 120, 31));
-        b_control_stopAde = new QPushButton(gbox_DST_Control_Suit);
-        b_control_stopAde->setObjectName(QStringLiteral("b_control_stopAde"));
-        b_control_stopAde->setGeometry(QRect(400, 40, 121, 27));
-        b_control_showreport = new QPushButton(gbox_DST_Control_Suit);
-        b_control_showreport->setObjectName(QStringLiteral("b_control_showreport"));
-        b_control_showreport->setGeometry(QRect(200, 280, 131, 27));
-        b_control_sel_scenario = new QPushButton(gbox_DST_Control_Suit);
-        b_control_sel_scenario->setObjectName(QStringLiteral("b_control_sel_scenario"));
-        b_control_sel_scenario->setGeometry(QRect(190, 40, 131, 31));
         scrollControl_ScenarioList = new QScrollArea(gbox_DST_Control_Suit);
         scrollControl_ScenarioList->setObjectName(QStringLiteral("scrollControl_ScenarioList"));
-        scrollControl_ScenarioList->setGeometry(QRect(10, 80, 511, 121));
+        scrollControl_ScenarioList->setGeometry(QRect(12, 65, 841, 221));
         scrollControl_ScenarioList->setWidgetResizable(true);
         scrollAreaControlWidgetContents = new QWidget();
         scrollAreaControlWidgetContents->setObjectName(QStringLiteral("scrollAreaControlWidgetContents"));
-        scrollAreaControlWidgetContents->setGeometry(QRect(0, 0, 509, 119));
+        scrollAreaControlWidgetContents->setGeometry(QRect(0, 0, 839, 219));
         treeWidgetControl = new QTreeWidget(scrollAreaControlWidgetContents);
         treeWidgetControl->setObjectName(QStringLiteral("treeWidgetControl"));
-        treeWidgetControl->setGeometry(QRect(170, 0, 341, 121));
-        listWidgetSceneSelect = new QListWidget(scrollAreaControlWidgetContents);
-        QFont font3;
-        font3.setPointSize(12);
-        font3.setBold(true);
-        font3.setUnderline(true);
-        font3.setWeight(75);
-        QListWidgetItem *__qlistwidgetitem = new QListWidgetItem(listWidgetSceneSelect);
-        __qlistwidgetitem->setFont(font3);
-        new QListWidgetItem(listWidgetSceneSelect);
-        new QListWidgetItem(listWidgetSceneSelect);
-        new QListWidgetItem(listWidgetSceneSelect);
-        new QListWidgetItem(listWidgetSceneSelect);
-        new QListWidgetItem(listWidgetSceneSelect);
+        treeWidgetControl->setGeometry(QRect(260, 0, 581, 221));
+        layoutWidget4 = new QWidget(scrollAreaControlWidgetContents);
+        layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
+        layoutWidget4->setGeometry(QRect(0, 0, 258, 219));
+        verticalLayout_4 = new QVBoxLayout(layoutWidget4);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        label_5 = new QLabel(layoutWidget4);
+        label_5->setObjectName(QStringLiteral("label_5"));
+
+        verticalLayout_4->addWidget(label_5);
+
+        listWidgetSceneSelect = new QListWidget(layoutWidget4);
         listWidgetSceneSelect->setObjectName(QStringLiteral("listWidgetSceneSelect"));
-        listWidgetSceneSelect->setGeometry(QRect(0, 0, 171, 121));
+
+        verticalLayout_4->addWidget(listWidgetSceneSelect);
+
         scrollControl_ScenarioList->setWidget(scrollAreaControlWidgetContents);
-        b_control_run_scenario = new QPushButton(gbox_DST_Control_Suit);
+        layoutWidget5 = new QWidget(gbox_DST_Control_Suit);
+        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
+        layoutWidget5->setGeometry(QRect(10, 30, 841, 29));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget5);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        horizontalSpacer_16 = new QSpacerItem(61, 24, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_16);
+
+        b_control_start_ade = new QPushButton(layoutWidget5);
+        b_control_start_ade->setObjectName(QStringLiteral("b_control_start_ade"));
+
+        horizontalLayout_3->addWidget(b_control_start_ade);
+
+        horizontalSpacer_13 = new QSpacerItem(87, 24, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_13);
+
+        b_control_sel_scenario = new QPushButton(layoutWidget5);
+        b_control_sel_scenario->setObjectName(QStringLiteral("b_control_sel_scenario"));
+
+        horizontalLayout_3->addWidget(b_control_sel_scenario);
+
+        horizontalSpacer_14 = new QSpacerItem(87, 24, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_14);
+
+        b_control_stopAde = new QPushButton(layoutWidget5);
+        b_control_stopAde->setObjectName(QStringLiteral("b_control_stopAde"));
+
+        horizontalLayout_3->addWidget(b_control_stopAde);
+
+        horizontalSpacer_15 = new QSpacerItem(61, 24, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_15);
+
+        layoutWidget6 = new QWidget(gbox_DST_Control_Suit);
+        layoutWidget6->setObjectName(QStringLiteral("layoutWidget6"));
+        layoutWidget6->setGeometry(QRect(10, 310, 841, 29));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget6);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        horizontalSpacer_12 = new QSpacerItem(68, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_12);
+
+        b_control_run_scenario = new QPushButton(layoutWidget6);
         b_control_run_scenario->setObjectName(QStringLiteral("b_control_run_scenario"));
-        b_control_run_scenario->setGeometry(QRect(10, 210, 131, 27));
-        b_control_stop_scenario = new QPushButton(gbox_DST_Control_Suit);
+
+        horizontalLayout_4->addWidget(b_control_run_scenario);
+
+        horizontalSpacer_17 = new QSpacerItem(38, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_17);
+
+        b_control_stop_scenario = new QPushButton(layoutWidget6);
         b_control_stop_scenario->setObjectName(QStringLiteral("b_control_stop_scenario"));
-        b_control_stop_scenario->setGeometry(QRect(390, 210, 131, 27));
-        b_control_validation = new QPushButton(gbox_DST_Control_Suit);
+
+        horizontalLayout_4->addWidget(b_control_stop_scenario);
+
+        horizontalSpacer_18 = new QSpacerItem(38, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_18);
+
+        b_control_validation = new QPushButton(layoutWidget6);
         b_control_validation->setObjectName(QStringLiteral("b_control_validation"));
-        b_control_validation->setGeometry(QRect(200, 210, 131, 27));
 
-        layout_control_suit->addWidget(gbox_DST_Control_Suit);
+        horizontalLayout_4->addWidget(b_control_validation);
 
-        txtBrowser_control = new QTextBrowser(control_test_suit);
-        txtBrowser_control->setObjectName(QStringLiteral("txtBrowser_control"));
-        txtBrowser_control->setGeometry(QRect(560, 40, 301, 351));
+        horizontalSpacer_19 = new QSpacerItem(38, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_19);
+
+        b_control_showreport = new QPushButton(layoutWidget6);
+        b_control_showreport->setObjectName(QStringLiteral("b_control_showreport"));
+
+        horizontalLayout_4->addWidget(b_control_showreport);
+
+        horizontalSpacer_20 = new QSpacerItem(68, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_20);
+
         label = new QLabel(control_test_suit);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(560, 10, 281, 31));
+        label->setGeometry(QRect(500, 420, 281, 31));
+        txtBrowser_control = new QTextBrowser(control_test_suit);
+        txtBrowser_control->setObjectName(QStringLiteral("txtBrowser_control"));
+        txtBrowser_control->setGeometry(QRect(0, 360, 301, 101));
         stackedWidget->addWidget(control_test_suit);
         lbl_outputlog = new QLabel(tab);
         lbl_outputlog->setObjectName(QStringLiteral("lbl_outputlog"));
@@ -488,34 +561,18 @@ public:
         lbl_d_LG->setText(QApplication::translate("MainWindow", "Detection range in LG (m)   :", Q_NULLPTR));
         lbl_d_Succes->setText(QApplication::translate("MainWindow", "Detection Success Rate (%)   :", Q_NULLPTR));
         lbl_d_Failure->setText(QApplication::translate("MainWindow", "Detection Failure Rate (%)   :", Q_NULLPTR));
-        label_4->setText(QString());
+        lblSpinner->setText(QString());
         gbox_DST_Control_Suit->setTitle(QApplication::translate("MainWindow", "Control Test Suite", Q_NULLPTR));
-        b_control_start_ade->setText(QApplication::translate("MainWindow", "Start ADE", Q_NULLPTR));
-        b_control_stopAde->setText(QApplication::translate("MainWindow", "Stop ADE", Q_NULLPTR));
-        b_control_showreport->setText(QApplication::translate("MainWindow", "Show Report", Q_NULLPTR));
-        b_control_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", Q_NULLPTR));
         QTreeWidgetItem *___qtreewidgetitem1 = treeWidgetControl->headerItem();
         ___qtreewidgetitem1->setText(0, QApplication::translate("MainWindow", " Select Scripts", Q_NULLPTR));
-
-        const bool __sortingEnabled = listWidgetSceneSelect->isSortingEnabled();
-        listWidgetSceneSelect->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem = listWidgetSceneSelect->item(0);
-        ___qlistwidgetitem->setText(QApplication::translate("MainWindow", "Select Scene       ", Q_NULLPTR));
-        QListWidgetItem *___qlistwidgetitem1 = listWidgetSceneSelect->item(1);
-        ___qlistwidgetitem1->setText(QApplication::translate("MainWindow", "BorregasAve", Q_NULLPTR));
-        QListWidgetItem *___qlistwidgetitem2 = listWidgetSceneSelect->item(2);
-        ___qlistwidgetitem2->setText(QApplication::translate("MainWindow", "SanFrancisco", Q_NULLPTR));
-        QListWidgetItem *___qlistwidgetitem3 = listWidgetSceneSelect->item(3);
-        ___qlistwidgetitem3->setText(QApplication::translate("MainWindow", "SingleLaneRoad", Q_NULLPTR));
-        QListWidgetItem *___qlistwidgetitem4 = listWidgetSceneSelect->item(4);
-        ___qlistwidgetitem4->setText(QApplication::translate("MainWindow", "CubeTown", Q_NULLPTR));
-        QListWidgetItem *___qlistwidgetitem5 = listWidgetSceneSelect->item(5);
-        ___qlistwidgetitem5->setText(QApplication::translate("MainWindow", "Jacksonville", Q_NULLPTR));
-        listWidgetSceneSelect->setSortingEnabled(__sortingEnabled);
-
+        label_5->setText(QApplication::translate("MainWindow", "Select Scene", Q_NULLPTR));
+        b_control_start_ade->setText(QApplication::translate("MainWindow", "Start ADE", Q_NULLPTR));
+        b_control_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", Q_NULLPTR));
+        b_control_stopAde->setText(QApplication::translate("MainWindow", "Stop ADE", Q_NULLPTR));
         b_control_run_scenario->setText(QApplication::translate("MainWindow", "Run Scenario", Q_NULLPTR));
         b_control_stop_scenario->setText(QApplication::translate("MainWindow", "Stop Scenario", Q_NULLPTR));
-        b_control_validation->setText(QApplication::translate("MainWindow", "Validation", Q_NULLPTR));
+        b_control_validation->setText(QApplication::translate("MainWindow", "Generate Report", Q_NULLPTR));
+        b_control_showreport->setText(QApplication::translate("MainWindow", "Show Report", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "Report of the Control Validation", Q_NULLPTR));
         lbl_outputlog->setText(QApplication::translate("MainWindow", "Log Information :", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Validation", Q_NULLPTR));
