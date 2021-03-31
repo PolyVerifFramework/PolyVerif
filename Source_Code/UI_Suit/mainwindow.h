@@ -15,6 +15,7 @@
 #include <QStandardItemModel>
 #include <QListWidgetItem>
 #include <QLabel>
+#include "reportwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -44,7 +45,7 @@ public:
     QString csv_ReportPath;
     QString par;
     QList<QTreeWidgetItem *> sel_item_clr;
-    int counter;
+    bool flagSimulation = false;
     QMovie *movie;
     ~MainWindow();
 
@@ -99,8 +100,6 @@ private slots:
     void fileWatcher();
     void createTempRecordPath();
     void executeShell(QString path);
-
-
 
     void on_b_generatereport_clicked();
 
