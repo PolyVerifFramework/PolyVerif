@@ -1,0 +1,11 @@
+#!/bin/sh 
+set -eu
+echo "Running Scenario :1 " 
+echo "Running Scenario :/script/Test_Cases/Weather_Control/TC_1.py 10.1 0.2 0.1 0.1 0.1 BorregasAve " > ./script/logfiles/logInfo.txt; 
+python3 ./script/Test_Cases/Weather_Control/TC_1.py 10.1 0.2 0.1 0.1 0.1 BorregasAve
+echo "Running Scenario :2 " 
+echo "Running Scenario :/script/Test_Cases/Weather_Control/TC_2.py 20.1 0.2 0.1 0.1 0.1 BorregasAve " > ./script/logfiles/logInfo.txt; 
+python3 ./script/Test_Cases/Weather_Control/TC_2.py 20.1 0.2 0.1 0.1 0.1 BorregasAve
+echo "Running Scenario :3 " 
+echo "Running Scenario :/script/Test_Cases/Weather_Control/TC_2.py 20.9 0.9 0.9 0.9 0.9 BorregasAve " > ./script/logfiles/logInfo.txt; 
+python3 ./script/Test_Cases/Weather_Control/TC_2.py 20.9 0.9 0.9 0.9 0.9 BorregasAve
