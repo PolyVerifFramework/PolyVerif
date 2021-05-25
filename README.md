@@ -1,24 +1,51 @@
 # PolyVerif
 PolyVerif AV Validation Suite
 
-Background & Overview 
-The project addresses the problem of Autonomous Vehicle Validation for a particular route/road network.  The baseline situation considered is a city or town that has to put in an autonomous vehicle capability (typically in a geofenced area).  Given a topology (location, road network) the system should automatically build edge condition cases which can serve as a basis for a safety report.
- 
-The problem statement is:
-Various cities, towns, and campuses are exploring the use of autonomous vehicle shuttles. The technical specifications for such a vehicle are low speed, public transport, and fixed route, operated by the city.
- The project requirement is to verify safety of these Autonomous Vehicles in the context of:
+PolyVerif is an open-source autonomy validation research framework whose objectives are to accelerate the state-of-art for autonomy design and validation. 
+
+The focus of the framework is:
+To enable a coherent and integrated Design of Experiment (DoE) capability.
+Use open-source ecosystems such as Autoware, Unity (not open-source but easily available), LGSVL, and SCENIC. 
+   1. Captures a physical AV environment
+   2. Performs extensive VV&C in a virtual environment
+   3. Generate validation results and diagnostic data
+   4. Provides a path back to physical testing
+
+
+The initial use model is fixed-route autonomous public transportation where this solution will allow cities to build robust public safety protocols.
+
+PolyVerif Suit tries to verify safety of the Autonomous Vehicles in the context of:
     1. Dynamic: cars, pedestrians, and various models
     2. Weather: various stress points on the sensor network
     3. RF: various stress points on the communications network
 
 
-Build
+
+Build Instructions:
+
+PC configuration required:
+
+•	CPU: Intel i7 10700
+•	GPU: Nvidia RTX 2070 (8GB memory)
+•	OS: Ubuntu 64-bit
+
+Prerequisite:
+
+•	Ubuntu
+•	Nodejs 12.16
+•	Python3.8
+
+Note: The Simulator performance will be very slow if run on a lower PC configuration.
 
 
-Commands
+Please follow the below documents in the same sequence to install and run the PolyVerif suite:
 
+  1. Setup_And_Installation
 
-Binaries
+  2. Lgsvl_Simulator_Setup
+
+  3. PolyVerification_Suite_UserGuide
+
 
 
 
