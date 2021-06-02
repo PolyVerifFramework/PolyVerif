@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: lgsvl
+Version: 0.0.0
+Summary: LGSVL Simulator Api
+Home-page: https://github.com/lgsvl/simulator
+Author: LGSVL
+Author-email: contact@lgsvlsimulator.com
+License: Other
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Requires-Python: >=3.5.0
