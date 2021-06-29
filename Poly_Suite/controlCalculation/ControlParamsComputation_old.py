@@ -19,6 +19,9 @@ class ControlValidationParams(object):
       
   def TTC(inputData):
       print("ENtering TTC function")
+      
+      
+      
       print("Exiting from TTC funvtion")
       
   #function to compute Time to Collision using GT data   
@@ -114,18 +117,15 @@ class ControlValidationParams(object):
                                                       "accel_deaccel_rate")
         writer.writerow(title)                         
       max_Y_deviation = 2.0
-      detected_Vehicle_Size = 3.0
       count = 0
       for idx_LG in range(inputData["timestamp_sec"].count()-1):  
         if inputData.vehicle_label[idx_LG] != "no_object":
-         if(inputData.size_y[idx_LG]<=detected_Vehicle_Size):
           for idx_ctl in range(1,control_data["timestamp_sec"].count()-1):
               # print("idx_LG", idx_LG)
               # print("idx_ctl", idx_ctl)
               if(inputData.timestamp_sec[idx_LG] == control_data.timestamp_sec[idx_ctl]):
                   # print("idx_LG", idx_LG)
                   # print("idx_ctl", idx_ctl)
-                
                   if(percep_stamping[idx_LG] == ctl_stamping[idx_ctl]):
                       # print("gtd_stamping", gtd_stamping[idx_LG])
                       # print("ctl_stamping", ctl_stamping[idx_ctl])
@@ -167,9 +167,8 @@ class ControlValidationParams(object):
                           for idx_ttc_gt in range (ttc_gt["timestamp_sec"].count()-1):
                              #print("idx_ttc_gt", idx_ttc_gt)
                              if(inputData.timestamp_sec[idx_LG] == ttc_gt.timestamp_sec[idx_ttc_gt]):
-                                    #print("idx_LG", idx_LG)
-                                     ttc_gt_avail = True
-                                     break;
+                                #print("idx_LG", idx_LG)
+                                ttc_gt_avail = True
                           if(ttc_gt_avail ==True):
                               count = count+1
                               ttc = abs((lg_pos_x - 4) /(ego_linear_velocities - lg_velocity_x))

@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/UI_Suit/mainwindow.h"
+#include "../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyVerifSuite/mainwindow.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

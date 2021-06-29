@@ -34,8 +34,13 @@ def ComputeParams(auto_loc, lg_ego_loc, location, map_origion_error):
               if(auto_loc_stamping[idx_AUTO] == lg_ego_stamping[idx_LG]):
                    auto_pos_x = auto_loc.position_x[idx_AUTO]
                    auto_pos_y = auto_loc.position_y[idx_AUTO]
-                   lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
-                   lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
+                   # Taltech 
+                   # lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
+                   # lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
+
+                   # Autonomous Stuff
+                   lg_pos_y   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
+                   lg_pos_x   = -(lg_ego_loc.position_y[idx_LG] - map_origion_error[1])
                    
                    # Calculate Euclidean distance using x nad y values
                    deviation = math.sqrt((math.pow((auto_pos_x-lg_pos_x),2)) + (math.pow((auto_pos_y-lg_pos_y),2)))
@@ -43,8 +48,14 @@ def ComputeParams(auto_loc, lg_ego_loc, location, map_origion_error):
                    # Save data in to csv
                    with open(deviation_report,'a', newline='') as csvfile:
                        writer = csv.writer(csvfile)
+                       #taltech
+                       # values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
+                       #                           lg_ego_loc.position_x[idx_LG],lg_ego_loc.position_y[idx_LG], lg_ego_loc.position_z[idx_LG],
+                       #                           lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
+                       #                           lg_ego_loc.orientation_w[idx_LG], deviation)
+                       # Autonomous Stuff
                        values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
-                                                 lg_ego_loc.position_x[idx_LG],lg_ego_loc.position_y[idx_LG], lg_ego_loc.position_z[idx_LG],
+                                                 -(lg_ego_loc.position_y[idx_LG]),lg_ego_loc.position_x[idx_LG], lg_ego_loc.position_z[idx_LG],
                                                  lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
                                                  lg_ego_loc.orientation_w[idx_LG], deviation)
                        writer.writerow(values)   
@@ -102,7 +113,12 @@ def main(args=None):
     # /home/acclivis/adehome/PolyReports/GNSS_ODOM_Localization.csv
 
     # Need to read from the config file for map error
-    map_origion_error = [0,-300,0]
+    # for taltech map
+    #map_origion_error = [0,-300,0] 
+
+    #for Autonomous stuff   
+    map_origion_error = [0,0,0]
+
     #location = '/home/acclivis/adehome/PolyReports'
     auto_loc_file = location  + file_path + '/NDT_Pose_Localization.csv'
     lg_ego_file = location  + file_path + '/GNSS_ODOM_Localization.csv'

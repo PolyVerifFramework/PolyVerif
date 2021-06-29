@@ -38,6 +38,10 @@ class PerceptionParams(object):
       print("Entering in ObjectDetectionRate function")
       detections = 0
       count_no_objects = 0
+
+      if(len(matched_report)==0):
+          return 'NA'
+
       for idx_match in range(matched_report["timestamp_sec"].count()):
           if (matched_report.match_found[idx_match] == True):
               detections = detections + 1
@@ -157,8 +161,8 @@ class PerceptionParams(object):
             multirange_detection_rate.SuccessRate[count] = count_det_success*100 / (count_det_success + count_det_failure)
             multirange_detection_rate.FailureRate[count] = count_det_failure*100 / (count_det_success + count_det_failure)
           else:
-            multirange_detection_rate.SuccessRate[count] = 0.0
-            multirange_detection_rate.FailureRate[count] = 0.0
+            multirange_detection_rate.SuccessRate[count] = -9999
+            multirange_detection_rate.FailureRate[count] = -9999
       
           count = count + 1
           

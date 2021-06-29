@@ -81,13 +81,14 @@ def ComputeParams(gtd_data, auto_percep_data,file_path):
     print("Max Range Object Detected by Autoware Perception : ", maxrange[0:2])
     print("Max Range Object in LG GroundTruth : ", maxrange[2:4])
     print("Object Detection Success Rate in Percentage : ", detectionRate)
-    print("Object Detection Failure Rate in Rercentage : ", 100 - detectionRate)
+    #print("Object Detection Failure Rate in Rercentage : ", 100 - detectionRate)
     
     auto_range = str(round(maxrange[0]))+ " to " +  str(round(maxrange[1]))
     lg_range = str(round(maxrange[2]))+ " to " +  str(round(maxrange[3]))
     
-    line = [auto_range+"\n",lg_range+"\n", str(detectionRate)+"\n",str(100-detectionRate)+"\n"]
-    
+    #line = [auto_range+"\n",lg_range+"\n", str(detectionRate)+"\n",str(100-detectionRate)+"\n"]
+    line = [auto_range+"\n",lg_range+"\n", str(detectionRate)+"\n"]
+
     f = open(file_path +"/perception_stats.txt", "w+")
     f.writelines(line)
     f.close()
@@ -107,6 +108,10 @@ def ComputeParams(gtd_data, auto_percep_data,file_path):
             writer = csv.writer(csvfile)
             rangedata = DetectionRangeReport_Multi(DetectionRange,
                                                multirange_detection_rate.SuccessRate[idx])
+            
+            if(multirange_detection_rate.SuccessRate[idx] ==-9999):  #@shiv
+                rangedata = DetectionRangeReport_Multi(DetectionRange, 'NA')#@shiv
+            
             writer.writerow(rangedata)      
         
               
