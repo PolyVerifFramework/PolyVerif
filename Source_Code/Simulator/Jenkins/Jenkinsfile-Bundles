@@ -1,0 +1,211 @@
+//
+
+pipeline {
+
+  agent {
+    node {
+      label "unity3d-2019.3-vulkan"
+      customWorkspace "/home/jenkins/workspace/simulator-bundles-2019.3.15f1"
+    }
+  }
+
+  options {
+    gitLabConnection("${GITLAB_HOST}")
+    skipDefaultCheckout(true)
+    buildDiscarder(logRotator(numToKeepStr: '20'))
+    timestamps()
+  }
+
+  triggers {
+    gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: "NameBasedFilter", includeBranchesSpec: "master", excludeBranchesSpec: "")
+  }
+
+  parameters {
+    string(name: "CLOUD_URL", defaultValue: "${SIMULATOR_STAGING_CLOUD_URL}", description: "")
+    booleanParam(name: "FORCE_REBUILD", defaultValue: false, description: "")
+    booleanParam(name: "UPLOAD", defaultValue: true, description: "Upload bundles to S3")
+    string(name: "BUILD_SIMULATOR_ENVIRONMENTS", defaultValue: "${SIMULATOR_ENVIRONMENTS}", description: "Environments to build")
+    string(name: "BUILD_SIMULATOR_VEHICLES", defaultValue: "${SIMULATOR_VEHICLES}", description: "Vehicles to build")
+  }
+
+  environment {
+    UNITY_USERNAME = credentials("UNITY_USERNAME")
+    UNITY_PASSWORD = credentials("UNITY_PASSWORD")
+    UNITY_SERIAL = credentials("UNITY_SERIAL")
+    PYTHONUNBUFFERED = "1"
+    DISPLAY = ":0"
+    JENKINS_BUILD_ID = "${BUILD_ID}"
+  }
+
+  stages {
+    stage("Checkout Simulator") {
+        steps {
+            checkout scm
+            sh """
+                git lfs install
+                git lfs pull origin
+            """
+            sh "rm -rf *.zip *.html *.xml *.log *.txt"
+
+            script {
+                env.GIT_COMMIT = sh(returnStdout: true, script: "git rev-parse HEAD").trim()
+            }
+        }
+    }
+
+    stage("Checkout Environments") {
+      when {
+        not {
+            environment name: "BUILD_SIMULATOR_ENVIRONMENTS", value: ""
+        }
+      }
+      steps {
+        script {
+
+          def environments = env.BUILD_SIMULATOR_ENVIRONMENTS.split(',')
+          def environment_names_list = []
+
+          for (int i=0; i<environments.size(); i++) {
+            def environment_path = environments[i]
+            def environment_path_parts = environment_path.split('/')
+            def environment_name = environment_path_parts.last()
+
+            environment_names_list.add(environment_name)
+
+            checkout([
+              $class: "GitSCM",
+              branches: [[name: "refs/heads/master"]],
+              browser: [$class: "GitLab", repoUrl: "https://${GITLAB_HOST}/HDRP/Environments/${environment_path}", version: env.GITLAB_VERSION],
+              extensions: [
+                [$class: "RelativeTargetDirectory", relativeTargetDir: "Assets/External/Environments/${environment_name}"],
+                [$class: "LocalBranch"],
+                [$class: "GitLFSPull"]
+              ],
+              userRemoteConfigs: [[
+                credentialsId: "auto-gitlab",
+                url: "git@${GITLAB_HOST}:HDRP/Environments/${environment_path}.git"
+              ]]
+            ])
+          }
+
+          def environment_names = environment_names_list.join(",")
+
+          env.SIM_ENVIRONMENTS = sh(returnStdout: true, script: "./Jenkins/get-assets.sh Assets/External/Environments ${S3_DOWNLOAD_HOST} environment 0 ${environment_names}").trim()
+        } // script
+        sh "printenv SIM_ENVIRONMENTS | tee environments.txt"
+      }
+
+      post {
+        success {
+            archiveArtifacts "environments.txt"
+        }
+      }
+    }
+
+    stage("Checkout Vehicles") {
+      when {
+        not {
+            environment name: "BUILD_SIMULATOR_VEHICLES", value: ""
+        }
+      }
+      steps {
+        script {
+          def vehicles = env.BUILD_SIMULATOR_VEHICLES.split(',')
+          for (int i=0; i<vehicles.size(); i++) {
+            def vehicle = vehicles[i]
+            checkout([
+              $class: "GitSCM",
+              branches: [[name: "refs/heads/master"]],
+              browser: [$class: "GitLab", repoUrl: "https://${GITLAB_HOST}/HDRP/Vehicles/${vehicle}", version: env.GITLAB_VERSION],
+              extensions: [
+                [$class: "RelativeTargetDirectory", relativeTargetDir: "Assets/External/Vehicles/${vehicle}"],
+                [$class: "LocalBranch"],
+                [$class: "GitLFSPull"]
+              ],
+              userRemoteConfigs: [[
+                credentialsId: "auto-gitlab",
+                url: "git@${GITLAB_HOST}:HDRP/Vehicles/${vehicle}.git"
+              ]]
+            ])
+          }
+
+          env.SIM_VEHICLES = sh(returnStdout: true, script: "./Jenkins/get-assets.sh Assets/External/Vehicles ${S3_DOWNLOAD_HOST} vehicle 0 ${BUILD_SIMULATOR_VEHICLES}").trim()
+        } // script
+
+        sh "printenv SIM_VEHICLES | tee vehicles.txt"
+      }
+      post {
+        success {
+            archiveArtifacts "vehicles.txt"
+        }
+      }
+    }
+
+    stage("Docker") {
+      environment {
+        DOCKER = credentials("Jenkins-Gitlab")
+      }
+      steps {
+        dir("Jenkins") {
+          sh """
+            docker login -u ${DOCKER_USR} -p ${DOCKER_PSW} ${GITLAB_HOST}:4567
+            docker-compose build build-simulator
+            docker-compose push build-simulator
+          """
+        }
+      }
+    }
+
+    stage("Build") {
+      when {
+        anyOf {
+          not {
+            environment name: "SIM_ENVIRONMENTS", value: ""
+          }
+          not {
+            environment name: "SIM_VEHICLES", value: ""
+          }
+        }
+      }
+      steps {
+        dir("Jenkins") {
+          sh "UID=`id -u` docker-compose run --rm build-bundles"
+        }
+      }
+    } // Build
+
+    stage("Upload") {
+      when {
+        environment name: "UPLOAD", value: "true"
+        anyOf {
+          not {
+            environment name: "SIM_ENVIRONMENTS", value: ""
+          }
+          not {
+            environment name: "SIM_VEHICLES", value: ""
+          }
+        }
+      }
+      steps {
+        dir("Jenkins") {
+          sh "UID=`id -u` docker-compose run --rm upload-bundles | tee ../upload-bundles.log"
+        }
+      }
+    } // Upload
+
+  } // stages
+
+  post {
+    failure {
+      updateGitlabCommitStatus state: "failed"
+    }
+    success {
+      updateGitlabCommitStatus state: "success"
+    }
+    always {
+        sh script:"zip logs-bundles-${BUILD_ID}.zip *.log || true", label:"Archive log files"
+        archiveArtifacts artifacts:"logs*.zip", allowEmptyArchive:true
+    }
+  }
+
+}
