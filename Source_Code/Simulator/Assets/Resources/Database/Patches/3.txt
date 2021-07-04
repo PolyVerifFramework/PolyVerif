@@ -1,2 +1,0 @@
-ALTER TABLE simulations
-  ADD error Varchar(512) DEFAULT NULL;

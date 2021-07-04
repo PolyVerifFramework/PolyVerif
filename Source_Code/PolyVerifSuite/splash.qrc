@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/splash">
-        <file>car.jpg</file>
-        <file>AV_Testing.jpg</file>
-    </qresource>
-</RCC>
