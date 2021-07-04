@@ -1,25 +1,30 @@
 # PolyVerif
 PolyVerif AV Validation Suite
 
-Background & Overview 
-The project addresses the problem of Autonomous Vehicle Validation for a particular route/road network.  The baseline situation considered is a city or town that has to put in an autonomous vehicle capability (typically in a geofenced area).  Given a topology (location, road network) the system should automatically build edge condition cases which can serve as a basis for a safety report.
- 
-The problem statement is:
-Various cities, towns, and campuses are exploring the use of autonomous vehicle shuttles. The technical specifications for such a vehicle are low speed, public transport, and fixed route, operated by the city.
- The project requirement is to verify safety of these Autonomous Vehicles in the context of:
-    1. Dynamic: cars, pedestrians, and various models
-    2. Weather: various stress points on the sensor network
-    3. RF: various stress points on the communications network
+This is Poly-Verification and Validation Suite. Its functionality is to generate the test cases and validate the autonomous stack.
+It integrate the Scenic scenario description language with AutowareAuto and helps to generate the random scenario for simulation.
+Since we are using lgsvl Simulator and AutowareAuto, it will require a high-end server with Graphics card to run it smoothly. 
 
+The Simulator performance will be very slow if run on a lower PC configuration.
 
-Build
+Below is the PC configuration required:
+  PC Configuration:
+  
+    •	CPU: Intel i7 10700
+    •	GPU: Nvidia RTX 2070 (8GB memory)
+    •	OS: Ubuntu 14.04 and above 64-bit
+    
+  Prerequisite: 
+  
+    •	Ubuntu
+    •	Nodejs 12.16
+    •	Python3.8
+    
+Please follow the below documents in the same sequence to run the run the polyverification suite-
 
-
-Commands
-
-
-Binaries
-
-
-
+  •	Setup_And_Installation
+  
+  •	Lgsvl_Simulator_Setup
+  
+  •	PolyVerification_Suite_UserGuide
 
