@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pid=341
+pid=2629
 
 value=`cat pidfile`
 per_node_pid=`cat Poly_Suite/per_node_pid`

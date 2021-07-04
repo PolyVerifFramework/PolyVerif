@@ -10,9 +10,10 @@ import math
 import pandas as pd
 from GenericParamComputation import GenericParams as gp
 from utils.acquisition_structures import Deviation_Report
+from configparser import ConfigParser
 
 #function to compute localization deviation per frame/timestamp
-def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error):
+def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error, avp_demo_flag):
     deviation_report = location + "/deviation_report.csv" 
     
     with open(deviation_report,'w', newline='') as csvfile:
@@ -28,14 +29,15 @@ def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error):
     goal_pos_y = goalPose_loc.position_y[0]
     # Calculate deviation for each frame
     for idx_LG in range(lg_ego_loc["timestamp_sec"].count()-1):  
-     
-      # Taltech 
-      # lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
-      # lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
-       
+      
       # Autonomous Stuff
       lg_pos_y   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
       lg_pos_x   = -(lg_ego_loc.position_y[idx_LG] - map_origion_error[1])
+
+      # Taltech 
+      if avp_demo_flag == True:
+        lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
+        lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
 
        # Calculate Euclidean distance using x nad y values
       deviation = math.sqrt((math.pow((goal_pos_x-lg_pos_x),2)) + (math.pow((goal_pos_y-lg_pos_y),2)))
@@ -43,17 +45,20 @@ def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error):
        # Save data in to csv
       with open(deviation_report,'a', newline='') as csvfile:
           writer = csv.writer(csvfile)
-          # Taltech
-          # values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
-          #                            lg_ego_loc.position_x[idx_LG],lg_ego_loc.position_y[idx_LG], lg_ego_loc.position_z[idx_LG],
-          #                            lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
-          #                            lg_ego_loc.orientation_w[idx_LG], deviation)
 
           # Autonomous Stuff
           values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
                                      -(lg_ego_loc.position_y[idx_LG]),lg_ego_loc.position_x[idx_LG], lg_ego_loc.position_z[idx_LG],
                                      lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
                                      lg_ego_loc.orientation_w[idx_LG], deviation)
+
+           # Taltech Map
+          if avp_demo_flag == True:
+            values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
+                                     lg_ego_loc.position_x[idx_LG],lg_ego_loc.position_y[idx_LG], lg_ego_loc.position_z[idx_LG],
+                                     lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
+                                     lg_ego_loc.orientation_w[idx_LG], deviation)
+
           writer.writerow(values)   
          
 #function to calculate consolidated data from framewise data 
@@ -83,8 +88,6 @@ def DeviationParams(location):
 
     file.writelines(line)
     file.close()
-    
-
 
 #function to read GT data using given filename
 def Read_data(filename):
@@ -110,12 +113,33 @@ def main(args=None):
     print("Calculating Path Planner Validation.")
     # /home/acclivis/adehome/PolyReports/GNSS_ODOM_Localization.csv
 
+
+    # Need to read from the config file for map error
+    # instantiate
+    config = ConfigParser()
+
+    # parse existing file
+    config.read(currentpath + '/config.ini')
+
+    # read values from a section
+    bool_val_taltech = config.getboolean('autoware_stack_map', 'taltech')
+    bool_val_autonomoustuff = config.getboolean('autoware_stack_map', 'autonomoustuff')
+
+    origin_x = config.getint('error_map_offset', 'map_lanelet2_scene_offset_x')
+    origin_y = config.getint('error_map_offset', 'map_lanelet2_scene_offset_y')
+    origin_z = config.getint('error_map_offset', 'map_lanelet2_scene_offset_z')
+ 
+    avp_demo_flag = False
+    if bool_val_taltech == True:
+        avp_demo_flag = True
+
+    map_origion_error = [origin_x, origin_y, origin_z]
     # Need to read from the config file for map error
     # Taltech
     #map_origion_error = [0,-300,0]
 
     # Autonomous stuff
-    map_origion_error = [0,0,0]
+    # map_origion_error = [0,0,0]
 
     #location = '/home/acclivis/adehome/PolyReports'
     goalPose_loc_file = location  + file_path + '/Goal_Pose_PathPlanning.csv'
@@ -124,7 +148,7 @@ def main(args=None):
     goalPose_loc = Read_data(goalPose_loc_file)
     lg_ego_loc = Read_data(lg_ego_file)
     
-    ComputeParams(goalPose_loc, lg_ego_loc, location + file_path, map_origion_error)
+    ComputeParams(goalPose_loc, lg_ego_loc, location + file_path, map_origion_error, avp_demo_flag)
     DeviationParams(location + file_path)
     
     

@@ -64,6 +64,7 @@ OBJECTS       = main.o \
 		moc_mainwindow.o \
 		moc_reportwindow.o
 DIST          = ../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyVerifSuite/iou.py \
+		../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyVerifSuite/config.ini \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
