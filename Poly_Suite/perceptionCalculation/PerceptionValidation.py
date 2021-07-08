@@ -2,7 +2,7 @@
 """
 Created on Tue Mar  2 13:19:14 2021
 
-@author: Acclivis Technologies Pvt Ltd.
+@author: 
 """
 import os
 import pandas as pd
@@ -35,34 +35,30 @@ def Perception_Validation(gtd_data, auto_percep_data,file_path):
     
     # matching_data = pd.DataFrame(columns=["timestamp_sec" ,"timestamp_nanosec", "label", "position_x", "position_y", "position_z", "size_x", "size_y", "size_z", "match_found"])
     #Save csv report
-    for idx_LG in range(len(matching_report)):
-        if(matching_report[idx_LG] == "match_found"):
-            with open(matching_report_File,'a', newline='') as csvfile:
-                writer = csv.writer(csvfile)
-                matched_data = Objects_Report(gtd_data.timestamp_sec[idx_LG],gtd_data.timestamp_nanosec[idx_LG],
-                                              gtd_data.label[idx_LG], gtd_data.position_x[idx_LG], 
-                                              gtd_data.position_y[idx_LG], gtd_data.position_z[idx_LG],
-                                              gtd_data.size_x[idx_LG], gtd_data.size_y[idx_LG],
-                                              gtd_data.size_z[idx_LG], True)
-                writer.writerow(matched_data)
-        elif(matching_report[idx_LG] == "no_match_found"):
-            with open(matching_report_File,'a', newline='') as csvfile:
-                writer = csv.writer(csvfile)
-                unmatched_data = Objects_Report(gtd_data.timestamp_sec[idx_LG],gtd_data.timestamp_nanosec[idx_LG],
-                                            gtd_data.label[idx_LG], gtd_data.position_x[idx_LG], 
-                                            gtd_data.position_y[idx_LG], gtd_data.position_z[idx_LG],
-                                            gtd_data.size_x[idx_LG], gtd_data.size_y[idx_LG],
-                                            gtd_data.size_z[idx_LG], False)
-                writer.writerow(unmatched_data)
-        else :
-             with open(matching_report_File,'a', newline='') as csvfile:
-                  writer = csv.writer(csvfile)
-                  unmatched_data = Objects_Report(gtd_data.timestamp_sec[idx_LG],gtd_data.timestamp_nanosec[idx_LG],
-                                             gtd_data.label[idx_LG], gtd_data.position_x[idx_LG], 
-                                             gtd_data.position_y[idx_LG], gtd_data.position_z[idx_LG],
-                                             gtd_data.size_x[idx_LG], gtd_data.size_y[idx_LG],
-                                             gtd_data.size_z[idx_LG], False)
-                  writer.writerow(unmatched_data)
+    with open(matching_report_File,'a', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        for idx_LG in range(len(matching_report)):
+            if(matching_report[idx_LG] == "match_found"):
+                    matched_data = Objects_Report(gtd_data.timestamp_sec[idx_LG],gtd_data.timestamp_nanosec[idx_LG],
+                                                  gtd_data.label[idx_LG], gtd_data.position_x[idx_LG], 
+                                                  gtd_data.position_y[idx_LG], gtd_data.position_z[idx_LG],
+                                                  gtd_data.size_x[idx_LG], gtd_data.size_y[idx_LG],
+                                                  gtd_data.size_z[idx_LG], True)
+                    writer.writerow(matched_data)
+            elif(matching_report[idx_LG] == "no_match_found"):
+                    unmatched_data = Objects_Report(gtd_data.timestamp_sec[idx_LG],gtd_data.timestamp_nanosec[idx_LG],
+                                                gtd_data.label[idx_LG], gtd_data.position_x[idx_LG], 
+                                                gtd_data.position_y[idx_LG], gtd_data.position_z[idx_LG],
+                                                gtd_data.size_x[idx_LG], gtd_data.size_y[idx_LG],
+                                                gtd_data.size_z[idx_LG], False)
+                    writer.writerow(unmatched_data)
+            else :
+                      unmatched_data = Objects_Report(gtd_data.timestamp_sec[idx_LG],gtd_data.timestamp_nanosec[idx_LG],
+                                                 gtd_data.label[idx_LG], gtd_data.position_x[idx_LG], 
+                                                 gtd_data.position_y[idx_LG], gtd_data.position_z[idx_LG],
+                                                 gtd_data.size_x[idx_LG], gtd_data.size_y[idx_LG],
+                                                 gtd_data.size_z[idx_LG], False)
+                      writer.writerow(unmatched_data)
 
 #function to compute various parameters
 def ComputeParams(gtd_data, auto_percep_data,file_path):
@@ -97,77 +93,22 @@ def ComputeParams(gtd_data, auto_percep_data,file_path):
             writer = csv.writer(csvfile)
             title = DetectionRangeReport_Multi("Range", "SuccessRate")
             writer.writerow(title) 
-
-    for idx in range(len(multirange_detection_rate)):
-        print("minRange", multirange_detection_rate.MinRange[idx])
-        print("maxRange", multirange_detection_rate.MaxRange[idx])
-        print("multirange_detection_rate - Success" , multirange_detection_rate.SuccessRate[idx])
-        print("multirange_detection_rate - Failure" , multirange_detection_rate.FailureRate[idx])
-        DetectionRange =  str(multirange_detection_rate.MinRange[idx]) + " to " + str(multirange_detection_rate.MaxRange[idx])
-        with open(file_path + "/rangeReport.csv",'a', newline='') as csvfile:
-            writer = csv.writer(csvfile)
+    with open(file_path + "/rangeReport.csv",'a', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        for idx in range(len(multirange_detection_rate)):
+            print("minRange", multirange_detection_rate.MinRange[idx])
+            print("maxRange", multirange_detection_rate.MaxRange[idx])
+            print("multirange_detection_rate - Success" , multirange_detection_rate.SuccessRate[idx])
+            print("multirange_detection_rate - Failure" , multirange_detection_rate.FailureRate[idx])
+            DetectionRange =  str(multirange_detection_rate.MinRange[idx]) + " to " + str(multirange_detection_rate.MaxRange[idx])
+    
             rangedata = DetectionRangeReport_Multi(DetectionRange,
-                                               multirange_detection_rate.SuccessRate[idx])
-            
+                                                   multirange_detection_rate.SuccessRate[idx])
+                
             if(multirange_detection_rate.SuccessRate[idx] ==-9999):  #@shiv
-                rangedata = DetectionRangeReport_Multi(DetectionRange, 'NA')#@shiv
-            
-            writer.writerow(rangedata)      
-        
-              
-    # for idx_LG in range(gtd_data["timestamp_sec"].count()-1): 
-    #     match_found = False
-    #     if(gtd_data.label[idx_LG]!="no_object"):
-            
-    #         for idx_Auto in range(auto_percep_data["timestamp_sec"].count()-1):
-    #             # print("idx_LG", idx_LG)
-    #             # print("idx_Auto", idx_Auto)            
-    #             if(gtd_data.timestamp_sec[idx_LG] == auto_percep_data.timestamp_sec[idx_Auto]):
-    #                 if(gtd_stamping[idx_LG] == percep_stamping[idx_Auto]):
-    #                     lg_pos = [gtd_data.position_x[idx_LG], gtd_data.position_y[idx_LG],0]
-    #                     auto_pos = [auto_percep_data.corner_1_x[idx_Auto], auto_percep_data.centroid_y[idx_Auto],0]
-    #                     # print(lg_pos)
-    #                     # print(auto_pos)
-    #                     print("timestamp",auto_percep_data.timestamp_sec[idx_Auto])
-    #                     dist = distance.euclidean(lg_pos, auto_pos)
-    #                     diff_of_y = abs(auto_pos[1] - lg_pos[1])
-    #                     print("dist", dist)
-    #                     if(dist < 3.0 and diff_of_y < 2):
-    #                         match_found = True
-                        
-    #         if match_found == True:
-    #             print("match found")
-    #             with open('Perception_Report.csv','a', newline='') as csvfile:
-    #                 writer = csv.writer(csvfile)
-    #                 matched_data = Objects_Report(gtd_data.timestamp_sec[idx_LG],gtd_data.timestamp_nanosec[idx_LG],
-    #                                         gtd_data.label[idx_LG], gtd_data.position_x[idx_LG], 
-    #                                         gtd_data.position_y[idx_LG], gtd_data.position_z[idx_LG],
-    #                                         gtd_data.size_x[idx_LG], gtd_data.size_y[idx_LG],
-    #                                         gtd_data.size_z[idx_LG], match_found)
-    #                 writer.writerow(matched_data)
+                    rangedata = DetectionRangeReport_Multi(DetectionRange, 'NA')#@shiv
                 
-    #         else:
-    #             print("no match found")
-    #             with open('Perception_Report.csv','a', newline='') as csvfile:
-    #                 writer = csv.writer(csvfile)
-    #                 unmatched_data = Objects_Report(gtd_data.timestamp_sec[idx_LG],gtd_data.timestamp_nanosec[idx_LG],
-    #                                         gtd_data.label[idx_LG], gtd_data.position_x[idx_LG], 
-    #                                         gtd_data.position_y[idx_LG], gtd_data.position_z[idx_LG],
-    #                                         gtd_data.size_x[idx_LG], gtd_data.size_y[idx_LG],
-    #                                         gtd_data.size_z[idx_LG], match_found)
-                     
-    #                 writer.writerow(unmatched_data)
-                
-    #     else:
-    #         print("no_object")
-    #         with open('Perception_Report.csv','a', newline='') as csvfile:
-    #                 writer = csv.writer(csvfile)
-    #                 unmatched_data = Objects_Report(gtd_data.timestamp_sec[idx_LG],gtd_data.timestamp_nanosec[idx_LG],
-    #                                         gtd_data.label[idx_LG], gtd_data.position_x[idx_LG], 
-    #                                         gtd_data.position_y[idx_LG], gtd_data.position_z[idx_LG],
-    #                                         gtd_data.size_x[idx_LG], gtd_data.size_y[idx_LG],
-    #                                         gtd_data.size_z[idx_LG], match_found)
-    #                 writer.writerow(unmatched_data)
+            writer.writerow(rangedata)
             
     print("Check Computed Params")
     

@@ -28,39 +28,39 @@ def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error, avp_dem
     goal_pos_x = goalPose_loc.position_x[0]
     goal_pos_y = goalPose_loc.position_y[0]
     # Calculate deviation for each frame
-    for idx_LG in range(lg_ego_loc["timestamp_sec"].count()-1):  
-      
-      # Autonomous Stuff
-      lg_pos_y   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
-      lg_pos_x   = -(lg_ego_loc.position_y[idx_LG] - map_origion_error[1])
-
-      # Taltech 
-      if avp_demo_flag == True:
-        lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
-        lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
-
-       # Calculate Euclidean distance using x nad y values
-      deviation = math.sqrt((math.pow((goal_pos_x-lg_pos_x),2)) + (math.pow((goal_pos_y-lg_pos_y),2)))
-      print("deviation", deviation)
-       # Save data in to csv
-      with open(deviation_report,'a', newline='') as csvfile:
-          writer = csv.writer(csvfile)
+    with open(deviation_report,'a', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        for idx_LG in range(lg_ego_loc["timestamp_sec"].count()-1):  
+          
+          # Autonomous Stuff
+          lg_pos_y   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
+          lg_pos_x   = -(lg_ego_loc.position_y[idx_LG] - map_origion_error[1])
+    
+          # Taltech 
+          if avp_demo_flag == True:
+            lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
+            lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
+    
+           # Calculate Euclidean distance using x nad y values
+          deviation = math.sqrt((math.pow((goal_pos_x-lg_pos_x),2)) + (math.pow((goal_pos_y-lg_pos_y),2)))
+          print("deviation", deviation)
+           # Save data in to csv
 
           # Autonomous Stuff
           values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
-                                     -(lg_ego_loc.position_y[idx_LG]),lg_ego_loc.position_x[idx_LG], lg_ego_loc.position_z[idx_LG],
-                                     lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
-                                     lg_ego_loc.orientation_w[idx_LG], deviation)
-
-           # Taltech Map
+                                         -(lg_ego_loc.position_y[idx_LG]),lg_ego_loc.position_x[idx_LG], lg_ego_loc.position_z[idx_LG],
+                                         lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
+                                         lg_ego_loc.orientation_w[idx_LG], deviation)
+    
+               # Taltech Map
           if avp_demo_flag == True:
-            values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
-                                     lg_ego_loc.position_x[idx_LG],lg_ego_loc.position_y[idx_LG], lg_ego_loc.position_z[idx_LG],
-                                     lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
-                                     lg_ego_loc.orientation_w[idx_LG], deviation)
-
+                values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
+                                         lg_ego_loc.position_x[idx_LG],lg_ego_loc.position_y[idx_LG], lg_ego_loc.position_z[idx_LG],
+                                         lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
+                                         lg_ego_loc.orientation_w[idx_LG], deviation)
+    
           writer.writerow(values)   
-         
+             
 #function to calculate consolidated data from framewise data 
 def DeviationParams(location):
     print("Computing deviation params")
@@ -122,8 +122,10 @@ def main(args=None):
     config.read(currentpath + '/config.ini')
 
     # read values from a section
-    bool_val_taltech = config.getboolean('autoware_stack_map', 'taltech')
-    bool_val_autonomoustuff = config.getboolean('autoware_stack_map', 'autonomoustuff')
+    bool_val_taltech = config.getboolean('avp_demo', 'taltech')
+    bool_val_autonomoustuff = config.getboolean('avp_demo', 'autonomoustuff')
+
+    print("Avp taltech  :", bool_val_taltech)
 
     origin_x = config.getint('error_map_offset', 'map_lanelet2_scene_offset_x')
     origin_y = config.getint('error_map_offset', 'map_lanelet2_scene_offset_y')
