@@ -52,7 +52,7 @@ right = lgsvl.utils.transform_to_right(spawns[0])
 
 
 state = lgsvl.AgentState()
-state.transform.position = spawns[0].position - 5 * forward
+state.transform.position = spawns[0].position - 5 * right#- 1 * forward
 state.transform.rotation = spawns[0].rotation
 #state.transform.position = spawns[0].position - 5 * right ## for lane change
 #state.transform.rotation = spawns[0].rotation
@@ -70,7 +70,7 @@ ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGS
 state = lgsvl.AgentState()
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
-state.velocity = 5 * forward
+state.velocity = 10 * forward
 
 # 20 meters ahead, on left lane
 state.transform.position = spawns[0].position + 20 * forward
@@ -140,7 +140,7 @@ point = (
 state = lgsvl.AgentState()
 # state.transform = sim.map_point_on_lane(point)
 
-state.transform.position = spawns[0].position + 40 * forward
+state.transform.position = spawns[0].position + 30 * forward
 state.transform.rotation = spawns[0].rotation #+ 100
 
 npc1 = sim.add_agent("Jeep", lgsvl.AgentType.NPC, state,lgsvl.Vector(1, 1, 0))
@@ -153,8 +153,8 @@ npc1.on_stop_line(on_stop_line)
 # npc1.follow(waypoints1)
 
 #input("Press Enter to drive forward for 25 seconds (1x)")
-# t0 = time.time()
-# sim.run(time_limit=25, time_scale=1)
-# t1 = time.time()
-sim.run()
+t0 = time.time()
+sim.run(time_limit=25, time_scale=1)
+t1 = time.time()
+#sim.run()
 

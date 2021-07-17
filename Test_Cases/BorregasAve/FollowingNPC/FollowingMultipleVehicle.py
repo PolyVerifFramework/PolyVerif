@@ -54,7 +54,7 @@ state = lgsvl.AgentState()
 #state.transform.rotation = spawns[1].rotation
 state.transform.position = spawns[0].position - 5 * right
 state.transform.rotation = spawns[0].rotation
-state.velocity = 5 * forward
+state.velocity = 15 * forward
 ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "myLexusVehicle"), lgsvl.AgentType.EGO, state)
 
 # An EGO will not connect to a bridge unless commanded to
@@ -67,7 +67,7 @@ ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGS
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
 statej = lgsvl.AgentState()
-statej.transform.position = spawns[0].position #- 5 * right
+statej.transform.position = spawns[0].position - 5 * right + 40 *forward
 statej.transform.rotation = spawns[0].rotation 
 statej.velocity = 10 * forward
 jeep = sim.add_agent("Jeep", lgsvl.AgentType.NPC, statej)
@@ -82,31 +82,31 @@ statej.velocity = 10 * forward
 sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, statej)
 sedan.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
 
+statej = lgsvl.AgentState()
+statej.transform.position = spawns[0].position + 10 * forward
+statej.transform.rotation = spawns[0].rotation 
+statej.velocity = 10 * forward
+sedan1 = sim.add_agent("Sedan", lgsvl.AgentType.NPC, statej)
+sedan1.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
 
 statej = lgsvl.AgentState()
-statej.transform.position = spawns[0].position #+ 20 * forward
+statej.transform.position = spawns[0].position + (100 * forward) 
 statej.transform.rotation = spawns[0].rotation 
 statej.velocity = 25 * forward
 suv = sim.add_agent("SUV", lgsvl.AgentType.NPC, statej)
 
 suv.follow_closest_lane(True, 13.5)
+statej = lgsvl.AgentState()
+statej.transform.position = spawns[0].position + (80 * forward) 
+statej.transform.rotation = spawns[0].rotation 
+statej.velocity = 35 * forward
+suv1 = sim.add_agent("SUV", lgsvl.AgentType.NPC, statej)
+
+suv1.follow_closest_lane(True, 15.5)
+
 right = lgsvl.utils.transform_to_right(spawns[0])
-
-for i, name in enumerate(["Sedan", "SUV", "Hatchback"]):
-    state1 = lgsvl.AgentState()
-
-    # Spawn NPC vehicles 10 meters ahead of the EGO
-    state1.transform.position = spawns[0].position + (40 * forward) - (4.0 * i * right) # + 10.0 * forward
-    state1.transform.rotation = spawns[0].rotation
-    state1.velocity = 10 * forward
-    npc = sim.add_agent(name, lgsvl.AgentType.NPC, state1)
-    npc.follow_closest_lane(True, 12)
-
-
 
 #input("Press Enter to drive forward for 25 seconds (1x)")
 t0 = time.time()
 sim.run(time_limit=25, time_scale=1)
 t1 = time.time()
-
-

@@ -14,7 +14,6 @@ import os
 from pathlib import Path
 env = Env()
 
-print("Ego follows non ego vehicles")
 # Taking arguments for weather parameters and scene
 rain = 0
 fog = 0
@@ -52,24 +51,42 @@ right = lgsvl.utils.transform_to_right(spawns[0])
 
 
 state = lgsvl.AgentState()
-state.transform.position = spawns[0].position #- 3 * right
+#state.transform = spawns[0]
+state.transform.position = spawns[0].position - 2 * right
 state.transform.rotation = spawns[0].rotation
-state.velocity = 20 * forward
-ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "myLexusVehicle"), lgsvl.AgentType.EGO, state)
+#state.transform.position = spawns[0].position - 5 * right
+#state.transform.rotation = spawns[0].rotation
+# state.velocity = 10 * forward
+# tr = spawns[0]
+# t1 = sim.map_from_gps(
+#     northing=4137773.15130157,
+#     easting=596690.508709717,
+#     altitude=-19.1056592464447,
+#     orientation=310,
+# )
+# print("Transform from northing/easting: {}".format(t1))
+
+# state.transform = t1
+ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "AVPCar"), lgsvl.AgentType.EGO, state)
 
 # An EGO will not connect to a bridge unless commanded to
 print("Bridge connected:", ego.bridge_connected)
 
 # The EGO is now looking for a bridge at the specified IP and port
-ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGSVL__AUTOPILOT_0_PORT", 9090))
+#ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGSVL__AUTOPILOT_0_PORT", 9090))
+ego.connect_bridge(os.environ.get("BRIDGE_HOST", "127.0.0.1"), 9090)
 
-statej = lgsvl.AgentState()
-statej.transform.position = spawns[0].position + 20 * forward
-statej.transform.rotation = spawns[0].rotation 
-statej.velocity = 20 * forward
-sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, statej)
-#sedan.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
+for i, name in enumerate(["SUV", "Jeep", "SUV"]):
+    state1 = lgsvl.AgentState()
+    state1.transform.position = spawns[0].position + (20 * forward) - (4.0 * i * right) # + 10.0 * forward
+    state1.transform.rotation = spawns[0].rotation
+    npc = sim.add_agent(name, lgsvl.AgentType.NPC, state1)
+    npc.follow_closest_lane(True, 12)
+
+#input("press Enter to run ")
+#sim.run()
 
 t0 = time.time()
-sim.run(time_limit=25, time_scale=1)
+sim.run(time_limit=20, time_scale=1)
 t1 = time.time()
+# sim.stop()

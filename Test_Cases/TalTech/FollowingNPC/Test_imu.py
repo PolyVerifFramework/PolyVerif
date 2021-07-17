@@ -37,7 +37,7 @@ if sys.argv[1]:
    damage = float(sys.argv[5])
    scene = sys.argv[6]
 
-print("This test case will allow user to modify and add noise/error to the generated IMU Data")
+print("Running Scenario in which there is no Vehicle available in any Lane")
 sim = lgsvl.Simulator(env.str("LGSVL__SIMULATOR_HOST", "127.0.0.1"), env.int("LGSVL__SIMULATOR_PORT", 8181))
 if sim.current_scene == scene:
     sim.reset()
