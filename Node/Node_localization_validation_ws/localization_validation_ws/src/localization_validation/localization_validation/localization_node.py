@@ -88,9 +88,14 @@ class LocalizationValidation(Node):
       global file_path
       with open(file_path + '/GNSS_ODOM_Localization.csv','a', newline='') as csvfile:
          writer = csv.writer(csvfile)
-         gnss_odom = GNSS_Odom(msg.header.frame_id, msg.child_frame_id, msg.header.stamp.sec, msg.header.stamp.nanosec, msg.pose.pose.position.x,
-         msg.pose.pose.position.y, msg.pose.pose.position.z, msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, 
-         msg.pose.pose.orientation.w)
+         #gnss_odom = GNSS_Odom(msg.header.frame_id, msg.child_frame_id, msg.header.stamp.sec, msg.header.stamp.nanosec, msg.pose.pose.position.x,
+         #msg.pose.pose.position.y, msg.pose.pose.position.z, msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, 
+         #msg.pose.pose.orientation.w)
+         
+         # lg coordinate system  -> x = -y || y = x data converstion from lg coordinate system to autoware coocrdinate system
+         gnss_odom = GNSS_Odom(msg.header.frame_id, msg.child_frame_id, msg.header.stamp.sec, msg.header.stamp.nanosec,-(msg.pose.pose.position.y), 
+         msg.pose.pose.position.x, msg.pose.pose.position.z, msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, 
+         msg.pose.pose.orientation.w) # lg coordinate system  -> x = -y || y = x data converstion from lg coordinate system to autoware coocrdinate system
          writer.writerow(gnss_odom) 
      
 
@@ -105,7 +110,6 @@ class LocalizationValidation(Node):
 
 
 def main(args=None):
-
   observer = Observer()
   event_handler = Handler() 
   observer.schedule(event_handler, path='PolyReports/Validation_report/config.txt') 

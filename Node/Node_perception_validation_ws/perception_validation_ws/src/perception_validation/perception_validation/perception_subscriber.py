@@ -115,6 +115,60 @@ class PublishingSubscriber(Node):
     f_path.close()  
 
 #for lg_data
+  # def lg_callback(self, msg):
+  #     global file_path
+  #     global lgstamp
+  #     global autostamp
+  #     global framenum
+
+  #     lgstamp = msg.header.stamp.sec
+      
+  #     #print(framenum)
+  #     # Process only frames which have groundtruth data in LG Simulator  
+  #     if len(msg.detections) >  0:
+  #       #self.itrate_data(msg) 
+  #       #self.perception_validation(msg)
+  #       self.perception_validation_IOU(msg)
+  #       #objprecval.per_vali(msg)
+  #     else:
+  #        print("No vehicle in the LG Scene : ", len(msg.detections))
+  #     if len(msg.detections)==0:
+  #        objects =  Objects_GTD("lidar", framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, False, False, "no_object", 0.0, 0.0 ,
+  #              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+  #        with open(file_path + '/Objects_GTD_Perception.csv','a', newline='') as csvfile:
+  #           writer = csv.writer(csvfile)          
+  #           writer.writerow(objects)
+  #     if len(msg.detections) >  0:
+  #         c_lg_bbox = 0
+  #         #print("number of box : ", len(msg.detections))
+  #         while len(msg.detections) > 0:
+  #           objects =  Objects_GTD("lidar", framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, True, False,
+  #                 msg.detections[c_lg_bbox].label, 
+  #                 msg.detections[c_lg_bbox].bbox.position.position.x ,
+  #                 msg.detections[c_lg_bbox].bbox.position.position.y, 
+  #                 msg.detections[c_lg_bbox].bbox.position.position.z,
+  #                 msg.detections[c_lg_bbox].bbox.size.x,
+  #                 msg.detections[c_lg_bbox].bbox.size.y, 
+  #                 msg.detections[c_lg_bbox].bbox.size.y,
+  #                 msg.detections[c_lg_bbox].bbox.position.orientation.x, 
+  #                 msg.detections[c_lg_bbox].bbox.position.orientation.y,
+  #                 msg.detections[c_lg_bbox].bbox.position.orientation.z,
+  #                 msg.detections[c_lg_bbox].bbox.position.orientation.w,
+  #                 msg.detections[c_lg_bbox].velocity.linear.x,
+  #                 msg.detections[c_lg_bbox].velocity.linear.y,
+  #                 msg.detections[c_lg_bbox].velocity.linear.z,
+  #                 msg.detections[c_lg_bbox].velocity.angular.x,
+  #                 msg.detections[c_lg_bbox].velocity.angular.y,
+  #                 msg.detections[c_lg_bbox].velocity.angular.z)
+  #                 #print(objects)
+  #           with open(file_path + '/Objects_GTD_Perception.csv','a', newline='') as csvfile:
+  #                 writer = csv.writer(csvfile)          
+  #                 writer.writerow(objects)
+  #           if len(msg.detections)-1 == c_lg_bbox :
+  #                 break;
+  #           c_lg_bbox = c_lg_bbox + 1
+  #     framenum = framenum+1
+
   def lg_callback(self, msg):
       global file_path
       global lgstamp
@@ -123,13 +177,9 @@ class PublishingSubscriber(Node):
 
       lgstamp = msg.header.stamp.sec
       
-      #print(framenum)
       # Process only frames which have groundtruth data in LG Simulator  
       if len(msg.detections) >  0:
-        #self.itrate_data(msg) 
-        #self.perception_validation(msg)
         self.perception_validation_IOU(msg)
-        #objprecval.per_vali(msg)
       else:
          print("No vehicle in the LG Scene : ", len(msg.detections))
       if len(msg.detections)==0:
@@ -140,9 +190,9 @@ class PublishingSubscriber(Node):
             writer.writerow(objects)
       if len(msg.detections) >  0:
           c_lg_bbox = 0
-          #print("number of box : ", len(msg.detections))
-          while len(msg.detections) > 0:
-            objects =  Objects_GTD("lidar", framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, True, False,
+          with open(file_path + '/Objects_GTD_Perception.csv','a', newline='') as csvfile:
+            while len(msg.detections) > 0:
+                objects =  Objects_GTD("lidar", framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, True, False,
                   msg.detections[c_lg_bbox].label, 
                   msg.detections[c_lg_bbox].bbox.position.position.x ,
                   msg.detections[c_lg_bbox].bbox.position.position.y, 
@@ -161,13 +211,70 @@ class PublishingSubscriber(Node):
                   msg.detections[c_lg_bbox].velocity.angular.y,
                   msg.detections[c_lg_bbox].velocity.angular.z)
                   #print(objects)
-            with open(file_path + '/Objects_GTD_Perception.csv','a', newline='') as csvfile:
-                  writer = csv.writer(csvfile)          
-                  writer.writerow(objects)
-            if len(msg.detections)-1 == c_lg_bbox :
-                  break;
-            c_lg_bbox = c_lg_bbox + 1
+                writer = csv.writer(csvfile)          
+                writer.writerow(objects)
+                if len(msg.detections)-1 == c_lg_bbox :
+                    break;
+                c_lg_bbox = c_lg_bbox + 1
       framenum = framenum+1
+
+  # def autoware_callback(self, msg):
+  #     global file_path
+  #     global lgstamp
+  #     global autostamp
+  #     global autoware_boxes
+  #     global framenum
+  #     #global file_path
+      
+  #     autostamp = msg.header.stamp.sec
+  #     autoware_boxes = msg.boxes
+  #     #print("Autoware Data : ", msg)
+  #     #print("number of box : ", len(autoware_boxes))
+  #     #if len(autoware_boxes) == 0 :
+  #     #    writer = csv.writer(csvfile)
+  #     #    autoware_percep_data = Autoware_Objects(framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, False, False,
+  #     #        "no_object","no_signal",0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 
+  #     #        0.0, 0.0, 0.0, 0.0,0.0, 0.0, 0.0,0.0, 0.0,0.0,0.0,0.0)
+  #     #    writer.writerow(autoware_percep_data)
+  #     c_autoware_boxes = 0
+  #     while len(autoware_boxes) > 0 :
+  #       with open(file_path + '/Autoware_PerceptionData.csv','a', newline='') as csvfile:
+  #           writer = csv.writer(csvfile)
+  #           autoware_percep_data = Autoware_Objects(framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, True, False,
+  #               autoware_boxes[c_autoware_boxes].vehicle_label, 
+  #               autoware_boxes[c_autoware_boxes].signal_label, 
+  #               autoware_boxes[c_autoware_boxes].class_likelihood,
+  #               autoware_boxes[c_autoware_boxes].centroid.x,
+  #               autoware_boxes[c_autoware_boxes].centroid.y,
+  #               autoware_boxes[c_autoware_boxes].centroid.z,
+  #               autoware_boxes[c_autoware_boxes].size.x,
+  #               autoware_boxes[c_autoware_boxes].size.y,
+  #               autoware_boxes[c_autoware_boxes].size.z,
+  #               autoware_boxes[c_autoware_boxes].corners[0].x,
+  #               autoware_boxes[c_autoware_boxes].corners[0].y,
+  #               autoware_boxes[c_autoware_boxes].corners[0].z,
+  #               autoware_boxes[c_autoware_boxes].corners[1].x,
+  #               autoware_boxes[c_autoware_boxes].corners[1].y,
+  #               autoware_boxes[c_autoware_boxes].corners[1].z,
+  #               autoware_boxes[c_autoware_boxes].corners[2].x,
+  #               autoware_boxes[c_autoware_boxes].corners[2].y,
+  #               autoware_boxes[c_autoware_boxes].corners[2].z,
+  #               autoware_boxes[c_autoware_boxes].corners[3].x,
+  #               autoware_boxes[c_autoware_boxes].corners[3].y,
+  #               autoware_boxes[c_autoware_boxes].corners[3].z,
+  #               autoware_boxes[c_autoware_boxes].orientation.x,
+  #               autoware_boxes[c_autoware_boxes].orientation.y,
+  #               autoware_boxes[c_autoware_boxes].orientation.z,
+  #               autoware_boxes[c_autoware_boxes].orientation.w,
+  #               autoware_boxes[c_autoware_boxes].velocity,
+  #               autoware_boxes[c_autoware_boxes].heading,
+  #               autoware_boxes[c_autoware_boxes].heading_rate,
+  #               autoware_boxes[c_autoware_boxes].value)
+
+  #           writer.writerow(autoware_percep_data)
+  #           if len(autoware_boxes)-1 == c_autoware_boxes :
+  #               break;
+  #           c_autoware_boxes = c_autoware_boxes + 1
 
   def autoware_callback(self, msg):
       global file_path
@@ -175,21 +282,12 @@ class PublishingSubscriber(Node):
       global autostamp
       global autoware_boxes
       global framenum
-      #global file_path
       
       autostamp = msg.header.stamp.sec
       autoware_boxes = msg.boxes
-      #print("Autoware Data : ", msg)
-      #print("number of box : ", len(autoware_boxes))
-      #if len(autoware_boxes) == 0 :
-      #    writer = csv.writer(csvfile)
-      #    autoware_percep_data = Autoware_Objects(framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, False, False,
-      #        "no_object","no_signal",0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 
-      #        0.0, 0.0, 0.0, 0.0,0.0, 0.0, 0.0,0.0, 0.0,0.0,0.0,0.0)
-      #    writer.writerow(autoware_percep_data)
       c_autoware_boxes = 0
-      while len(autoware_boxes) > 0 :
-        with open(file_path + '/Autoware_PerceptionData.csv','a', newline='') as csvfile:
+      with open(file_path + '/Autoware_PerceptionData.csv','a', newline='') as csvfile:
+        while len(autoware_boxes) > 0 :
             writer = csv.writer(csvfile)
             autoware_percep_data = Autoware_Objects(framenum, msg.header.stamp.sec, msg.header.stamp.nanosec, True, False,
                 autoware_boxes[c_autoware_boxes].vehicle_label, 
@@ -228,8 +326,6 @@ class PublishingSubscriber(Node):
             c_autoware_boxes = c_autoware_boxes + 1
 
   def perception_validation_IOU(self, msg):
-    
-      #print(len(msg.detections))
       c_lg_bbox = 0
       while len(msg.detections) > 0:
             if lgstamp == autostamp :
@@ -353,7 +449,6 @@ def main(args=None):
   	
   observer.start()
   print('Checking file modification in background .. ')
-
 
 # write curernt pid in file
   home = str(Path.home())
