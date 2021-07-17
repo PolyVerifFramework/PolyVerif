@@ -2,7 +2,7 @@
 """
 Created on Fri Feb 19 17:34:24 2021
 
-@author: Acclivis Technologies Pvt Ltd.
+@author:
 """
 import pandas as pd
 import csv  

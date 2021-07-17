@@ -5,8 +5,6 @@ echo "Setting the Environment variables..." > Poly_Suite/logfiles/logInfo.txt
 source /opt/AutowareAuto/setup.bash
 source lgsvl_msgs/install/setup.bash
 source ros2-lgsvl-bridge/install/setup.bash
-source Node/Node_lg_groundtruth_data_ws/lg_groundtruth_data_ws/install/setup.bash 
-#source Node/Node_control_validation_ws/control_validation_ws/install/setup.bash 
 
 # TODO need to add source for control validation
 

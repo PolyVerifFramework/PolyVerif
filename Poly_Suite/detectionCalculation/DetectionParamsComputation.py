@@ -2,14 +2,14 @@
 """
 Created on Wed Feb 24 13:05:09 2021
 
-@author: Acclivis Technologies Pvt Ltd.
+@author:
 """
 #from scipy.spatial import distance
 import math
 import pandas as pd
 from utils.acquisition_structures import DetectionRangeReport_Multi
 
-class PerceptionParams(object):
+class DetectionParams(object):
   def __init__(self, filename=None):
       self.filename = filename
 
@@ -33,7 +33,7 @@ class PerceptionParams(object):
       return maxrange
      
   #function to compute detection rate of objects using lidar sensor
-  #comparison between GT and perception using lidar sensor 
+  #comparison between GT and detetcion using lidar sensor 
   def ObjectDetection_Rate(matched_report):
       print("Entering in ObjectDetectionRate function")
       detections = 0

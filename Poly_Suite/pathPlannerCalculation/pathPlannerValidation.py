@@ -32,14 +32,17 @@ def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error, avp_dem
         writer = csv.writer(csvfile)
         for idx_LG in range(lg_ego_loc["timestamp_sec"].count()-1):  
           
-          # Autonomous Stuff
-          lg_pos_y   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
-          lg_pos_x   = -(lg_ego_loc.position_y[idx_LG] - map_origion_error[1])
+          # # Autonomous Stuff
+          # lg_pos_y   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
+          # lg_pos_x   = -(lg_ego_loc.position_y[idx_LG] - map_origion_error[1])
     
-          # Taltech 
-          if avp_demo_flag == True:
-            lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
-            lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
+          # # Taltech 
+          # if avp_demo_flag == True:
+          #   lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
+          #   lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
+
+          lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
+          lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
     
            # Calculate Euclidean distance using x nad y values
           deviation = math.sqrt((math.pow((goal_pos_x-lg_pos_x),2)) + (math.pow((goal_pos_y-lg_pos_y),2)))
@@ -47,14 +50,19 @@ def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error, avp_dem
            # Save data in to csv
 
           # Autonomous Stuff
-          values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
-                                         -(lg_ego_loc.position_y[idx_LG]),lg_ego_loc.position_x[idx_LG], lg_ego_loc.position_z[idx_LG],
-                                         lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
-                                         lg_ego_loc.orientation_w[idx_LG], deviation)
+          # values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
+          #                                -(lg_ego_loc.position_y[idx_LG]),lg_ego_loc.position_x[idx_LG], lg_ego_loc.position_z[idx_LG],
+          #                                lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
+          #                                lg_ego_loc.orientation_w[idx_LG], deviation)
     
-               # Taltech Map
-          if avp_demo_flag == True:
-                values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
+          #      # Taltech Map
+          # if avp_demo_flag == True:
+          #       values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
+          #                                lg_ego_loc.position_x[idx_LG],lg_ego_loc.position_y[idx_LG], lg_ego_loc.position_z[idx_LG],
+          #                                lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
+          #                                lg_ego_loc.orientation_w[idx_LG], deviation)
+
+          values = Deviation_Report(lg_ego_loc.timestamp_sec[idx_LG], lg_ego_loc.timestamp_nanosec[idx_LG],
                                          lg_ego_loc.position_x[idx_LG],lg_ego_loc.position_y[idx_LG], lg_ego_loc.position_z[idx_LG],
                                          lg_ego_loc.orientation_x[idx_LG],lg_ego_loc.orientation_y[idx_LG], lg_ego_loc.orientation_z[idx_LG],
                                          lg_ego_loc.orientation_w[idx_LG], deviation)
@@ -62,7 +70,7 @@ def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error, avp_dem
           writer.writerow(values)   
              
 #function to calculate consolidated data from framewise data 
-def DeviationParams(location):
+def DeviationParams(location, deviationFromGoalPos_maxThreshold):
     print("Computing deviation params")
     deviation_report = location + "/deviation_report.csv"
     deviation_data = Read_data(deviation_report) # Read per frame based deviation data
@@ -72,8 +80,9 @@ def DeviationParams(location):
     deviationFromGoalPos = deviation_data.deviation[lengthOfData - 1]
     deviationFromGoalPos = round(deviationFromGoalPos, 2)
     goalPosAchieved = False
-    print("deviationFromGoalPos", deviationFromGoalPos)
-    if(deviationFromGoalPos < 5):
+    print("deviationFromGoalPos", deviationFromGoalPos)            
+
+    if(deviationFromGoalPos < deviationFromGoalPos_maxThreshold):
       goalPosAchieved = True
     else:
       goalPosAchieved = False
@@ -84,7 +93,10 @@ def DeviationParams(location):
 
     goalPosD = str(deviationFromGoalPos)
     goalPosAchieveD = str(goalPosAchieved)
-    line = [goalPosD+"\n",goalPosAchieveD+"\n"]
+
+    noOfCollisionCount = str(collisonCount())
+
+    line = [goalPosD+"\n",goalPosAchieveD+"\n",noOfCollisionCount+"\n"]
 
     file.writelines(line)
     file.close()
@@ -94,6 +106,26 @@ def Read_data(filename):
     data = pd.read_csv(filename)
     #print(data.to_string()) 
     return data
+
+
+# need to test TODO
+
+# Calculate the collision using the lg simulator colliosn callback function.
+# User can overload this function by writing their own logic
+def collisonCount():
+    noOfCollision = 0
+    print("Number of collisions ")
+    currentpath = os.getcwd()
+    print("location : ", currentpath)
+    pos = currentpath.rfind('/')
+    adePath = currentpath[0:pos]
+    location = adePath + '/'
+    f_path = open(location + 'PolyReports/Validation_report/collisionCount.txt', 'r')
+    path = f_path.readline()
+    noOfCollision = path.strip()
+    f_path.close()
+    print("collision count : ", noOfCollision)
+    return noOfCollision
 
 #main function for calling various functions available in various classes
 def main(args=None):
@@ -122,10 +154,12 @@ def main(args=None):
     config.read(currentpath + '/config.ini')
 
     # read values from a section
-    bool_val_taltech = config.getboolean('avp_demo', 'taltech')
-    bool_val_autonomoustuff = config.getboolean('avp_demo', 'autonomoustuff')
+    bool_val_taltech = config.getboolean('autoware_stack_map', 'taltech')
+    bool_val_autonomoustuff = config.getboolean('autoware_stack_map', 'autonomoustuff')
+    deviationFromGoalPos_maxThreshold = config.getint('autonomous_stack_config', 'planner_goalpose_max_deviation')
 
     print("Avp taltech  :", bool_val_taltech)
+    print("planner goal pos max threshold : ", deviationFromGoalPos_maxThreshold)
 
     origin_x = config.getint('error_map_offset', 'map_lanelet2_scene_offset_x')
     origin_y = config.getint('error_map_offset', 'map_lanelet2_scene_offset_y')
@@ -151,7 +185,7 @@ def main(args=None):
     lg_ego_loc = Read_data(lg_ego_file)
     
     ComputeParams(goalPose_loc, lg_ego_loc, location + file_path, map_origion_error, avp_demo_flag)
-    DeviationParams(location + file_path)
+    DeviationParams(location + file_path, deviationFromGoalPos_maxThreshold)
     
     
 if __name__ == '__main__':

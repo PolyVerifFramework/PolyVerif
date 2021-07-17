@@ -408,8 +408,7 @@ qrc_background.cpp: ../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyV
 
 qrc_splash.cpp: ../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyVerifSuite/splash.qrc \
 		/usr/lib/qt5/bin/rcc \
-		../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyVerifSuite/AV_Testing.jpg \
-		../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyVerifSuite/car.jpg
+		../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyVerifSuite/AV_Testing.jpg
 	/usr/lib/qt5/bin/rcc -name splash ../../rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyVerifSuite/splash.qrc -o qrc_splash.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h

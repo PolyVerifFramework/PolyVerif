@@ -2,7 +2,7 @@
 """
 Created on Thu Feb 18 15:49:46 2021
 
-@author: Acclivis Technologies Pvt Ltd.
+@author: 
 """
 from typing import NamedTuple
 

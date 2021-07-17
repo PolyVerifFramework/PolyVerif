@@ -11,12 +11,13 @@ import csv
 #from scipy.spatial import distance
 
 from GenericParamComputation import GenericParams as gp
-from PerceptionParamsComputation import PerceptionParams as pp
+from DetectionParamsComputation import DetectionParams as pp
 from utils.acquisition_structures import Objects_Report
 from utils.acquisition_structures import DetectionRangeReport_Multi
 
+ 
 #function to save matching report
-def Perception_Validation(gtd_data, auto_percep_data,file_path):
+def Detection_Validation(gtd_data, auto_percep_data,file_path):
     matching_report_File = file_path + '/Perception_Report.csv'
     with open(matching_report_File,'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -62,7 +63,7 @@ def Perception_Validation(gtd_data, auto_percep_data,file_path):
 
 #function to compute various parameters
 def ComputeParams(gtd_data, auto_percep_data,file_path):
-    Perception_Validation(gtd_data, auto_percep_data,file_path)
+    Detection_Validation(gtd_data, auto_percep_data,file_path)
     matching_report_File = file_path +'/Perception_Report.csv'
 
     matched_report = Read_data(matching_report_File) 
@@ -74,7 +75,7 @@ def ComputeParams(gtd_data, auto_percep_data,file_path):
     
     multirange_detection_rate = pp.ObjectDetection_Rate_MultiRange(matched_report, maxrange)
     
-    print("Max Range Object Detected by Autoware Perception : ", maxrange[0:2])
+    print("Max Range Object Detected by Autoware Detection : ", maxrange[0:2])
     print("Max Range Object in LG GroundTruth : ", maxrange[2:4])
     print("Object Detection Success Rate in Percentage : ", detectionRate)
     #print("Object Detection Failure Rate in Rercentage : ", 100 - detectionRate)
@@ -107,7 +108,6 @@ def ComputeParams(gtd_data, auto_percep_data,file_path):
                 
             if(multirange_detection_rate.SuccessRate[idx] ==-9999):  #@shiv
                     rangedata = DetectionRangeReport_Multi(DetectionRange, 'NA')#@shiv
-                
             writer.writerow(rangedata)
             
     print("Check Computed Params")
@@ -131,7 +131,7 @@ def main(args=None):
     file_path = path.strip()
     f_path.close()
     print("adepath : ", adePath)
-    print("Calculating Perception Params.")
+    print("Calculating Detection Params.")
     #set files and thier paths
     gtd_filename = location + file_path + "/Objects_GTD_Perception.csv"
     auto_percep_file = location + file_path+ "/Autoware_PerceptionData.csv"

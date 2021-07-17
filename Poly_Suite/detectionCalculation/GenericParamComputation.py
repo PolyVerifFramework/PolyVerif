@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-Acclivis Technologies Pvt Ltd.
+# -*- coding: utf-8 -*-
 """
 Created on Tue Feb 23 19:02:11 2021
 
