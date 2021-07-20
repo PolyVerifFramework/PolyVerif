@@ -50,9 +50,9 @@ forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
 
 state = lgsvl.AgentState()
-state.transform.position = spawns[0].position - 5 * forward
-state.transform.rotation = spawns[0].rotation
-state.velocity = 10 * forward
+state.transform.position = spawns[0].position - 8 * forward
+state.transform.rotation = spawns[0].rotation - 10
+state.velocity = 7 * forward
 ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "myLexusVehicle"), lgsvl.AgentType.EGO, state)
 
 # An EGO will not connect to a bridge unless commanded to
@@ -65,13 +65,17 @@ ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGS
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
 state = lgsvl.AgentState()
-state.transform.position = spawns[0].position + 150 * forward
-state.transform.rotation = spawns[0].rotation + 60
+state.transform.position = spawns[0].position + (70 * forward) - (5.5 * right)#spawns[0].position + 70 * forward - 3 *right
+state.transform.rotation = spawns[0].rotation - 30               #6.2
 Sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
 
-
+forward = lgsvl.utils.transform_to_forward(spawns[0])
+right = lgsvl.utils.transform_to_right(spawns[0])
+state = lgsvl.AgentState()
+state.transform.position = spawns[0].position + (70 * forward) - (10 * right)#spawns[0].position + 70 * forward - 3 *right
+state.transform.rotation = spawns[0].rotation - 40               #6.2
+Sedan = sim.add_agent("SUV", lgsvl.AgentType.NPC, state)
+#sim.run()
 t0 = time.time()
 sim.run(time_limit=25, time_scale=1)
 t1 = time.time()
-
-

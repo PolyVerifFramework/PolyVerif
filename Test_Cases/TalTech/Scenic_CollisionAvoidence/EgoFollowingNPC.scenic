@@ -37,7 +37,7 @@ select_road = Uniform(*roads)
 select_lane = Uniform(*select_road.lanes)
 
 #OBJECT PLACEMENT
-leadCar = NPCCar on select_lane.centerline,
+leadCar = AutowareCar on select_lane.centerline,
 		with behavior FollowLaneBehavior()
 
 ego = Car following roadDirection from leadCar for INITIAL_DISTANCE_APART,
