@@ -1,4 +1,3 @@
-# ReadMe
 # PolyVerif
 
 PolyVerif AV Validation Suite
@@ -12,22 +11,24 @@ This document contains the information of installing and setup the component for
 The Simulator performance will be very slow if run on a lower PC configuration.
 
 Below is the PC configuration required:
-
-  PC Configuration:
-    •	CPU: Intel i7 10700
-    •	GPU: Nvidia RTX 2070 (8GB memory)
+	PC Configuration:
+	
+  	•	CPU: Intel i7 10700
+   	•	GPU: Nvidia RTX 2070 (8GB memory)
     •	OS: Ubuntu 14.04 and above 64-bit
     
   Prerequisite: 
+	
     •	Ubuntu
     •	Nodejs 12.16
     •	Python3.8
 
-  Steps follow to run the poly_suite application-
+Steps follow to run the poly_suite application
+	
     1. Install and setup AutowareAuto 
       Setup and install the AutowareAuto, so follow the below link to setup the AutowareAuto in your system, please refer the below point number from the Setup_And_Installation document –
           Point 2 - Setup Docker and Install AutowareAuto
-
+  
     2. Install and build lgsvl-msgs
       Setup and install the lgsvl-msgs which is used by the validation stack. Please refer the below point number from the Setup_And_Installation document –
         Point 3 - Install and Setup lgsvl_msgs package
