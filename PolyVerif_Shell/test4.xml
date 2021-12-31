@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolyVerifWithoutUI>
+  <TCRunner>
+    <TestScript  Type="Python"></TestScript>
+    <TestScript  Location="TC_StaticVehicle.py"></TestScript>
+    <Validation Type="Detection"></Validation>
+    <SceneType>Normal</SceneType>
+    <SceneLocation name="BorregasAve"></SceneLocation>
+  </TCRunner>
+</PolyVerifWithoutUI>
