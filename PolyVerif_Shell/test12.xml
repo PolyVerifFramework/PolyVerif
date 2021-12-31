@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolyVerifWithoutUI>
+  <TCRunner>
+    <TestScript  Type="Scenic"></TestScript>
+    <TestScript  Location="AvoidingCollision.scenic"></TestScript>
+    <Validation Type="Control"></Validation>
+    <SceneType>Normal</SceneType>
+    <SceneLocation name="CubeTown"></SceneLocation>
+  </TCRunner>
+</PolyVerifWithoutUI>

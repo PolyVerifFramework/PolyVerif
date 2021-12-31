@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolyVerifWithoutUI>
+  <TCRunner>
+    <TestScript  Type="scenic"></TestScript>
+    <TestScript  Location="TCavp2.scenic"></TestScript>
+    <Validation Type="Localization"></Validation>
+    <SceneType>AVP</SceneType>
+    <SceneLocation name="TalTech"></SceneLocation>
+  </TCRunner>
+</PolyVerifWithoutUI>
