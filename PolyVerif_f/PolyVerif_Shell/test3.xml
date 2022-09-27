@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolyVerifWithoutUI>
+  <TCRunner>
+    <TestScript  Type="Python"></TestScript>
+    <TestScript  Location="EgoFollowsNPC.py"></TestScript>
+    <Validation Type="Detection"></Validation>
+    <SceneType>Normal</SceneType>
+    <SceneLocation name="CubeTown"></SceneLocation>
+  </TCRunner>
+</PolyVerifWithoutUI>

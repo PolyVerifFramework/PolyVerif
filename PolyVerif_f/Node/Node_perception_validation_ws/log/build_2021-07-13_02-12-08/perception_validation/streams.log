@@ -1,0 +1,24 @@
+[0.346s] Invoking command in '/home/acclivis/Node/Node_perception_validation_ws/perception_validation_ws/src/perception_validation': PYTHONPATH=/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/perception_validation build --build-base /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build install --prefix /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation --record /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log --single-version-externally-managed
+[0.550s] running egg_info
+[0.550s] writing ../../../build/perception_validation/perception_validation.egg-info/PKG-INFO
+[0.550s] writing dependency_links to ../../../build/perception_validation/perception_validation.egg-info/dependency_links.txt
+[0.551s] writing entry points to ../../../build/perception_validation/perception_validation.egg-info/entry_points.txt
+[0.551s] writing requirements to ../../../build/perception_validation/perception_validation.egg-info/requires.txt
+[0.551s] writing top-level names to ../../../build/perception_validation/perception_validation.egg-info/top_level.txt
+[0.578s] reading manifest file '../../../build/perception_validation/perception_validation.egg-info/SOURCES.txt'
+[0.579s] writing manifest file '../../../build/perception_validation/perception_validation.egg-info/SOURCES.txt'
+[0.579s] running build
+[0.579s] running build_py
+[0.580s] copying perception_validation/perception_subscriber.py -> /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation
+[0.580s] running install
+[0.581s] running install_lib
+[0.583s] copying /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation/perception_subscriber.py -> /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation
+[0.583s] byte-compiling /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation/perception_subscriber.py to perception_subscriber.cpython-38.pyc
+[0.586s] running install_data
+[0.587s] running install_egg_info
+[0.588s] removing '/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation-0.0.0-py3.8.egg-info' (and everything under it)
+[0.589s] Copying ../../../build/perception_validation/perception_validation.egg-info to /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation-0.0.0-py3.8.egg-info
+[0.589s] running install_scripts
+[0.605s] Installing perception_subscriber script to /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/perception_validation
+[0.605s] writing list of installed files to '/home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log'
+[0.634s] Invoked command in '/home/acclivis/Node/Node_perception_validation_ws/perception_validation_ws/src/perception_validation' returned '0': PYTHONPATH=/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/perception_validation build --build-base /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build install --prefix /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation --record /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log --single-version-externally-managed

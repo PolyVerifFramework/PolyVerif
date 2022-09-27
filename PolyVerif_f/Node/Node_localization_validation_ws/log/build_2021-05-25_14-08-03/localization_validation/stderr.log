@@ -1,0 +1,3 @@
+Sorry: IndentationError: unexpected indent (localization_node.py, line 99)
+Sorry: IndentationError: unindent does not match any outer indentation level (acquisition_structures.py, line 148)
+error: can't copy 'resource/localization_validation': doesn't exist or not a regular file

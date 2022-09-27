@@ -1,0 +1,19 @@
+running egg_info
+writing ../../../build/perception_validation/perception_validation.egg-info/PKG-INFO
+writing dependency_links to ../../../build/perception_validation/perception_validation.egg-info/dependency_links.txt
+writing entry points to ../../../build/perception_validation/perception_validation.egg-info/entry_points.txt
+writing requirements to ../../../build/perception_validation/perception_validation.egg-info/requires.txt
+writing top-level names to ../../../build/perception_validation/perception_validation.egg-info/top_level.txt
+reading manifest file '../../../build/perception_validation/perception_validation.egg-info/SOURCES.txt'
+writing manifest file '../../../build/perception_validation/perception_validation.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../../build/perception_validation/perception_validation.egg-info to /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation-0.0.0-py3.8.egg-info
+running install_scripts
+Installing perception_subscriber script to /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/perception_validation
+writing list of installed files to '/home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log'

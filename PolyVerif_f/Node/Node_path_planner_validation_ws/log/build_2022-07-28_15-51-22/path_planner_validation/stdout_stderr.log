@@ -1,0 +1,38 @@
+running egg_info
+creating ../../../build/path_planner_validation/path_planner_validation.egg-info
+writing ../../../build/path_planner_validation/path_planner_validation.egg-info/PKG-INFO
+writing dependency_links to ../../../build/path_planner_validation/path_planner_validation.egg-info/dependency_links.txt
+writing entry points to ../../../build/path_planner_validation/path_planner_validation.egg-info/entry_points.txt
+writing requirements to ../../../build/path_planner_validation/path_planner_validation.egg-info/requires.txt
+writing top-level names to ../../../build/path_planner_validation/path_planner_validation.egg-info/top_level.txt
+writing manifest file '../../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+reading manifest file '../../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+writing manifest file '../../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build
+creating /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build/lib
+creating /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build/lib/path_planner_validation
+copying path_planner_validation/acquisition_structures.py -> /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build/lib/path_planner_validation
+copying path_planner_validation/path_planner_node.py -> /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build/lib/path_planner_validation
+copying path_planner_validation/__init__.py -> /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build/lib/path_planner_validation
+running install
+running install_lib
+creating /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation
+copying /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build/lib/path_planner_validation/acquisition_structures.py -> /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation
+copying /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build/lib/path_planner_validation/path_planner_node.py -> /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation
+copying /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build/lib/path_planner_validation/__init__.py -> /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation
+byte-compiling /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation/acquisition_structures.py to acquisition_structures.cpython-38.pyc
+byte-compiling /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation/path_planner_node.py to path_planner_node.cpython-38.pyc
+byte-compiling /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/share/ament_index
+creating /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/share/ament_index/resource_index
+creating /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/share/ament_index/resource_index/packages
+copying resource/path_planner_validation -> /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/share/ament_index/resource_index/packages
+copying package.xml -> /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/share/path_planner_validation
+running install_egg_info
+Copying ../../../build/path_planner_validation/path_planner_validation.egg-info to /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation-1.0.0-py3.8.egg-info
+running install_scripts
+Installing path_planner_node script to /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/path_planner_validation
+writing list of installed files to '/home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/install.log'

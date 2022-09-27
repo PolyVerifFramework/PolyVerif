@@ -1,0 +1,6 @@
+Invoking command in '/home/acclivis/avp_demo/build/avp_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/acclivis/avp_demo -DCMAKE_INSTALL_PREFIX=/home/acclivis/avp_demo/install/avp_demo
+Invoked command in '/home/acclivis/avp_demo/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/acclivis/avp_demo -DCMAKE_INSTALL_PREFIX=/home/acclivis/avp_demo/install/avp_demo
+Invoking command in '/home/acclivis/avp_demo/build/avp_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/acclivis/avp_demo/build/avp_demo -- -j6 -l6
+Invoked command in '/home/acclivis/avp_demo/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/acclivis/avp_demo/build/avp_demo -- -j6 -l6
+Invoking command in '/home/acclivis/avp_demo/build/avp_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/acclivis/avp_demo/build/avp_demo
+Invoked command in '/home/acclivis/avp_demo/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/acclivis/avp_demo/build/avp_demo

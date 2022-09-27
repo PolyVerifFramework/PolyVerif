@@ -1,0 +1,21 @@
+[0.238s] Invoking command in '/home/acclivis/Node/Node_path_planner_validation_ws/path_planner_validation_ws/src/path_planner_validation': PYTHONPATH=/home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/path_planner_validation build --build-base /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build install --prefix /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation --record /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/install.log --single-version-externally-managed
+[0.482s] running egg_info
+[0.483s] writing ../../../build/path_planner_validation/path_planner_validation.egg-info/PKG-INFO
+[0.483s] writing dependency_links to ../../../build/path_planner_validation/path_planner_validation.egg-info/dependency_links.txt
+[0.483s] writing entry points to ../../../build/path_planner_validation/path_planner_validation.egg-info/entry_points.txt
+[0.483s] writing requirements to ../../../build/path_planner_validation/path_planner_validation.egg-info/requires.txt
+[0.483s] writing top-level names to ../../../build/path_planner_validation/path_planner_validation.egg-info/top_level.txt
+[0.567s] reading manifest file '../../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+[0.568s] writing manifest file '../../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+[0.568s] running build
+[0.568s] running build_py
+[0.568s] running install
+[0.573s] running install_lib
+[0.574s] running install_data
+[0.575s] running install_egg_info
+[0.576s] removing '/home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation-1.0.0-py3.8.egg-info' (and everything under it)
+[0.577s] Copying ../../../build/path_planner_validation/path_planner_validation.egg-info to /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages/path_planner_validation-1.0.0-py3.8.egg-info
+[0.577s] running install_scripts
+[0.594s] Installing path_planner_node script to /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/path_planner_validation
+[0.595s] writing list of installed files to '/home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/install.log'
+[0.628s] Invoked command in '/home/acclivis/Node/Node_path_planner_validation_ws/path_planner_validation_ws/src/path_planner_validation' returned '0': PYTHONPATH=/home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/path_planner_validation build --build-base /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/build install --prefix /home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation --record /home/acclivis/Node/Node_path_planner_validation_ws/build/path_planner_validation/install.log --single-version-externally-managed

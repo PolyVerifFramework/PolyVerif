@@ -1,0 +1,15 @@
+running egg_info
+writing ../../../build/localization_validation/localization_validation.egg-info/PKG-INFO
+writing dependency_links to ../../../build/localization_validation/localization_validation.egg-info/dependency_links.txt
+writing entry points to ../../../build/localization_validation/localization_validation.egg-info/entry_points.txt
+writing requirements to ../../../build/localization_validation/localization_validation.egg-info/requires.txt
+writing top-level names to ../../../build/localization_validation/localization_validation.egg-info/top_level.txt
+reading manifest file '../../../build/localization_validation/localization_validation.egg-info/SOURCES.txt'
+writing manifest file '../../../build/localization_validation/localization_validation.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+byte-compiling /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation/localization_node.py to localization_node.cpython-38.pyc
+byte-compiling /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation/acquisition_structures.py to acquisition_structures.cpython-38.pyc
+running install_data

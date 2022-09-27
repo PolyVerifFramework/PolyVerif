@@ -1,0 +1,3 @@
+[console_scripts]
+localization_node = localization_validation.localization_node:main
+

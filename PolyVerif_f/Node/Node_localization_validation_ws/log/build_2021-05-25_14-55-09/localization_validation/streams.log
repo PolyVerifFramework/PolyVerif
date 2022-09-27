@@ -1,0 +1,24 @@
+[0.273s] Invoking command in '/home/acclivis/Node/Node_localization_validation_ws/localization_validation_ws/src/localization_validation': PYTHONPATH=/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/localization_validation build --build-base /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build install --prefix /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation --record /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/install.log --single-version-externally-managed
+[0.521s] running egg_info
+[0.522s] writing ../../../build/localization_validation/localization_validation.egg-info/PKG-INFO
+[0.522s] writing dependency_links to ../../../build/localization_validation/localization_validation.egg-info/dependency_links.txt
+[0.522s] writing entry points to ../../../build/localization_validation/localization_validation.egg-info/entry_points.txt
+[0.522s] writing requirements to ../../../build/localization_validation/localization_validation.egg-info/requires.txt
+[0.523s] writing top-level names to ../../../build/localization_validation/localization_validation.egg-info/top_level.txt
+[0.556s] reading manifest file '../../../build/localization_validation/localization_validation.egg-info/SOURCES.txt'
+[0.557s] writing manifest file '../../../build/localization_validation/localization_validation.egg-info/SOURCES.txt'
+[0.558s] running build
+[0.558s] running build_py
+[0.559s] copying localization_validation/localization_node.py -> /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation
+[0.559s] running install
+[0.560s] running install_lib
+[0.561s] copying /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation/localization_node.py -> /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation
+[0.562s] byte-compiling /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation/localization_node.py to localization_node.cpython-38.pyc
+[0.566s] running install_data
+[0.566s] running install_egg_info
+[0.568s] removing '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation-1.0.0-py3.8.egg-info' (and everything under it)
+[0.569s] Copying ../../../build/localization_validation/localization_validation.egg-info to /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation-1.0.0-py3.8.egg-info
+[0.570s] running install_scripts
+[0.589s] Installing localization_node script to /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/localization_validation
+[0.589s] writing list of installed files to '/home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/install.log'
+[0.637s] Invoked command in '/home/acclivis/Node/Node_localization_validation_ws/localization_validation_ws/src/localization_validation' returned '0': PYTHONPATH=/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/localization_validation build --build-base /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build install --prefix /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation --record /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/install.log --single-version-externally-managed
