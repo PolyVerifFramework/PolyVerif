@@ -1,0 +1,22 @@
+running egg_info
+writing ../../../build/control_validation/control_validation.egg-info/PKG-INFO
+writing dependency_links to ../../../build/control_validation/control_validation.egg-info/dependency_links.txt
+writing entry points to ../../../build/control_validation/control_validation.egg-info/entry_points.txt
+writing requirements to ../../../build/control_validation/control_validation.egg-info/requires.txt
+writing top-level names to ../../../build/control_validation/control_validation.egg-info/top_level.txt
+reading manifest file '../../../build/control_validation/control_validation.egg-info/SOURCES.txt'
+writing manifest file '../../../build/control_validation/control_validation.egg-info/SOURCES.txt'
+running build
+running build_py
+copying control_validation/control_subscriber.py -> /home/acclivis/Node/Node_control_validation_ws/build/control_validation/build/lib/control_validation
+running install
+running install_lib
+copying /home/acclivis/Node/Node_control_validation_ws/build/control_validation/build/lib/control_validation/control_subscriber.py -> /home/acclivis/Node/Node_control_validation_ws/install/control_validation/lib/python3.8/site-packages/control_validation
+byte-compiling /home/acclivis/Node/Node_control_validation_ws/install/control_validation/lib/python3.8/site-packages/control_validation/control_subscriber.py to control_subscriber.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/acclivis/Node/Node_control_validation_ws/install/control_validation/lib/python3.8/site-packages/control_validation-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../../build/control_validation/control_validation.egg-info to /home/acclivis/Node/Node_control_validation_ws/install/control_validation/lib/python3.8/site-packages/control_validation-0.0.0-py3.8.egg-info
+running install_scripts
+Installing control_subscriber script to /home/acclivis/Node/Node_control_validation_ws/install/control_validation/lib/control_validation
+writing list of installed files to '/home/acclivis/Node/Node_control_validation_ws/build/control_validation/install.log'

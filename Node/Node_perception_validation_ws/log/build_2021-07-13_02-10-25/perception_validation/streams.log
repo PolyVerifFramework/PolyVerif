@@ -1,0 +1,25 @@
+[0.493s] Invoking command in '/home/acclivis/Node/Node_perception_validation_ws/perception_validation_ws/src/perception_validation': PYTHONPATH=/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/perception_validation build --build-base /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build install --prefix /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation --record /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log --single-version-externally-managed
+[0.700s] running egg_info
+[0.701s] writing ../../../build/perception_validation/perception_validation.egg-info/PKG-INFO
+[0.702s] writing dependency_links to ../../../build/perception_validation/perception_validation.egg-info/dependency_links.txt
+[0.702s] writing entry points to ../../../build/perception_validation/perception_validation.egg-info/entry_points.txt
+[0.702s] writing requirements to ../../../build/perception_validation/perception_validation.egg-info/requires.txt
+[0.703s] writing top-level names to ../../../build/perception_validation/perception_validation.egg-info/top_level.txt
+[0.730s] reading manifest file '../../../build/perception_validation/perception_validation.egg-info/SOURCES.txt'
+[0.736s] writing manifest file '../../../build/perception_validation/perception_validation.egg-info/SOURCES.txt'
+[0.737s] running build
+[0.737s] running build_py
+[0.737s] copying perception_validation/perception_subscriber.py -> /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation
+[0.737s] running install
+[0.738s] running install_lib
+[0.739s] copying /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation/perception_subscriber.py -> /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation
+[0.740s] byte-compiling /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation/perception_subscriber.py to perception_subscriber.cpython-38.pyc
+[0.741s] Sorry: IndentationError: unexpected indent (perception_subscriber.py, line 213)
+[0.741s] running install_data
+[0.742s] running install_egg_info
+[0.743s] removing '/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation-0.0.0-py3.8.egg-info' (and everything under it)
+[0.744s] Copying ../../../build/perception_validation/perception_validation.egg-info to /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation-0.0.0-py3.8.egg-info
+[0.745s] running install_scripts
+[0.762s] Installing perception_subscriber script to /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/perception_validation
+[0.763s] writing list of installed files to '/home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log'
+[0.782s] Invoked command in '/home/acclivis/Node/Node_perception_validation_ws/perception_validation_ws/src/perception_validation' returned '0': PYTHONPATH=/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/perception_validation build --build-base /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build install --prefix /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation --record /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log --single-version-externally-managed

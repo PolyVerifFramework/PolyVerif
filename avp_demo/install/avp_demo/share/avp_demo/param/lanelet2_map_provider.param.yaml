@@ -1,0 +1,23 @@
+# params/lanelet2_map_publisher.param.yaml
+---
+
+/**:
+   ros__parameters:
+     # map_osm_file: "/home/acclivis/avp_demo/data/my_autonomoustuff_parking_lot.osm"
+     map_osm_file: "/home/acclivis/avp_demo/data/JTA_R1.osm"
+     #map_osm_file: "/home/acclivis/avp_demo/data/Taltech_original.osm"
+     # The earth-map transform is given by the point cloud map, but when the osm file is projected
+     # into the map frame, they might not match exactly. These parameters allow specifying a small
+     # correction to the position of the map frame origin for the purpose of this projection. 
+     # Added as part of issue #847. The values are in degrees.
+     # origin_offset_lat: -2100.239983224214484e-06
+     # origin_offset_lon: 125.5845488187978845e-06
+     #origin_offset_lat: -2085.239983224214484e-06    #taltech map offset
+     #origin_offset_lon: 125.5845488187978845e-06     #taltech map offset
+     #origin_offset_lat: 22.013997    #//ku map
+     #origin_offset_lon: 146.575701   #//ku map
+     #origin_offset_lat: -5.239983224214484e-06
+     #origin_offset_lon: 4.5845488187978845e-06
+     origin_offset_lat: -7.0551414  #JTA Map offset
+     origin_offset_lon: 40.2450993  #JTA Map offset
+ 

@@ -1,0 +1,40 @@
+[0.205s] Invoking command in '/home/acclivis/Node/Node_perception_validation_ws/perception_validation_ws/src/perception_validation': PYTHONPATH=/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/perception_validation build --build-base /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build install --prefix /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation --record /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log --single-version-externally-managed
+[0.387s] running egg_info
+[0.388s] creating ../../../build/perception_validation/perception_validation.egg-info
+[0.388s] writing ../../../build/perception_validation/perception_validation.egg-info/PKG-INFO
+[0.388s] writing dependency_links to ../../../build/perception_validation/perception_validation.egg-info/dependency_links.txt
+[0.388s] writing entry points to ../../../build/perception_validation/perception_validation.egg-info/entry_points.txt
+[0.388s] writing requirements to ../../../build/perception_validation/perception_validation.egg-info/requires.txt
+[0.388s] writing top-level names to ../../../build/perception_validation/perception_validation.egg-info/top_level.txt
+[0.390s] writing manifest file '../../../build/perception_validation/perception_validation.egg-info/SOURCES.txt'
+[0.415s] reading manifest file '../../../build/perception_validation/perception_validation.egg-info/SOURCES.txt'
+[0.416s] writing manifest file '../../../build/perception_validation/perception_validation.egg-info/SOURCES.txt'
+[0.416s] running build
+[0.416s] running build_py
+[0.416s] creating /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build
+[0.417s] creating /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib
+[0.417s] creating /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation
+[0.417s] copying perception_validation/__init__.py -> /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation
+[0.417s] copying perception_validation/perception_subscriber.py -> /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation
+[0.417s] copying perception_validation/acquisition_structures.py -> /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation
+[0.417s] running install
+[0.417s] running install_lib
+[0.418s] creating /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation
+[0.418s] copying /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation/__init__.py -> /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation
+[0.418s] copying /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation/perception_subscriber.py -> /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation
+[0.418s] copying /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build/lib/perception_validation/acquisition_structures.py -> /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation
+[0.419s] byte-compiling /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation/__init__.py to __init__.cpython-38.pyc
+[0.420s] byte-compiling /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation/perception_subscriber.py to perception_subscriber.cpython-38.pyc
+[0.421s] byte-compiling /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation/acquisition_structures.py to acquisition_structures.cpython-38.pyc
+[0.422s] running install_data
+[0.422s] creating /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/share/ament_index
+[0.423s] creating /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/share/ament_index/resource_index
+[0.423s] creating /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/share/ament_index/resource_index/packages
+[0.423s] copying resource/perception_validation -> /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/share/ament_index/resource_index/packages
+[0.423s] copying package.xml -> /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/share/perception_validation
+[0.423s] running install_egg_info
+[0.424s] Copying ../../../build/perception_validation/perception_validation.egg-info to /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages/perception_validation-0.0.0-py3.8.egg-info
+[0.425s] running install_scripts
+[0.439s] Installing perception_subscriber script to /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/perception_validation
+[0.439s] writing list of installed files to '/home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log'
+[0.458s] Invoked command in '/home/acclivis/Node/Node_perception_validation_ws/perception_validation_ws/src/perception_validation' returned '0': PYTHONPATH=/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/perception_validation build --build-base /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/build install --prefix /home/acclivis/Node/Node_perception_validation_ws/install/perception_validation --record /home/acclivis/Node/Node_perception_validation_ws/build/perception_validation/install.log --single-version-externally-managed

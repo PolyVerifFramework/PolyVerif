@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolyVerifWithoutUI>
+  <TCRunner>
+    <TestScript  Type="Python"></TestScript>
+    <TestScript  Location="AutonomousStuff_SP.py"></TestScript>
+    <Validation Type="PathPlanning"></Validation>
+    <SceneType>AVP</SceneType>
+    <SceneLocation name="AutonomouStuff"></SceneLocation>
+  </TCRunner>
+</PolyVerifWithoutUI>

@@ -1,0 +1,6 @@
+source;share/control_validation/hook/pythonpath.ps1
+source;share/control_validation/hook/pythonpath.dsv
+source;share/control_validation/hook/pythonpath.sh
+source;share/control_validation/hook/ament_prefix_path.ps1
+source;share/control_validation/hook/ament_prefix_path.dsv
+source;share/control_validation/hook/ament_prefix_path.sh

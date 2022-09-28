@@ -1,0 +1,139 @@
+[0.147s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.148s] DEBUG:colcon:Parsed command line arguments: Namespace(ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f73bba29c10>>, merge_install=False, metas=['./colcon.meta'], mixin=None, mixin_files=None, mixin_verb=('build',), packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=6, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f73bba29c10>, verb_name='build', verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f73bba37220>)
+[0.152s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.152s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.152s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.152s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.152s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.152s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.152s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/acclivis/Node/Node_localization_validation_ws'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extension 'ignore_ament_install'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extensions ['colcon_pkg']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extension 'colcon_pkg'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extensions ['colcon_meta']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extension 'colcon_meta'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extensions ['ros']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extension 'ros'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extensions ['cmake', 'python']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extension 'cmake'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extension 'python'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extensions ['python_setup_py']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws) by extension 'python_setup_py'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extensions ['ignore', 'ignore_ament_install']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extension 'ignore'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extension 'ignore_ament_install'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extensions ['colcon_pkg']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extension 'colcon_pkg'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extensions ['colcon_meta']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extension 'colcon_meta'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extensions ['ros']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extension 'ros'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extensions ['cmake', 'python']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extension 'cmake'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extension 'python'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extensions ['python_setup_py']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src) by extension 'python_setup_py'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src/localization_validation) by extensions ['ignore', 'ignore_ament_install']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src/localization_validation) by extension 'ignore'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src/localization_validation) by extension 'ignore_ament_install'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src/localization_validation) by extensions ['colcon_pkg']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src/localization_validation) by extension 'colcon_pkg'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src/localization_validation) by extensions ['colcon_meta']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src/localization_validation) by extension 'colcon_meta'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src/localization_validation) by extensions ['ros']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(localization_validation_ws/src/localization_validation) by extension 'ros'
+[0.166s] DEBUG:colcon.colcon_core.package_identification:Package 'localization_validation_ws/src/localization_validation' with type 'ros.ament_python' and name 'localization_validation'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.167s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.167s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.167s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.167s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.167s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'localization_validation' build argument 'cmake_args' from command line to 'None'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'localization_validation' build argument 'cmake_target' from command line to 'None'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'localization_validation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'localization_validation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'localization_validation' build argument 'cmake_clean_first' from command line to 'False'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'localization_validation' build argument 'cmake_force_configure' from command line to 'False'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'localization_validation' build argument 'ament_cmake_args' from command line to 'None'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'localization_validation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'localization_validation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.183s] DEBUG:colcon.colcon_core.verb:Building package 'localization_validation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/acclivis/Node/Node_localization_validation_ws/build/localization_validation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation', 'merge_install': False, 'path': '/home/acclivis/Node/Node_localization_validation_ws/localization_validation_ws/src/localization_validation', 'symlink_install': False, 'test_result_base': None}
+[0.184s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.185s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.185s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/acclivis/Node/Node_localization_validation_ws/localization_validation_ws/src/localization_validation' with build type 'ament_python'
+[0.185s] Level 1:colcon.colcon_core.shell:create_environment_hook('localization_validation', 'ament_prefix_path')
+[0.188s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.188s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/hook/ament_prefix_path.ps1'
+[0.189s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/hook/ament_prefix_path.dsv'
+[0.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/hook/ament_prefix_path.sh'
+[0.190s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.190s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.193s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/foxy'
+[0.383s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/acclivis/Node/Node_localization_validation_ws/localization_validation_ws/src/localization_validation'
+[0.384s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.384s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.386s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/foxy'
+[0.391s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/acclivis/Node/Node_localization_validation_ws/localization_validation_ws/src/localization_validation': PYTHONPATH=/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/localization_validation build --build-base /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build install --prefix /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation --record /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/install.log --single-version-externally-managed
+[0.643s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/acclivis/Node/Node_localization_validation_ws/localization_validation_ws/src/localization_validation' returned '0': PYTHONPATH=/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/localization_validation build --build-base /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build install --prefix /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation --record /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/install.log --single-version-externally-managed
+[0.645s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation' for CMake module files
+[0.646s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation' for CMake config files
+[0.646s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib'
+[0.647s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/bin'
+[0.647s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/pkgconfig/localization_validation.pc'
+[0.647s] Level 1:colcon.colcon_core.environment:checking '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages'
+[0.647s] Level 1:colcon.colcon_core.shell:create_environment_hook('localization_validation', 'pythonpath')
+[0.647s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/hook/pythonpath.ps1'
+[0.648s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/hook/pythonpath.dsv'
+[0.648s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/hook/pythonpath.sh'
+[0.648s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(localization_validation)
+[0.649s] INFO:colcon.colcon_core.shell:Creating package script '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/package.ps1'
+[0.649s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/package.dsv'
+[0.650s] INFO:colcon.colcon_core.shell:Creating package script '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/package.sh'
+[0.650s] INFO:colcon.colcon_core.shell:Creating package script '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/package.bash'
+[0.651s] INFO:colcon.colcon_core.shell:Creating package script '/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/localization_validation/package.zsh'
+[0.651s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/colcon-core/packages/localization_validation)
+[0.652s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.652s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.652s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[0.652s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.658s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[0.658s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.658s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.658s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.661s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[0.661s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.662s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acclivis/Node/Node_localization_validation_ws/install/local_setup.ps1'
+[0.663s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/acclivis/Node/Node_localization_validation_ws/install/_local_setup_util_ps1.py'
+[0.664s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acclivis/Node/Node_localization_validation_ws/install/setup.ps1'
+[0.666s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acclivis/Node/Node_localization_validation_ws/install/local_setup.sh'
+[0.666s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/acclivis/Node/Node_localization_validation_ws/install/_local_setup_util_sh.py'
+[0.667s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acclivis/Node/Node_localization_validation_ws/install/setup.sh'
+[0.668s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acclivis/Node/Node_localization_validation_ws/install/local_setup.bash'
+[0.669s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acclivis/Node/Node_localization_validation_ws/install/setup.bash'
+[0.671s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acclivis/Node/Node_localization_validation_ws/install/local_setup.zsh'
+[0.671s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acclivis/Node/Node_localization_validation_ws/install/setup.zsh'

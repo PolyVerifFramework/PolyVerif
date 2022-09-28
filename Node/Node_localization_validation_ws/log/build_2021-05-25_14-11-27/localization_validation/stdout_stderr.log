@@ -1,0 +1,18 @@
+running egg_info
+writing ../../../build/localization_validation/localization_validation.egg-info/PKG-INFO
+writing dependency_links to ../../../build/localization_validation/localization_validation.egg-info/dependency_links.txt
+writing entry points to ../../../build/localization_validation/localization_validation.egg-info/entry_points.txt
+writing requirements to ../../../build/localization_validation/localization_validation.egg-info/requires.txt
+writing top-level names to ../../../build/localization_validation/localization_validation.egg-info/top_level.txt
+reading manifest file '../../../build/localization_validation/localization_validation.egg-info/SOURCES.txt'
+writing manifest file '../../../build/localization_validation/localization_validation.egg-info/SOURCES.txt'
+running build
+running build_py
+copying localization_validation/acquisition_structures.py -> /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation
+running install
+running install_lib
+copying /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation/acquisition_structures.py -> /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation
+byte-compiling /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation/acquisition_structures.py to acquisition_structures.cpython-38.pyc
+Sorry: IndentationError: unindent does not match any outer indentation level (acquisition_structures.py, line 163)
+running install_data
+error: can't copy 'resource/localization_validation': doesn't exist or not a regular file

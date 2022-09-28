@@ -1,0 +1,36 @@
+[0.227s] Invoking command in '/home/acclivis/Node/Node_localization_validation_ws/localization_validation_ws/src/localization_validation': PYTHONPATH=/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/localization_validation build --build-base /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build install --prefix /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation --record /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/install.log --single-version-externally-managed
+[0.525s] running egg_info
+[0.525s] creating ../../../build/localization_validation/localization_validation.egg-info
+[0.525s] writing ../../../build/localization_validation/localization_validation.egg-info/PKG-INFO
+[0.525s] writing dependency_links to ../../../build/localization_validation/localization_validation.egg-info/dependency_links.txt
+[0.525s] writing entry points to ../../../build/localization_validation/localization_validation.egg-info/entry_points.txt
+[0.526s] writing requirements to ../../../build/localization_validation/localization_validation.egg-info/requires.txt
+[0.526s] writing top-level names to ../../../build/localization_validation/localization_validation.egg-info/top_level.txt
+[0.545s] writing manifest file '../../../build/localization_validation/localization_validation.egg-info/SOURCES.txt'
+[0.631s] reading manifest file '../../../build/localization_validation/localization_validation.egg-info/SOURCES.txt'
+[0.635s] writing manifest file '../../../build/localization_validation/localization_validation.egg-info/SOURCES.txt'
+[0.635s] running build
+[0.636s] running build_py
+[0.637s] creating /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build
+[0.637s] creating /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib
+[0.637s] creating /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation
+[0.638s] copying localization_validation/__init__.py -> /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation
+[0.638s] copying localization_validation/localization_node.py -> /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation
+[0.638s] copying localization_validation/acquisition_structures.py -> /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation
+[0.638s] running install
+[0.642s] running install_lib
+[0.644s] creating /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation
+[0.645s] copying /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation/__init__.py -> /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation
+[0.645s] copying /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation/localization_node.py -> /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation
+[0.645s] copying /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build/lib/localization_validation/acquisition_structures.py -> /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation
+[0.646s] byte-compiling /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation/__init__.py to __init__.cpython-38.pyc
+[0.648s] byte-compiling /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation/localization_node.py to localization_node.cpython-38.pyc
+[0.648s] Sorry: IndentationError: unexpected indent (localization_node.py, line 99)
+[0.649s] byte-compiling /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages/localization_validation/acquisition_structures.py to acquisition_structures.cpython-38.pyc
+[0.649s] Sorry: IndentationError: unindent does not match any outer indentation level (acquisition_structures.py, line 148)
+[0.649s] running install_data
+[0.650s] creating /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/ament_index
+[0.650s] creating /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/ament_index/resource_index
+[0.650s] creating /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/share/ament_index/resource_index/packages
+[0.650s] error: can't copy 'resource/localization_validation': doesn't exist or not a regular file
+[0.668s] Invoked command in '/home/acclivis/Node/Node_localization_validation_ws/localization_validation_ws/src/localization_validation' returned '1': PYTHONPATH=/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/localization_validation build --build-base /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/build install --prefix /home/acclivis/Node/Node_localization_validation_ws/install/localization_validation --record /home/acclivis/Node/Node_localization_validation_ws/build/localization_validation/install.log --single-version-externally-managed
