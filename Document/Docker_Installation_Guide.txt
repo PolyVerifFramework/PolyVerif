@@ -1,0 +1,96 @@
+/*************************Docker Installation steps**********************************************************************/
+
+Follow below links :
+https://www.svlsimulator.com/docs/archive/2020.06/autoware-auto-instructions/
+https://docs.docker.com/engine/install/ubuntu/
+
+
+#Uninstall old versions
+
+$sudo apt-get remove docker docker-engine docker.io containerd runc
+
+
+The contents of /var/lib/docker/, including images, containers, volumes, and networks, are preserved. 
+If you do not need to save your existing data, and want to start with a clean installation, run below cmds else skip.
+
+
+$sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-compose-plugin
+$sudo rm -rf /var/lib/docker
+$sudo rm -rf /var/lib/containerd
+
+
+#Set up the repository
+
+$sudo apt-get update
+$sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+
+$sudo mkdir -p /etc/apt/keyrings
+$curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+$echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+$sudo apt-get update
+$sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+/**************Optional *********************/
+To install a specific version of Docker Engine, list the available versions in the repo, then select and install:
+
+a. List the versions available in your repo:
+
+ $apt-cache madison docker-ce
+
+b. Install a specific version using the version string from the second column, for example, 5:20.10.16~3-0~ubuntu-jammy.
+
+ $sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin
+
+
+$sudo service docker start
+$sudo docker run hello-world
+$sudo groupadd docker
+$sudo usermod -aG docker $USER
+$newgrp docker 
+$docker run hello-world
+
+#Docker Installed successfully
+
+To Install nvidia docker.
+# Add the package repositories
+$ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+$ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+$ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+Run below both commands separately in place of $ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+$ sudo apt-get update
+$ sudo apt-get install -y nvidia-container-toolkit
+$ sudo systemctl restart docker
+
+Upgrading with nvidia-docker2 
+
+$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2
+$ sudo systemctl restart docker
+
+
+
+Configure Docker to start on boot
+
+$sudo systemctl enable docker.service
+$sudo systemctl enable containerd.service
+$sudo systemctl daemon-reload
+$sudo systemctl restart docker.service
+
+
+#restart machine
+
+
+/*********************************END****************************************************/
+
+
+
+
