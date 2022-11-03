@@ -1,3 +1,0 @@
-[console_scripts]
-perception_subscriber = perception_validation.perception_subscriber:main
-

@@ -1,6 +1,6 @@
 # PolyVerif
 
-PolyVerif AV Validation Suite...
+PolyVerif AV Validation Suite
 
 This is Poly-Verification and Validation Suite. Its functionality is to generate the test cases and validate the autonomous stack.
 It integrate the Scenic scenario description language with AutowareAuto and helps to generate the random scenario for simulation.
@@ -15,7 +15,7 @@ Below is the PC configuration required:
 	
   	•	CPU: Intel i7 10700
    	•	GPU: Nvidia RTX 2070 (8GB memory)
-    •	OS: Ubuntu 14.04 and above 64-bit
+        •	OS: Ubuntu 14.04 and above 64-bit
     
   Prerequisite: 
 	
@@ -23,14 +23,17 @@ Below is the PC configuration required:
     •	Nodejs 12.16
     •	Python3.8
 
-Steps follow to run the poly_suite application
+  Reference link:  https://github.com/MaheshM99/PolyVerif/tree/release-v1.1
+
+Steps follow to run the poly_suite application,to setup and install poly_suite application please refer all documents from Document directory.
 	
     1. Install and setup AutowareAuto 
-      Setup and install the AutowareAuto, so follow the below link to setup the AutowareAuto in your system, please refer the below point number from the Setup_And_Installation document –
-          Point 2 - Setup Docker and Install AutowareAuto
-  
+      To setup and install the AutowareAuto,please refer the below point –
+          Point 1 - Setup Docker from docker-install.txt document.
+          Point 2 - Setup and Install AutowareAuto from Setup_And_Installation document.
+
     2. Install and build lgsvl-msgs
-      Setup and install the lgsvl-msgs which is used by the validation stack. Please refer the below point number from the Setup_And_Installation document –
+      To setup and install the lgsvl-msgs which is used by the validation stack. Please refer the below point number from the Setup_And_Installation document –
         Point 3 - Install and Setup lgsvl_msgs package
 
     3. Install and build ros2-lgsvl-bridge
@@ -51,4 +54,4 @@ Steps follow to run the poly_suite application
 
     7. Install and run the Poly_Suite framework
       Once the above setup and packages are completed successfully. Please refer the below document to how to use the Suite.
-        Point 15 - PolyVerif Installation and Use
+        Point 15 - PolyVerifcation_Suite_UserGuide.docx
