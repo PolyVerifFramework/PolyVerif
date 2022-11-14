@@ -32,7 +32,7 @@ Steps follow to run the poly_suite application,to setup and install poly_suite a
       To setup and install the Nvidia Drivers,please refer the below points –
           Point 1 - Please find the system configuration required as mentioned above.
           Point 2 - Refere below link for Nvidia Drivers driver installation.
-          https://www.itzgeek.com/amp/post/how-to-install-nvidia-drivers-on-ubuntu-20-04-ubuntu-18-04.html#Install_Nvidia_Drivers_from_Ubuntu_Repository_/_PPA
+          https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html
 
     2. Install and setup docker 
         Point 3 - Setup Docker from Docker_Installation_Guide.txt document.
