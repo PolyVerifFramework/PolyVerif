@@ -15,7 +15,7 @@ Below is the PC configuration required:
 	
   	•	CPU: Intel i7 10700
    	•	GPU: Nvidia RTX 2070 (8GB memory)
-        •	OS: Ubuntu 14.04 and above 64-bit
+    •	OS: Ubuntu 14.04 and above 64-bit
     
   Prerequisite: 
 	
