@@ -23,9 +23,10 @@ Below is the PC configuration required:
     •	Nodejs 12.16
     •	Python3.8
 
-  Reference link:  https://github.com/MaheshM99/PolyVerif/tree/release-v1.1
+  Reference link:  https://github.com/MaheshM99/PolyVerif
 
 Steps follow to run the poly_suite application,to setup and install poly_suite application please refer all documents from Document directory.
+Note: Refer Scripts directory for Automation installation process.
 	
     1. Install and setup AutowareAuto 
       To setup and install the AutowareAuto,please refer the below point –
