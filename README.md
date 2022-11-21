@@ -26,6 +26,7 @@ Below is the PC configuration required:
   Reference link:  https://github.com/MaheshM99/PolyVerif
 
 Steps follow to run the poly_suite application,to setup and install poly_suite application please refer all documents from Document directory.
+
 Note: Refer Scripts directory for Automation installation process.
 	
     1. Install and setup AutowareAuto 
