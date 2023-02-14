@@ -21,21 +21,23 @@ fog = 0
 wetness = 0
 cloudiness = 0
 damage = 0
-scene = "BorregasAve"
+scene = "aae03d2a-b7ca-4a88-9e41-9035287a12cc"
+#scene = "781b04c8-43b4-431e-af55-1ae2b2efc877" #JTA_R2 Map
 home = str(Path.home())
-file = open(home+'/pid','w');
+file = open(home+'/pid','w')
 t = os.getpid()
 pid = str(t)
 file.write(pid)
 file.close()
 print("pid : ",pid)
-# if sys.argv[1]: 
-#    rain = float(sys.argv[1])
-#    fog = float(sys.argv[2])
-#    wetness = float(sys.argv[3])
-#    cloudiness = float(sys.argv[4])
-#    damage = float(sys.argv[5])
-#    scene = sys.argv[6]
+
+if sys.argv[1]: 
+   rain = float(sys.argv[1])
+   fog = float(sys.argv[2])
+   wetness = float(sys.argv[3])
+   cloudiness = float(sys.argv[4])
+   damage = float(sys.argv[5])
+
 
 print("Running Scenario in which there is no Vehicle available in any Lane")
 sim = lgsvl.Simulator(env.str("LGSVL__SIMULATOR_HOST", "127.0.0.1"), env.int("LGSVL__SIMULATOR_PORT", 8181))
@@ -44,7 +46,7 @@ if sim.current_scene == scene:
 else:
     sim.load(scene)
 
-#sim.weather = lgsvl.WeatherState(rain, fog, wetness, cloudiness, damage)
+sim.weather = lgsvl.WeatherState(rain, fog, wetness, cloudiness, damage)
 
 spawns = sim.get_spawn()
 forward = lgsvl.utils.transform_to_forward(spawns[0])
@@ -55,7 +57,7 @@ state = lgsvl.AgentState()
 state.transform.position = spawns[0].position #- 3 * right
 state.transform.rotation = spawns[0].rotation
 state.velocity = 20 * forward
-ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "myLexusVehicle"), lgsvl.AgentType.EGO, state)
+ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "5ab8175f-e1f1-427c-a86e-e882fa842978"), lgsvl.AgentType.EGO, state)
 
 # An EGO will not connect to a bridge unless commanded to
 print("Bridge connected:", ego.bridge_connected)
@@ -67,7 +69,7 @@ statej = lgsvl.AgentState()
 statej.transform.position = spawns[0].position + 20 * forward
 statej.transform.rotation = spawns[0].rotation 
 statej.velocity = 20 * forward
-sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, statej)
+sedan = sim.add_agent("Jeep", lgsvl.AgentType.NPC, statej)
 #sedan.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
 
 t0 = time.time()

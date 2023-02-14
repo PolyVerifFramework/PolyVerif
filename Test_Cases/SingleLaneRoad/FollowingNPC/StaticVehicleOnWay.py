@@ -20,8 +20,8 @@ fog = 0
 wetness = 0
 cloudiness = 0
 damage = 0
-scene = "BorregasAve"
-file = open('pid','w');
+scene = "5d272540-f689-4355-83c7-03bf11b6865f"
+file = open('pid','w')
 t = os.getpid()
 pid = str(t)
 file.write(pid)
@@ -33,7 +33,7 @@ if sys.argv[1]:
    wetness = float(sys.argv[3])
    cloudiness = float(sys.argv[4])
    damage = float(sys.argv[5])
-   scene = sys.argv[6]
+   
 
 print("Scenario with some NPC's")
 
@@ -55,7 +55,7 @@ state.transform.rotation = spawns[0].rotation
 #state.transform.position = spawns[0].position - 5 * right
 #state.transform.rotation = spawns[0].rotation
 state.velocity = 10 * forward
-ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "myLexusVehicle"), lgsvl.AgentType.EGO, state)
+ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "5ab8175f-e1f1-427c-a86e-e882fa842977"), lgsvl.AgentType.EGO, state)
 
 # An EGO will not connect to a bridge unless commanded to
 print("Bridge connected:", ego.bridge_connected)
@@ -72,25 +72,7 @@ state.transform.rotation = spawns[0].rotation + 60
 #state.velocity = 10 * forward
 jeep = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
 
-#jeep.follow_closest_lane(True, 11.5)  # 11.1 m/s is ~40 km/h
-
-
-# statej = lgsvl.AgentState()
-# statej.transform.position = spawns[0].position + 30 * forward
-# statej.transform.rotation = spawns[0].rotation 
-# statej.velocity = 10 * forward
-# sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, statej)
-# sedan.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
-
-
-# statej = lgsvl.AgentState()
-# statej.transform.position = spawns[1].position #+ 20 * forward
-# statej.transform.rotation = spawns[1].rotation 
-# statej.velocity = 25 * forward
-# suv = sim.add_agent("SUV", lgsvl.AgentType.NPC, statej)
-
-# suv.follow_closest_lane(True, 13.5)
-# right = lgsvl.utils.transform_to_right(spawns[0])
+#
 
 
 #input("Press Enter to drive forward for 25 seconds (1x)")

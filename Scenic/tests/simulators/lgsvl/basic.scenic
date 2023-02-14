@@ -1,3 +1,4 @@
+
 param map = localPath('../../formats/opendrive/maps/LGSVL/cubetown.xodr')
 param lgsvl_map = 'CubeTown'
 from scenic.simulators.lgsvl.model import *

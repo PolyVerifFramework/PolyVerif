@@ -8,6 +8,7 @@ try:
     EGO_TYPE = lgsvl.AgentType.EGO
     NPC_TYPE = lgsvl.AgentType.NPC
     PEDESTRIAN_TYPE = lgsvl.AgentType.PEDESTRIAN
+    
     from scenic.simulators.lgsvl.simulator import LGSVLSimulator
     from scenic.simulators.lgsvl.actions import *
     import scenic.simulators.lgsvl.utils as utils
@@ -16,6 +17,7 @@ except ModuleNotFoundError:
     EGO_TYPE = 'EGO'
     NPC_TYPE = 'NPC'
     PEDESTRIAN_TYPE = 'PEDESTRIAN'
+    
 
     import warnings
     warnings.warn('the "lgsvl" package is not installed; '
@@ -53,7 +55,7 @@ class Vehicle(Vehicle, LGSVLObject):
     pass
 
 class AutowareEgoCar(Vehicle, Steers):
-    lgsvlName: 'Lexus2016RXHybrid (Autoware)'
+    lgsvlName: '5ab8175f-e1f1-427c-a86e-e882fa842978'
     lgsvlAgentType: EGO_TYPE
     dreamview: None
        
@@ -88,7 +90,7 @@ class AutowareEgoCar(Vehicle, Steers):
 (Car) = (AutowareEgoCar)
 
 class AutowareCar(AutowareEgoCar):
-    lgsvlName: 'Jaguar2015XE (Autoware)'   #'Lexus2016RXHybrid (Autoware)'
+    lgsvlName: '5ab8175f-e1f1-427c-a86e-e882fa842978'   #'Lexus2016RXHybrid (Autoware)'
     autowareVehicle:   ' Jaguar2015XE'    #'Lexus2016RXHybrid'
     autowareModules:['Localization', 'Perception', 'Transform', 'Routing',
                     'Prediction', 'Planning', 'Camera']
@@ -101,6 +103,15 @@ class NPCCar(NPCCar, Vehicle):
     lgsvlName: 'Sedan'
     lgsvlAgentType: NPC_TYPE
 
+class Bus(NPCCar, Vehicle):
+    lgsvlName: 'SchoolBus'
+    lgsvlAgentType: NPC_TYPE
+
+class Bus(NPCCar, Vehicle):
+    lgsvlName: 'Bicyclist'
+    lgsvlAgentType: NPC_TYPE
+
+
 class Pedestrian(Pedestrian, LGSVLObject, Walks):
     lgsvlName: 'Bob'
     lgsvlAgentType: PEDESTRIAN_TYPE
@@ -108,8 +119,14 @@ class Pedestrian(Pedestrian, LGSVLObject, Walks):
     def setWalkingDirection(self, heading):
         super().setWalkingDirection(heading)    # TODO use better implementation?
 
-    def setWalkingSpeed(self, speed):
+    def setWalkingSpeed(self, speed=5.0):
         super().setWalkingSpeed(speed)
+    
+class Pedestrian_subclass(Pedestrian,LGSVLObject,Walks):
+    ped= ['Howard', 'Johny','Pamela','Presley','EntrepreneurFemale','SegwayKickScooterMaxG30LP']
+    lgsvlName: ped
+    lgsvlAgentType: PEDESTRIAN_TYPE
+    
 
 ## Utility classes
 

@@ -27,8 +27,8 @@ npcWP3 = Waypoint following roadDirection from egoStartPos for 100,
     with speed 0
 waypoints = [npcWP0, npcWP1, npcWP2, npcWP3]
 
-#for waypoint in waypoints:
-#    require waypoint in road
+for waypoint in waypoints:
+    require waypoint in road
 
 npc = Car at npcStartPos,
           with behavior FollowWaypoints(waypoints),

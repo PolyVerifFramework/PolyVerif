@@ -1,0 +1,94 @@
+-- Found ament_cmake_auto: 0.9.8 (/opt/ros/foxy/share/ament_cmake_auto/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.5", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+-- Found python_cmake_module: 0.8.0 (/opt/ros/foxy/share/python_cmake_module/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.5", minimum required is "3.5") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/acclivis/avp_demo/build/avp_demo
+-- Install configuration: ""
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/config
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/config/ms3.rviz
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/config/ms2.rviz
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/config/recordreplay_planner_demo.rviz
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot_lgsvl.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/omy_autonomoustuff_parking_lot.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/Taltech_new.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/Taltech.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/JTA_R1.pcd
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/Taltech_original.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/my_autonomoustuff_parking_lot.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/JTA_R1.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot2.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/JTA_R2.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot_lgsvl.forward.path
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot_lgsvl.reverse.path
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/map.osm
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/taltech.pcd
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/ms3_sim.launch.py
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/ms3_vehicle.launch.py
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/recordreplay_planner_demo.launch.py
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/__pycache__
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/__pycache__/ms3_sim.launch.cpython-38.pyc
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/ms2.launch.py
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/ms3_core.launch.py
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/mpc.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/ndt_localizer.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/ray_ground_classifier.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/map_publisher_vehicle.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/ndt_localizer_vehicle.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/vlp16_rear_vehicle.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/vlp16_front_vehicle.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/object_collision_estimator_rrp.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/off_map_obstacles_filter.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/lane_planner.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/lgsvl_interface.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/odom_state_estimator.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/euclidean_cluster.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/lanelet2_map_provider.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/ssc_interface.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/parking_planner.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/object_collision_estimator.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/mpc_vehicle.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/behavior_planner.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/scan_downsampler.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/map_publisher.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/recordreplay_planner.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/pc_filter_transform.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/scan_downsampler_ms3.param.yaml
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/ament_index/resource_index/package_run_dependencies/avp_demo
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/ament_index/resource_index/parent_prefix_path/avp_demo
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/environment/ament_prefix_path.sh
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/environment/ament_prefix_path.dsv
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/environment/path.sh
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/environment/path.dsv
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/local_setup.bash
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/local_setup.sh
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/local_setup.zsh
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/local_setup.dsv
+-- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/package.dsv
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/ament_index/resource_index/packages/avp_demo
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/cmake/avp_demoConfig.cmake
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/cmake/avp_demoConfig-version.cmake
+-- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/package.xml

@@ -1,0 +1,1 @@
+frame_id,timestamp_sec,timestamp_nanosec,available,verified,vehicle_label,signal_label,class_likelihood,centroid_x,centroid_y,centroid_z,size_x,size_y,size_z,corner_1_x,corner_1_y,corner_1_z,corner_2_x,corner_2_y,corner_2_z,corner_3_x,corner_3_y,corner_3_z,corner_4_x,corner_4_y,corner_4_z,orientation_x,orientation_y,orientation_z,orientation_w,velocity,heading,heading_rate,value

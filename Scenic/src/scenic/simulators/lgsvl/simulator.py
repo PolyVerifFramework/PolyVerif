@@ -87,12 +87,10 @@ class LGSVLSimulation(simulators.Simulation):
 
         if name == 'Lincoln2017MKZ (Apollo 5.0)':
            self.initApolloFor(obj,lgsvlObj)
-        elif name == 'Lexus2016RXHybrid (Autoware)':
+        elif name == '5ab8175f-e1f1-427c-a86e-e882fa842978':
            self.initAutowareFor(obj, lgsvlObj)
         elif name == 'Jaguar2015XE (Autoware)' :
             print("name in simulator.py : ",name)
-        elif name == 'Sedan':
-            self.NPCCreate(obj, lgsvlObj)
         else:
            print("No AD object created..")
 
@@ -111,7 +109,7 @@ class LGSVLSimulation(simulators.Simulation):
         lgsvlObj.on_collision(on_collision)
         lgsvlObj.follow_closest_lane(follow=True, max_speed=11.176)
         #print("-------",lgsvlObj)
-#sneha
+
     def initAutowareFor(self, obj, lgsvlObj):
         print("initAutoware..")
         def on_collision(agent1, agent2, contact):

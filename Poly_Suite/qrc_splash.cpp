@@ -1,13 +1,13 @@
 /****************************************************************************
 ** Resource object code
 **
-** Created by: The Resource Compiler for Qt version 5.9.5
+** Created by: The Resource Compiler for Qt version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
 static const unsigned char qt_resource_data[] = {
-  // /home/acclivis/rahul/QT_Project/PolySuite_Project/UI_Suit_15May/PolyVerifSuite/AV_Testing.jpg
+  // /home/acclivis/VIP/Poly_Suit_Final/AV_Testing.jpg
   0x0,0x3,0xc1,0xea,
   0xff,
   0xd8,0xff,0xe0,0x0,0x10,0x4a,0x46,0x49,0x46,0x0,0x1,0x1,0x1,0x0,0x60,0x0,
@@ -15421,13 +15421,10 @@ static const unsigned char qt_resource_name[] = {
 static const unsigned char qt_resource_struct[] = {
   // :
   0x0,0x0,0x0,0x0,0x0,0x2,0x0,0x0,0x0,0x1,0x0,0x0,0x0,0x1,
-0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
   // :/splash
   0x0,0x0,0x0,0x0,0x0,0x2,0x0,0x0,0x0,0x1,0x0,0x0,0x0,0x2,
-0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
   // :/splash/AV_Testing.jpg
   0x0,0x0,0x0,0x12,0x0,0x0,0x0,0x0,0x0,0x1,0x0,0x0,0x0,0x0,
-0x0,0x0,0x1,0x7a,0xb0,0xa1,0xba,0xb8,
 
 };
 
@@ -15459,7 +15456,7 @@ int QT_RCC_MANGLE_NAMESPACE(qInitResources_splash)();
 int QT_RCC_MANGLE_NAMESPACE(qInitResources_splash)()
 {
     QT_RCC_PREPEND_NAMESPACE(qRegisterResourceData)
-        (0x2, qt_resource_struct, qt_resource_name, qt_resource_data);
+        (0x01, qt_resource_struct, qt_resource_name, qt_resource_data);
     return 1;
 }
 
@@ -15467,7 +15464,7 @@ int QT_RCC_MANGLE_NAMESPACE(qCleanupResources_splash)();
 int QT_RCC_MANGLE_NAMESPACE(qCleanupResources_splash)()
 {
     QT_RCC_PREPEND_NAMESPACE(qUnregisterResourceData)
-       (0x2, qt_resource_struct, qt_resource_name, qt_resource_data);
+       (0x01, qt_resource_struct, qt_resource_name, qt_resource_data);
     return 1;
 }
 

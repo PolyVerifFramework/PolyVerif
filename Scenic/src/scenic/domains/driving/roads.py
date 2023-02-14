@@ -395,6 +395,11 @@ class Road(LinearElement):
         return self.network.findPointIn(point, self.laneGroups, reject)
 
     @distributionFunction
+    def sidewalkAt(self, point: Vectorlike, reject=False) -> Union[PedestrianCrossing, None]:
+        """Get the :obj:`.PedestrianCrossing` passing through a given point."""
+        return self.network.findPointIn(point, self.sidewalk, reject)
+    
+    @distributionFunction
     def crossingAt(self, point: Vectorlike, reject=False) -> Union[PedestrianCrossing, None]:
         """Get the :obj:`.PedestrianCrossing` passing through a given point."""
         return self.network.findPointIn(point, self.crossings, reject)

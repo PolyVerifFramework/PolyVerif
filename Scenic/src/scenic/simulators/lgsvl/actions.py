@@ -21,7 +21,7 @@ class FollowWaypointsAction(Action):
 				elev = veneer.simulation().groundElevationAt(wp.position)
 				pos = utils.scenicToLGSVLPosition(wp.position, y=elev)
 				rot = utils.scenicToLGSVLRotation(wp.heading)
-				pt = lgsvl.DriveWaypoint(pos, wp.speed, rot)
+				pt = lgsvl.DriveWaypoint(pos, wp.speed)
 				pts.append(pt)
 			self.waypoints = tuple(pts)
 
@@ -41,6 +41,23 @@ class CancelWaypointsAction(Action):
 
 	def applyTo(self, obj, sim):
 		obj.lgsvlObject.walk_randomly(False)
+
+class SetWalkAction(Action):
+	def canBeTakenBy(self, agent):
+		return agent.lgsvlAgentType in (lgsvl.AgentType.NPC,lgsvl.AgentType.PEDESTRIAN)
+	def applyTo(self, obj, sim):
+		obj.lgsvlObject.walk_randomly(True)
+
+class SetWalkingSpeedAction(Action):
+	"""Set the walking speed."""
+	def __init__(self, speed=5.0):
+		self.speed = speed
+		
+	def canBeTakenBy(self, agent):
+		return agent.lgsvlAgentType in (lgsvl.AgentType.NPC,lgsvl.AgentType.PEDESTRIAN)
+
+	def applyTo(self, obj, sim):
+		obj.setWalkingSpeed(self.speed)
 
 class SetDestinationAction(Action):
 	def __init__(self, dest):

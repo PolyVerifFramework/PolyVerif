@@ -8,7 +8,7 @@ Note: The scenario may fail if the leadCar or the ego get past the intersection 
 
 param map = localPath('../../../tests/formats/opendrive/maps/CARLA/Town07.xodr')  # or other CARLA map that definitely works
 param carla_map = 'Town07'
-model scenic.domains.driving.mode
+model scenic.domains.driving.model
 
 #CONSTANTS
 EGO_SPEED = 10

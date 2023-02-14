@@ -12,13 +12,13 @@ behavior AutopilotBehavior():
     """Behavior causing a vehicle to use CARLA's built-in autopilot."""
     take SetAutopilotAction(True)
 
-behavior WalkForwardBehavior(speed=0.5):
-	take SetWalkingDirectionAction(self.heading), SetWalkingSpeedAction(speed)
+behavior WalkForwardBehavior(5):
+	take SetWalkingDirectionAction(self.heading), SetWalkingSpeedAction(self.speed)
 
 behavior WalkBehavior(maxSpeed=1.4):
 	take SetWalkAction(True, maxSpeed)
 
-behavior CrossingBehavior(reference_actor, min_speed=1, threshold=10, final_speed=None):
+behavior CrossingBehavior(Pedestrian, min_speed=1, threshold=10, final_speed=None):
     """
     This behavior dynamically controls the speed of an actor that will perpendicularly (or close to)
     cross the road, so that it arrives at a spot in the road at the same time as a reference actor.
@@ -33,21 +33,21 @@ behavior CrossingBehavior(reference_actor, min_speed=1, threshold=10, final_spee
     if not final_speed:
         final_speed = min_speed
 
-    while (distance from self to reference_actor) > threshold:
+    while (distance from self to Pedestrian) > threshold:
         wait
 
     while True:
-        distance_vec = self.position - reference_actor.position
-        rotated_vec = distance_vec.rotatedBy(-reference_actor.heading)
+        distance_vec = self.position - Pedestrian.position
+        rotated_vec = distance_vec.rotatedBy(-Pedestrian.heading)
 
         ref_dist = rotated_vec.y
         if ref_dist < 0:
-            # The reference_actor has passed the crossing object, no need to keep monitoring the speed
+            # The Pedestrian has passed the crossing object, no need to keep monitoring the speed
             break
 
         actor_dist = rotated_vec.x
 
-        ref_speed = reference_actor.speed
+        ref_speed = Pedestrian.speed
         ref_time = ref_speed / ref_dist
 
         actor_speed = actor_dist * ref_time

@@ -1,0 +1,98 @@
+[0.011s] Invoking command in '/home/acclivis/avp_demo/build/avp_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation:/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation:/home/acclivis/Node/Node_control_validation_ws/install/control_validation:/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation:/opt/ros/foxy /usr/bin/cmake --build /home/acclivis/avp_demo/build/avp_demo -- -j12 -l12
+[0.034s] -- Found ament_cmake_auto: 0.9.8 (/opt/ros/foxy/share/ament_cmake_auto/cmake)
+[0.051s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.5", minimum required is "3") 
+[0.051s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.328s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.332s] -- Found python_cmake_module: 0.8.0 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[0.348s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.5", minimum required is "3.5") 
+[0.350s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.350s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[0.350s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[0.381s] -- Added test 'lint_cmake' to check CMake code style
+[0.381s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.404s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.404s] -- Configured cppcheck include dirs: 
+[0.404s] -- Configured cppcheck exclude dirs and/or files: 
+[0.426s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.427s] -- Configured cpplint exclude dirs and/or files: 
+[0.430s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.433s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[0.455s] -- Added test 'uncrustify' to check C / C++ code style
+[0.455s] -- Configured uncrustify additional arguments: 
+[0.458s] -- Added test 'xmllint' to check XML markup files
+[0.460s] -- Configuring done
+[0.463s] -- Generating done
+[0.464s] -- Build files have been written to: /home/acclivis/avp_demo/build/avp_demo
+[0.478s] Invoked command in '/home/acclivis/avp_demo/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation:/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation:/home/acclivis/Node/Node_control_validation_ws/install/control_validation:/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation:/opt/ros/foxy /usr/bin/cmake --build /home/acclivis/avp_demo/build/avp_demo -- -j12 -l12
+[0.500s] Invoking command in '/home/acclivis/avp_demo/build/avp_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation:/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation:/home/acclivis/Node/Node_control_validation_ws/install/control_validation:/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation:/opt/ros/foxy /usr/bin/cmake --install /home/acclivis/avp_demo/build/avp_demo
+[0.505s] -- Install configuration: ""
+[0.505s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/config
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/config/ms3.rviz
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/config/ms2.rviz
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/config/recordreplay_planner_demo.rviz
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot_lgsvl.yaml
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/omy_autonomoustuff_parking_lot.osm
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/Taltech_new.osm
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/Taltech.osm
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/JTA_R1.pcd
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/Taltech_original.osm
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/my_autonomoustuff_parking_lot.osm
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot.yaml
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/JTA_R1.osm
+[0.506s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot2.osm
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/JTA_R2.osm
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot_lgsvl.forward.path
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot.osm
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot_lgsvl.reverse.path
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/map.osm
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/data/taltech.pcd
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/ms3_sim.launch.py
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/ms3_vehicle.launch.py
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/recordreplay_planner_demo.launch.py
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/__pycache__
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/__pycache__/ms3_sim.launch.cpython-38.pyc
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/ms2.launch.py
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/launch/ms3_core.launch.py
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/mpc.param.yaml
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/ndt_localizer.param.yaml
+[0.507s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/ray_ground_classifier.param.yaml
+[0.508s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/map_publisher_vehicle.param.yaml
+[0.508s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/ndt_localizer_vehicle.param.yaml
+[0.508s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/vlp16_rear_vehicle.param.yaml
+[0.508s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/vlp16_front_vehicle.param.yaml
+[0.509s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/object_collision_estimator_rrp.param.yaml
+[0.509s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/off_map_obstacles_filter.param.yaml
+[0.509s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/lane_planner.param.yaml
+[0.509s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/lgsvl_interface.param.yaml
+[0.509s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/odom_state_estimator.param.yaml
+[0.509s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/euclidean_cluster.param.yaml
+[0.510s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/lanelet2_map_provider.param.yaml
+[0.510s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/ssc_interface.param.yaml
+[0.510s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/parking_planner.param.yaml
+[0.510s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/object_collision_estimator.param.yaml
+[0.510s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/mpc_vehicle.param.yaml
+[0.510s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/behavior_planner.param.yaml
+[0.510s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/scan_downsampler.param.yaml
+[0.510s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/map_publisher.param.yaml
+[0.511s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/recordreplay_planner.param.yaml
+[0.511s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/pc_filter_transform.param.yaml
+[0.511s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/param/scan_downsampler_ms3.param.yaml
+[0.511s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/ament_index/resource_index/package_run_dependencies/avp_demo
+[0.511s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/ament_index/resource_index/parent_prefix_path/avp_demo
+[0.511s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/environment/ament_prefix_path.sh
+[0.511s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/environment/ament_prefix_path.dsv
+[0.512s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/environment/path.sh
+[0.512s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/environment/path.dsv
+[0.512s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/local_setup.bash
+[0.512s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/local_setup.sh
+[0.512s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/local_setup.zsh
+[0.512s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/local_setup.dsv
+[0.512s] -- Installing: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/package.dsv
+[0.512s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/ament_index/resource_index/packages/avp_demo
+[0.513s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/cmake/avp_demoConfig.cmake
+[0.513s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/cmake/avp_demoConfig-version.cmake
+[0.513s] -- Up-to-date: /home/acclivis/avp_demo/install/avp_demo/share/avp_demo/package.xml
+[0.513s] Invoked command in '/home/acclivis/avp_demo/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/acclivis/Node/Node_path_planner_validation_ws/install/path_planner_validation:/home/acclivis/Node/Node_localization_validation_ws/install/localization_validation:/home/acclivis/Node/Node_control_validation_ws/install/control_validation:/home/acclivis/Node/Node_perception_validation_ws/install/perception_validation:/opt/ros/foxy /usr/bin/cmake --install /home/acclivis/avp_demo/build/avp_demo

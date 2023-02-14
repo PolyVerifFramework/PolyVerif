@@ -28,7 +28,7 @@ pt = Point on turn.connectingLane.centerline # point in the ego's path that the 
 # BEHAVIOR
 behavior CrossingBehavior():
 	randomSpeedup = Range(0, 1)
-	startWalkingDist = 100#(10, 15)
+	startWalkingDist = 100 #(10, 15)
 	while True:
 		egoDist = distance from ego to pt
 		walkDist = distance from p to pt

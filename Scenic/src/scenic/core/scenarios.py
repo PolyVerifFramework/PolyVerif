@@ -159,7 +159,7 @@ class Scenario:
 			return False
 		return True
 
-	def generate(self, maxIterations=2000, verbosity=0, feedback=None):
+	def generate(self, maxIterations=5000, verbosity=0, feedback=None):
 		"""Sample a `Scene` from this scenario.
 
 		Args:

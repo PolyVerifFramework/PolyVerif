@@ -21,20 +21,19 @@ fog = 0
 wetness = 0
 cloudiness = 0
 damage = 0
-scene = "BorregasAve"
+scene = "aae03d2a-b7ca-4a88-9e41-9035287a12cc"
 file = open('pid','w');
 t = os.getpid()
 pid = str(t)
 file.write(pid)
 file.close()
 
-'''if sys.argv[1]: 
+if sys.argv[1]: 
    rain = float(sys.argv[1])
    fog = float(sys.argv[2])
    wetness = float(sys.argv[3])
    cloudiness = float(sys.argv[4])
    damage = float(sys.argv[5])
-   scene = sys.argv[6]'''
 
 print("Scenario with some NPC's")
 
@@ -58,7 +57,7 @@ state.transform.rotation = spawns[0].rotation
 #state.transform.rotation = spawns[0].rotation
 state.velocity = 10 * forward
 
-ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "myLexusVehicle"), lgsvl.AgentType.EGO, state)
+ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "5ab8175f-e1f1-427c-a86e-e882fa842977"), lgsvl.AgentType.EGO, state)
 
 # An EGO will not connect to a bridge unless commanded to
 print("Bridge connected:", ego.bridge_connected)
@@ -75,12 +74,12 @@ state.velocity = 10 * forward
 # 20 meters ahead, on left lane
 state.transform.position = spawns[0].position + 20 * forward
 state.transform.rotation = spawns[0].rotation #+ 100
-npc = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
+npc = sim.add_agent("Hatchback", lgsvl.AgentType.NPC, state)
 
 # state.transform.position = spawns[0].position + 40 * forward
 # state.transform.rotation = spawns[0].rotation #+ 100
 # npc1 = sim.add_agent("Jeep", lgsvl.AgentType.NPC, state)
-
+print("Bridge connected:", ego.bridge_connected)
 
 waypoints = []
 x_max = 2

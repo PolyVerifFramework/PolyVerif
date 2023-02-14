@@ -1,7 +1,7 @@
 /**:
   ros__parameters:
-    map_pcd_file: "/home/acclivis/avp_demo/data/JTA_R1.pcd"
-    #map_pcd_file: "/home/acclivis/avp_demo/data/JTA_R2.pcd"
+    #map_pcd_file: "/home/acclivis/avp_demo/data/JTA_R1.pcd"
+    map_pcd_file: "/home/acclivis/avp_demo/data/JTA_R2.pcd"
     map_yaml_file: "/home/acclivis/avp_demo/data/autonomoustuff_parking_lot_lgsvl.yaml"
     map_frame: "map"
     map_config:
