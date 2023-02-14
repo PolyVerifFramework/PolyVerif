@@ -1,0 +1,4 @@
+# generated from rosidl_cmake/cmake/rosidl_cmake-extras.cmake.in
+
+set(lgsvl_msgs_IDL_FILES "msg/BoundingBox2D.idl;msg/BoundingBox3D.idl;msg/CanBusData.idl;msg/DetectedRadarObjectArray.idl;msg/DetectedRadarObject.idl;msg/Detection2D.idl;msg/Detection2DArray.idl;msg/Detection3D.idl;msg/Detection3DArray.idl;msg/Signal.idl;msg/SignalArray.idl;msg/Ultrasonic.idl;msg/VehicleControlData.idl;msg/VehicleStateData.idl;msg/VehicleOdometry.idl")
+set(lgsvl_msgs_INTERFACE_FILES "msg/BoundingBox2D.msg;msg/BoundingBox3D.msg;msg/CanBusData.msg;msg/DetectedRadarObjectArray.msg;msg/DetectedRadarObject.msg;msg/Detection2D.msg;msg/Detection2DArray.msg;msg/Detection3D.msg;msg/Detection3DArray.msg;msg/Signal.msg;msg/SignalArray.msg;msg/Ultrasonic.msg;msg/VehicleControlData.msg;msg/VehicleStateData.msg;msg/VehicleOdometry.msg")

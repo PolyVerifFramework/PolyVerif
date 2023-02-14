@@ -1,0 +1,20 @@
+{
+  "package_name": "lgsvl_msgs",
+  "non_idl_tuples": [
+    "/home/acclivis/lgsvl_msgs:msg/BoundingBox2D.msg",
+    "/home/acclivis/lgsvl_msgs:msg/BoundingBox3D.msg",
+    "/home/acclivis/lgsvl_msgs:msg/CanBusData.msg",
+    "/home/acclivis/lgsvl_msgs:msg/DetectedRadarObjectArray.msg",
+    "/home/acclivis/lgsvl_msgs:msg/DetectedRadarObject.msg",
+    "/home/acclivis/lgsvl_msgs:msg/Detection2D.msg",
+    "/home/acclivis/lgsvl_msgs:msg/Detection2DArray.msg",
+    "/home/acclivis/lgsvl_msgs:msg/Detection3D.msg",
+    "/home/acclivis/lgsvl_msgs:msg/Detection3DArray.msg",
+    "/home/acclivis/lgsvl_msgs:msg/Signal.msg",
+    "/home/acclivis/lgsvl_msgs:msg/SignalArray.msg",
+    "/home/acclivis/lgsvl_msgs:msg/Ultrasonic.msg",
+    "/home/acclivis/lgsvl_msgs:msg/VehicleControlData.msg",
+    "/home/acclivis/lgsvl_msgs:msg/VehicleStateData.msg",
+    "/home/acclivis/lgsvl_msgs:msg/VehicleOdometry.msg"
+  ]
+}
