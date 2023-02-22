@@ -1,10 +1,5 @@
 #!/bin/bash
-echo "Building and installing the require components for PolyVerif Framework."
-#cd adehome
-#cd AutowareAuto
-#ade start
-#ade enter
-
+echo "Building and installing the require components for PolyVerif Suite."
 
 echo "Setting the environment variables.."
 source /opt/AutowareAuto/setup.bash
@@ -57,6 +52,7 @@ cd ..
 echo "Start Installing PythonAPI.."
 cd PythonAPI/
 pip3 install --user -e .
+python3 -m pip install -r requirements.txt --user -e .
 echo -e "PythonAPI Installed.\n\n"
 sleep 2
 cd ..
@@ -97,5 +93,5 @@ cd ..
 
 
 
-echo "All the package build Successfully"
+echo "All the package build Successfully."
 

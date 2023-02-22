@@ -42,6 +42,7 @@ Steps follow to run the poly_suite application,to setup and install poly_suite a
         Point 4 - Ros2-lgsvl-bridge
 
     4. Install and setup the OSSDC Simulator 
+      You need to download OSSDC simulator from [download link](https://drive.google.com/file/d/1J0c4YFKRYRDp--8qEuUGNlu5NDbcRH8M/view?usp=sharing)
       Please refer the below point number from the Setup_And_Installation document –
         Point 7 - OSSDC Simulator
 

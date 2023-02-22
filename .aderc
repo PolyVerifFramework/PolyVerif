@@ -4,5 +4,5 @@ export ADE_REGISTRY=registry.gitlab.com
 export ADE_IMAGES="
   registry.gitlab.com/autowarefoundation/autoware.auto/autowareauto/amd64/ade-foxy:1.0.0
   registry.gitlab.com/autowarefoundation/autoware.auto/autowareauto/amd64/binary-foxy:1.0.0
-  registry.gitlab.com/autowarefoundation/autoware.auto/ade-lgsvl/foxy:2020.06
+  registry.gitlab.com/autowarefoundation/autoware.auto/ade-lgsvl/foxy:2021.3
 "
