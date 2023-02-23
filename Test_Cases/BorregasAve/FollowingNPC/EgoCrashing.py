@@ -20,9 +20,7 @@ fog = 0
 wetness = 0
 cloudiness = 0
 damage = 0
-scene = "aae03d2a-b7ca-4a88-9e41-9035287a12cc" 
-# BorregasAve
-#scene = "781b04c8-43b4-431e-af55-1ae2b2efc877" #JTA_R2 Map
+scene = "aae03d2a-b7ca-4a88-9e41-9035287a12cc" # BorregasAve
 
 file = open('pid','w+')
 t = os.getpid()
@@ -36,12 +34,12 @@ SIMULATOR_HOST = env.str("LGSVL__SIMULATOR_HOST", 'localhost')
 SIMULATOR_BRIDGE = env.str("LGSVL__SIMULATOR_BRIDGE", 'localhost')
 SIMULATOR_BRIDGE_PORT = env.str("LGSVL__SIMULATOR_BRIDGE_PORT", '9090')
 
-# if sys.argv[1]: 
-#    rain = float(sys.argv[1])
-#    fog = float(sys.argv[2])
-#    wetness = float(sys.argv[3])
-#    cloudiness = float(sys.argv[4])
-#    damage = float(sys.argv[5])
+if sys.argv[1]: 
+   rain = float(sys.argv[1])
+   fog = float(sys.argv[2])
+   wetness = float(sys.argv[3])
+   cloudiness = float(sys.argv[4])
+   damage = float(sys.argv[5])
 
 
 print("Scenario with some NPC's")
@@ -62,7 +60,7 @@ state = lgsvl.AgentState()
 state.transform.position = spawns[0].position - 2 * forward
 state.transform.rotation = spawns[0].rotation
 state.velocity = 10 * forward
-#ego = sim.add_agent(env.str("LGSVL__VEHICLE_0","3c0417f5-98d4-41ad-ad6d-10d2b0130f77"), lgsvl.AgentType.EGO, state)
+
 ego = sim.add_agent(env.str("LGSVL__VEHICLE_0","5ab8175f-e1f1-427c-a86e-e882fa842978"), lgsvl.AgentType.EGO, state)
 
 
@@ -81,6 +79,7 @@ state = lgsvl.AgentState()
 state.transform.position = spawns[0].position + 150 * forward
 state.transform.rotation = spawns[0].rotation + 60
 Sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
+
 print("Bridge connected:", ego.bridge_connected)
 t0 = time.time()
 sim.run(time_limit=25, time_scale=1)

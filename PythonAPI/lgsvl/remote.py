@@ -59,7 +59,7 @@ class Remote(threading.Thread):
             raise Exception("Not connected")
 
         data = json.dumps({"command": name, "arguments": args})
-        print("In OOSD")
+        
         asyncio.run_coroutine_threadsafe(self.websocket.send(data), self.loop)
 
         with self.cv:

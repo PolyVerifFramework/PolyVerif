@@ -51,7 +51,6 @@ sleep 2
 cd ..
 echo "Start Installing PythonAPI.."
 cd PythonAPI/
-pip3 install --user -e .
 python3 -m pip install -r requirements.txt --user -e .
 echo -e "PythonAPI Installed.\n\n"
 sleep 2
@@ -93,5 +92,5 @@ cd ..
 
 
 
-echo "All the package build Successfully."
+echo "All the packages build Successfully."
 

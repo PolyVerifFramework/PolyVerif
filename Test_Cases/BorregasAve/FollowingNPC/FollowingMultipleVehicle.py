@@ -20,9 +20,8 @@ fog = 0
 wetness = 0
 cloudiness = 0
 damage = 0
-#scene = "aae03d2a-b7ca-4a88-9e41-9035287a12cc"
+scene = "aae03d2a-b7ca-4a88-9e41-9035287a12cc"
 
-scene = "781b04c8-43b4-431e-af55-1ae2b2efc877" #JTA_R2 Map
 file = open('pid','w')
 t = os.getpid()
 pid = str(t)

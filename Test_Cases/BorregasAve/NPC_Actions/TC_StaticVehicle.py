@@ -21,7 +21,8 @@ wetness = 0
 cloudiness = 0
 damage = 0
 scene = "aae03d2a-b7ca-4a88-9e41-9035287a12cc"
-file = open('pid','w');
+
+file = open('pid','w')
 t = os.getpid()
 pid = str(t)
 file.write(pid)
@@ -55,7 +56,7 @@ state.transform.rotation = spawns[0].rotation
 #state.transform.position = spawns[0].position - 5 * right
 #state.transform.rotation = spawns[0].rotation
 state.velocity = 10 * forward
-ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "5ab8175f-e1f1-427c-a86e-e882fa842977"), lgsvl.AgentType.EGO, state)
+ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "5ab8175f-e1f1-427c-a86e-e882fa842978"), lgsvl.AgentType.EGO, state)
 
 # An EGO will not connect to a bridge unless commanded to
 print("Bridge connected:", ego.bridge_connected)

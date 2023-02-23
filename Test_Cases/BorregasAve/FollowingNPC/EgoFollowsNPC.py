@@ -14,7 +14,6 @@ import os
 from pathlib import Path
 env = Env()
 
-print("Ego follows non ego vehicles")
 # Taking arguments for weather parameters and scene
 rain = 0
 fog = 0
@@ -22,7 +21,7 @@ wetness = 0
 cloudiness = 0
 damage = 0
 scene = "aae03d2a-b7ca-4a88-9e41-9035287a12cc"
-#scene = "781b04c8-43b4-431e-af55-1ae2b2efc877" #JTA_R2 Map
+
 home = str(Path.home())
 file = open(home+'/pid','w')
 t = os.getpid()
@@ -59,8 +58,7 @@ state.transform.rotation = spawns[0].rotation
 state.velocity = 20 * forward
 ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "5ab8175f-e1f1-427c-a86e-e882fa842978"), lgsvl.AgentType.EGO, state)
 
-# An EGO will not connect to a bridge unless commanded to
-print("Bridge connected:", ego.bridge_connected)
+
 
 # The EGO is now looking for a bridge at the specified IP and port
 ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGSVL__AUTOPILOT_0_PORT", 9090))
@@ -72,6 +70,8 @@ statej.velocity = 20 * forward
 sedan = sim.add_agent("Jeep", lgsvl.AgentType.NPC, statej)
 #sedan.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
 
+# An EGO will not connect to a bridge unless commanded to
+print("Bridge connected:", ego.bridge_connected)
 t0 = time.time()
 sim.run(time_limit=25, time_scale=1)
 t1 = time.time()
