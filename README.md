@@ -23,7 +23,7 @@ Below is the PC configuration required:
     •	Nodejs 12.16
     •	Python3.8
 
-  Reference link:  https://github.com/MaheshM99/PolyVerif
+  
 
 Steps follow to run the poly_suite application,to setup and install poly_suite application please refer all documents from Document directory.
 
@@ -42,7 +42,7 @@ Steps follow to run the poly_suite application,to setup and install poly_suite a
         Point 4 - Ros2-lgsvl-bridge
 
     4. Install and setup the OSSDC Simulator 
-      You need to download OSSDC simulator from [download link](https://drive.google.com/file/d/1J0c4YFKRYRDp--8qEuUGNlu5NDbcRH8M/view?usp=sharing)
+      You need to download OSSDC simulator from [download link](https://drive.google.com/uc?export=download&id=1sPAOsk_AwnXgeW9QW3aTJPa3TjmjDNWl)
       Please refer the below point number from the Setup_And_Installation document –
         Point 7 - OSSDC Simulator
 
@@ -56,5 +56,5 @@ Steps follow to run the poly_suite application,to setup and install poly_suite a
         Point 10, 11, 12, 13 - Node of Detection, Control, Localization, Mission Planning Validation
 
     7. Install and run the Poly_Suite framework
-      Once the above setup and packages are completed successfully. Please refer the below document to how to use the Suite.
+      Once the above setup and packages are completed successfully. Please refer the below document to how to use the PolySuite.
         Point 15 - PolyVerifcation_Suite_UserGuide.docx
