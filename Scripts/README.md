@@ -11,6 +11,7 @@ This document contains the information of installing and setup the component for
 The Simulator performance will be very slow if run on a lower PC configuration.
 
 Below is the PC configuration required:
+	
 	PC Configuration:
 	
   	•	CPU: Intel i7 10700
