@@ -41,8 +41,7 @@ ros2 topic pub /planning/goal_pose geometry_msgs/msg/PoseStamped  '{header:{fram
 JTA_R2_GoalPose (){
 	
 # JTA_R2
-#ros2 topic pub /planning/goal_pose geometry_msgs/msg/PoseStamped  '{header:{frame_id: "map"}, pose: {position: {x: -168, y: 9.38, z: 8.66}, orientation:{x: 0, y: 0, z: -1, w: 0}}}' --once
-ros2 topic pub /planning/goal_pose geometry_msgs/msg/PoseStamped  '{header:{frame_id: "map"}, pose: {position: {x: -198, y: -9.63, z: 8.63}, orientation:{x: 0, y: 0, z: -1, w: 0}}}' --once
+ros2 topic pub /planning/goal_pose geometry_msgs/msg/PoseStamped  '{header:{frame_id: "map"}, pose: {position: {x: -198, y: -1.42, z: 9.41}, orientation:{x: 0, y: 0, z: -1, w: 0}}}' --once
 }
 
 if [ $AvpDemoTaltech == true ]
