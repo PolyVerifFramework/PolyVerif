@@ -64,7 +64,7 @@ def main(args=None):
     adePath = currentpath[0:pos]
     print("adepath : ", adePath)
     location = adePath + '/'
-    f_path = open(location + 'PolyReports/Validation_report/config.txt', 'r')
+    f_path = open(location + 'PolyReports/Validation_report/config1.txt', 'r')
     # PolyReports/Validation_report/01_04_2021__13_50_36/TC_3_CV
     path = f_path.readline()
     file_path = path.strip()

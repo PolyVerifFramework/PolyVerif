@@ -1,7 +1,7 @@
 #!/bin/sh 
 set -eu
 ./Poly_Suite/support_files/validate_pathplannerNode.sh & 
-mkdir -p PolyReports/Validation_report/02_08_2023__10_42_20/PlannerJTA && touch PolyReports/Validation_report/02_08_2023__10_42_20/PlannerJTA/
-echo "PolyReports/Validation_report/02_08_2023__10_42_20/PlannerJTA " > PolyReports/Validation_report/config.txt; 
-echo "Running Scenario :/Test_Cases/JTA_R2/PythonScript/PlannerJTA.py 0.0 0.0 0.0 0.0 0.0 JTA_R2 " > ./Poly_Suite/logfiles/logInfo.txt; 
-python3 ./Test_Cases/JTA_R2/PythonScript/PlannerJTA.py 0.0 0.0 0.0 0.0 0.0 JTA_R2
+mkdir -p PolyReports/Validation_report/08_11_2022__14_47_47/Blind_Spot6 && touch PolyReports/Validation_report/08_11_2022__14_47_47/Blind_Spot6/
+echo "PolyReports/Validation_report/08_11_2022__14_47_47/Blind_Spot6 " > PolyReports/Validation_report/config.txt; 
+echo "Running Scenario :/Test_Cases/JTA_R1/JTA_R1_TESTS/Blind_Spot6.py 0.0 0.0 0.0 0.0 0.0 JTA_R1 " > ./Poly_Suite/logfiles/logInfo.txt; 
+python3 ./Test_Cases/JTA_R1/JTA_R1_TESTS/Blind_Spot6.py 0.0 0.0 0.0 0.0 0.0 JTA_R1
