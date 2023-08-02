@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'reportwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.15.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,9 +10,7 @@
 #define UI_REPORTWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
@@ -149,37 +147,37 @@ public:
     void setupUi(QDialog *reportwindow)
     {
         if (reportwindow->objectName().isEmpty())
-            reportwindow->setObjectName(QStringLiteral("reportwindow"));
+            reportwindow->setObjectName(QString::fromUtf8("reportwindow"));
         reportwindow->resize(1268, 615);
         tabReport = new QTabWidget(reportwindow);
-        tabReport->setObjectName(QStringLiteral("tabReport"));
+        tabReport->setObjectName(QString::fromUtf8("tabReport"));
         tabReport->setGeometry(QRect(220, 30, 1051, 591));
         controValidation = new QWidget();
-        controValidation->setObjectName(QStringLiteral("controValidation"));
+        controValidation->setObjectName(QString::fromUtf8("controValidation"));
         lblRSpinner = new QLabel(controValidation);
-        lblRSpinner->setObjectName(QStringLiteral("lblRSpinner"));
+        lblRSpinner->setObjectName(QString::fromUtf8("lblRSpinner"));
         lblRSpinner->setGeometry(QRect(550, 250, 121, 91));
         tableViewControl = new QTableView(controValidation);
-        tableViewControl->setObjectName(QStringLiteral("tableViewControl"));
+        tableViewControl->setObjectName(QString::fromUtf8("tableViewControl"));
         tableViewControl->setGeometry(QRect(600, 130, 431, 401));
         label_9 = new QLabel(controValidation);
-        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(11, 71, 581, 51));
         label_9->setFrameShape(QFrame::Panel);
         label_9->setAlignment(Qt::AlignCenter);
         label_9->setIndent(0);
         layoutWidget = new QWidget(controValidation);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(2, 2, 991, 61));
         horizontalLayout_3 = new QHBoxLayout(layoutWidget);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_3->addItem(horizontalSpacer);
 
         b_generateReportC = new QPushButton(layoutWidget);
-        b_generateReportC->setObjectName(QStringLiteral("b_generateReportC"));
+        b_generateReportC->setObjectName(QString::fromUtf8("b_generateReportC"));
 
         horizontalLayout_3->addWidget(b_generateReportC);
 
@@ -188,7 +186,7 @@ public:
         horizontalLayout_3->addItem(horizontalSpacer_3);
 
         b_showReportC = new QPushButton(layoutWidget);
-        b_showReportC->setObjectName(QStringLiteral("b_showReportC"));
+        b_showReportC->setObjectName(QString::fromUtf8("b_showReportC"));
 
         horizontalLayout_3->addWidget(b_showReportC);
 
@@ -197,22 +195,22 @@ public:
         horizontalLayout_3->addItem(horizontalSpacer_4);
 
         layoutWidget1 = new QWidget(controValidation);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
         layoutWidget1->setGeometry(QRect(10, 130, 581, 401));
         gridLayout = new QGridLayout(layoutWidget1);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
         verticalSpacer_9 = new QSpacerItem(20, 28, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout->addItem(verticalSpacer_9, 7, 1, 1, 1);
 
         label_6 = new QLabel(layoutWidget1);
-        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setObjectName(QString::fromUtf8("label_6"));
 
         gridLayout->addWidget(label_6, 3, 0, 1, 1);
 
         lblGT = new QLabel(layoutWidget1);
-        lblGT->setObjectName(QStringLiteral("lblGT"));
+        lblGT->setObjectName(QString::fromUtf8("lblGT"));
 
         gridLayout->addWidget(lblGT, 1, 1, 1, 1);
 
@@ -233,12 +231,12 @@ public:
         gridLayout->addItem(verticalSpacer_3, 2, 0, 1, 1);
 
         label_8 = new QLabel(layoutWidget1);
-        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setObjectName(QString::fromUtf8("label_8"));
 
         gridLayout->addWidget(label_8, 8, 0, 1, 1);
 
         lblPer = new QLabel(layoutWidget1);
-        lblPer->setObjectName(QStringLiteral("lblPer"));
+        lblPer->setObjectName(QString::fromUtf8("lblPer"));
 
         gridLayout->addWidget(lblPer, 3, 1, 1, 1);
 
@@ -247,7 +245,7 @@ public:
         gridLayout->addItem(verticalSpacer_4, 4, 0, 1, 1);
 
         lblBrake = new QLabel(layoutWidget1);
-        lblBrake->setObjectName(QStringLiteral("lblBrake"));
+        lblBrake->setObjectName(QString::fromUtf8("lblBrake"));
 
         gridLayout->addWidget(lblBrake, 8, 1, 1, 1);
 
@@ -256,17 +254,17 @@ public:
         gridLayout->addItem(verticalSpacer_2, 0, 0, 1, 1);
 
         label_7 = new QLabel(layoutWidget1);
-        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setObjectName(QString::fromUtf8("label_7"));
 
         gridLayout->addWidget(label_7, 5, 0, 1, 1);
 
         label_5 = new QLabel(layoutWidget1);
-        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setObjectName(QString::fromUtf8("label_5"));
 
         gridLayout->addWidget(label_5, 1, 0, 1, 1);
 
         lblDelayPer = new QLabel(layoutWidget1);
-        lblDelayPer->setObjectName(QStringLiteral("lblDelayPer"));
+        lblDelayPer->setObjectName(QString::fromUtf8("lblDelayPer"));
 
         gridLayout->addWidget(lblDelayPer, 5, 1, 2, 1);
 
@@ -276,19 +274,19 @@ public:
 
         tabReport->addTab(controValidation, QString());
         detectionValidation = new QWidget();
-        detectionValidation->setObjectName(QStringLiteral("detectionValidation"));
+        detectionValidation->setObjectName(QString::fromUtf8("detectionValidation"));
         layoutWidget2 = new QWidget(detectionValidation);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
         layoutWidget2->setGeometry(QRect(9, 9, 991, 27));
         horizontalLayout = new QHBoxLayout(layoutWidget2);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalSpacer_441 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_441);
 
         pushButton_2 = new QPushButton(layoutWidget2);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
 
         horizontalLayout->addWidget(pushButton_2);
 
@@ -297,7 +295,7 @@ public:
         horizontalLayout->addItem(horizontalSpacer_439);
 
         pushButton_3 = new QPushButton(layoutWidget2);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
 
         horizontalLayout->addWidget(pushButton_3);
 
@@ -306,29 +304,29 @@ public:
         horizontalLayout->addItem(horizontalSpacer_440);
 
         lblRSpinnerPerception = new QLabel(detectionValidation);
-        lblRSpinnerPerception->setObjectName(QStringLiteral("lblRSpinnerPerception"));
+        lblRSpinnerPerception->setObjectName(QString::fromUtf8("lblRSpinnerPerception"));
         lblRSpinnerPerception->setGeometry(QRect(540, 220, 131, 101));
         tableView = new QTableView(detectionValidation);
-        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setGeometry(QRect(620, 110, 421, 421));
         label_10 = new QLabel(detectionValidation);
-        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(10, 59, 601, 51));
         label_10->setFrameShape(QFrame::Panel);
         label_10->setAlignment(Qt::AlignCenter);
         label_10->setIndent(0);
         layoutWidget3 = new QWidget(detectionValidation);
-        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
         layoutWidget3->setGeometry(QRect(10, 110, 601, 421));
         formLayout = new QFormLayout(layoutWidget3);
-        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         formLayout->setItem(0, QFormLayout::LabelRole, verticalSpacer);
 
         lbl_d_Succes = new QLabel(layoutWidget3);
-        lbl_d_Succes->setObjectName(QStringLiteral("lbl_d_Succes"));
+        lbl_d_Succes->setObjectName(QString::fromUtf8("lbl_d_Succes"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, lbl_d_Succes);
 
@@ -337,7 +335,7 @@ public:
         formLayout->setItem(2, QFormLayout::LabelRole, verticalSpacer_10);
 
         lbl_d_LG = new QLabel(layoutWidget3);
-        lbl_d_LG->setObjectName(QStringLiteral("lbl_d_LG"));
+        lbl_d_LG->setObjectName(QString::fromUtf8("lbl_d_LG"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, lbl_d_LG);
 
@@ -346,7 +344,7 @@ public:
         formLayout->setItem(4, QFormLayout::LabelRole, verticalSpacer_11);
 
         lbl_d_Auto = new QLabel(layoutWidget3);
-        lbl_d_Auto->setObjectName(QStringLiteral("lbl_d_Auto"));
+        lbl_d_Auto->setObjectName(QString::fromUtf8("lbl_d_Auto"));
 
         formLayout->setWidget(5, QFormLayout::LabelRole, lbl_d_Auto);
 
@@ -355,35 +353,35 @@ public:
         formLayout->setItem(6, QFormLayout::LabelRole, verticalSpacer_12);
 
         lblSucceRate = new QLabel(layoutWidget3);
-        lblSucceRate->setObjectName(QStringLiteral("lblSucceRate"));
+        lblSucceRate->setObjectName(QString::fromUtf8("lblSucceRate"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, lblSucceRate);
 
         lblRangeLGSVL = new QLabel(layoutWidget3);
-        lblRangeLGSVL->setObjectName(QStringLiteral("lblRangeLGSVL"));
+        lblRangeLGSVL->setObjectName(QString::fromUtf8("lblRangeLGSVL"));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, lblRangeLGSVL);
 
         lblRangeAutoware = new QLabel(layoutWidget3);
-        lblRangeAutoware->setObjectName(QStringLiteral("lblRangeAutoware"));
+        lblRangeAutoware->setObjectName(QString::fromUtf8("lblRangeAutoware"));
 
         formLayout->setWidget(5, QFormLayout::FieldRole, lblRangeAutoware);
 
         tabReport->addTab(detectionValidation, QString());
         localizationValidation = new QWidget();
-        localizationValidation->setObjectName(QStringLiteral("localizationValidation"));
+        localizationValidation->setObjectName(QString::fromUtf8("localizationValidation"));
         layoutWidget_2 = new QWidget(localizationValidation);
-        layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
+        layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
         layoutWidget_2->setGeometry(QRect(-1, 9, 991, 27));
         horizontalLayout_btn_top = new QHBoxLayout(layoutWidget_2);
-        horizontalLayout_btn_top->setObjectName(QStringLiteral("horizontalLayout_btn_top"));
+        horizontalLayout_btn_top->setObjectName(QString::fromUtf8("horizontalLayout_btn_top"));
         horizontalLayout_btn_top->setContentsMargins(0, 0, 0, 0);
         horizontalSpacer_442 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_btn_top->addItem(horizontalSpacer_442);
 
         btn_local_Gen_Report = new QPushButton(layoutWidget_2);
-        btn_local_Gen_Report->setObjectName(QStringLiteral("btn_local_Gen_Report"));
+        btn_local_Gen_Report->setObjectName(QString::fromUtf8("btn_local_Gen_Report"));
 
         horizontalLayout_btn_top->addWidget(btn_local_Gen_Report);
 
@@ -392,7 +390,7 @@ public:
         horizontalLayout_btn_top->addItem(horizontalSpacer_443);
 
         btn_local_show_report = new QPushButton(layoutWidget_2);
-        btn_local_show_report->setObjectName(QStringLiteral("btn_local_show_report"));
+        btn_local_show_report->setObjectName(QString::fromUtf8("btn_local_show_report"));
 
         horizontalLayout_btn_top->addWidget(btn_local_show_report);
 
@@ -401,25 +399,25 @@ public:
         horizontalLayout_btn_top->addItem(horizontalSpacer_444);
 
         lbl_local_heading = new QLabel(localizationValidation);
-        lbl_local_heading->setObjectName(QStringLiteral("lbl_local_heading"));
+        lbl_local_heading->setObjectName(QString::fromUtf8("lbl_local_heading"));
         lbl_local_heading->setGeometry(QRect(0, 59, 601, 51));
         lbl_local_heading->setFrameShape(QFrame::Panel);
         lbl_local_heading->setAlignment(Qt::AlignCenter);
         lbl_local_heading->setIndent(0);
         tblV_local_DataReport = new QTableView(localizationValidation);
-        tblV_local_DataReport->setObjectName(QStringLiteral("tblV_local_DataReport"));
+        tblV_local_DataReport->setObjectName(QString::fromUtf8("tblV_local_DataReport"));
         tblV_local_DataReport->setGeometry(QRect(610, 120, 421, 411));
         lbl_SpinnerLocalization = new QLabel(localizationValidation);
-        lbl_SpinnerLocalization->setObjectName(QStringLiteral("lbl_SpinnerLocalization"));
+        lbl_SpinnerLocalization->setObjectName(QString::fromUtf8("lbl_SpinnerLocalization"));
         lbl_SpinnerLocalization->setGeometry(QRect(530, 220, 131, 101));
         layoutWidget4 = new QWidget(localizationValidation);
-        layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
+        layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
         layoutWidget4->setGeometry(QRect(30, 140, 381, 261));
         gridLayout_2 = new QGridLayout(layoutWidget4);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
         lbl_local_meanDev = new QLabel(layoutWidget4);
-        lbl_local_meanDev->setObjectName(QStringLiteral("lbl_local_meanDev"));
+        lbl_local_meanDev->setObjectName(QString::fromUtf8("lbl_local_meanDev"));
 
         gridLayout_2->addWidget(lbl_local_meanDev, 0, 0, 1, 1);
 
@@ -428,12 +426,12 @@ public:
         gridLayout_2->addItem(horizontalSpacer_2, 0, 1, 1, 1);
 
         lblD_local_meanDev = new QLabel(layoutWidget4);
-        lblD_local_meanDev->setObjectName(QStringLiteral("lblD_local_meanDev"));
+        lblD_local_meanDev->setObjectName(QString::fromUtf8("lblD_local_meanDev"));
 
         gridLayout_2->addWidget(lblD_local_meanDev, 0, 2, 1, 1);
 
         lbl_local_maxDev = new QLabel(layoutWidget4);
-        lbl_local_maxDev->setObjectName(QStringLiteral("lbl_local_maxDev"));
+        lbl_local_maxDev->setObjectName(QString::fromUtf8("lbl_local_maxDev"));
 
         gridLayout_2->addWidget(lbl_local_maxDev, 1, 0, 1, 1);
 
@@ -442,12 +440,12 @@ public:
         gridLayout_2->addItem(horizontalSpacer_5, 1, 1, 1, 1);
 
         lblD_local_maxDev = new QLabel(layoutWidget4);
-        lblD_local_maxDev->setObjectName(QStringLiteral("lblD_local_maxDev"));
+        lblD_local_maxDev->setObjectName(QString::fromUtf8("lblD_local_maxDev"));
 
         gridLayout_2->addWidget(lblD_local_maxDev, 1, 2, 1, 1);
 
         lbl_local_minDev = new QLabel(layoutWidget4);
-        lbl_local_minDev->setObjectName(QStringLiteral("lbl_local_minDev"));
+        lbl_local_minDev->setObjectName(QString::fromUtf8("lbl_local_minDev"));
 
         gridLayout_2->addWidget(lbl_local_minDev, 2, 0, 1, 1);
 
@@ -456,31 +454,31 @@ public:
         gridLayout_2->addItem(horizontalSpacer_6, 2, 1, 1, 1);
 
         lblD_local_minDev = new QLabel(layoutWidget4);
-        lblD_local_minDev->setObjectName(QStringLiteral("lblD_local_minDev"));
+        lblD_local_minDev->setObjectName(QString::fromUtf8("lblD_local_minDev"));
 
         gridLayout_2->addWidget(lblD_local_minDev, 2, 2, 1, 1);
 
         tabReport->addTab(localizationValidation, QString());
         missionplanningValidation = new QWidget();
-        missionplanningValidation->setObjectName(QStringLiteral("missionplanningValidation"));
+        missionplanningValidation->setObjectName(QString::fromUtf8("missionplanningValidation"));
         lbl_pp_spinnerPathPlanning = new QLabel(missionplanningValidation);
-        lbl_pp_spinnerPathPlanning->setObjectName(QStringLiteral("lbl_pp_spinnerPathPlanning"));
+        lbl_pp_spinnerPathPlanning->setObjectName(QString::fromUtf8("lbl_pp_spinnerPathPlanning"));
         lbl_pp_spinnerPathPlanning->setGeometry(QRect(530, 211, 131, 101));
         tblV_pp_DataReport = new QTableView(missionplanningValidation);
-        tblV_pp_DataReport->setObjectName(QStringLiteral("tblV_pp_DataReport"));
+        tblV_pp_DataReport->setObjectName(QString::fromUtf8("tblV_pp_DataReport"));
         tblV_pp_DataReport->setGeometry(QRect(610, 121, 421, 401));
         layoutWidget_4 = new QWidget(missionplanningValidation);
-        layoutWidget_4->setObjectName(QStringLiteral("layoutWidget_4"));
+        layoutWidget_4->setObjectName(QString::fromUtf8("layoutWidget_4"));
         layoutWidget_4->setGeometry(QRect(0, 10, 991, 27));
         horizontalLayout_btn_top_2 = new QHBoxLayout(layoutWidget_4);
-        horizontalLayout_btn_top_2->setObjectName(QStringLiteral("horizontalLayout_btn_top_2"));
+        horizontalLayout_btn_top_2->setObjectName(QString::fromUtf8("horizontalLayout_btn_top_2"));
         horizontalLayout_btn_top_2->setContentsMargins(0, 0, 0, 0);
         horizontalSpacer_445 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_btn_top_2->addItem(horizontalSpacer_445);
 
         btn_pp_Gen_Report = new QPushButton(layoutWidget_4);
-        btn_pp_Gen_Report->setObjectName(QStringLiteral("btn_pp_Gen_Report"));
+        btn_pp_Gen_Report->setObjectName(QString::fromUtf8("btn_pp_Gen_Report"));
 
         horizontalLayout_btn_top_2->addWidget(btn_pp_Gen_Report);
 
@@ -489,7 +487,7 @@ public:
         horizontalLayout_btn_top_2->addItem(horizontalSpacer_446);
 
         btn_pp_show_report = new QPushButton(layoutWidget_4);
-        btn_pp_show_report->setObjectName(QStringLiteral("btn_pp_show_report"));
+        btn_pp_show_report->setObjectName(QString::fromUtf8("btn_pp_show_report"));
 
         horizontalLayout_btn_top_2->addWidget(btn_pp_show_report);
 
@@ -498,24 +496,24 @@ public:
         horizontalLayout_btn_top_2->addItem(horizontalSpacer_447);
 
         lbl_pp_heading = new QLabel(missionplanningValidation);
-        lbl_pp_heading->setObjectName(QStringLiteral("lbl_pp_heading"));
+        lbl_pp_heading->setObjectName(QString::fromUtf8("lbl_pp_heading"));
         lbl_pp_heading->setGeometry(QRect(0, 60, 601, 51));
         lbl_pp_heading->setFrameShape(QFrame::Panel);
         lbl_pp_heading->setAlignment(Qt::AlignCenter);
         lbl_pp_heading->setIndent(0);
         layoutWidget5 = new QWidget(missionplanningValidation);
-        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
+        layoutWidget5->setObjectName(QString::fromUtf8("layoutWidget5"));
         layoutWidget5->setGeometry(QRect(30, 132, 511, 281));
         gridLayout_3 = new QGridLayout(layoutWidget5);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
         lblD_pp_goalPosAchieved = new QLabel(layoutWidget5);
-        lblD_pp_goalPosAchieved->setObjectName(QStringLiteral("lblD_pp_goalPosAchieved"));
+        lblD_pp_goalPosAchieved->setObjectName(QString::fromUtf8("lblD_pp_goalPosAchieved"));
 
         gridLayout_3->addWidget(lblD_pp_goalPosAchieved, 0, 2, 1, 1);
 
         lblD_pp_collisionCount = new QLabel(layoutWidget5);
-        lblD_pp_collisionCount->setObjectName(QStringLiteral("lblD_pp_collisionCount"));
+        lblD_pp_collisionCount->setObjectName(QString::fromUtf8("lblD_pp_collisionCount"));
 
         gridLayout_3->addWidget(lblD_pp_collisionCount, 2, 2, 1, 1);
 
@@ -528,17 +526,17 @@ public:
         gridLayout_3->addItem(horizontalSpacer_8, 1, 1, 1, 1);
 
         lbl_pp_collisionCount = new QLabel(layoutWidget5);
-        lbl_pp_collisionCount->setObjectName(QStringLiteral("lbl_pp_collisionCount"));
+        lbl_pp_collisionCount->setObjectName(QString::fromUtf8("lbl_pp_collisionCount"));
 
         gridLayout_3->addWidget(lbl_pp_collisionCount, 2, 0, 1, 1);
 
         lbl_pp_goalPosDeviation = new QLabel(layoutWidget5);
-        lbl_pp_goalPosDeviation->setObjectName(QStringLiteral("lbl_pp_goalPosDeviation"));
+        lbl_pp_goalPosDeviation->setObjectName(QString::fromUtf8("lbl_pp_goalPosDeviation"));
 
         gridLayout_3->addWidget(lbl_pp_goalPosDeviation, 1, 0, 1, 1);
 
         lblD_pp_goalPosDeviation = new QLabel(layoutWidget5);
-        lblD_pp_goalPosDeviation->setObjectName(QStringLiteral("lblD_pp_goalPosDeviation"));
+        lblD_pp_goalPosDeviation->setObjectName(QString::fromUtf8("lblD_pp_goalPosDeviation"));
 
         gridLayout_3->addWidget(lblD_pp_goalPosDeviation, 1, 2, 1, 1);
 
@@ -547,7 +545,7 @@ public:
         gridLayout_3->addItem(horizontalSpacer_10, 3, 1, 1, 1);
 
         lbl_pp_goalPosAchieved = new QLabel(layoutWidget5);
-        lbl_pp_goalPosAchieved->setObjectName(QStringLiteral("lbl_pp_goalPosAchieved"));
+        lbl_pp_goalPosAchieved->setObjectName(QString::fromUtf8("lbl_pp_goalPosAchieved"));
 
         gridLayout_3->addWidget(lbl_pp_goalPosAchieved, 0, 0, 1, 1);
 
@@ -556,52 +554,52 @@ public:
         gridLayout_3->addItem(horizontalSpacer_9, 2, 1, 1, 1);
 
         lblD_pp_drivableAreaFollowed = new QLabel(layoutWidget5);
-        lblD_pp_drivableAreaFollowed->setObjectName(QStringLiteral("lblD_pp_drivableAreaFollowed"));
+        lblD_pp_drivableAreaFollowed->setObjectName(QString::fromUtf8("lblD_pp_drivableAreaFollowed"));
 
         gridLayout_3->addWidget(lblD_pp_drivableAreaFollowed, 3, 2, 1, 1);
 
         lbl_pp_drivableAreaFollowed = new QLabel(layoutWidget5);
-        lbl_pp_drivableAreaFollowed->setObjectName(QStringLiteral("lbl_pp_drivableAreaFollowed"));
+        lbl_pp_drivableAreaFollowed->setObjectName(QString::fromUtf8("lbl_pp_drivableAreaFollowed"));
 
         gridLayout_3->addWidget(lbl_pp_drivableAreaFollowed, 3, 0, 1, 1);
 
         tabReport->addTab(missionplanningValidation, QString());
         summary = new QWidget();
-        summary->setObjectName(QStringLiteral("summary"));
+        summary->setObjectName(QString::fromUtf8("summary"));
         tableWidSummary = new QTableWidget(summary);
-        tableWidSummary->setObjectName(QStringLiteral("tableWidSummary"));
+        tableWidSummary->setObjectName(QString::fromUtf8("tableWidSummary"));
         tableWidSummary->setGeometry(QRect(20, 40, 641, 421));
         lbl_summry_lbl2 = new QLabel(summary);
-        lbl_summry_lbl2->setObjectName(QStringLiteral("lbl_summry_lbl2"));
+        lbl_summry_lbl2->setObjectName(QString::fromUtf8("lbl_summry_lbl2"));
         lbl_summry_lbl2->setGeometry(QRect(670, 150, 205, 65));
         lbl_summry_lbl1 = new QLabel(summary);
-        lbl_summry_lbl1->setObjectName(QStringLiteral("lbl_summry_lbl1"));
+        lbl_summry_lbl1->setObjectName(QString::fromUtf8("lbl_summry_lbl1"));
         lbl_summry_lbl1->setGeometry(QRect(670, 90, 205, 65));
         lblD_summry_lbl1 = new QLabel(summary);
-        lblD_summry_lbl1->setObjectName(QStringLiteral("lblD_summry_lbl1"));
+        lblD_summry_lbl1->setObjectName(QString::fromUtf8("lblD_summry_lbl1"));
         lblD_summry_lbl1->setGeometry(QRect(910, 87, 81, 65));
         lblD_summry_lbl2 = new QLabel(summary);
-        lblD_summry_lbl2->setObjectName(QStringLiteral("lblD_summry_lbl2"));
+        lblD_summry_lbl2->setObjectName(QString::fromUtf8("lblD_summry_lbl2"));
         lblD_summry_lbl2->setGeometry(QRect(910, 150, 101, 65));
         lbl_analysis = new QLabel(summary);
-        lbl_analysis->setObjectName(QStringLiteral("lbl_analysis"));
+        lbl_analysis->setObjectName(QString::fromUtf8("lbl_analysis"));
         lbl_analysis->setGeometry(QRect(790, 30, 205, 65));
         tabReport->addTab(summary, QString());
         horizontalLayoutWidget_2 = new QWidget(reportwindow);
-        horizontalLayoutWidget_2->setObjectName(QStringLiteral("horizontalLayoutWidget_2"));
+        horizontalLayoutWidget_2->setObjectName(QString::fromUtf8("horizontalLayoutWidget_2"));
         horizontalLayoutWidget_2->setGeometry(QRect(10, 30, 211, 561));
         showReportLayout = new QHBoxLayout(horizontalLayoutWidget_2);
-        showReportLayout->setObjectName(QStringLiteral("showReportLayout"));
+        showReportLayout->setObjectName(QString::fromUtf8("showReportLayout"));
         showReportLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout_5 = new QVBoxLayout();
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         pushButton = new QPushButton(horizontalLayoutWidget_2);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
         verticalLayout_5->addWidget(pushButton);
 
         treeWidgetReportDir = new QTreeWidget(horizontalLayoutWidget_2);
-        treeWidgetReportDir->setObjectName(QStringLiteral("treeWidgetReportDir"));
+        treeWidgetReportDir->setObjectName(QString::fromUtf8("treeWidgetReportDir"));
 
         verticalLayout_5->addWidget(treeWidgetReportDir);
 
@@ -611,7 +609,7 @@ public:
 
         retranslateUi(reportwindow);
 
-        tabReport->setCurrentIndex(3);
+        tabReport->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(reportwindow);
@@ -619,64 +617,64 @@ public:
 
     void retranslateUi(QDialog *reportwindow)
     {
-        reportwindow->setWindowTitle(QApplication::translate("reportwindow", "Dialog", 0));
+        reportwindow->setWindowTitle(QCoreApplication::translate("reportwindow", "Dialog", nullptr));
         lblRSpinner->setText(QString());
-        label_9->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Control Validation Report</span></p></body></html>", 0));
-        b_generateReportC->setText(QApplication::translate("reportwindow", "Generate Report", 0));
-        b_showReportC->setText(QApplication::translate("reportwindow", "Show Report", 0));
-        label_6->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Response Time of Ego in Autoware (sec) :</span></p></body></html>", 0));
-        lblGT->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        label_8->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Brake Applied from Ego :</span></p></body></html>", 0));
-        lblPer->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        lblBrake->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        label_7->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Delay in Response Time of Ego in Autoware (sec) :</span></p></body></html>", 0));
-        label_5->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Response Time of Ego in LGSVL (sec) :</span></p></body></html>", 0));
-        lblDelayPer->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        tabReport->setTabText(tabReport->indexOf(controValidation), QApplication::translate("reportwindow", "Control Validation", 0));
-        pushButton_2->setText(QApplication::translate("reportwindow", "Generate Report", 0));
-        pushButton_3->setText(QApplication::translate("reportwindow", "Show Report", 0));
+        label_9->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Control Validation Report</span></p></body></html>", nullptr));
+        b_generateReportC->setText(QCoreApplication::translate("reportwindow", "Generate Report", nullptr));
+        b_showReportC->setText(QCoreApplication::translate("reportwindow", "Show Report", nullptr));
+        label_6->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Reaction Time of Ego in Autoware (sec) :</span></p></body></html>", nullptr));
+        lblGT->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        label_8->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Brake Applied from Ego :</span></p></body></html>", nullptr));
+        lblPer->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        lblBrake->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        label_7->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Delay in Reaction time Time(sec) :</span></p></body></html>", nullptr));
+        label_5->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">Reaction Time of LGSVL(sec):</span></p></body></html>", nullptr));
+        lblDelayPer->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        tabReport->setTabText(tabReport->indexOf(controValidation), QCoreApplication::translate("reportwindow", "Control Validation", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("reportwindow", "Generate Report", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("reportwindow", "Show Report", nullptr));
         lblRSpinnerPerception->setText(QString());
-        label_10->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection Validation Report</span></p></body></html>", 0));
-        lbl_d_Succes->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection Success Rate (%) of Autoware                  :</span></p></body></html>", 0));
-        lbl_d_LG->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection range of LGSVL (meters)                      :</span></p></body></html>", 0));
-        lbl_d_Auto->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection range of Autoware (meters)                   :</span></p></body></html>", 0));
-        lblSucceRate->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        lblRangeLGSVL->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        lblRangeAutoware->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        tabReport->setTabText(tabReport->indexOf(detectionValidation), QApplication::translate("reportwindow", "Detection Validation", 0));
-        btn_local_Gen_Report->setText(QApplication::translate("reportwindow", "Generate Report", 0));
-        btn_local_show_report->setText(QApplication::translate("reportwindow", "Show Report", 0));
-        lbl_local_heading->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Localization Validation Report</span></p></body></html>", 0));
+        label_10->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection Validation Report</span></p></body></html>", nullptr));
+        lbl_d_Succes->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection Success Rate (%) of Autoware                  :</span></p></body></html>", nullptr));
+        lbl_d_LG->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection range of LGSVL (meters)                      :</span></p></body></html>", nullptr));
+        lbl_d_Auto->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection range of Autoware (meters)                   :</span></p></body></html>", nullptr));
+        lblSucceRate->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        lblRangeLGSVL->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        lblRangeAutoware->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        tabReport->setTabText(tabReport->indexOf(detectionValidation), QCoreApplication::translate("reportwindow", "Detection Validation", nullptr));
+        btn_local_Gen_Report->setText(QCoreApplication::translate("reportwindow", "Generate Report", nullptr));
+        btn_local_show_report->setText(QCoreApplication::translate("reportwindow", "Show Report", nullptr));
+        lbl_local_heading->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Localization Validation Report</span></p></body></html>", nullptr));
         lbl_SpinnerLocalization->setText(QString());
-        lbl_local_meanDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Mean Deviation(meters)</span></p></body></html>", 0));
-        lblD_local_meanDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        lbl_local_maxDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Max Deviation(meters)</span></p></body></html>", 0));
-        lblD_local_maxDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        lbl_local_minDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Min Deviation(meters)</span></p></body></html>", 0));
-        lblD_local_minDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        tabReport->setTabText(tabReport->indexOf(localizationValidation), QApplication::translate("reportwindow", "Localization Validation", 0));
+        lbl_local_meanDev->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Mean Deviation(meters)</span></p></body></html>", nullptr));
+        lblD_local_meanDev->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        lbl_local_maxDev->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Max Deviation(meters)</span></p></body></html>", nullptr));
+        lblD_local_maxDev->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        lbl_local_minDev->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Min Deviation(meters)</span></p></body></html>", nullptr));
+        lblD_local_minDev->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        tabReport->setTabText(tabReport->indexOf(localizationValidation), QCoreApplication::translate("reportwindow", "Localization Validation", nullptr));
         lbl_pp_spinnerPathPlanning->setText(QString());
-        btn_pp_Gen_Report->setText(QApplication::translate("reportwindow", "Generate Report", 0));
-        btn_pp_show_report->setText(QApplication::translate("reportwindow", "Show Report", 0));
-        lbl_pp_heading->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Mission Planning Validation Report</span></p></body></html>", 0));
-        lblD_pp_goalPosAchieved->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        lblD_pp_collisionCount->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        lbl_pp_collisionCount->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Number of Collisions</span></p></body></html>", 0));
-        lbl_pp_goalPosDeviation->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Goal Position Deviation(meters)</span></p></body></html>", 0));
-        lblD_pp_goalPosDeviation->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        lbl_pp_goalPosAchieved->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Goal Position Achieved</span></p></body></html>", 0));
-        lblD_pp_drivableAreaFollowed->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        lbl_pp_drivableAreaFollowed->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Driveable Area Followed</span></p></body></html>", 0));
-        tabReport->setTabText(tabReport->indexOf(missionplanningValidation), QApplication::translate("reportwindow", "Mission Planning Validation", 0));
-        lbl_summry_lbl2->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Collision </span></p></body></html>", 0));
-        lbl_summry_lbl1->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Destination Reached</span></p></body></html>", 0));
-        lblD_summry_lbl1->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#4e9a06;\">Succeed</span></p></body></html>", 0));
-        lblD_summry_lbl2->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#4e9a06;\">No Collision</span></p></body></html>", 0));
-        lbl_analysis->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Analysis</span></p></body></html>", 0));
-        tabReport->setTabText(tabReport->indexOf(summary), QApplication::translate("reportwindow", "Summary ", 0));
-        pushButton->setText(QApplication::translate("reportwindow", "Load Report", 0));
+        btn_pp_Gen_Report->setText(QCoreApplication::translate("reportwindow", "Generate Report", nullptr));
+        btn_pp_show_report->setText(QCoreApplication::translate("reportwindow", "Show Report", nullptr));
+        lbl_pp_heading->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Mission Planning Validation Report</span></p></body></html>", nullptr));
+        lblD_pp_goalPosAchieved->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        lblD_pp_collisionCount->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        lbl_pp_collisionCount->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Number of Collisions</span></p></body></html>", nullptr));
+        lbl_pp_goalPosDeviation->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Goal Position Deviation(meters)</span></p></body></html>", nullptr));
+        lblD_pp_goalPosDeviation->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        lbl_pp_goalPosAchieved->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Goal Position Achieved</span></p></body></html>", nullptr));
+        lblD_pp_drivableAreaFollowed->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", nullptr));
+        lbl_pp_drivableAreaFollowed->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Driveable Area Followed</span></p></body></html>", nullptr));
+        tabReport->setTabText(tabReport->indexOf(missionplanningValidation), QCoreApplication::translate("reportwindow", "Mission Planning Validation", nullptr));
+        lbl_summry_lbl2->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Collision </span></p></body></html>", nullptr));
+        lbl_summry_lbl1->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Destination Reached</span></p></body></html>", nullptr));
+        lblD_summry_lbl1->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#4e9a06;\">Succeed</span></p></body></html>", nullptr));
+        lblD_summry_lbl2->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#4e9a06;\">No Collision</span></p></body></html>", nullptr));
+        lbl_analysis->setText(QCoreApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Analysis</span></p></body></html>", nullptr));
+        tabReport->setTabText(tabReport->indexOf(summary), QCoreApplication::translate("reportwindow", "Summary ", nullptr));
+        pushButton->setText(QCoreApplication::translate("reportwindow", "Load Report", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = treeWidgetReportDir->headerItem();
-        ___qtreewidgetitem->setText(0, QApplication::translate("reportwindow", "Select Simulation Report", 0));
+        ___qtreewidgetitem->setText(0, QCoreApplication::translate("reportwindow", "Select Simulation Report", nullptr));
     } // retranslateUi
 
 };
