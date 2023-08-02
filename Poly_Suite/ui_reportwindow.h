@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'reportwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.5
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -619,64 +619,64 @@ public:
 
     void retranslateUi(QDialog *reportwindow)
     {
-        reportwindow->setWindowTitle(QApplication::translate("reportwindow", "Dialog", Q_NULLPTR));
+        reportwindow->setWindowTitle(QApplication::translate("reportwindow", "Dialog", 0));
         lblRSpinner->setText(QString());
-        label_9->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Control Validation Report</span></p></body></html>", Q_NULLPTR));
-        b_generateReportC->setText(QApplication::translate("reportwindow", "Generate Report", Q_NULLPTR));
-        b_showReportC->setText(QApplication::translate("reportwindow", "Show Report", Q_NULLPTR));
-        label_6->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Response Time of Ego in Autoware (sec) :</span></p></body></html>", Q_NULLPTR));
-        lblGT->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        label_8->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Brake Applied from Ego :</span></p></body></html>", Q_NULLPTR));
-        lblPer->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        lblBrake->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        label_7->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Delay in Response Time of Ego in Autoware (sec) :</span></p></body></html>", Q_NULLPTR));
-        label_5->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Response Time of Ego in LGSVL (sec) :</span></p></body></html>", Q_NULLPTR));
-        lblDelayPer->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        tabReport->setTabText(tabReport->indexOf(controValidation), QApplication::translate("reportwindow", "Control Validation", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("reportwindow", "Generate Report", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("reportwindow", "Show Report", Q_NULLPTR));
+        label_9->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Control Validation Report</span></p></body></html>", 0));
+        b_generateReportC->setText(QApplication::translate("reportwindow", "Generate Report", 0));
+        b_showReportC->setText(QApplication::translate("reportwindow", "Show Report", 0));
+        label_6->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Response Time of Ego in Autoware (sec) :</span></p></body></html>", 0));
+        lblGT->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        label_8->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Brake Applied from Ego :</span></p></body></html>", 0));
+        lblPer->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        lblBrake->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        label_7->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Delay in Response Time of Ego in Autoware (sec) :</span></p></body></html>", 0));
+        label_5->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Response Time of Ego in LGSVL (sec) :</span></p></body></html>", 0));
+        lblDelayPer->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        tabReport->setTabText(tabReport->indexOf(controValidation), QApplication::translate("reportwindow", "Control Validation", 0));
+        pushButton_2->setText(QApplication::translate("reportwindow", "Generate Report", 0));
+        pushButton_3->setText(QApplication::translate("reportwindow", "Show Report", 0));
         lblRSpinnerPerception->setText(QString());
-        label_10->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection Validation Report</span></p></body></html>", Q_NULLPTR));
-        lbl_d_Succes->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection Success Rate (%) of Autoware                  :</span></p></body></html>", Q_NULLPTR));
-        lbl_d_LG->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection range of LGSVL (meters)                      :</span></p></body></html>", Q_NULLPTR));
-        lbl_d_Auto->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection range of Autoware (meters)                   :</span></p></body></html>", Q_NULLPTR));
-        lblSucceRate->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        lblRangeLGSVL->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        lblRangeAutoware->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        tabReport->setTabText(tabReport->indexOf(detectionValidation), QApplication::translate("reportwindow", "Detection Validation", Q_NULLPTR));
-        btn_local_Gen_Report->setText(QApplication::translate("reportwindow", "Generate Report", Q_NULLPTR));
-        btn_local_show_report->setText(QApplication::translate("reportwindow", "Show Report", Q_NULLPTR));
-        lbl_local_heading->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Localization Validation Report</span></p></body></html>", Q_NULLPTR));
+        label_10->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection Validation Report</span></p></body></html>", 0));
+        lbl_d_Succes->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection Success Rate (%) of Autoware                  :</span></p></body></html>", 0));
+        lbl_d_LG->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection range of LGSVL (meters)                      :</span></p></body></html>", 0));
+        lbl_d_Auto->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Detection range of Autoware (meters)                   :</span></p></body></html>", 0));
+        lblSucceRate->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        lblRangeLGSVL->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        lblRangeAutoware->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        tabReport->setTabText(tabReport->indexOf(detectionValidation), QApplication::translate("reportwindow", "Detection Validation", 0));
+        btn_local_Gen_Report->setText(QApplication::translate("reportwindow", "Generate Report", 0));
+        btn_local_show_report->setText(QApplication::translate("reportwindow", "Show Report", 0));
+        lbl_local_heading->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Localization Validation Report</span></p></body></html>", 0));
         lbl_SpinnerLocalization->setText(QString());
-        lbl_local_meanDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Mean Deviation(meters)</span></p></body></html>", Q_NULLPTR));
-        lblD_local_meanDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        lbl_local_maxDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Max Deviation(meters)</span></p></body></html>", Q_NULLPTR));
-        lblD_local_maxDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        lbl_local_minDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Min Deviation(meters)</span></p></body></html>", Q_NULLPTR));
-        lblD_local_minDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        tabReport->setTabText(tabReport->indexOf(localizationValidation), QApplication::translate("reportwindow", "Localization Validation", Q_NULLPTR));
+        lbl_local_meanDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Mean Deviation(meters)</span></p></body></html>", 0));
+        lblD_local_meanDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        lbl_local_maxDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Max Deviation(meters)</span></p></body></html>", 0));
+        lblD_local_maxDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        lbl_local_minDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Min Deviation(meters)</span></p></body></html>", 0));
+        lblD_local_minDev->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        tabReport->setTabText(tabReport->indexOf(localizationValidation), QApplication::translate("reportwindow", "Localization Validation", 0));
         lbl_pp_spinnerPathPlanning->setText(QString());
-        btn_pp_Gen_Report->setText(QApplication::translate("reportwindow", "Generate Report", Q_NULLPTR));
-        btn_pp_show_report->setText(QApplication::translate("reportwindow", "Show Report", Q_NULLPTR));
-        lbl_pp_heading->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Mission Planning Validation Report</span></p></body></html>", Q_NULLPTR));
-        lblD_pp_goalPosAchieved->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        lblD_pp_collisionCount->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        lbl_pp_collisionCount->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Number of Collisions</span></p></body></html>", Q_NULLPTR));
-        lbl_pp_goalPosDeviation->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Goal Position Deviation(meters)</span></p></body></html>", Q_NULLPTR));
-        lblD_pp_goalPosDeviation->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        lbl_pp_goalPosAchieved->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Goal Position Achieved</span></p></body></html>", Q_NULLPTR));
-        lblD_pp_drivableAreaFollowed->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", Q_NULLPTR));
-        lbl_pp_drivableAreaFollowed->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Driveable Area Followed</span></p></body></html>", Q_NULLPTR));
-        tabReport->setTabText(tabReport->indexOf(missionplanningValidation), QApplication::translate("reportwindow", "Mission Planning Validation", Q_NULLPTR));
-        lbl_summry_lbl2->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Collision </span></p></body></html>", Q_NULLPTR));
-        lbl_summry_lbl1->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Destination Reached</span></p></body></html>", Q_NULLPTR));
-        lblD_summry_lbl1->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#4e9a06;\">Succeed</span></p></body></html>", Q_NULLPTR));
-        lblD_summry_lbl2->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#4e9a06;\">No Collision</span></p></body></html>", Q_NULLPTR));
-        lbl_analysis->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Analysis</span></p></body></html>", Q_NULLPTR));
-        tabReport->setTabText(tabReport->indexOf(summary), QApplication::translate("reportwindow", "Summary ", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("reportwindow", "Load Report", Q_NULLPTR));
+        btn_pp_Gen_Report->setText(QApplication::translate("reportwindow", "Generate Report", 0));
+        btn_pp_show_report->setText(QApplication::translate("reportwindow", "Show Report", 0));
+        lbl_pp_heading->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Mission Planning Validation Report</span></p></body></html>", 0));
+        lblD_pp_goalPosAchieved->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        lblD_pp_collisionCount->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        lbl_pp_collisionCount->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Number of Collisions</span></p></body></html>", 0));
+        lbl_pp_goalPosDeviation->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Goal Position Deviation(meters)</span></p></body></html>", 0));
+        lblD_pp_goalPosDeviation->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        lbl_pp_goalPosAchieved->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Goal Position Achieved</span></p></body></html>", 0));
+        lblD_pp_drivableAreaFollowed->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
+        lbl_pp_drivableAreaFollowed->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Driveable Area Followed</span></p></body></html>", 0));
+        tabReport->setTabText(tabReport->indexOf(missionplanningValidation), QApplication::translate("reportwindow", "Mission Planning Validation", 0));
+        lbl_summry_lbl2->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Collision </span></p></body></html>", 0));
+        lbl_summry_lbl1->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Destination Reached</span></p></body></html>", 0));
+        lblD_summry_lbl1->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#4e9a06;\">Succeed</span></p></body></html>", 0));
+        lblD_summry_lbl2->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#4e9a06;\">No Collision</span></p></body></html>", 0));
+        lbl_analysis->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Analysis</span></p></body></html>", 0));
+        tabReport->setTabText(tabReport->indexOf(summary), QApplication::translate("reportwindow", "Summary ", 0));
+        pushButton->setText(QApplication::translate("reportwindow", "Load Report", 0));
         QTreeWidgetItem *___qtreewidgetitem = treeWidgetReportDir->headerItem();
-        ___qtreewidgetitem->setText(0, QApplication::translate("reportwindow", "Select Simulation Report", Q_NULLPTR));
+        ___qtreewidgetitem->setText(0, QApplication::translate("reportwindow", "Select Simulation Report", 0));
     } // retranslateUi
 
 };

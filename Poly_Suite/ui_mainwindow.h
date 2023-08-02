@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.5
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -956,7 +956,7 @@ public:
         retranslateUi(MainWindow);
 
         tabWidget->setCurrentIndex(0);
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -964,78 +964,78 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        actionexit->setText(QApplication::translate("MainWindow", "exit", Q_NULLPTR));
-        actionAbout->setText(QApplication::translate("MainWindow", "About", Q_NULLPTR));
-        lbl_outputlog->setText(QApplication::translate("MainWindow", "Log Information :", Q_NULLPTR));
-        checkBox_2->setText(QApplication::translate("MainWindow", "Detection Validation", Q_NULLPTR));
-        checkBox_3->setText(QApplication::translate("MainWindow", "Control Validation", Q_NULLPTR));
-        ckbox_localization->setText(QApplication::translate("MainWindow", "Localization Validation", Q_NULLPTR));
-        ckbox_PathPlanning->setText(QApplication::translate("MainWindow", "Mission Planning Validation", Q_NULLPTR));
-        ckbox_perception->setText(QApplication::translate("MainWindow", "Perception Validation", Q_NULLPTR));
-        gbox_localization->setTitle(QApplication::translate("MainWindow", "Localization Validation", Q_NULLPTR));
-        btn_local_adeStart->setText(QApplication::translate("MainWindow", "Start ADE", Q_NULLPTR));
-        btn_local_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", Q_NULLPTR));
-        btn_local_StopAde->setText(QApplication::translate("MainWindow", "Stop ADE", Q_NULLPTR));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        actionexit->setText(QApplication::translate("MainWindow", "exit", 0));
+        actionAbout->setText(QApplication::translate("MainWindow", "About", 0));
+        lbl_outputlog->setText(QApplication::translate("MainWindow", "Log Information :", 0));
+        checkBox_2->setText(QApplication::translate("MainWindow", "Detection Validation", 0));
+        checkBox_3->setText(QApplication::translate("MainWindow", "Control Validation", 0));
+        ckbox_localization->setText(QApplication::translate("MainWindow", "Localization Validation", 0));
+        ckbox_PathPlanning->setText(QApplication::translate("MainWindow", "Mission Planning Validation", 0));
+        ckbox_perception->setText(QApplication::translate("MainWindow", "Perception Validation", 0));
+        gbox_localization->setTitle(QApplication::translate("MainWindow", "Localization Validation", 0));
+        btn_local_adeStart->setText(QApplication::translate("MainWindow", "Start ADE", 0));
+        btn_local_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", 0));
+        btn_local_StopAde->setText(QApplication::translate("MainWindow", "Stop ADE", 0));
         QTreeWidgetItem *___qtreewidgetitem = treeWid_local_select_script->headerItem();
-        ___qtreewidgetitem->setText(0, QApplication::translate("MainWindow", " Select Scripts", Q_NULLPTR));
-        lbl_sceneSelect->setText(QApplication::translate("MainWindow", "Select Scene", Q_NULLPTR));
-        btn_local_avp->setText(QApplication::translate("MainWindow", "AVP", Q_NULLPTR));
-        btn_local_initial_pos->setText(QApplication::translate("MainWindow", "Initial_pos", Q_NULLPTR));
-        btn_local_goal_pos->setText(QApplication::translate("MainWindow", "Goal_pos", Q_NULLPTR));
-        btn_local_scenic_count->setText(QApplication::translate("MainWindow", "Set Count", Q_NULLPTR));
-        btn_local_scenic_run->setText(QApplication::translate("MainWindow", "Run_Scenic", Q_NULLPTR));
-        btn_local_run_scenario->setText(QApplication::translate("MainWindow", "Run Scenario", Q_NULLPTR));
-        btn_local_stop_scenario->setText(QApplication::translate("MainWindow", "Stop Scenario", Q_NULLPTR));
-        btn_local_showreport->setText(QApplication::translate("MainWindow", "Show Report", Q_NULLPTR));
-        gbox_path_planning->setTitle(QApplication::translate("MainWindow", "Mission Planning Validation", Q_NULLPTR));
-        btn_pp_scenic_count->setText(QApplication::translate("MainWindow", "Set Count", Q_NULLPTR));
-        btn_pp_scenic_run->setText(QApplication::translate("MainWindow", "Run_Scenic", Q_NULLPTR));
-        btn_pp_run_scenario->setText(QApplication::translate("MainWindow", "Run Scenario", Q_NULLPTR));
-        btn_pp_stop_scenario->setText(QApplication::translate("MainWindow", "Stop Scenario", Q_NULLPTR));
-        btn_pp_showreport->setText(QApplication::translate("MainWindow", "Show Report", Q_NULLPTR));
+        ___qtreewidgetitem->setText(0, QApplication::translate("MainWindow", " Select Scripts", 0));
+        lbl_sceneSelect->setText(QApplication::translate("MainWindow", "Select Scene", 0));
+        btn_local_avp->setText(QApplication::translate("MainWindow", "AVP", 0));
+        btn_local_initial_pos->setText(QApplication::translate("MainWindow", "Initial_pos", 0));
+        btn_local_goal_pos->setText(QApplication::translate("MainWindow", "Goal_pos", 0));
+        btn_local_scenic_count->setText(QApplication::translate("MainWindow", "Set Count", 0));
+        btn_local_scenic_run->setText(QApplication::translate("MainWindow", "Run_Scenic", 0));
+        btn_local_run_scenario->setText(QApplication::translate("MainWindow", "Run Scenario", 0));
+        btn_local_stop_scenario->setText(QApplication::translate("MainWindow", "Stop Scenario", 0));
+        btn_local_showreport->setText(QApplication::translate("MainWindow", "Show Report", 0));
+        gbox_path_planning->setTitle(QApplication::translate("MainWindow", "Mission Planning Validation", 0));
+        btn_pp_scenic_count->setText(QApplication::translate("MainWindow", "Set Count", 0));
+        btn_pp_scenic_run->setText(QApplication::translate("MainWindow", "Run_Scenic", 0));
+        btn_pp_run_scenario->setText(QApplication::translate("MainWindow", "Run Scenario", 0));
+        btn_pp_stop_scenario->setText(QApplication::translate("MainWindow", "Stop Scenario", 0));
+        btn_pp_showreport->setText(QApplication::translate("MainWindow", "Show Report", 0));
         QTreeWidgetItem *___qtreewidgetitem1 = treeWid_pp_select_script->headerItem();
-        ___qtreewidgetitem1->setText(0, QApplication::translate("MainWindow", " Select Scripts", Q_NULLPTR));
-        lbl_pp_sceneSelect->setText(QApplication::translate("MainWindow", "Select Scene", Q_NULLPTR));
-        btn_pp_adeStart->setText(QApplication::translate("MainWindow", "Start ADE", Q_NULLPTR));
-        btn_pp_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", Q_NULLPTR));
-        btn_pp_StopAde->setText(QApplication::translate("MainWindow", "Stop ADE", Q_NULLPTR));
-        btn_pp_avp->setText(QApplication::translate("MainWindow", "AVP", Q_NULLPTR));
-        btn_pp_initial_pos->setText(QApplication::translate("MainWindow", "Initial_pos", Q_NULLPTR));
-        btn_pp_goal_pos->setText(QApplication::translate("MainWindow", "Goal_pos", Q_NULLPTR));
-        gbox_DST_Suit->setTitle(QApplication::translate("MainWindow", "Detection Validation", Q_NULLPTR));
+        ___qtreewidgetitem1->setText(0, QApplication::translate("MainWindow", " Select Scripts", 0));
+        lbl_pp_sceneSelect->setText(QApplication::translate("MainWindow", "Select Scene", 0));
+        btn_pp_adeStart->setText(QApplication::translate("MainWindow", "Start ADE", 0));
+        btn_pp_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", 0));
+        btn_pp_StopAde->setText(QApplication::translate("MainWindow", "Stop ADE", 0));
+        btn_pp_avp->setText(QApplication::translate("MainWindow", "AVP", 0));
+        btn_pp_initial_pos->setText(QApplication::translate("MainWindow", "Initial_pos", 0));
+        btn_pp_goal_pos->setText(QApplication::translate("MainWindow", "Goal_pos", 0));
+        gbox_DST_Suit->setTitle(QApplication::translate("MainWindow", "Detection Validation", 0));
         QTreeWidgetItem *___qtreewidgetitem2 = treeWidget->headerItem();
-        ___qtreewidgetitem2->setText(0, QApplication::translate("MainWindow", " Select Scripts", Q_NULLPTR));
-        label_3->setText(QApplication::translate("MainWindow", "Select Scene", Q_NULLPTR));
-        pblaunch->setText(QApplication::translate("MainWindow", "Start ADE", Q_NULLPTR));
-        b_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", Q_NULLPTR));
-        b_StopAde->setText(QApplication::translate("MainWindow", "Stop ADE", Q_NULLPTR));
+        ___qtreewidgetitem2->setText(0, QApplication::translate("MainWindow", " Select Scripts", 0));
+        label_3->setText(QApplication::translate("MainWindow", "Select Scene", 0));
+        pblaunch->setText(QApplication::translate("MainWindow", "Start ADE", 0));
+        b_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", 0));
+        b_StopAde->setText(QApplication::translate("MainWindow", "Stop ADE", 0));
         lblSpinner->setText(QString());
-        scenic_activate_2->setText(QApplication::translate("MainWindow", "Set Count", Q_NULLPTR));
-        scenic_activate->setText(QApplication::translate("MainWindow", "Run_Scenic", Q_NULLPTR));
-        b_run_scenario->setText(QApplication::translate("MainWindow", "Run Scenario", Q_NULLPTR));
-        b_stop_scenario->setText(QApplication::translate("MainWindow", "Stop Scenario", Q_NULLPTR));
-        b_showreport_2->setText(QApplication::translate("MainWindow", "Show Report", Q_NULLPTR));
-        avp_button->setText(QApplication::translate("MainWindow", "AVP", Q_NULLPTR));
-        initial_pos_b->setText(QApplication::translate("MainWindow", "Initial_pos", Q_NULLPTR));
-        goal_pos_b->setText(QApplication::translate("MainWindow", "Goal_pos", Q_NULLPTR));
-        gbox_DST_Control_Suit->setTitle(QApplication::translate("MainWindow", "Control Validation", Q_NULLPTR));
+        scenic_activate_2->setText(QApplication::translate("MainWindow", "Set Count", 0));
+        scenic_activate->setText(QApplication::translate("MainWindow", "Run_Scenic", 0));
+        b_run_scenario->setText(QApplication::translate("MainWindow", "Run Scenario", 0));
+        b_stop_scenario->setText(QApplication::translate("MainWindow", "Stop Scenario", 0));
+        b_showreport_2->setText(QApplication::translate("MainWindow", "Show Report", 0));
+        avp_button->setText(QApplication::translate("MainWindow", "AVP", 0));
+        initial_pos_b->setText(QApplication::translate("MainWindow", "Initial_pos", 0));
+        goal_pos_b->setText(QApplication::translate("MainWindow", "Goal_pos", 0));
+        gbox_DST_Control_Suit->setTitle(QApplication::translate("MainWindow", "Control Validation", 0));
         QTreeWidgetItem *___qtreewidgetitem3 = treeWidgetControl->headerItem();
-        ___qtreewidgetitem3->setText(0, QApplication::translate("MainWindow", " Select Scripts", Q_NULLPTR));
-        label_5->setText(QApplication::translate("MainWindow", "Select Scene", Q_NULLPTR));
-        b_control_start_ade->setText(QApplication::translate("MainWindow", "Start ADE", Q_NULLPTR));
-        b_control_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", Q_NULLPTR));
-        b_control_stopAde->setText(QApplication::translate("MainWindow", "Stop ADE", Q_NULLPTR));
-        scenic_activate_3->setText(QApplication::translate("MainWindow", "Set Count", Q_NULLPTR));
-        run_scenic_control->setText(QApplication::translate("MainWindow", "Run_Scenic", Q_NULLPTR));
-        b_control_run_scenario->setText(QApplication::translate("MainWindow", "Run Scenario", Q_NULLPTR));
-        b_control_stop_scenario->setText(QApplication::translate("MainWindow", "Stop Scenario", Q_NULLPTR));
-        b_control_showreport->setText(QApplication::translate("MainWindow", "Show Report", Q_NULLPTR));
-        avp_button_2->setText(QApplication::translate("MainWindow", "AVP", Q_NULLPTR));
-        initial_pos_b_2->setText(QApplication::translate("MainWindow", "Initial_pos", Q_NULLPTR));
-        goal_pos_b_2->setText(QApplication::translate("MainWindow", "Goal_pos", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Validation Suite", Q_NULLPTR));
-        menuHelp->setTitle(QApplication::translate("MainWindow", "Help", Q_NULLPTR));
+        ___qtreewidgetitem3->setText(0, QApplication::translate("MainWindow", " Select Scripts", 0));
+        label_5->setText(QApplication::translate("MainWindow", "Select Scene", 0));
+        b_control_start_ade->setText(QApplication::translate("MainWindow", "Start ADE", 0));
+        b_control_sel_scenario->setText(QApplication::translate("MainWindow", "Select Scenario", 0));
+        b_control_stopAde->setText(QApplication::translate("MainWindow", "Stop ADE", 0));
+        scenic_activate_3->setText(QApplication::translate("MainWindow", "Set Count", 0));
+        run_scenic_control->setText(QApplication::translate("MainWindow", "Run_Scenic", 0));
+        b_control_run_scenario->setText(QApplication::translate("MainWindow", "Run Scenario", 0));
+        b_control_stop_scenario->setText(QApplication::translate("MainWindow", "Stop Scenario", 0));
+        b_control_showreport->setText(QApplication::translate("MainWindow", "Show Report", 0));
+        avp_button_2->setText(QApplication::translate("MainWindow", "AVP", 0));
+        initial_pos_b_2->setText(QApplication::translate("MainWindow", "Initial_pos", 0));
+        goal_pos_b_2->setText(QApplication::translate("MainWindow", "Goal_pos", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Validation Suite", 0));
+        menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0));
     } // retranslateUi
 
 };
