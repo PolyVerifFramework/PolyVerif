@@ -8,6 +8,6 @@ echo "Python API Simulation Running"
 #path = $1
 #echo $path
 
-gnome-terminal --tab --title="Scenario Run" --command="bash -c 'cd ../AutowareAuto; echo Trying to setup the Simulation.. > ../Poly_Suite/logfiles/logInfo.txt; ade enter ./Poly_Suite/test_runner.sh; echo Simulation of selected Test case completed, Click on Stop Scenario to Generate Report.. > ../Poly_Suite/logfiles/logInfo.txt;  $SHELL '"
+gnome-terminal --tab --title="Scenario Run" --command="bash -c 'cd ../AutowareAuto; echo Trying to setup the Simulation.. > ../Poly_Suite/logfiles/logInfo.txt; ade enter ./Poly_Suite/test_runner.sh; echo Simulation of selected Test case completed, Click on Stop Scenario to Generate Report.. > ../Poly_Suite/logfiles/logInfo.txt; exit; $SHELL '"
 
 

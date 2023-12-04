@@ -13,7 +13,7 @@ AutonomousStuffGoalPose(){
 	#ros2 topic pub /planning/goal_pose geometry_msgs/msg/PoseStamped  '{header:{frame_id: "map"}, pose: {position: {x: 7.88494873046875, y: 86.73922729492188, z: 0}, orientation:{x: 0, y: 0, z: 0.40195123046527176, w: 0.9156610772155023}}}' --once
 
 	# Use this autonomous stuff old # goal pose from 1st end localize
-	ros2 topic pub /planning/goal_pose geometry_msgs/msg/PoseStamped  '{header:{frame_id: "map"}, pose: {position: {x: -62.4631, y: 86.5299, z: 0}, orientation:{x: 0, y: 0, z:  0.945008, w: 0.327047}}}' --once
+	ros2 topic pub /planning/goal_pose geometry_msgs/msg/PoseStamped  '{header:{frame_id: "map"}, pose: {position: {x: -76.5, y: -19.3, z: -2.11}, orientation:{x: 0, y: 0, z: 180, w: 0.327047}}}' --once
 
 	#Autonomous new planner	
 	#ros2 topic pub /planning/goal_pose geometry_msgs/msg/PoseStamped  '{header:{frame_id: "map"}, pose: {position: {x: -81.38352966308594, y: 58.45685958862305, z: 0}, orientation:{x: 0, y: 0, z:  -0.35609762884684376, w: 0.9344487566098291}}}' --once

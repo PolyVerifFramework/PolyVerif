@@ -60,13 +60,9 @@ echo "Start Installing Scenic (SDL) .."
 cd Scenic/
 sudo pip3 install --upgrade pip
 pip3 install scenic
-export PATH=$PATH:${home}/.local/bin
+sudo export PATH=$PATH:${home}/.local/bin
 
-curl -sSL https://install.python-poetry.org | python3 -
-source $HOME/.poetry/env
-poetry env list
-poetry install
-poetry self update 1.0.0
+
 pip3 install --user -e .
 echo -e "Scenic Installed.\n\n"
 sleep 2

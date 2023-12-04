@@ -611,7 +611,7 @@ public:
 
         retranslateUi(reportwindow);
 
-        tabReport->setCurrentIndex(3);
+        tabReport->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(reportwindow);
@@ -624,13 +624,13 @@ public:
         label_9->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Control Validation Report</span></p></body></html>", 0));
         b_generateReportC->setText(QApplication::translate("reportwindow", "Generate Report", 0));
         b_showReportC->setText(QApplication::translate("reportwindow", "Show Report", 0));
-        label_6->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Response Time of Ego in Autoware (sec) :</span></p></body></html>", 0));
+        label_6->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Reaction Time of Ego in Autoware (sec) :</span></p></body></html>", 0));
         lblGT->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
         label_8->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Brake Applied from Ego :</span></p></body></html>", 0));
         lblPer->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
         lblBrake->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
-        label_7->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Delay in Response Time of Ego in Autoware (sec) :</span></p></body></html>", 0));
-        label_5->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Response Time of Ego in LGSVL (sec) :</span></p></body></html>", 0));
+        label_7->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Delay in Reaction Time(sec) :</span></p></body></html>", 0));
+        label_5->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Reaction Time of Ego in LGSVL(sec):</span></p></body></html>", 0));
         lblDelayPer->setText(QApplication::translate("reportwindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">NA</span></p></body></html>", 0));
         tabReport->setTabText(tabReport->indexOf(controValidation), QApplication::translate("reportwindow", "Control Validation", 0));
         pushButton_2->setText(QApplication::translate("reportwindow", "Generate Report", 0));

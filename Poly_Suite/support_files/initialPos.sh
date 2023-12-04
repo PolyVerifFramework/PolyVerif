@@ -11,7 +11,7 @@ AvpDemoAutonomusstuff=$(awk -F "=" '/autonomoustuff/ {print $2}' ./Poly_Suite/co
 # autonomous stuff
 AutonomusStuffInitialPose(){
 	# use autonomous stuff old ###### initial pose from 1st end #### localize
-	ros2 topic pub /localization/initialpose geometry_msgs/msg/PoseWithCovarianceStamped  '{header:{frame_id: "map"}, pose: { pose: {position: {x: -100.6637191772461, y: 48.752685546875, z: 0}, orientation:{x: 0, y: 0, z: 0.34801759365444823, w: 0.9374880023269457}}, covariance: [0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06853891945200942]}}' --once
+	ros2 topic pub /localization/initialpose geometry_msgs/msg/PoseWithCovarianceStamped  '{header:{frame_id: "map"}, pose: { pose: {position: {x: -58.06, y: -41.7314, z: -6.8757}, orientation:{x: 0, y: 0, z: 180, w: 0.9374880023269457}}, covariance: [0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06853891945200942]}}' --once
 
 
 	#ros2 topic pub /localization/initialpose geometry_msgs/msg/PoseWithCovarianceStamped  '{header:{frame_id: "map"}, pose: { pose: {position: {x: -24.6692, y:  -402.736, z: 0}, orientation:{x: 0, y: 0, z: 0.772252, w: 0.635316}}, covariance: [0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06853891945200942]}}' --once
