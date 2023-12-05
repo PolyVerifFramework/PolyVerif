@@ -1,6 +1,6 @@
 
-param map = localPath('maps/cubetown.xodr')
-param lgsvl_map = 'CubeTown'
+param map = localPath('maps/JTA_R2.xodr')
+param lgsvl_map = 'JTA_R2'
 timestep = 1.0/10
 param time_step = timestep
 

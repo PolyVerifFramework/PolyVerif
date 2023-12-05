@@ -5,13 +5,13 @@ ego-vehicle must react, performing an emergency brake or an avoidance maneuver.
 Note: The scenario may fail if the leadCar or the ego get past the intersection while following the roadDirection
 """
 
-#SET MAP AND MODEL (i.e. definitions of all referenceable vehicle types, road library, etc)
-param map = localPath('../../../tests/formats/opendrive/maps/CARLA/Town07.xodr')  # or other CARLA map that definitely works
-param carla_map = 'Town07'
+param map = localPath('maps/JTA_R2.xodr')
+param lgsvl_map = 'JTA_R2'
+timestep = 1.0/10
+param time_step = timestep
 model scenic.simulators.lgsvl.model
 
-param map = localPath('maps/CubeTown.xodr')
-param lgsvl_map = '06773677-1ce3-492f-9fe2-b3147e126e27'
+
 #model scenic.domains.driving.model
 
 #CONSTANTS

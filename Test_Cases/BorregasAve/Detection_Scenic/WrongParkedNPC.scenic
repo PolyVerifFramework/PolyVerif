@@ -1,6 +1,8 @@
-param map = localPath('maps/CubeTown.xodr')
-param lgsvl_map = 'CubeTown'
-param time_step = 1.0/10
+
+param map = localPath('maps/BorregasAve.xodr')
+param lgsvl_map ='BorregasAve'
+timestep = 1.0/10
+param time_step = timestep
 
 model scenic.domains.driving.model
 

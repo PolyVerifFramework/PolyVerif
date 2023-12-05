@@ -12,20 +12,13 @@ from scenic.simulators.lgsvl.model import *
 
 #CONSTANTS
 SAFETY_DISTANCE = 10
-INITIAL_DISTANCE_APART = -10
+INITIAL_DISTANCE_APART = -50
 
 ##DEFINING BEHAVIORS
 behavior CollisionAvoidance(brake_intensity=0.3):
 	while withinDistanceToAnyObjs(self, SAFETY_DISTANCE):
 		take SetBrakeAction(brake_intensity)
 
-
-behavior FollowLeadCarBehavior():
-	try: 
-		do FollowLaneBehavior()
-
-	interrupt when withinDistanceToAnyObjs(self, SAFETY_DISTANCE):
-		do CollisionAvoidance()
 
 ##DEFINING SPATIAL RELATIONS
 # Please refer to scenic/domains/driving/roads.py how to access detailed road infrastructure
@@ -38,16 +31,12 @@ roads = network.roads
 select_road = Uniform(*roads)
 select_lane = Uniform(*select_road.lanes)
 
-
-
 #OBJECT PLACEMENT
 ego = Car on select_lane.centerline,
 		with behavior FollowLaneBehavior()
-for i in range(5):
+for i in range(2):
 	npc3 = NPCCar visible
-npc1 = NPCCar on select_lane
 
-require ego can see npc1
 require ego can see npc3
 #ego = Car following roadDirection from leadCar for INITIAL_DISTANCE_APART,
 #		with behavior FollowLeadCarBehavior()

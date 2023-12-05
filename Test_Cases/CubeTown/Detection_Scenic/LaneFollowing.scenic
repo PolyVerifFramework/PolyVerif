@@ -36,7 +36,7 @@ roads = network.roads
 select_road = Uniform(*roads)
 select_lane = Uniform(*select_road.lanes)
 
-npc1 = NPCCar
+npc1 = NPCCar on select_lane 
 npc2 = NPCCar
 
 #OBJECT PLACEMENT

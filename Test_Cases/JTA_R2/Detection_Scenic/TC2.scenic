@@ -3,11 +3,12 @@ Voyage OAS Scenario Unique ID: 2-2-XX-CF-STR-CAR
 The ego vehicle follows the lead car
 """
 
-#SET MAP AND MODEL (i.e. definitions of all referenceable vehicle types, road library, etc)
-param map = localPath('maps/CubeTown.xodr')  # or other CARLA map that definitely works
-param carla_map = 'CubeTown'
+param map = localPath('maps/JTA_R2.xodr')
+param lgsvl_map = 'JTA_R2'
+timestep = 1.0/10
+param time_step = timestep
 model scenic.domains.driving.model
-
+model scenic.simulators.lgsvl.model
 #CONSTANTS
 SAFETY_DISTANCE = 10
 INITIAL_DISTANCE_APART = -10

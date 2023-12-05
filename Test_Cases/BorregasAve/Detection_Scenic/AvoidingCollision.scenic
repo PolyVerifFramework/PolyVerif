@@ -17,10 +17,10 @@ LEAD_CAR_SPEED = 10
 BRAKE_ACTION = 1.0
 THROTTLE_ACTION = 0.6
 
-EGO_TO_LEADCAR = -30
+EGO_TO_LEADCAR = -40
 EGO_BRAKING_THRESHOLD = 15
 
-LEADCAR_TO_OBSTACLE = -20
+LEADCAR_TO_OBSTACLE = -25
 LEADCAR_BRAKING_THRESHOLD = 15
 
 ## DEFINING BEHAVIORS
@@ -58,7 +58,7 @@ leadCar = Car following roadDirection from obstacle for LEADCAR_TO_OBSTACLE,
 ego = Car following roadDirection from leadCar for EGO_TO_LEADCAR,
 	with behavior EgoBehavior(EGO_SPEED)
 
-npc1 = NPCCar on lane 
+npc1 = NPCCar visible   
 
 #require ego can see npc1
 require npc1 can see ego

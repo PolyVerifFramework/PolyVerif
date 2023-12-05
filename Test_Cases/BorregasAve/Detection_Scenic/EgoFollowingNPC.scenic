@@ -12,11 +12,9 @@ param lgsvl_map = 'aae03d2a-b7ca-4a88-9e41-9035287a12cc'
 model scenic.domains.driving.model
 
 
-
-
 #CONSTANTS
 SAFETY_DISTANCE = 10
-INITIAL_DISTANCE_APART = -10
+INITIAL_DISTANCE_APART = -20
 
 ##DEFINING BEHAVIORS
 behavior CollisionAvoidance(brake_intensity=0.3):
@@ -48,8 +46,8 @@ leadCar = Car on select_lane.centerline,
 print("new -- ",roadDirection)
 ego = Car following roadDirection from leadCar for INITIAL_DISTANCE_APART,
 		with behavior FollowLeadCarBehavior()
-for i in range(3):
-	npc1 = NPCCar on select_lane
+for i in range(2):
+	npc1 = NPCCar visible
 
 require ego can see npc1
-require leadCar can see npc1
+#require leadCar can see npc1
