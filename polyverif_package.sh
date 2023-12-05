@@ -42,7 +42,8 @@ source install/setup.bash
 echo -e "Path Planning Validation Node Build.\n\n"
 sleep 2
 cd ../..
-
+rm -rf ~/adehome/avp_demo/build
+rm -rf ~/adehome/avp_demo/log
 echo "Start Building Avp_Demo"
 cd avp_demo/
 colcon build
