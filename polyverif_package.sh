@@ -54,6 +54,7 @@ cd ..
 echo "Start Installing PythonAPI.."
 cd PythonAPI/
 python3 -m pip install -r requirements.txt --user -e .
+pip3 install --user -e .
 echo -e "PythonAPI Installed.\n\n"
 sleep 2
 cd ..

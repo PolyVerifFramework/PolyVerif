@@ -54,6 +54,7 @@ sudo chmod 777 ~/adehome/Poly_Suite/.*
 sudo chmod 777 ~/adehome/Poly_Suite/support_files/*
 sudo chmod 777 ~/adehome/Poly_Suite/support_files/.*
 
+cd ~/adehome
 sudo cp index.html /var/www/html/index.html
 
 # Download the file from Google Drive to adehome
@@ -64,7 +65,7 @@ unzip downloadOSSDC-SIM-v1_1-Linux.zip
 sudo rm -rf downloadOSSDC-SIM-v1_1-Linux.zip
 cd OSSDC-SIM-v1_1-Linux && sudo chmod +x run-OSSDC-SIM-v1.sh OSSDC-SIM
 
-cd ~/OSSDC-SIM-v1_1-Linux/2021.3-ossdc
+cd ~/adehome/OSSDC-SIM-v1_1-Linux/2021.3-ossdc
 sudo chmod +x user_change.py
 python3 user_change.py
 
