@@ -4,6 +4,7 @@ sudo apt install software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.8
 sudo apt-get install -y libqt5widgets5
+sudo apt-get install apache2
 sudo apt update
 sudo apt install python3-pip
 sudo apt-get install zenity
@@ -53,6 +54,8 @@ sudo chmod 777 ~/adehome/Poly_Suite/.*
 sudo chmod 777 ~/adehome/Poly_Suite/support_files/*
 sudo chmod 777 ~/adehome/Poly_Suite/support_files/.*
 
+sudo cp index.html /var/www/html/index.html
+
 # Download the file from Google Drive to adehome
 # Extract the downloaded file in adehome
 cd ~/adehome
@@ -61,16 +64,9 @@ unzip downloadOSSDC-SIM-v1_1-Linux.zip
 sudo rm -rf downloadOSSDC-SIM-v1_1-Linux.zip
 cd OSSDC-SIM-v1_1-Linux && sudo chmod +x run-OSSDC-SIM-v1.sh OSSDC-SIM
 
-# Continue with the rest of your script
-cd ~/adehome/Scenic
-sudo pip3 install --upgrade pip
-pip3 install scenic
-export PATH=$PATH:${home}/.local/bin
-# curl -sSL https://install.python-poetry.org | python3 -
-# poetry env list
-# poetry install
-# poetry self update 1.0.0
-pip3 install --user -e .
+cd ~/OSSDC-SIM-v1_1-Linux/2021.3-ossdc
+sudo chmod +x user_change.py
+python3 user_change.py
 
 # # Change the working directory to home directory
 cd $HOME
