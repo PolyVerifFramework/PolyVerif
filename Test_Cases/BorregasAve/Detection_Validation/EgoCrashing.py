@@ -11,6 +11,7 @@ import time
 import random
 import sys
 import os
+print(sys.version)
 env = Env()
 
 
@@ -67,12 +68,19 @@ ego = sim.add_agent(env.str("LGSVL__VEHICLE_0","5ab8175f-e1f1-427c-a86e-e882fa84
 
 
 sim.add_random_agents(lgsvl.AgentType.PEDESTRIAN)
+sim.add_random_agents(lgsvl.AgentType.NPC)
 
 # An EGO will not connect to a bridge unless commanded to
 
 # The EGO is now looking for a bridge at the specified IP and port
 ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGSVL__AUTOPILOT_0_PORT", 9090))
 print("Bridge connected:", ego.bridge_connected)
+statej = lgsvl.AgentState()
+statej.transform.position = spawns[0].position + 90 * forward
+statej.transform.rotation = spawns[0].rotation 
+#statej.velocity = 10 * forward
+sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, statej)
+sedan.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
 
 
 forward = lgsvl.utils.transform_to_forward(spawns[0])

@@ -60,7 +60,7 @@ sudo cp index.html /var/www/html/index.html
 # Download the file from Google Drive to adehome
 # Extract the downloaded file in adehome
 cd ~/adehome
-python3 -m gdown.cli https://drive.google.com/uc?id=1sPAOsk_AwnXgeW9QW3aTJPa3TjmjDNWl
+gdown https://drive.google.com/uc?id=1sPAOsk_AwnXgeW9QW3aTJPa3TjmjDNWl
 unzip downloadOSSDC-SIM-v1_1-Linux.zip
 sudo rm -rf downloadOSSDC-SIM-v1_1-Linux.zip
 cd OSSDC-SIM-v1_1-Linux && sudo chmod +x run-OSSDC-SIM-v1.sh OSSDC-SIM

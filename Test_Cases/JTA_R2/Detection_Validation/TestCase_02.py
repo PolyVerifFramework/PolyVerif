@@ -70,6 +70,7 @@ print("Bridge connected:", ego.bridge_connected)
 ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGSVL__AUTOPILOT_0_PORT", 9090))
 
 
+sim.add_random_agents(lgsvl.AgentType.PEDESTRIAN)
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
 statej = lgsvl.AgentState()

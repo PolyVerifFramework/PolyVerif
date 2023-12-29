@@ -58,7 +58,7 @@ right = lgsvl.utils.transform_to_right(spawns[0])
 state = lgsvl.AgentState()
 #state.transform.position = spawns[1].position + 40 * forward
 #state.transform.rotation = spawns[1].rotation
-state.transform.position = spawns[0].position - 1 * right
+state.transform.position = spawns[0].position - 2 * forward
 state.transform.rotation = spawns[0].rotation
 state.velocity = 12 * forward
 ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "5ab8175f-e1f1-427c-a86e-e882fa842978"), lgsvl.AgentType.EGO, state)
@@ -68,7 +68,7 @@ print("Bridge connected:", ego.bridge_connected)
 
 # The EGO is now looking for a bridge at the specified IP and port
 ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGSVL__AUTOPILOT_0_PORT", 9090))
-
+sim.add_random_agents(lgsvl.AgentType.NPC)
 
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
@@ -112,7 +112,8 @@ suv1.follow_closest_lane(True, 15.5)
 
 right = lgsvl.utils.transform_to_right(spawns[0])
 
+
 #input("Press Enter to drive forward for 25 seconds (1x)")
 t0 = time.time()
-sim.run(time_limit=25, time_scale=1)
+sim.run(time_limit=20, time_scale=1)
 t1 = time.time()

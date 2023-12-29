@@ -46,7 +46,7 @@ sim.weather = lgsvl.WeatherState(rain, fog, wetness, cloudiness, damage)
 spawns = sim.get_spawn()
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
-
+sim.add_random_agents(lgsvl.AgentType.NPC)
 # NPC
 state = lgsvl.AgentState()
 state.transform.position = spawns[0].position + 20 * forward - 1 * right 

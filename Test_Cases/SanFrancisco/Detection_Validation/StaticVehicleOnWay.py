@@ -61,16 +61,13 @@ print("Bridge connected:", ego.bridge_connected)
 # The EGO is now looking for a bridge at the specified IP and port
 ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGSVL__AUTOPILOT_0_PORT", 9090))
 
-
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
 state = lgsvl.AgentState()
-state.transform.position = spawns[0].position + (100 * forward) - (5 * right)
+state.transform.position = spawns[0].position + (150 * forward) - (3 * right)
 state.transform.rotation = spawns[0].rotation 
-state.velocity = 5 * forward
 jeep = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
 
-#jeep.follow_closest_lane(True, 11.5)  # 11.1 m/s is ~40 k
 
 t0 = time.time()
 sim.run(time_limit=25, time_scale=1)

@@ -49,9 +49,9 @@ right = lgsvl.utils.transform_to_right(spawns[0])
 
 
 state = lgsvl.AgentState()
-state.transform.position = spawns[0].position - 3 * right
+state.transform.position = spawns[0].position - 3.2 * right
 state.transform.rotation = spawns[0].rotation
-state.velocity = 20 * forward
+state.velocity = 12 * forward
 ego = sim.add_agent(env.str("LGSVL__VEHICLE_0","5ab8175f-e1f1-427c-a86e-e882fa842978"), lgsvl.AgentType.EGO,state)
 
 
@@ -70,7 +70,7 @@ for i, name in enumerate(["Sedan", "SUV"]):
     state1.transform.position = spawns[0].position + (50 * forward) - (4.0 * i * right) # + 10.0 * forward
     state1.transform.rotation = spawns[0].rotation
     npc = sim.add_agent(name, lgsvl.AgentType.NPC, state1)
-    npc.follow_closest_lane(True, 12)
+    npc.follow_closest_lane(True, 15)
 #input("Press Enter to drive forward for 25 seconds (1x)")
 t0 = time.time()
 sim.run(time_limit=20, time_scale=1)

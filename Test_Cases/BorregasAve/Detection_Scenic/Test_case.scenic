@@ -44,9 +44,6 @@ initLaneSec = Uniform(*initLane.sections)
 print("start : ",start)
 #PLACEMENT
 spawnPt = OrientedPoint on initLaneSec.centerline
-#ego = Car following roadDirection from spawnPt for Range(-50, -30),
-
-#ego = Car at start
 
 ego = AutowareEgoCar following roadDirection from spawnPt for Range(-50, -30),
       with behavior FollowLeadCar(10),
@@ -60,7 +57,7 @@ require (Point ahead of ego by 100) in road
 for i in range(3):
 	npc1 = NPCCar visible
 
-require ego can see npc1
+require npc1 can see ego
 
 terminate when ego.lane is None
 terminate when other.lane is None

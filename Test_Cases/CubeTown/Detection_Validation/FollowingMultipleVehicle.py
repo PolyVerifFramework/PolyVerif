@@ -63,6 +63,8 @@ ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGS
 
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
+sim.add_random_agents(lgsvl.AgentType.PEDESTRIAN)
+sim.add_random_agents(lgsvl.AgentType.NPC)
 
 
 for i, name in enumerate(["Sedan", "SUV", "Hatchback"]):
