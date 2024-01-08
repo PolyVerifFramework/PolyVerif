@@ -8,7 +8,9 @@ sudo apt-get install apache2
 sudo apt update
 sudo apt install python3-pip
 sudo apt-get install zenity
-pip install gdown
+#pip install gdown
+sudo apt-get install wget
+sudo apt update
 
 # Check if the PolyVerif directory already exists
 if [ -d "$HOME/PolyVerif" ]; then
@@ -21,8 +23,8 @@ fi
 sudo apt update
 sudo apt install git
 sudo apt-get install python3-gi
-pip install watchdog
-pip install pandas
+pip3 install watchdog
+pip3 install pandas
 
 # Install ade-cli
 cd ${HOME}
@@ -60,7 +62,9 @@ sudo cp index.html /var/www/html/index.html
 # Download the file from Google Drive to adehome
 # Extract the downloaded file in adehome
 cd ~/adehome
-gdown https://drive.google.com/uc?id=1sPAOsk_AwnXgeW9QW3aTJPa3TjmjDNWl
+#gdown https://drive.google.com/uc?id=1sPAOsk_AwnXgeW9QW3aTJPa3TjmjDNWl
+wget --content-disposition 'https://drive.google.com/uc?export=download&id=1sPAOsk_AwnXgeW9QW3aTJPa3TjmjDNWl&confirm=t'
+
 unzip downloadOSSDC-SIM-v1_1-Linux.zip
 sudo rm -rf downloadOSSDC-SIM-v1_1-Linux.zip
 cd OSSDC-SIM-v1_1-Linux && sudo chmod +x run-OSSDC-SIM-v1.sh OSSDC-SIM

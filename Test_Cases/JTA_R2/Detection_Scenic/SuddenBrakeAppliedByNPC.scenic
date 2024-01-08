@@ -47,7 +47,7 @@ other = Car ahead of ego by 10,
 		with behavior LeadCarSuddenlyStopsAndGo,
 		with blueprint 'vehicle.tesla.model3'
 
-npc1 = NPCCar visible on 
+npc1 = NPCCar visible 
 
 require ego can see npc1
 	
