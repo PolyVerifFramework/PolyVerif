@@ -4,11 +4,10 @@ The ego vehicle follows the lead car
 """
 
 #SET MAP AND MODEL (i.e. definitions of all referenceable vehicle types, road library, etc)
-#param map = localPath('maps/06773677-1ce3-492f-9fe2-b3147e126e27')  # or other CARLA map that definitely works'
-#param carla_map = 'CubeTown'
+param map = localPath('maps/BorregasAve.xodr')  # or other lgsvl map that definitely works
+param lgsvl_map = 'BorregasAve'
 
-param map = localPath('maps/BorregasAve.xodr')
-param lgsvl_map = 'aae03d2a-b7ca-4a88-9e41-9035287a12cc'
+
 model scenic.domains.driving.model
 
 

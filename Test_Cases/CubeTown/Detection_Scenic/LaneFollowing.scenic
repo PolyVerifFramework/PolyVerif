@@ -4,8 +4,8 @@ The ego vehicle follows the lead car
 """
 
 #SET MAP AND MODEL (i.e. definitions of all referenceable vehicle types, road library, etc)
-param map = localPath('maps/CubeTown.xodr')  # or other CARLA map that definitely works
-param carla_map = 'CubeTown'
+param map = localPath('maps/CubeTown.xodr')  # or other lgsvl map that definitely works
+param lgsvl_map = 'CubeTown'
 model scenic.domains.driving.model
 
 #CONSTANTS

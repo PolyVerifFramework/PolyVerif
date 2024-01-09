@@ -6,8 +6,8 @@ ego has the right of the way because it is closer to the intersection.
 """
 
 #SET MAP AND MODEL (i.e. definitions of all referenceable vehicle types, road library, etc)
-param map = localPath('../../../tests/formats/opendrive/maps/CARLA/Town10HD.xodr')  # or other CARLA map that definitely works
-param carla_map = 'Town10HD'
+param map = localPath('maps/CubeTown.xodr')  # or other lgsvl map that definitely works
+param lgsvl_map = 'CubeTown'
 model scenic.domains.driving.model
 
 # Constants

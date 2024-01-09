@@ -6,8 +6,8 @@ Note: The scenario may fail if the leadCar or the ego get past the intersection 
 """
 #SET MAP AND MODEL (i.e. definitions of all referenceable vehicle types, road library, etc)
 
-param map = localPath('../../../tests/formats/opendrive/maps/CARLA/Town07.xodr')  # or other CARLA map that definitely works
-param carla_map = 'Town07'
+param map = localPath('maps/BorregasAve.xodr')  # or other lgsvl map that definitely works
+param lgsvl_map = 'BorregasAve'
 model scenic.domains.driving.model
 
 #CONSTANTS
