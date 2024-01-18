@@ -63,8 +63,7 @@ sudo cp index.html /var/www/html/index.html
 # Extract the downloaded file in adehome
 cd ~/adehome
 #gdown https://drive.google.com/uc?id=1sPAOsk_AwnXgeW9QW3aTJPa3TjmjDNWl
-wget --content-disposition 'https://drive.google.com/uc?export=download&id=1sPAOsk_AwnXgeW9QW3aTJPa3TjmjDNWl&confirm=t'
-
+wget --content-disposition 'https://drive.usercontent.google.com/download?id=1sPAOsk_AwnXgeW9QW3aTJPa3TjmjDNWl&confirm=t&uuid=a8b3a20c-7bf4-4f3e-9a1d-e1713d611152'
 unzip downloadOSSDC-SIM-v1_1-Linux.zip
 sudo rm -rf downloadOSSDC-SIM-v1_1-Linux.zip
 cd OSSDC-SIM-v1_1-Linux && sudo chmod +x run-OSSDC-SIM-v1.sh OSSDC-SIM
