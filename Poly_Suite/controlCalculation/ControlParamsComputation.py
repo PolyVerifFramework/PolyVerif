@@ -32,7 +32,7 @@ class ControlValidationParams(object):
                                                       "position_z", "size_x","size_y","size_z", "ttc_val", "brake_state",
                                                       "accel_deaccel_rate")
         writer.writerow(title)                         
-    max_Y_deviation = 2.0
+    max_Y_deviation = 3.0
     count = 0
     with open(opfilename,'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -92,8 +92,8 @@ class ControlValidationParams(object):
                                                       "position_z", "size_x","size_y","size_z", "ttc_val", "brake_state",
                                                       "accel_deaccel_rate")
         writer.writerow(title)                         
-      max_Y_deviation = 2.0
-      detected_Vehicle_Size = 3.0
+      max_Y_deviation = 3.0
+      detected_Vehicle_Size = 4.0
       count = 0
       with open(opfilename,'a', newline='') as csvfile:
           writer = csv.writer(csvfile)
@@ -153,7 +153,7 @@ class ControlValidationParams(object):
                                          break;
                               if(ttc_gt_avail ==True):
                                   count = count+1
-                                  ttc = abs((lg_pos_x - 4) /(ego_linear_velocities - lg_velocity_x))
+                                  ttc = abs((lg_pos_x - 7) /(ego_linear_velocities - lg_velocity_x))
                                   
                                   vel_change = control_data.Speed[idx_ctl] - control_data.Speed[idx_ctl-1]
                                   print(" Time to Collision : ", ttc)
