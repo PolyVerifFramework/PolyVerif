@@ -1,1 +1,0 @@
-sensor_name,frame_id,timestamp_sec,timestamp_nanosec,available,verified,label,position_x,position_y,position_z,size_x,size_y,size_z,orientation_x,orientation_y,orientation_z,orientation_w,linear_velocity_x,linear_velocity_y,linear_velocity_z,angular_velocity_x,angular_velocity_y,angular_velocity_z
