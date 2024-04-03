@@ -3,28 +3,35 @@
 PolyVerif AV Validation Suite
 
 This is Poly-Verification and Validation Suite. Its functionality is to generate the test cases and validate the autonomous stack.
-It integrate the Python and Scenic scenario description language with AutowareAuto and helps to generate the random scenario for simulation.
-Since we are using OSSDC Simulator and AutowareAuto, it will require a high-end server with Graphics card to run it smoothly. 
+It integrate with AWSIM and Autoware Universe along with random scenario for simulation.
+Since we are using AWSIM Simulator and Autoware Universe, it will require a high-end server with Graphics card to run it smoothly. 
 
-This document contains the information of installing and setup the component for running Poly_Suite framework. It requires below setup, libraries and package that are need to be install in sequence as mention below.
+The document dir contains the information about installing and setup the component for running PolyVerif framework. 
+It requires below setup, libraries and package that are need to be install in sequence as mention below.
 
 The Simulator performance will be very slow if run on a lower PC configuration.
 
-Below is the PC configuration required:
-	PC Configuration:
+Please make sure that your machine meets the following requirements:
 	
-  	• CPU: at least 8 core CPU
-    • GPU: Nvidia GTX 1080 (8GB memory) or higher
-    • OS: Ubuntu 20.04 64-bit
+ PC Configuration:
+ 
+	• OS: Ubuntu 22.04 jammy 64-bit
+  	• CPU: 11th Gen Intel® Core™ i7-11700K @ 3.60GHz × 16
+    • GPU: NVIDIA GeForce RTX 4070 
+    • Nvidia Driver: 535.161.07
+    
+    
     
   Prerequisite: 
 	
-    •	Ubuntu
-    •	Python3.8
+    •	Ubuntu 22.04
+    •	ROS2(Humble)
+    •	ROS 2 RMW implementation
+    •	Python 3.10
+    
 
   
 
 Refer Document directory for PolyVerif installation and User Guide.
 Note:- Follow step-wise document for better understanding.
 	
-
