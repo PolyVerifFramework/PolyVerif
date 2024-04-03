@@ -1,0 +1,25 @@
+[0.652s] Invoking command in '/home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/src/node_localization_validation': PYTHONPATH=/home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/prefix_override:/home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/node_localization_validation build --build-base /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build install --record /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/install.log --single-version-externally-managed
+[0.861s] running egg_info
+[0.861s] writing ../../build/node_localization_validation/node_localization_validation.egg-info/PKG-INFO
+[0.861s] writing dependency_links to ../../build/node_localization_validation/node_localization_validation.egg-info/dependency_links.txt
+[0.861s] writing entry points to ../../build/node_localization_validation/node_localization_validation.egg-info/entry_points.txt
+[0.861s] writing requirements to ../../build/node_localization_validation/node_localization_validation.egg-info/requires.txt
+[0.861s] writing top-level names to ../../build/node_localization_validation/node_localization_validation.egg-info/top_level.txt
+[0.863s] reading manifest file '../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[0.863s] adding license file 'LICENSE'
+[0.863s] writing manifest file '../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[0.863s] running build
+[0.863s] running build_py
+[0.863s] copying node_localization_validation/localization_node.py -> /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation
+[0.864s] running install
+[0.864s] running install_lib
+[0.864s] copying /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation/localization_node.py -> /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[0.864s] byte-compiling /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/localization_node.py to localization_node.cpython-310.pyc
+[0.865s] running install_data
+[0.865s] running install_egg_info
+[0.866s] removing '/home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation-0.0.0-py3.10.egg-info' (and everything under it)
+[0.866s] Copying ../../build/node_localization_validation/node_localization_validation.egg-info to /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation-0.0.0-py3.10.egg-info
+[0.867s] running install_scripts
+[0.881s] Installing localization_node script to /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/node_localization_validation
+[0.881s] writing list of installed files to '/home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/install.log'
+[0.896s] Invoked command in '/home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/src/node_localization_validation' returned '0': PYTHONPATH=/home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/prefix_override:/home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/node_localization_validation build --build-base /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build install --record /home/shoukat/PolyVerif/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/install.log --single-version-externally-managed

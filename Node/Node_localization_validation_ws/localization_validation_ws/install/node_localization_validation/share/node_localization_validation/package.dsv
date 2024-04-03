@@ -1,0 +1,6 @@
+source;share/node_localization_validation/hook/pythonpath.ps1
+source;share/node_localization_validation/hook/pythonpath.dsv
+source;share/node_localization_validation/hook/pythonpath.sh
+source;share/node_localization_validation/hook/ament_prefix_path.ps1
+source;share/node_localization_validation/hook/ament_prefix_path.dsv
+source;share/node_localization_validation/hook/ament_prefix_path.sh

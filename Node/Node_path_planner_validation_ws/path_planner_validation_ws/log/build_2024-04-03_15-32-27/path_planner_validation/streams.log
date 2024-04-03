@@ -1,0 +1,25 @@
+[0.636s] Invoking command in '/home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/src/path_planner_validation': PYTHONPATH=/home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/build/path_planner_validation/prefix_override:/home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/install/path_planner_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/path_planner_validation build --build-base /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/build/path_planner_validation/build install --record /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/build/path_planner_validation/install.log --single-version-externally-managed
+[0.850s] running egg_info
+[0.851s] writing ../../build/path_planner_validation/path_planner_validation.egg-info/PKG-INFO
+[0.851s] writing dependency_links to ../../build/path_planner_validation/path_planner_validation.egg-info/dependency_links.txt
+[0.851s] writing entry points to ../../build/path_planner_validation/path_planner_validation.egg-info/entry_points.txt
+[0.852s] writing requirements to ../../build/path_planner_validation/path_planner_validation.egg-info/requires.txt
+[0.852s] writing top-level names to ../../build/path_planner_validation/path_planner_validation.egg-info/top_level.txt
+[0.853s] reading manifest file '../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+[0.853s] adding license file 'LICENSE'
+[0.854s] writing manifest file '../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+[0.854s] running build
+[0.854s] running build_py
+[0.854s] copying path_planner_validation/path_planner_node.py -> /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/build/path_planner_validation/build/lib/path_planner_validation
+[0.854s] running install
+[0.854s] running install_lib
+[0.855s] copying /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/build/path_planner_validation/build/lib/path_planner_validation/path_planner_node.py -> /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation
+[0.856s] byte-compiling /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation/path_planner_node.py to path_planner_node.cpython-310.pyc
+[0.856s] running install_data
+[0.857s] running install_egg_info
+[0.859s] removing '/home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation-1.0.0-py3.10.egg-info' (and everything under it)
+[0.859s] Copying ../../build/path_planner_validation/path_planner_validation.egg-info to /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation-1.0.0-py3.10.egg-info
+[0.860s] running install_scripts
+[0.880s] Installing path_planner_node script to /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/install/path_planner_validation/lib/path_planner_validation
+[0.881s] writing list of installed files to '/home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/build/path_planner_validation/install.log'
+[0.912s] Invoked command in '/home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/src/path_planner_validation' returned '0': PYTHONPATH=/home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/build/path_planner_validation/prefix_override:/home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/install/path_planner_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/path_planner_validation build --build-base /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/build/path_planner_validation/build install --record /home/shoukat/PolyVerif/Node/Node_path_planner_validation_ws/path_planner_validation_ws/build/path_planner_validation/install.log --single-version-externally-managed
