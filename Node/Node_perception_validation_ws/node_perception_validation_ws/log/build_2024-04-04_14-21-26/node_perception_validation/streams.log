@@ -1,0 +1,25 @@
+[0.617s] Invoking command in '/home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/src/node_perception_validation': PYTHONPATH=/home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/prefix_override:/home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/node_perception_validation build --build-base /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build install --record /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log --single-version-externally-managed
+[0.809s] running egg_info
+[0.809s] writing ../../build/node_perception_validation/node_perception_validation.egg-info/PKG-INFO
+[0.809s] writing dependency_links to ../../build/node_perception_validation/node_perception_validation.egg-info/dependency_links.txt
+[0.809s] writing entry points to ../../build/node_perception_validation/node_perception_validation.egg-info/entry_points.txt
+[0.809s] writing requirements to ../../build/node_perception_validation/node_perception_validation.egg-info/requires.txt
+[0.810s] writing top-level names to ../../build/node_perception_validation/node_perception_validation.egg-info/top_level.txt
+[0.811s] reading manifest file '../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+[0.811s] adding license file 'LICENSE'
+[0.811s] writing manifest file '../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+[0.811s] running build
+[0.811s] running build_py
+[0.811s] copying node_perception_validation/detection_node.py -> /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build/lib/node_perception_validation
+[0.811s] running install
+[0.812s] running install_lib
+[0.812s] copying /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build/lib/node_perception_validation/detection_node.py -> /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation
+[0.812s] byte-compiling /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation/detection_node.py to detection_node.cpython-310.pyc
+[0.813s] running install_data
+[0.814s] running install_egg_info
+[0.815s] removing '/home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation-0.0.0-py3.10.egg-info' (and everything under it)
+[0.815s] Copying ../../build/node_perception_validation/node_perception_validation.egg-info to /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation-0.0.0-py3.10.egg-info
+[0.815s] running install_scripts
+[0.828s] Installing detection_node script to /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/node_perception_validation
+[0.828s] writing list of installed files to '/home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log'
+[0.841s] Invoked command in '/home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/src/node_perception_validation' returned '0': PYTHONPATH=/home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/prefix_override:/home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/node_perception_validation build --build-base /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build install --record /home/shoukat/PolyVerif/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log --single-version-externally-managed

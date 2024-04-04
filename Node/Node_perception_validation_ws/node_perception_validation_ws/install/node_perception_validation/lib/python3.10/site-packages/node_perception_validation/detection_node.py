@@ -8,13 +8,14 @@ import sys
 import csv
 from numpy import *
 from rclpy.node import Node
+import rclpy.qos
 from std_msgs.msg import String
 from std_msgs.msg import Int32
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import PoseStamped
 from geometry_msgs.msg import PoseWithCovarianceStamped
 from autoware_auto_perception_msgs.msg import DetectedObjects
-from rclpy.qos import qos_profile_sensor_data, QoSProfile
+from rclpy.qos import QoSProfile
 
 
 framenum = 0
@@ -25,8 +26,14 @@ class Detection_Subcriber(Node):
     def __init__(self):
         super().__init__('detetction_subscriber')
         qos_profile = QoSProfile(reliability=rclpy.qos.ReliabilityPolicy.BEST_EFFORT,
-                                          history=rclpy.qos.HistoryPolicy.KEEP_LAST,
-                                          depth=1)
+                                            durability=rclpy.qos.DurabilityPolicy.VOLATILE,
+                                           history=rclpy.qos.HistoryPolicy.KEEP_LAST,
+                                           depth=1)
+        
+        # qos_profile=QoSProfile(ReliabilityPolicy = ReliabilityPolicy.QOS_POLICY_RELIABILITY_BEST_EFFORT,
+        #     DurabilityPolicy = DurabilityPolicy.QOS_POLICY_DURABILITY_VOLATILE,
+        #     HistoryPolicy = HistoryPolicy.QOS_POLICY_HISTORY_KEEP_LAST,
+        #     Depth = 1)
 
 
         self.subdectauto = self.create_subscription(DetectedObjects,'/perception/object_recognition/detection/objects',self.auto_callback,1)
@@ -61,8 +68,7 @@ class Detection_Subcriber(Node):
     def sim_callback(self, msg):
         global framenum
         msgLen=0
-        msgLen=len(msg.objects)
-          
+        msgLen=len(msg.objects) 
         if msgLen==0:   
           Gt_objects=["Object_Sensor",framenum,msg.header.stamp.sec, msg.header.stamp.nanosec,False,False,"no_object",
             0.0,0.0,0.0, 0.0, 0.0,0.0, 0.0]
@@ -102,7 +108,7 @@ class Detection_Subcriber(Node):
        global framenum  
        c_autoware_boxes = 0
        autoware_boxes=msg.objects
-       
+    
        with open(file_path + '/Autoware_PerceptionData.csv','a', newline='') as csvfile:   
         while len(autoware_boxes) > 0 :  
             writer = csv.writer(csvfile)

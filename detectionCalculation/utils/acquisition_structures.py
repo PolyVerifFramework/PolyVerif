@@ -172,3 +172,13 @@ class DetectionRangeReport_Multi(NamedTuple):
     Range               : str
     SuccessRate         : float 
 
+ObjectClassification={
+    0:"UNKNOWN",
+    1:"CAR",
+    2:"TRUCK",
+    3:"BUS",
+    4:"TRAILER",
+    5:"MOTORCYCLE",
+    6:"BICYCLE",
+    7:"PEDESTRIAN"
+}

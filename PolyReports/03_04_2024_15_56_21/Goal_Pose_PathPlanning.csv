@@ -1,2 +1,0 @@
-frame_id,timestamp_sec,timestamp_nanosec,position_x,position_y,position_z,orientation_x,orientation_y,orientation_z,orientation_w
-map,93,181175703,81700.65625,50043.7421875,0.0,0.0,0.0,0.08784409077593464,0.9961342357914165

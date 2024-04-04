@@ -7,6 +7,7 @@ Created on Wed Feb 24 13:05:09 2021
 #from scipy.spatial import distance
 import math
 import pandas as pd
+from utils.acquisition_structures import ObjectClassification
 from utils.acquisition_structures import DetectionRangeReport_Multi
 
 class DetectionParams(object):
@@ -63,30 +64,26 @@ class DetectionParams(object):
       matching_report = []
      
       print("Entering in ObjectDetectionRate function")
-      for idx_LG in range(gtd_data["timestamp_sec"].count()-1): 
-        
+      for idx_LG in range(gtd_data["timestamp_sec"].count()-1):  
         match_found = False
-        if(gtd_data.object_label[idx_LG]!="no_object"):
-            
-            for idx_Auto in range(auto_percep_data["timestamp_sec"].count()-1):
-                       
+        if(gtd_data.object_label[idx_LG]!="no_object"):  
+            for idx_Auto in range(auto_percep_data["timestamp_sec"].count()-1):          
                 if(gtd_data.timestamp_sec[idx_LG] == auto_percep_data.timestamp_sec[idx_Auto]):
                     if(gtd_stamping[idx_LG] == percep_stamping[idx_Auto]):
                         lg_pos = [gtd_data.position_x[idx_LG], gtd_data.position_y[idx_LG],0]
                         auto_pos = [auto_percep_data.position_x[idx_Auto], auto_percep_data.position_y[idx_Auto],0]
                         
                         lg_label=int(gtd_data.object_label[idx_LG])
-                        auto_label=(auto_percep_data.object_label[idx_Auto])
+                        auto_label=int(auto_percep_data.object_label[idx_Auto])
                         
                         
                         dist = math.sqrt((lg_pos[0]-auto_pos[0])**2 + (lg_pos[1]-auto_pos[1])**2 + (lg_pos[2]-auto_pos[2])**2)
                         diff_of_y = abs(auto_pos[1] - lg_pos[1])
-                       
                         
-                        if(dist < max_distance and diff_of_y < max_Y_deviation):                        
-                          if(auto_label == lg_label or auto_percep_data.object_label[idx_Auto]==3 or auto_percep_data.object_label[idx_Auto]==4):                       
+                        if(dist < max_distance and diff_of_y < max_Y_deviation):                      
+                          if(auto_label == lg_label or auto_percep_data.object_label[idx_Auto]==ObjectClassification[3] or auto_percep_data.object_label[idx_Auto]==ObjectClassification[4]):                       
                             match_found = True
-                            # print("dist", dist,diff_of_y)
+                            #print("dist",dist)
                             print(gtd_data.position_x[idx_LG],gtd_data.position_y[idx_LG],gtd_data.position_z[idx_LG],auto_percep_data.position_x[idx_Auto],auto_percep_data.position_y[idx_Auto])
                             # print("matchAuto:",auto_percep_data.position_x[idx_Auto],auto_percep_data.position_y[idx_Auto])
                             # print("label:",gtd_data.object_label[idx_LG],auto_percep_data.object_label[idx_Auto])
