@@ -1,0 +1,62 @@
+running egg_info
+creating ../build/lgsvl/lgsvl.egg-info
+writing ../build/lgsvl/lgsvl.egg-info/PKG-INFO
+writing dependency_links to ../build/lgsvl/lgsvl.egg-info/dependency_links.txt
+writing requirements to ../build/lgsvl/lgsvl.egg-info/requires.txt
+writing top-level names to ../build/lgsvl/lgsvl.egg-info/top_level.txt
+writing manifest file '../build/lgsvl/lgsvl.egg-info/SOURCES.txt'
+reading manifest file '../build/lgsvl/lgsvl.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../build/lgsvl/lgsvl.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/shoukat/adehome/build/lgsvl/build
+creating /home/shoukat/adehome/build/lgsvl/build/lib
+creating /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl
+copying lgsvl/sensor.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl
+copying lgsvl/utils.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl
+copying lgsvl/__init__.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl
+copying lgsvl/remote.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl
+copying lgsvl/geometry.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl
+copying lgsvl/simulator.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl
+copying lgsvl/agent.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl
+copying lgsvl/controllable.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl
+creating /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/dreamview
+copying lgsvl/dreamview/__init__.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/dreamview
+copying lgsvl/dreamview/dreamview.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/dreamview
+creating /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/evaluator
+copying lgsvl/evaluator/utils.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/evaluator
+copying lgsvl/evaluator/__init__.py -> /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/evaluator
+running install
+running install_lib
+creating /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl
+creating /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/evaluator
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/evaluator/utils.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/evaluator
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/evaluator/__init__.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/evaluator
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/sensor.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/utils.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/__init__.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/remote.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl
+creating /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/dreamview
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/dreamview/__init__.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/dreamview
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/dreamview/dreamview.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/dreamview
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/geometry.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/simulator.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/agent.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl
+copying /home/shoukat/adehome/build/lgsvl/build/lib/lgsvl/controllable.py -> /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/evaluator/utils.py to utils.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/evaluator/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/sensor.py to sensor.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/utils.py to utils.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/remote.py to remote.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/dreamview/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/dreamview/dreamview.py to dreamview.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/geometry.py to geometry.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/simulator.py to simulator.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/agent.py to agent.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl/controllable.py to controllable.cpython-310.pyc
+running install_egg_info
+Copying ../build/lgsvl/lgsvl.egg-info to /home/shoukat/adehome/install/lgsvl/lib/python3.10/site-packages/lgsvl-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/shoukat/adehome/build/lgsvl/install.log'

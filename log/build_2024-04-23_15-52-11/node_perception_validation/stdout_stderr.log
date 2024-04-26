@@ -1,0 +1,39 @@
+running egg_info
+creating ../../../../../build/node_perception_validation/node_perception_validation.egg-info
+writing ../../../../../build/node_perception_validation/node_perception_validation.egg-info/PKG-INFO
+writing dependency_links to ../../../../../build/node_perception_validation/node_perception_validation.egg-info/dependency_links.txt
+writing entry points to ../../../../../build/node_perception_validation/node_perception_validation.egg-info/entry_points.txt
+writing requirements to ../../../../../build/node_perception_validation/node_perception_validation.egg-info/requires.txt
+writing top-level names to ../../../../../build/node_perception_validation/node_perception_validation.egg-info/top_level.txt
+writing manifest file '../../../../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+reading manifest file '../../../../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../../../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/shoukat/adehome/build/node_perception_validation/build
+creating /home/shoukat/adehome/build/node_perception_validation/build/lib
+creating /home/shoukat/adehome/build/node_perception_validation/build/lib/node_perception_validation
+copying node_perception_validation/acquisition_structures.py -> /home/shoukat/adehome/build/node_perception_validation/build/lib/node_perception_validation
+copying node_perception_validation/__init__.py -> /home/shoukat/adehome/build/node_perception_validation/build/lib/node_perception_validation
+copying node_perception_validation/detection_node.py -> /home/shoukat/adehome/build/node_perception_validation/build/lib/node_perception_validation
+running install
+running install_lib
+creating /home/shoukat/adehome/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation
+copying /home/shoukat/adehome/build/node_perception_validation/build/lib/node_perception_validation/acquisition_structures.py -> /home/shoukat/adehome/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation
+copying /home/shoukat/adehome/build/node_perception_validation/build/lib/node_perception_validation/__init__.py -> /home/shoukat/adehome/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation
+copying /home/shoukat/adehome/build/node_perception_validation/build/lib/node_perception_validation/detection_node.py -> /home/shoukat/adehome/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation
+byte-compiling /home/shoukat/adehome/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation/acquisition_structures.py to acquisition_structures.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation/detection_node.py to detection_node.cpython-310.pyc
+running install_data
+creating /home/shoukat/adehome/install/node_perception_validation/share/ament_index
+creating /home/shoukat/adehome/install/node_perception_validation/share/ament_index/resource_index
+creating /home/shoukat/adehome/install/node_perception_validation/share/ament_index/resource_index/packages
+copying resource/node_perception_validation -> /home/shoukat/adehome/install/node_perception_validation/share/ament_index/resource_index/packages
+copying package.xml -> /home/shoukat/adehome/install/node_perception_validation/share/node_perception_validation
+running install_egg_info
+Copying ../../../../../build/node_perception_validation/node_perception_validation.egg-info to /home/shoukat/adehome/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation-0.0.0-py3.10.egg-info
+running install_scripts
+Installing detection_node script to /home/shoukat/adehome/install/node_perception_validation/lib/node_perception_validation
+writing list of installed files to '/home/shoukat/adehome/build/node_perception_validation/install.log'

@@ -1,0 +1,113 @@
+[0.323s] Invoking command in '/home/shoukat/adehome/build/avp_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/shoukat/adehome/avp_demo -DCMAKE_INSTALL_PREFIX=/home/shoukat/adehome/install/avp_demo
+[1.465s] -- The C compiler identification is GNU 11.4.0
+[1.466s] -- The CXX compiler identification is GNU 11.4.0
+[1.466s] -- Detecting C compiler ABI info
+[1.466s] -- Detecting C compiler ABI info - done
+[1.466s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.466s] -- Detecting C compile features
+[1.466s] -- Detecting C compile features - done
+[1.466s] -- Detecting CXX compiler ABI info
+[1.466s] -- Detecting CXX compiler ABI info - done
+[1.466s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.466s] -- Detecting CXX compile features
+[1.466s] -- Detecting CXX compile features - done
+[1.466s] -- Found ament_cmake_auto: 1.3.7 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[1.466s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[1.466s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.466s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.466s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.466s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.466s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.466s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.466s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.466s] -- Found PythonExtra: .so  
+[1.466s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.466s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.467s] -- Configured cppcheck include dirs: 
+[1.467s] -- Configured cppcheck exclude dirs and/or files: 
+[1.467s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.467s] -- Configured cpplint exclude dirs and/or files: 
+[1.467s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.467s] -- Added test 'lint_cmake' to check CMake code style
+[1.467s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.467s] -- Added test 'uncrustify' to check C / C++ code style
+[1.467s] -- Configured uncrustify additional arguments: 
+[1.467s] -- Added test 'xmllint' to check XML markup files
+[1.467s] -- Configuring done
+[1.467s] -- Generating done
+[1.467s] -- Build files have been written to: /home/shoukat/adehome/build/avp_demo
+[1.755s] Invoked command in '/home/shoukat/adehome/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/shoukat/adehome/avp_demo -DCMAKE_INSTALL_PREFIX=/home/shoukat/adehome/install/avp_demo
+[1.756s] Invoking command in '/home/shoukat/adehome/build/avp_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/shoukat/adehome/build/avp_demo -- -j16 -l16
+[1.792s] Invoked command in '/home/shoukat/adehome/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/shoukat/adehome/build/avp_demo -- -j16 -l16
+[1.830s] Invoking command in '/home/shoukat/adehome/build/avp_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/shoukat/adehome/build/avp_demo
+[1.837s] -- Install configuration: ""
+[1.837s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/config
+[1.837s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/config/recordreplay_planner_demo.rviz
+[1.837s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/config/ms2.rviz
+[1.838s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/config/ms3.rviz
+[1.838s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data
+[1.838s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/JTA_R1.pcd
+[2.177s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/my_autonomoustuff_parking_lot.osm
+[2.178s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot_lgsvl.forward.path
+[2.179s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/JTA_R2.osm
+[2.179s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/Taltech.osm
+[2.183s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot2.osm
+[2.199s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot.osm
+[2.206s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot.yaml
+[2.207s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/omy_autonomoustuff_parking_lot.osm
+[2.208s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/taltech.pcd
+[2.309s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot_lgsvl.yaml
+[2.309s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/Taltech_original.osm
+[2.310s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/Taltech_new.osm
+[2.311s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/JTA_R1.osm
+[2.313s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/map.osm
+[2.314s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/data/autonomoustuff_parking_lot_lgsvl.reverse.path
+[2.315s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/launch
+[2.315s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/launch/recordreplay_planner_demo.launch.py
+[2.315s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/launch/__pycache__
+[2.315s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/launch/__pycache__/ms3_sim.launch.cpython-38.pyc
+[2.316s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/launch/ms3_vehicle.launch.py
+[2.316s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/launch/ms3_sim.launch.py
+[2.316s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/launch/ms3_core.launch.py
+[2.316s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/launch/ms2.launch.py
+[2.316s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param
+[2.316s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/odom_state_estimator.param.yaml
+[2.316s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/mpc_vehicle.param.yaml
+[2.317s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/lanelet2_map_provider.param.yaml
+[2.317s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/vlp16_front_vehicle.param.yaml
+[2.318s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/vlp16_rear_vehicle.param.yaml
+[2.318s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/scan_downsampler_ms3.param.yaml
+[2.318s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/off_map_obstacles_filter.param.yaml
+[2.318s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/parking_planner.param.yaml
+[2.319s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/ssc_interface.param.yaml
+[2.319s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/lane_planner.param.yaml
+[2.320s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/ray_ground_classifier.param.yaml
+[2.320s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/mpc.param.yaml
+[2.320s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/map_publisher_vehicle.param.yaml
+[2.320s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/map_publisher.param.yaml
+[2.321s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/object_collision_estimator.param.yaml
+[2.321s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/recordreplay_planner.param.yaml
+[2.322s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/pc_filter_transform.param.yaml
+[2.322s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/lgsvl_interface.param.yaml
+[2.322s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/object_collision_estimator_rrp.param.yaml
+[2.323s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/ndt_localizer.param.yaml
+[2.324s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/scan_downsampler.param.yaml
+[2.324s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/ndt_localizer_vehicle.param.yaml
+[2.325s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/euclidean_cluster.param.yaml
+[2.325s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/param/behavior_planner.param.yaml
+[2.326s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/ament_index/resource_index/package_run_dependencies/avp_demo
+[2.326s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/ament_index/resource_index/parent_prefix_path/avp_demo
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/environment/ament_prefix_path.sh
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/environment/ament_prefix_path.dsv
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/environment/path.sh
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/environment/path.dsv
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/local_setup.bash
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/local_setup.sh
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/local_setup.zsh
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/local_setup.dsv
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/package.dsv
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/ament_index/resource_index/packages/avp_demo
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/cmake/avp_demoConfig.cmake
+[2.327s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/cmake/avp_demoConfig-version.cmake
+[2.328s] -- Installing: /home/shoukat/adehome/install/avp_demo/share/avp_demo/package.xml
+[2.329s] Invoked command in '/home/shoukat/adehome/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/shoukat/adehome/build/avp_demo

@@ -1,0 +1,3 @@
+[console_scripts]
+detection_node = node_perception_validation.detection_node:main
+

@@ -1,0 +1,39 @@
+running egg_info
+creating ../../../../../build/node_localization_validation/node_localization_validation.egg-info
+writing ../../../../../build/node_localization_validation/node_localization_validation.egg-info/PKG-INFO
+writing dependency_links to ../../../../../build/node_localization_validation/node_localization_validation.egg-info/dependency_links.txt
+writing entry points to ../../../../../build/node_localization_validation/node_localization_validation.egg-info/entry_points.txt
+writing requirements to ../../../../../build/node_localization_validation/node_localization_validation.egg-info/requires.txt
+writing top-level names to ../../../../../build/node_localization_validation/node_localization_validation.egg-info/top_level.txt
+writing manifest file '../../../../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+reading manifest file '../../../../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../../../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/shoukat/adehome/build/node_localization_validation/build
+creating /home/shoukat/adehome/build/node_localization_validation/build/lib
+creating /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation
+copying node_localization_validation/acquisition_structures.py -> /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation
+copying node_localization_validation/__init__.py -> /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation
+copying node_localization_validation/localization_node.py -> /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation
+running install
+running install_lib
+creating /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+copying /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation/acquisition_structures.py -> /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+copying /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation/__init__.py -> /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+copying /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation/localization_node.py -> /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+byte-compiling /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/acquisition_structures.py to acquisition_structures.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/localization_node.py to localization_node.cpython-310.pyc
+running install_data
+creating /home/shoukat/adehome/install/node_localization_validation/share/ament_index
+creating /home/shoukat/adehome/install/node_localization_validation/share/ament_index/resource_index
+creating /home/shoukat/adehome/install/node_localization_validation/share/ament_index/resource_index/packages
+copying resource/node_localization_validation -> /home/shoukat/adehome/install/node_localization_validation/share/ament_index/resource_index/packages
+copying package.xml -> /home/shoukat/adehome/install/node_localization_validation/share/node_localization_validation
+running install_egg_info
+Copying ../../../../../build/node_localization_validation/node_localization_validation.egg-info to /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation-0.0.0-py3.10.egg-info
+running install_scripts
+Installing localization_node script to /home/shoukat/adehome/install/node_localization_validation/lib/node_localization_validation
+writing list of installed files to '/home/shoukat/adehome/build/node_localization_validation/install.log'

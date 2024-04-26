@@ -1,0 +1,41 @@
+[2.005s] Invoking command in '/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/src/node_localization_validation': PYTHONPATH=/home/shoukat/adehome/build/node_localization_validation/prefix_override:/home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../../../build/node_localization_validation build --build-base /home/shoukat/adehome/build/node_localization_validation/build install --record /home/shoukat/adehome/build/node_localization_validation/install.log --single-version-externally-managed
+[2.241s] running egg_info
+[2.242s] creating ../../../../../build/node_localization_validation/node_localization_validation.egg-info
+[2.243s] writing ../../../../../build/node_localization_validation/node_localization_validation.egg-info/PKG-INFO
+[2.243s] writing dependency_links to ../../../../../build/node_localization_validation/node_localization_validation.egg-info/dependency_links.txt
+[2.243s] writing entry points to ../../../../../build/node_localization_validation/node_localization_validation.egg-info/entry_points.txt
+[2.243s] writing requirements to ../../../../../build/node_localization_validation/node_localization_validation.egg-info/requires.txt
+[2.243s] writing top-level names to ../../../../../build/node_localization_validation/node_localization_validation.egg-info/top_level.txt
+[2.243s] writing manifest file '../../../../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[2.244s] reading manifest file '../../../../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[2.244s] adding license file 'LICENSE'
+[2.245s] writing manifest file '../../../../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[2.245s] running build
+[2.245s] running build_py
+[2.246s] creating /home/shoukat/adehome/build/node_localization_validation/build
+[2.246s] creating /home/shoukat/adehome/build/node_localization_validation/build/lib
+[2.246s] creating /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation
+[2.246s] copying node_localization_validation/acquisition_structures.py -> /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation
+[2.246s] copying node_localization_validation/__init__.py -> /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation
+[2.246s] copying node_localization_validation/localization_node.py -> /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation
+[2.246s] running install
+[2.246s] running install_lib
+[2.249s] creating /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[2.249s] copying /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation/acquisition_structures.py -> /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[2.249s] copying /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation/__init__.py -> /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[2.249s] copying /home/shoukat/adehome/build/node_localization_validation/build/lib/node_localization_validation/localization_node.py -> /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[2.250s] byte-compiling /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/acquisition_structures.py to acquisition_structures.cpython-310.pyc
+[2.251s] byte-compiling /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/__init__.py to __init__.cpython-310.pyc
+[2.251s] byte-compiling /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/localization_node.py to localization_node.cpython-310.pyc
+[2.251s] running install_data
+[2.251s] creating /home/shoukat/adehome/install/node_localization_validation/share/ament_index
+[2.251s] creating /home/shoukat/adehome/install/node_localization_validation/share/ament_index/resource_index
+[2.252s] creating /home/shoukat/adehome/install/node_localization_validation/share/ament_index/resource_index/packages
+[2.252s] copying resource/node_localization_validation -> /home/shoukat/adehome/install/node_localization_validation/share/ament_index/resource_index/packages
+[2.253s] copying package.xml -> /home/shoukat/adehome/install/node_localization_validation/share/node_localization_validation
+[2.254s] running install_egg_info
+[2.254s] Copying ../../../../../build/node_localization_validation/node_localization_validation.egg-info to /home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation-0.0.0-py3.10.egg-info
+[2.255s] running install_scripts
+[2.279s] Installing localization_node script to /home/shoukat/adehome/install/node_localization_validation/lib/node_localization_validation
+[2.279s] writing list of installed files to '/home/shoukat/adehome/build/node_localization_validation/install.log'
+[2.448s] Invoked command in '/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/src/node_localization_validation' returned '0': PYTHONPATH=/home/shoukat/adehome/build/node_localization_validation/prefix_override:/home/shoukat/adehome/install/node_localization_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../../../build/node_localization_validation build --build-base /home/shoukat/adehome/build/node_localization_validation/build install --record /home/shoukat/adehome/build/node_localization_validation/install.log --single-version-externally-managed

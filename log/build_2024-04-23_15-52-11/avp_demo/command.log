@@ -1,0 +1,6 @@
+Invoking command in '/home/shoukat/adehome/build/avp_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/shoukat/adehome/avp_demo -DCMAKE_INSTALL_PREFIX=/home/shoukat/adehome/install/avp_demo
+Invoked command in '/home/shoukat/adehome/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/shoukat/adehome/avp_demo -DCMAKE_INSTALL_PREFIX=/home/shoukat/adehome/install/avp_demo
+Invoking command in '/home/shoukat/adehome/build/avp_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/shoukat/adehome/build/avp_demo -- -j16 -l16
+Invoked command in '/home/shoukat/adehome/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/shoukat/adehome/build/avp_demo -- -j16 -l16
+Invoking command in '/home/shoukat/adehome/build/avp_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/shoukat/adehome/build/avp_demo
+Invoked command in '/home/shoukat/adehome/build/avp_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/shoukat/adehome/build/avp_demo

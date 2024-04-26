@@ -1,0 +1,41 @@
+[0.695s] Invoking command in '/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/src/node_localization_validation': PYTHONPATH=/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/prefix_override:/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/node_localization_validation build --build-base /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build install --record /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/install.log --single-version-externally-managed
+[0.903s] running egg_info
+[0.903s] creating ../../build/node_localization_validation/node_localization_validation.egg-info
+[0.903s] writing ../../build/node_localization_validation/node_localization_validation.egg-info/PKG-INFO
+[0.903s] writing dependency_links to ../../build/node_localization_validation/node_localization_validation.egg-info/dependency_links.txt
+[0.904s] writing entry points to ../../build/node_localization_validation/node_localization_validation.egg-info/entry_points.txt
+[0.904s] writing requirements to ../../build/node_localization_validation/node_localization_validation.egg-info/requires.txt
+[0.904s] writing top-level names to ../../build/node_localization_validation/node_localization_validation.egg-info/top_level.txt
+[0.904s] writing manifest file '../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[0.906s] reading manifest file '../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[0.906s] adding license file 'LICENSE'
+[0.907s] writing manifest file '../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[0.907s] running build
+[0.907s] running build_py
+[0.907s] creating /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build
+[0.907s] creating /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib
+[0.907s] creating /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation
+[0.907s] copying node_localization_validation/acquisition_structures.py -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation
+[0.907s] copying node_localization_validation/__init__.py -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation
+[0.907s] copying node_localization_validation/localization_node.py -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation
+[0.907s] running install
+[0.907s] running install_lib
+[0.908s] creating /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[0.908s] copying /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation/acquisition_structures.py -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[0.908s] copying /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation/__init__.py -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[0.908s] copying /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation/localization_node.py -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[0.908s] byte-compiling /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/acquisition_structures.py to acquisition_structures.cpython-310.pyc
+[0.909s] byte-compiling /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/__init__.py to __init__.cpython-310.pyc
+[0.909s] byte-compiling /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/localization_node.py to localization_node.cpython-310.pyc
+[0.910s] running install_data
+[0.910s] creating /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/share/ament_index
+[0.910s] creating /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/share/ament_index/resource_index
+[0.911s] creating /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/share/ament_index/resource_index/packages
+[0.911s] copying resource/node_localization_validation -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/share/ament_index/resource_index/packages
+[0.911s] copying package.xml -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/share/node_localization_validation
+[0.911s] running install_egg_info
+[0.913s] Copying ../../build/node_localization_validation/node_localization_validation.egg-info to /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation-0.0.0-py3.10.egg-info
+[0.913s] running install_scripts
+[0.927s] Installing localization_node script to /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/node_localization_validation
+[0.928s] writing list of installed files to '/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/install.log'
+[0.942s] Invoked command in '/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/src/node_localization_validation' returned '0': PYTHONPATH=/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/prefix_override:/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/node_localization_validation build --build-base /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build install --record /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/install.log --single-version-externally-managed

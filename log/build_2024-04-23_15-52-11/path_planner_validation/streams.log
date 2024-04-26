@@ -1,0 +1,41 @@
+[1.894s] Invoking command in '/home/shoukat/adehome/Node/Node_path_planner_validation_ws/path_planner_validation_ws/src/path_planner_validation': PYTHONPATH=/home/shoukat/adehome/build/path_planner_validation/prefix_override:/home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../../../build/path_planner_validation build --build-base /home/shoukat/adehome/build/path_planner_validation/build install --record /home/shoukat/adehome/build/path_planner_validation/install.log --single-version-externally-managed
+[2.131s] running egg_info
+[2.131s] creating ../../../../../build/path_planner_validation/path_planner_validation.egg-info
+[2.132s] writing ../../../../../build/path_planner_validation/path_planner_validation.egg-info/PKG-INFO
+[2.132s] writing dependency_links to ../../../../../build/path_planner_validation/path_planner_validation.egg-info/dependency_links.txt
+[2.132s] writing entry points to ../../../../../build/path_planner_validation/path_planner_validation.egg-info/entry_points.txt
+[2.132s] writing requirements to ../../../../../build/path_planner_validation/path_planner_validation.egg-info/requires.txt
+[2.132s] writing top-level names to ../../../../../build/path_planner_validation/path_planner_validation.egg-info/top_level.txt
+[2.132s] writing manifest file '../../../../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+[2.135s] reading manifest file '../../../../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+[2.135s] adding license file 'LICENSE'
+[2.135s] writing manifest file '../../../../../build/path_planner_validation/path_planner_validation.egg-info/SOURCES.txt'
+[2.136s] running build
+[2.136s] running build_py
+[2.136s] creating /home/shoukat/adehome/build/path_planner_validation/build
+[2.136s] creating /home/shoukat/adehome/build/path_planner_validation/build/lib
+[2.136s] creating /home/shoukat/adehome/build/path_planner_validation/build/lib/path_planner_validation
+[2.136s] copying path_planner_validation/acquisition_structures.py -> /home/shoukat/adehome/build/path_planner_validation/build/lib/path_planner_validation
+[2.136s] copying path_planner_validation/__init__.py -> /home/shoukat/adehome/build/path_planner_validation/build/lib/path_planner_validation
+[2.137s] copying path_planner_validation/path_planner_node.py -> /home/shoukat/adehome/build/path_planner_validation/build/lib/path_planner_validation
+[2.137s] running install
+[2.139s] running install_lib
+[2.139s] creating /home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation
+[2.139s] copying /home/shoukat/adehome/build/path_planner_validation/build/lib/path_planner_validation/acquisition_structures.py -> /home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation
+[2.139s] copying /home/shoukat/adehome/build/path_planner_validation/build/lib/path_planner_validation/__init__.py -> /home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation
+[2.139s] copying /home/shoukat/adehome/build/path_planner_validation/build/lib/path_planner_validation/path_planner_node.py -> /home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation
+[2.140s] byte-compiling /home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation/acquisition_structures.py to acquisition_structures.cpython-310.pyc
+[2.140s] byte-compiling /home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation/__init__.py to __init__.cpython-310.pyc
+[2.141s] byte-compiling /home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation/path_planner_node.py to path_planner_node.cpython-310.pyc
+[2.141s] running install_data
+[2.142s] creating /home/shoukat/adehome/install/path_planner_validation/share/ament_index
+[2.142s] creating /home/shoukat/adehome/install/path_planner_validation/share/ament_index/resource_index
+[2.142s] creating /home/shoukat/adehome/install/path_planner_validation/share/ament_index/resource_index/packages
+[2.142s] copying resource/path_planner_validation -> /home/shoukat/adehome/install/path_planner_validation/share/ament_index/resource_index/packages
+[2.143s] copying package.xml -> /home/shoukat/adehome/install/path_planner_validation/share/path_planner_validation
+[2.143s] running install_egg_info
+[2.145s] Copying ../../../../../build/path_planner_validation/path_planner_validation.egg-info to /home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages/path_planner_validation-1.0.0-py3.10.egg-info
+[2.145s] running install_scripts
+[2.166s] Installing path_planner_node script to /home/shoukat/adehome/install/path_planner_validation/lib/path_planner_validation
+[2.167s] writing list of installed files to '/home/shoukat/adehome/build/path_planner_validation/install.log'
+[2.286s] Invoked command in '/home/shoukat/adehome/Node/Node_path_planner_validation_ws/path_planner_validation_ws/src/path_planner_validation' returned '0': PYTHONPATH=/home/shoukat/adehome/build/path_planner_validation/prefix_override:/home/shoukat/adehome/install/path_planner_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../../../build/path_planner_validation build --build-base /home/shoukat/adehome/build/path_planner_validation/build install --record /home/shoukat/adehome/build/path_planner_validation/install.log --single-version-externally-managed

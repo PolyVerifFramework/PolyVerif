@@ -1,0 +1,25 @@
+[0.660s] Invoking command in '/home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/src/node_perception_validation': PYTHONPATH=/home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/prefix_override:/home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/node_perception_validation build --build-base /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build install --record /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log --single-version-externally-managed
+[0.873s] running egg_info
+[0.873s] writing ../../build/node_perception_validation/node_perception_validation.egg-info/PKG-INFO
+[0.873s] writing dependency_links to ../../build/node_perception_validation/node_perception_validation.egg-info/dependency_links.txt
+[0.873s] writing entry points to ../../build/node_perception_validation/node_perception_validation.egg-info/entry_points.txt
+[0.873s] writing requirements to ../../build/node_perception_validation/node_perception_validation.egg-info/requires.txt
+[0.873s] writing top-level names to ../../build/node_perception_validation/node_perception_validation.egg-info/top_level.txt
+[0.874s] reading manifest file '../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+[0.875s] adding license file 'LICENSE'
+[0.875s] writing manifest file '../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+[0.875s] running build
+[0.875s] running build_py
+[0.875s] copying node_perception_validation/detection_node.py -> /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build/lib/node_perception_validation
+[0.875s] running install
+[0.875s] running install_lib
+[0.876s] copying /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build/lib/node_perception_validation/detection_node.py -> /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation
+[0.876s] byte-compiling /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation/detection_node.py to detection_node.cpython-310.pyc
+[0.877s] running install_data
+[0.877s] running install_egg_info
+[0.878s] removing '/home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation-0.0.0-py3.10.egg-info' (and everything under it)
+[0.879s] Copying ../../build/node_perception_validation/node_perception_validation.egg-info to /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation-0.0.0-py3.10.egg-info
+[0.879s] running install_scripts
+[0.898s] Installing detection_node script to /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/node_perception_validation
+[0.899s] writing list of installed files to '/home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log'
+[0.938s] Invoked command in '/home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/src/node_perception_validation' returned '0': PYTHONPATH=/home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/prefix_override:/home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/node_perception_validation build --build-base /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build install --record /home/shoukat/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log --single-version-externally-managed
