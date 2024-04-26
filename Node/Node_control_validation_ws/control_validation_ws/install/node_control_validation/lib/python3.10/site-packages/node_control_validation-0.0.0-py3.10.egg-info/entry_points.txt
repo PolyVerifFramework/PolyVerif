@@ -1,3 +1,0 @@
-[console_scripts]
-control_subscriber = node_control_validation.control_subscriber:main
-
