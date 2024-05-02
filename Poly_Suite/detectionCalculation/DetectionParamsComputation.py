@@ -68,7 +68,7 @@ class DetectionParams(object):
         if(gtd_data.object_label[idx_LG]!="no_object"):  
             for idx_Auto in range(auto_percep_data["timestamp_sec"].count()-1):          
                 if(gtd_data.timestamp_sec[idx_LG] == auto_percep_data.timestamp_sec[idx_Auto]):
-                   # if(gtd_stamping[idx_LG] == percep_stamping[idx_Auto]):
+                   #if(gtd_stamping[idx_LG] == percep_stamping[idx_Auto]):
                         lg_pos = [gtd_data.position_x[idx_LG], gtd_data.position_y[idx_LG],0]
                         auto_pos = [auto_percep_data.position_x[idx_Auto], auto_percep_data.position_y[idx_Auto],0]
                         
@@ -85,7 +85,7 @@ class DetectionParams(object):
                             #print("dist",dist)
                             print(gtd_data.position_x[idx_LG],gtd_data.position_y[idx_LG],gtd_data.position_z[idx_LG],auto_percep_data.position_x[idx_Auto],auto_percep_data.position_y[idx_Auto])
                             # print("matchAuto:",auto_percep_data.position_x[idx_Auto],auto_percep_data.position_y[idx_Auto])
-                            print("label:",gtd_data.object_label[idx_LG],auto_percep_data.object_label[idx_Auto])
+                            #print("label:",gtd_data.object_label[idx_LG],auto_percep_data.object_label[idx_Auto])
                             
             if match_found == True:
                 matching_report.append("match_found")

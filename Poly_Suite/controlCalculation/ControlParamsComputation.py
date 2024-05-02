@@ -148,7 +148,6 @@ class ControlValidationParams(object):
       print("Entering in Initial_TTC function")
       if(len(ttc_op)>0):
           initial_ttc = ttc_op.ttc_val[0]
-
       print("Exiting from Initial_TTC function")
       return initial_ttc
 
