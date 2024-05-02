@@ -1,4 +1,0 @@
-7.98
-inf
--inf
-False
