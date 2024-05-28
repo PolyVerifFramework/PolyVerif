@@ -47,10 +47,12 @@ echo "Start Building Avp_Demo"
 cd avp_demo/
 rm -rf build
 rm -rf log
+rm -rf install
 colcon build
 echo -e "Avp Demo Package Build.\n\n"
 sleep 2
 cd ..
+
 echo "Start Installing PythonAPI.."
 cd PythonAPI/
 python3 -m pip install -r requirements.txt --user -e .
@@ -58,6 +60,7 @@ pip3 install --user -e .
 echo -e "PythonAPI Installed.\n\n"
 sleep 2
 cd ..
+pip3 install environs
 
 echo "Start Installing Scenic (SDL) .."
 cd Scenic/
