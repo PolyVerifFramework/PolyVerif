@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Docker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function copyToClipboard(elementId) {
+            var copyText = document.getElementById(elementId).innerText;
+            copyText = copyText.split('\n').map(line => line.trim().startsWith('$') ? line.trim().substring(1).trim() : line.trim()).join('\n');
+            navigator.clipboard.writeText(copyText).then(function() {
+                alert('Copied to clipboard');
+            }, function() {
+                alert('Failed to copy');
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Setup Docker</h1>
+    <p><strong>Uninstall old versions:</strong></p>
+    <div style="position: relative;">
+        <pre id="cmd1">
+$ sudo apt-get remove docker docker-engine docker.io containerd runc
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd1')">Copy</button>
+    </div>
+
+    <p>The contents of <code>/var/lib/docker/</code>, including images, containers, volumes, and networks, are preserved.
+       If you do not need to save your existing data, and want to start with a clean installation, run below commands else skip.</p>
+
+    <div style="position: relative;">
+        <pre id="cmd2">
+$ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-compose-plugin
+$ sudo rm -rf /var/lib/docker
+$ sudo rm -rf /var/lib/containerd
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd2')">Copy</button>
+    </div>
+
+    <p>Follow below steps for installation and set up the repository:</p>
+    <p>Add Docker's official GPG key:</p>
+    <div style="position: relative;">
+        <pre id="cmd3">
+$ sudo apt-get update
+$ sudo apt-get install ca-certificates curl gnupg
+$ sudo install -m 0755 -d /etc/apt/keyrings
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+$ sudo chmod a+r /etc/apt/keyrings/docker.gpg
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd3')">Copy</button>
+    </div>
+
+    <p>Add the repository to Apt sources:</p>
+    <div style="position: relative;">
+        <pre id="cmd4">
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+$ sudo apt-get update
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd4')">Copy</button>
+    </div>
+
+    <p>Start Docker service and check the installation:</p>
+    <div style="position: relative;">
+        <pre id="cmd5">
+$ sudo service docker start
+$ sudo docker run hello-world
+$ sudo groupadd docker
+$ sudo usermod -aG docker $USER
+$ newgrp docker 
+$ docker run hello-world
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd5')">Copy</button>
+    </div>
+<h3>References</h3>
+    <p>For more detailed instructions, visit the official <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">Docker installation guide for Ubuntu</a>.</p>
+    <h1>Install NVIDIA Docker</h1>
+    <p>To install NVIDIA Docker, add the package repositories:</p>
+    <div style="position: relative;">
+        <pre id="cmd6">
+$ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+$ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+$ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+$ sudo apt-get update
+$ sudo apt-get install -y nvidia-container-toolkit
+$ sudo systemctl restart docker
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd6')">Copy</button>
+    </div>
+
+    <p>Upgrade with NVIDIA Docker 2:</p>
+    <div style="position: relative;">
+        <pre id="cmd7">
+$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2
+$ sudo systemctl restart docker
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd7')">Copy</button>
+    </div>
+
+    <p>Configure Docker to start on boot:</p>
+    <div style="position: relative;">
+        <pre id="cmd8">
+$ sudo systemctl enable docker.service
+$ sudo systemctl enable containerd.service
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker.service
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd8')">Copy</button>
+    </div>
+<h4>References</h4>
+    <p>For more detailed instructions, visit the official <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html" target="_blank">NVIDIA Docker installation guide</a>.</p>
+    
+	<h3>Restart the machine to apply all changes.</h3>
+</body>
+</html>

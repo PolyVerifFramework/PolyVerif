@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyVerification Suite Setup and Configuration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function copyToClipboard(elementId) {
+            var copyText = document.getElementById(elementId).innerText;
+            copyText = copyText.split('\n').map(line => line.trim().startsWith('$') ? line.trim().substring(1).trim() : line.trim()).join('\n');
+            navigator.clipboard.writeText(copyText).then(function() {
+                alert('Copied to clipboard');
+            }, function() {
+                alert('Failed to copy');
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>PolyVerification Suite Setup and Configuration</h1>
+    <p>This document contains the information for setting up and installing the PolyVerification suite on Linux/Unix. We have modified some open-source packages which are added in the repository.</p>
+
+    <h2>System Requirements:</h2>
+    <ul>
+        <li>CPU: at least 8 core CPU</li>
+        <li>GPU: Nvidia GTX 1080 (8GB memory) or higher</li>
+        <li>OS: Ubuntu 18.04 or 20.04 (20.04 is recommended)</li>
+        <li>Python 3.8</li>
+    </ul>
+
+    <h2>1. Setup Docker</h2>
+    <p>For Docker installation, please refer to <a href="https://github.com/PolyVerifFramework/PolyVerif/blob/PolyVerif-OSSDC-SIM-Docker/Document" target="_blank">Docker_Installation.html</a> found in the Documents directory. Alternatively, you can visit the <a href="https://github.com/PolyVerifFramework/PolyVerif/blob/PolyVerif-OSSDC-SIM-Docker" target="_blank">PolyVerif GitHub repository</a>.</p>
+
+    <h2>2. PolyVerif Setup</h2>
+    <p>For PolyVerif setup, run the below commands. It will automatically set up and install all packages of the PolyVerif suite.</p>
+
+    <div style="position: relative;">
+        <pre id="cmd1">
+$ docker pull polyverif/ossdc-sim:v1.1 && docker run -it -e HOST_USERNAME=$USER -v $HOME:/host-home polyverif/ossdc-sim:v1.1
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd1')">Copy</button>
+	   </div>
+	<div style="position: relative;">
+		        <pre id="cmd2">
+$ ./adehome/build_env.sh
+        </pre>
+        <button class="copy-btn" onclick="copyToClipboard('cmd2')">Copy</button>
+	</div>
+
+    <h5><strong>NOTE:</strong> This is an error during the repository updates that will not affect anything.</h5>
+    <p>E: The repository 'http://packages.ros.org/ros2/ubuntu focal In Release' is not signed.</p>
+	<h5><strong>NOTE:</strong>If you are facing any difficulties while runnig just rebuild polyverif by running ./adehome/build_env.sh</h5>
+    
+</body>
+</html>
