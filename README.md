@@ -21,16 +21,17 @@ Below is the PC configuration required:
 	
     •	Ubuntu 
     •	Python3.8
+    •	Docker & NVIDIA-container-toolkit
 
   
 
-Refer Document directory for PolyVerif installation and User Guide.
+Refer Document directory for PolyVerif installation and User Guide[].
 Note:- Follow step-wise document for better understanding.
 	
 [![Static Badge](https://img.shields.io/badge/PolyVerif-blue?style=for-the-badge)](https://www.avvc.net/)  [![Static Badge](https://img.shields.io/badge/Publication-blue?style=for-the-badge)](https://ieeexplore.ieee.org/document/10075634)
 
 
-[![Documentation](https://img.shields.io/badge/Documentation-red?style=for-the-badge)](https://github.com/PolyVerifFramework/PolyVerif/tree/PolyVerif-OSSDC-SIM/Document) [![Watch Video](https://img.shields.io/badge/Watch_Video-red?style=for-the-badge)](https://www.youtube.com/playlist?list=PLdaz5YCiVlEn_l22XnQp6pS2KvE3BOX23)
+[![Documentation](https://img.shields.io/badge/Documentation-red?style=for-the-badge)](https://github.com/PolyVerifFramework/PolyVerif/tree/PolyVerif-OSSDC-SIM-Docker/Document) [![Watch Video](https://img.shields.io/badge/Watch_Video-red?style=for-the-badge)](https://www.youtube.com/playlist?list=PLdaz5YCiVlEn_l22XnQp6pS2KvE3BOX23)
 
 
 ![Alt Text](https://drive.google.com/uc?export=view&id=1tTEotG_E1Kpgxs7zuP5BslOgRJ57vTWV)
