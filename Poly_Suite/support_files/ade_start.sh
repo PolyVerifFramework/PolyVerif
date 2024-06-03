@@ -1,20 +1,16 @@
 #!/bin/bash
 
-#echo "Hello"
-#SCRIPT=$(readlink -f $0)
-#SCRIPTPATH=`dirname $SCRIPT`
-#ADEPATH=$($SCRIPTPATH) | cut -d'/' -f-3
-#echo $ADEPATH
-#echo $SCRIPTPATH | cut -d'/' -f-4
+# Open a new terminal tab to start ADE
+gnome-terminal --tab --title="ADE Start" -- bash -c 'pwd; ade start; exec $SHELL'
 
+# Wait for 5 seconds to ensure ADE starts properly
+sleep 5
 
-#gnome-terminal --tab --title="ADE Start" --command="bash -c 'cd ../AutowareAuto;  ade start -- --net=host --privileged; echo ADE Started, Now Entering into Docker.. > ../Poly_Suite/logfiles/logInfo.txt; sleep 1; ade enter ./Poly_Suite/support_files/launch.sh;  $SHELL'"
+# Define the command to be executed inside the ADE container
+cmd="cd adehome && source /opt/ros/humble/setup.bash && source /autoware/install/setup.bash && ./Poly_Suite/support_files/launch.sh && exec /bin/bash"
 
-#sleep 1
+# Print the command for verification
+#echo $cmd
 
-#gnome-terminal --tab --title="Browser " --command="bash -c 'cd support_files;  python3 ./apimode.py; $SHELL'"
-
-gnome-terminal --tab --title="ADE Start" --command="bash -c 'cd ..; echo ADE Started, Now Entering into Docker.. > Poly_Suite/logfiles/logInfo.txt; sleep 1;./Poly_Suite/support_files/launch.sh;exit;$SHELL'"
-
-
-
+# Open a new terminal tab to enter the ADE container and run the command
+gnome-terminal --tab --title="ADE Entering" -- bash -c "pwd; ade enter \"${cmd}\"; exec $SHELL"
