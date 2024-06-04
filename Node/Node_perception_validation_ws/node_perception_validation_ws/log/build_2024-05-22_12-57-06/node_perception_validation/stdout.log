@@ -1,0 +1,20 @@
+running egg_info
+writing ../../build/node_perception_validation/node_perception_validation.egg-info/PKG-INFO
+writing dependency_links to ../../build/node_perception_validation/node_perception_validation.egg-info/dependency_links.txt
+writing entry points to ../../build/node_perception_validation/node_perception_validation.egg-info/entry_points.txt
+writing requirements to ../../build/node_perception_validation/node_perception_validation.egg-info/requires.txt
+writing top-level names to ../../build/node_perception_validation/node_perception_validation.egg-info/top_level.txt
+reading manifest file '../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/node_perception_validation/node_perception_validation.egg-info to /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation-0.0.0-py3.10.egg-info
+running install_scripts
+Installing detection_node script to /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/node_perception_validation
+writing list of installed files to '/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log'

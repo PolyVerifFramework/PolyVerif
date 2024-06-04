@@ -35,6 +35,7 @@ class Handler(FileSystemEventHandler):
             # Event is modified, you can process it now 
             print("File modified with new path - % s." % event.src_path) 
             global file_path
+            print("path1:",file_path)
             print("path2:",os.getcwd())
             f_path = open('PolyReports/Validation_report/config.txt', 'r')
             path = f_path.readline()
@@ -60,11 +61,13 @@ class Detection_Subcriber(Node):
 
     def __init__(self):
         global file_path
+        
         f_path = open('PolyReports/Validation_report/config.txt', 'r')
         path = f_path.readline()
         file_path = path.strip()
+        file_path=file_path
         f_path.close()
-        print("file path : ",file_path)
+        
         
         # Initiate the Node class's constructor and give it a name
         super().__init__('detetction_subscriber')
@@ -74,7 +77,7 @@ class Detection_Subcriber(Node):
                                            history=rclpy.qos.HistoryPolicy.KEEP_LAST,
                                            depth=1)
         
-        with open(file_path + '/Autoware_PerceptionData.csv','w', newline='') as csvfile:
+        with open(file_path + 'Autoware_PerceptionData.csv','w', newline='') as csvfile:
                  writer = csv.writer(csvfile)
                  autoware_percep_title = Autoware_Objects("frame_id","timestamp_sec" , "timestamp_nanosec" , "available", "verified", "object_label", "position_x", 
                  "position_y" , "position_z", "orientation_x", "orientation_y", "orientation_z", "orientation_w","linear_x", "linear_y", "linear_z")
@@ -162,7 +165,7 @@ def main(args=None):
       
   observer = Observer()
   event_handler = Handler() 
-  print("path1:",os.getcwd())
+  
   observer.schedule(event_handler, path='PolyReports/Validation_report/config.txt') 
   if(observer.is_alive()):
       observer.stop()
@@ -172,17 +175,16 @@ def main(args=None):
 
  # write curernt pid in file
   home = str(Path.home()) 
-  file = open(home+'/adehome/Poly_Suite/per_node_pid','w+')
+  file = open(home +'/adehome/Poly_Suite/per_node_pid','w+')
+
   self_pid = os.getpid()
-   # self_pid = os.getppid()
-  s_pid = str(self_pid)
-    #print("home:",home,s_pid)
+  s_pid = str(self_pid)  
   file.write(s_pid)
   file.close()
   
   rclpy.init(args=args)  
   detetction_subscriber = Detection_Subcriber()
- # detetction_subscriber.filePath()
+
   rclpy.spin(detetction_subscriber)
   
   print("Detection Node Started...............")

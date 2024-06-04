@@ -1,0 +1,25 @@
+[0.990s] Invoking command in '/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/src/node_perception_validation': PYTHONPATH=/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/prefix_override:/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/node_perception_validation build --build-base /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build install --record /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log --single-version-externally-managed install_data
+[1.354s] running egg_info
+[1.356s] writing ../../build/node_perception_validation/node_perception_validation.egg-info/PKG-INFO
+[1.356s] writing dependency_links to ../../build/node_perception_validation/node_perception_validation.egg-info/dependency_links.txt
+[1.356s] writing entry points to ../../build/node_perception_validation/node_perception_validation.egg-info/entry_points.txt
+[1.356s] writing requirements to ../../build/node_perception_validation/node_perception_validation.egg-info/requires.txt
+[1.356s] writing top-level names to ../../build/node_perception_validation/node_perception_validation.egg-info/top_level.txt
+[1.357s] reading manifest file '../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+[1.357s] adding license file 'LICENSE'
+[1.357s] writing manifest file '../../build/node_perception_validation/node_perception_validation.egg-info/SOURCES.txt'
+[1.358s] running build
+[1.358s] running build_py
+[1.358s] copying node_perception_validation/detection_node.py -> /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build/lib/node_perception_validation
+[1.358s] running install
+[1.358s] running install_lib
+[1.359s] copying /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build/lib/node_perception_validation/detection_node.py -> /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation
+[1.360s] byte-compiling /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation/detection_node.py to detection_node.cpython-310.pyc
+[1.361s] running install_data
+[1.362s] running install_egg_info
+[1.367s] removing '/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation-0.0.0-py3.10.egg-info' (and everything under it)
+[1.367s] Copying ../../build/node_perception_validation/node_perception_validation.egg-info to /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages/node_perception_validation-0.0.0-py3.10.egg-info
+[1.368s] running install_scripts
+[1.400s] Installing detection_node script to /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/node_perception_validation
+[1.400s] writing list of installed files to '/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log'
+[1.440s] Invoked command in '/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/src/node_perception_validation' returned '0': PYTHONPATH=/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/prefix_override:/adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/install/node_perception_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/node_perception_validation build --build-base /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/build install --record /adehome/Node/Node_perception_validation_ws/node_perception_validation_ws/build/node_perception_validation/install.log --single-version-externally-managed install_data
