@@ -11,5 +11,5 @@ echo "Simulation Stopped!!" > logfiles/logInfo.txt
 
 
 #gnome-terminal --tab --title="Stop Scenario" --command="bash -c 'ls; sed -i \"3s/.*/pid=\${value}/\" support_files/stop_scenario.sh; ./support_files/stop_scenario.sh;$SHELL '"
-gnome-terminal --tab --title="Stop Scenario" --command="bash -c 'ls; sed -i '3s/.*/pid=${value}/' support_files/stop_scenario.sh;./support_files/stop_scenario.sh;exit;$SHELL '"
+gnome-terminal --tab --title="Stop Scenario" --command="bash -c 'ls; sed -i '3s/.*/pid=${value}/' ./support_files/stop_scenario.sh;exit;$SHELL '"
 

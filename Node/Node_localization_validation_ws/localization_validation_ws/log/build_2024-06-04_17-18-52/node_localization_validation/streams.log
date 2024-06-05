@@ -1,0 +1,25 @@
+[1.137s] Invoking command in '/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/src/node_localization_validation': PYTHONPATH=/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/prefix_override:/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/node_localization_validation build --build-base /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build install --record /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/install.log --single-version-externally-managed install_data
+[1.509s] running egg_info
+[1.511s] writing ../../build/node_localization_validation/node_localization_validation.egg-info/PKG-INFO
+[1.511s] writing dependency_links to ../../build/node_localization_validation/node_localization_validation.egg-info/dependency_links.txt
+[1.511s] writing entry points to ../../build/node_localization_validation/node_localization_validation.egg-info/entry_points.txt
+[1.511s] writing requirements to ../../build/node_localization_validation/node_localization_validation.egg-info/requires.txt
+[1.511s] writing top-level names to ../../build/node_localization_validation/node_localization_validation.egg-info/top_level.txt
+[1.518s] reading manifest file '../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[1.518s] adding license file 'LICENSE'
+[1.519s] writing manifest file '../../build/node_localization_validation/node_localization_validation.egg-info/SOURCES.txt'
+[1.520s] running build
+[1.520s] running build_py
+[1.520s] copying node_localization_validation/localization_node.py -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation
+[1.520s] running install
+[1.523s] running install_lib
+[1.523s] copying /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build/lib/node_localization_validation/localization_node.py -> /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation
+[1.523s] byte-compiling /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation/localization_node.py to localization_node.cpython-310.pyc
+[1.525s] running install_data
+[1.525s] running install_egg_info
+[1.528s] removing '/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation-0.0.0-py3.10.egg-info' (and everything under it)
+[1.530s] Copying ../../build/node_localization_validation/node_localization_validation.egg-info to /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages/node_localization_validation-0.0.0-py3.10.egg-info
+[1.530s] running install_scripts
+[1.556s] Installing localization_node script to /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/node_localization_validation
+[1.556s] writing list of installed files to '/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/install.log'
+[1.596s] Invoked command in '/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/src/node_localization_validation' returned '0': PYTHONPATH=/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/prefix_override:/home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/install/node_localization_validation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/node_localization_validation build --build-base /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/build install --record /home/shoukat/adehome/Node/Node_localization_validation_ws/localization_validation_ws/build/node_localization_validation/install.log --single-version-externally-managed install_data

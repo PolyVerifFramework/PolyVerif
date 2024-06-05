@@ -57,7 +57,7 @@ class LocalizationValidation(Node):
         
         super().__init__('localization_validation')
         
-        print("file path : ",file_path)
+     
         with open(file_path + '/GNSS_ODOM_Localization.csv','w', newline='') as csvfile:
                 writer = csv.writer(csvfile)
                 gnss_odom = GNSS_Odom("frame_id","child_frame_id","timestamp_sec" , "timestamp_nanosec" ,"position_x",
