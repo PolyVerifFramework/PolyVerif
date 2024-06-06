@@ -8,7 +8,7 @@ import rclpy
 import math
 from pathlib import Path
 from numpy import *
-import numpy as np # NumPy Python library
+import numpy as np 
 from std_msgs.msg import Int32
 from rclpy.node import Node
 from nav_msgs.msg import Odometry
@@ -115,7 +115,7 @@ def main(args=None):
 
 # write curernt pid in file
   home = str(Path.home())
-  file = open(home+'/adehome/Poly_Suite/per_node_pid','w+')
+  file = open(home +'/adehome/Poly_Suite/per_node_pid','w+')
   self_pid = os.getpid()
   s_pid = str(self_pid)
   file.write(s_pid)
@@ -123,7 +123,7 @@ def main(args=None):
   
   rclpy.init(args=args)
   path_planner_validation= PathPlannerValidation()
-  print("Planner Node Started...............")
+  
   rclpy.spin(path_planner_validation)
   
     # Destroy the node explicitly

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Feb 18 15:49:46 2021
+Created on Mon Mar 18 15:49:46 2024
 
 @author: Acclivis Technologies Pvt Ltd.
 """
@@ -51,26 +51,26 @@ class Objects_GTD(NamedTuple):
     timestamp_sec     : int
     timestamp_nanosec : int
     available         : bool
-    object_label : int
-    position_x : float
-    position_y : float
-    position_z   : float
-    orientation_x   : float
-    orientation_y   : float
-    orientation_z   : float
-    orientation_w   : float
-    linear_x       : float
-    linear_y       : float
-    linear_z       : float
+    object_label      : int
+    position_x        : float
+    position_y        : float
+    position_z        : float
+    orientation_x     : float
+    orientation_y     : float
+    orientation_z     : float
+    orientation_w     : float
+    linear_x          : float
+    linear_y          : float
+    linear_z          : float
     
 
 # Structure for Ego Vehicle, data recieved from Can Bus 
 class Ego_CanData(NamedTuple):
-    frame_id     : int
-    timestamp_sec     : int
-    timestamp_nanosec : int
-    available    : bool
-    verified     : bool
+    frame_id             : int
+    timestamp_sec        : int
+    timestamp_nanosec    : int
+    available            : bool
+    verified             : bool
     speed                : float
     throttle             : float
     braking              : float
@@ -106,16 +106,16 @@ class Autoware_Objects(NamedTuple):
     available         : bool
     verified          : bool
     object_label      : int
-    position_x : float
-    position_y : float
-    position_z   : float
-    orientation_x   : float
-    orientation_y   : float
-    orientation_z   : float
-    orientation_w   : float
-    linear_x       : float
-    linear_y       : float
-    linear_z       : float
+    position_x        : float
+    position_y        : float
+    position_z        : float
+    orientation_x     : float
+    orientation_y     : float
+    orientation_z     : float
+    orientation_w     : float
+    linear_x          : float
+    linear_y          : float
+    linear_z          : float
 
 # Structure for Autoware localization ndt data
 class PathPlanner_GoalPose(NamedTuple):

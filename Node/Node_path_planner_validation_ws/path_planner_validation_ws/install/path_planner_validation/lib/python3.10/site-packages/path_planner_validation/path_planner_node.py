@@ -8,7 +8,7 @@ import rclpy
 import math
 from pathlib import Path
 from numpy import *
-import numpy as np # NumPy Python library
+import numpy as np 
 from std_msgs.msg import Int32
 from rclpy.node import Node
 from nav_msgs.msg import Odometry

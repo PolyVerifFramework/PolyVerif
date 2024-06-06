@@ -12,4 +12,4 @@ echo "File"
 
 #sh  ./support_files/scenario_setup.sh $path
 
-sh  ./support_files/scenario_setup.sh $path
+sh  ./support_files/scenario_setup.sh
