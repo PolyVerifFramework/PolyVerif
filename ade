@@ -1,0 +1,93 @@
+#!/bin/bash
+
+# Set the image name
+IMAGE_NAME="${IMAGE_NAME:-polyverifav/autoware-universe:poly-prebuilt-cuda-v1.0}"
+CONTAINER_NAME="${CONTAINER_NAME:-ade_container}"
+VOLUME_PATH="${VOLUME_PATH:-$HOME/adehome/}"
+
+# Default command to run inside the container
+DEFAULT_CMD="cd adehome && exec /bin/bash"
+
+# Function to check if rocker and docker are installed
+check_dependencies() {
+    if ! command -v rocker &> /dev/null; then
+        echo "rocker could not be found. Please install rocker with below cmd."
+        echo "$ sudo apt-get install python3-rocker"
+        exit 1
+    fi
+
+    if ! command -v docker &> /dev/null; then
+        echo "docker could not be found. Please install docker."
+        exit 1
+    fi
+}
+
+# Function to check if container is running
+is_container_running() {
+    docker ps -q -f "name=$CONTAINER_NAME"
+}
+
+# Start the container
+start_container() {
+    if [ -n "$(is_container_running)" ]; then
+        echo "Container $CONTAINER_NAME is already running. Enter using: $0 enter..."
+    else
+        echo "Starting a new container..."
+        if ! rocker --nvidia --x11 --user --volume $VOLUME_PATH --name $CONTAINER_NAME -- $IMAGE_NAME; then
+            echo "Failed to start the container $CONTAINER_NAME."
+            exit 1
+        fi
+    fi
+}
+
+# Stop the container
+stop_container() {
+    if [ -n "$(is_container_running)" ]; then
+        echo "Stopping container $CONTAINER_NAME..."
+        if docker stop $CONTAINER_NAME; then
+            echo "Container $CONTAINER_NAME stopped successfully."
+        else
+            echo "Failed to stop the container $CONTAINER_NAME."
+            exit 1
+        fi
+    else
+        echo "Container $CONTAINER_NAME is not running."
+    fi
+}
+
+# Enter the container with a specified command
+enter_container() {
+    if [ -n "$(is_container_running)" ]; then
+        CMD="${1:-$DEFAULT_CMD}"
+        echo "Entering into container $CONTAINER_NAME with command: $CMD"
+        if docker exec -it $CONTAINER_NAME /bin/bash -c "$CMD"; then
+            :
+        else
+            echo "Failed to enter the container $CONTAINER_NAME."
+            exit 1
+        fi
+    else
+        echo "Container $CONTAINER_NAME is not running. Start it first using '$0 start'."
+    fi
+}
+
+# Check dependencies
+check_dependencies
+
+# Check for input argument
+case "$1" in
+    start)
+        start_container
+        ;;
+    stop)
+        stop_container
+        ;;
+    enter)
+        shift
+        enter_container "$@"
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|enter <command>}"
+        exit 1
+        ;;
+esac
