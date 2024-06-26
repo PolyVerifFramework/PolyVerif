@@ -1,38 +1,27 @@
-# PolyVerif FrameWork
+# PolyVerif Framework
 
 ## PolyVerif AV Validation Suite
 
-This is Poly-Verification and Validation Suite. Its functionality is to generate the test cases and validate the autonomous stack.
-It integrate the Python and Scenic scenario description language with AutowareAuto and helps to generate the random scenario for simulation.
-Since we are using OSSDC Simulator and AutowareAuto, it will require a high-end server with Graphics card to run it smoothly. 
+The Poly-Verification and Validation Suite is designed to generate test cases and validate the autonomous stack. It integrates Python and the Scenic scenario description language with AutowareAuto to create random scenarios for simulation. The suite uses the OSSDC Simulator and AutowareAuto, requiring a high-end server with a graphics card for optimal performance.
 
-This document contains the information of installing and setup the component for running Poly_Suite framework. It requires below setup, libraries and package that are need to be install in sequence as mention below.
+This document contains the information necessary to install and set up the components for running the Poly_Suite framework. The required setup, libraries, and packages must be installed in the sequence mentioned below. Running the simulator on a lower PC configuration will result in very slow performance.
 
-The Simulator performance will be very slow if run on a lower PC configuration.
-
-Below is the PC configuration required:
 ### PC Configuration:
-	
-    • CPU: at least 8 core CPU
-    • GPU: Nvidia GTX 1080 (8GB memory) or higher
-    • OS: Ubuntu 20.04 64-bit
-    
-### Prerequisite: 
-	
-    •	Ubuntu 
-    •	Python3.8
-    •	Docker & NVIDIA-container-toolkit
 
-  
+- **CPU:** At least 8-core CPU
+- **GPU:** Nvidia GTX 1080 (8GB memory) or higher
+- **OS:** Ubuntu 20.04 64-bit
 
-Refer Document directory for PolyVerif installation and User Guide[].
-Note:- Follow step-wise document for better understanding.
-	
-[![Static Badge](https://img.shields.io/badge/PolyVerif-blue?style=for-the-badge)](https://www.avvc.net/)  [![Static Badge](https://img.shields.io/badge/Publication-blue?style=for-the-badge)](https://ieeexplore.ieee.org/document/10075634)
+### Prerequisites:
 
+- Ubuntu
+- Python 3.8
+- Docker & NVIDIA-container-toolkit
 
-[![Documentation](https://img.shields.io/badge/Documentation-red?style=for-the-badge)](https://github.com/PolyVerifFramework/PolyVerif/tree/PolyVerif-OSSDC-SIM-Docker/Document) [![Watch Video](https://img.shields.io/badge/Watch_Video-red?style=for-the-badge)](https://www.youtube.com/playlist?list=PLdaz5YCiVlEn_l22XnQp6pS2KvE3BOX23)
+**Refer to the document directory for the PolyVerif installation and User Guide. Follow the step-wise document for better understanding.**
 
+[![PolyVerif](https://img.shields.io/badge/PolyVerif-blue?style=for-the-badge)](https://www.avvc.net/)  [![Publication](https://img.shields.io/badge/Publication-blue?style=for-the-badge)](https://ieeexplore.ieee.org/document/10075634)
 
-![Alt Text](https://drive.google.com/uc?export=view&id=1tTEotG_E1Kpgxs7zuP5BslOgRJ57vTWV)
+[![Documentation](https://img.shields.io/badge/Documentation-red?style=for-the-badge)](https://github.com/PolyVerifFramework/PolyVerif/tree/PolyVerif-OSSDC-SIM-Docker/Document) [![Watch Video](https://img.shields.io/badge/Watch_Video-red?style=for-the-badge)](https://youtu.be/IJhRgmiKD7Y)
 
+![PolyVerif Framework](https://drive.google.com/uc?export=view&id=1tTEotG_E1Kpgxs7zuP5BslOgRJ57vTWV)
