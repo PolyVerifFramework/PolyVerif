@@ -30,8 +30,12 @@ Please make sure that your machine meets the following requirements:
     •	Python 3.10
     
 
-  
 
-Refer Document directory for PolyVerif installation and User Guide.
-Note:- Follow step-wise document for better understanding.
+**Refer Document directory for PolyVerif installation and User Guide.**
+**Note:- Follow step-wise document for better understanding.**
 	
+[![PolyVerif](https://img.shields.io/badge/PolyVerif-blue?style=for-the-badge)](https://www.avvc.net/)  [![Publication](https://img.shields.io/badge/Publication-blue?style=for-the-badge)](https://ieeexplore.ieee.org/document/10075634)
+
+[![Documentation](https://img.shields.io/badge/Documentation-red?style=for-the-badge)](https://github.com/PolyVerifFramework/PolyVerif/tree/PolyVerif-AWSIM/Document) [![Watch Video](https://img.shields.io/badge/Watch_Video-red?style=for-the-badge)](https://youtube.com/playlist?list=PLdaz5YCiVlEmxPXZIiJOFaoY52bHu0DMm&si=qi0cmoexFl0JFJZQ)
+
+![PolyVerif Framework](https://drive.google.com/uc?export=view&id=1tTEotG_E1Kpgxs7zuP5BslOgRJ57vTWV)
