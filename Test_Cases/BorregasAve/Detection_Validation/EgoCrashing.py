@@ -86,10 +86,10 @@ sedan.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
 state = lgsvl.AgentState()
-state.transform.position = spawns[0].position + 150 * forward
+state.transform.position = spawns[0].position + 90 * forward
 state.transform.rotation = spawns[0].rotation + 60
 Sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
 print("Bridge connected:", ego.bridge_connected)
 t0 = time.time()
-sim.run(time_limit=25, time_scale=1)
+sim.run(time_limit=10, time_scale=1)
 t1 = time.time()
