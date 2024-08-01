@@ -3,8 +3,8 @@
 ## PolyVerif AV Validation Suite
 
 This is Poly-Verification and Validation Suite. Its functionality is to generate the test cases and validate the autonomous stack.
-It integrate the Python and Scenic scenario description language with AutowareAuto and helps to generate the random scenario for simulation.
-Since we are using OSSDC Simulator and AutowareAuto, it will require a high-end server with Graphics card to run it smoothly. 
+It integrates the Python and Scenic scenario description language with AutowareAuto and helps to generate the random scenario for simulation.
+Since we are using OSSDC Simulator and AutowareAuto, it will require a high-end computer with Graphics card to run it smoothly. 
 
 This document contains the information of installing and setup the component for running Poly_Suite framework. It requires below setup, libraries and package that are need to be install in sequence as mention below.
 
