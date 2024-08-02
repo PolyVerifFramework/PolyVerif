@@ -26,7 +26,8 @@ Note:- Follow step-wise document for better understanding.
 [![Static Badge](https://img.shields.io/badge/PolyVerif-blue?style=for-the-badge)](https://www.avvc.net/) 
 
 ### Publications:
-[![Paper 1](https://img.shields.io/badge/Paper_1-blue?style=for-the-badge)](https://ieeexplore.ieee.org/document/10075634) [![Paper 2](https://img.shields.io/badge/Paper_2-blue?style=for-the-badge)](https://ieeexplore.ieee.org/document/10607079)
+- [PolyVerif: An Open-Source Environment for Autonomous Vehicle Validation and Verification Research Acceleration](https://ieeexplore.ieee.org/document/10075634)
+- [PolyFlows: Modular Test Framework Design for Autonomous Vehicles](https://ieeexplore.ieee.org/document/10607079)
 
 [![Documentation](https://img.shields.io/badge/Documentation-red?style=for-the-badge)](https://github.com/PolyVerifFramework/PolyVerif/tree/PolyVerif-OSSDC-SIM/Document) [![Watch Video](https://img.shields.io/badge/Watch_Video-red?style=for-the-badge)](https://www.youtube.com/playlist?list=PLdaz5YCiVlEn_l22XnQp6pS2KvE3BOX23)
 
