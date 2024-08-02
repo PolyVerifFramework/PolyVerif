@@ -1,5 +1,3 @@
-# PolyVerif FrameWork
-
 ## PolyVerif AV Validation Suite
 
 This is Poly-Verification and Validation Suite. Its functionality is to generate the test cases and validate the autonomous stack.
@@ -22,16 +20,14 @@ Below is the PC configuration required:
     •	Ubuntu 
     •	Python3.8
 
-  
-
 Refer Document directory for PolyVerif installation and User Guide.
 Note:- Follow step-wise document for better understanding.
 	
-[![Static Badge](https://img.shields.io/badge/PolyVerif-blue?style=for-the-badge)](https://www.avvc.net/)  [![Static Badge](https://img.shields.io/badge/Publication-blue?style=for-the-badge)](https://ieeexplore.ieee.org/document/10075634)
+[![Static Badge](https://img.shields.io/badge/PolyVerif-blue?style=for-the-badge)](https://www.avvc.net/) 
 
+### Publications:
+[![Paper 1](https://img.shields.io/badge/Paper_1-blue?style=for-the-badge)](https://ieeexplore.ieee.org/document/10075634) [![Paper 2](https://img.shields.io/badge/Paper_2-blue?style=for-the-badge)](https://ieeexplore.ieee.org/document/10607079)
 
 [![Documentation](https://img.shields.io/badge/Documentation-red?style=for-the-badge)](https://github.com/PolyVerifFramework/PolyVerif/tree/PolyVerif-OSSDC-SIM/Document) [![Watch Video](https://img.shields.io/badge/Watch_Video-red?style=for-the-badge)](https://www.youtube.com/playlist?list=PLdaz5YCiVlEn_l22XnQp6pS2KvE3BOX23)
 
-
 ![Alt Text](https://drive.google.com/uc?export=view&id=1tTEotG_E1Kpgxs7zuP5BslOgRJ57vTWV)
-
