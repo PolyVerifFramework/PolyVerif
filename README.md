@@ -38,7 +38,7 @@ Explore these related publications:
 Below are the statistics for participant registrations:
 
 <div align="center">
-    <img src="https://drive.google.com/uc?export=view&id=1_yhwyqi12Ofxg7x1PLvlUIVT7-5w5xmZ" alt="Chart 1" width="650" height="400"/>
+    <img src="https://drive.google.com/uc?export=view&id=1_yhwyqi12Ofxg7x1PLvlUIVT7-5w5xmZ" alt="Chart 1" width="600" height="400"/>
     <img src="https://drive.google.com/uc?export=view&id=1WL6syz6dyGdTf_EEgOMimyXk5s08z6kc" alt="Chart 2" width="350" height="400"/>
 </div>
 
