@@ -41,7 +41,7 @@ Below are the statistics for participant registrations:
     <img src="https://drive.google.com/uc?export=view&id=1WL6syz6dyGdTf_EEgOMimyXk5s08z6kc" alt="Chart 2" width="350" height="400"/>
 </div>
 
-## 🌟 Registration Highlights
+## 🌟 Community Highlights
 
 Here are some highlights of our registration:
 <div align="center">
