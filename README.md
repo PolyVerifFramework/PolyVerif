@@ -31,7 +31,7 @@ Explore these related publications:
 [![Documentation](https://img.shields.io/badge/Documentation-red?style=for-the-badge)](https://github.com/PolyVerifFramework/PolyVerif/tree/PolyVerif-OSSDC-SIM/Document) 
 [![Watch Video](https://img.shields.io/badge/Watch_Video-red?style=for-the-badge)](https://www.youtube.com/playlist?list=PLdaz5YCiVlEn_l22XnQp6pS2KvE3BOX23)
 
-![PolyVerif](https://drive.google.com/uc?export=view&id=1tTEotG_E1Kpgxs7zuP5BslOgRJ57vTWV)
+![PolyVerif](https://drive.google.com/uc?export=view&id=1zTshCpQYNnqr3VMKzmhM_uBogjJ9dmpA)
 
 ## 📊 Participant Registration Statistics
 
@@ -39,14 +39,6 @@ Below are the statistics for participant registrations:
 
 <div align="center">
     <img src="https://drive.google.com/uc?export=view&id=18QcDQ9IWDNcZbK7nVIY-K5kgJ3iwm3el" alt="Chart 2" width="500" height="400"/>
-</div>
-
-## 🌟 Founding Polytechnics
-
-<div align="center">
-    <img src="https://drive.google.com/uc?export=view&id=1E2aMJKCvJCniWugqJpZPBK2t8QoJtobb" alt="Florida Poly" width="170" height="170"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="https://drive.google.com/uc?export=view&id=1wPv2C0xJvdsIz3WffJVP5_hVr8TyZPkR" alt="Taltech" width="150" height="150"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="https://drive.google.com/uc?export=view&id=1A2KJEcTihNtaogPhaYV10TfTNdwc1YLt" alt="Embry-Riddle" width="150" height="150"/>
 </div>
 
 ## 🌟 Community Highlights
