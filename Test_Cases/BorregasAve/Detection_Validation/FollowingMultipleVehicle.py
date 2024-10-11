@@ -73,46 +73,46 @@ print("Bridge connected:", ego.bridge_connected)
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
 statej = lgsvl.AgentState()
-statej.transform.position = spawns[0].position + 2 * right + 60 *forward
+statej.transform.position = spawns[0].position + 2 * right + 40 *forward
 statej.transform.rotation = spawns[0].rotation 
-statej.velocity = 10 * forward
+statej.velocity = 8 * forward
 jeep = sim.add_agent("Jeep", lgsvl.AgentType.NPC, statej)
 
-jeep.follow_closest_lane(True, 11.5)  # 11.1 m/s is ~40 km/h
+jeep.follow_closest_lane(True, 5.0)  # 11.1 m/s is ~40 km/h
 
-
-statej = lgsvl.AgentState()
-statej.transform.position = spawns[0].position + 50 * forward
-statej.transform.rotation = spawns[0].rotation 
-statej.velocity = 10 * forward
-sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, statej)
-sedan.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
 
 statej = lgsvl.AgentState()
 statej.transform.position = spawns[0].position + 30 * forward
 statej.transform.rotation = spawns[0].rotation 
-statej.velocity = 10 * forward
-sedan1 = sim.add_agent("Jeep", lgsvl.AgentType.NPC, statej)
-sedan1.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
+statej.velocity = 8 * forward
+sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, statej)
+sedan.follow_closest_lane(True, 12.0)  # 11.1 m/s is ~40 km/h
+
+# statej = lgsvl.AgentState()
+# statej.transform.position = spawns[0].position + 30 * forward
+# statej.transform.rotation = spawns[0].rotation 
+# statej.velocity = 2 * forward
+# sedan1 = sim.add_agent("Jeep", lgsvl.AgentType.NPC, statej)
+# sedan1.follow_closest_lane(True, 10)  # 11.1 m/s is ~40 km/h
 
 statej = lgsvl.AgentState()
 statej.transform.position = spawns[0].position + (100 * forward) 
 statej.transform.rotation = spawns[0].rotation 
-statej.velocity = 25 * forward
+statej.velocity = 2 * forward
 suv = sim.add_agent("SchoolBus", lgsvl.AgentType.NPC, statej)
 
-suv.follow_closest_lane(True, 13.5)
+suv.follow_closest_lane(True, 5.0)
 statej = lgsvl.AgentState()
 statej.transform.position = spawns[0].position + (80 * forward) 
 statej.transform.rotation = spawns[0].rotation 
-statej.velocity = 35 * forward
+statej.velocity = 5 * forward
 suv1 = sim.add_agent("Jeep", lgsvl.AgentType.NPC, statej)
 
-suv1.follow_closest_lane(True, 15.5)
+suv1.follow_closest_lane(True, 5.0)
 
 right = lgsvl.utils.transform_to_right(spawns[0])
 
 #input("Press Enter to drive forward for 25 seconds (1x)")
 t0 = time.time()
-sim.run(time_limit=25, time_scale=1)
+sim.run(time_limit=15, time_scale=1)
 t1 = time.time()

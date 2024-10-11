@@ -33,8 +33,11 @@ def ComputeParams(gt_data, control_data, percep_data,file_path):
     initial_ttc_gtd = cv.Initial_TTC(ttc_gt)
     print("inital_ttc_ gtd :: ",initial_ttc_gtd)
     initial_ttc_percep = cv.Initial_TTC(ttc_percep)
+    t1 = initial_ttc_gtd
     print("initial_ttc_percep  :: ", initial_ttc_percep)
-    
+    if initial_ttc_gtd < initial_ttc_percep:
+        initial_ttc_gtd = initial_ttc_percep
+        initial_ttc_percep = t1
     percep_delay =initial_ttc_gtd - initial_ttc_percep
     print("percep_delay :: ", percep_delay)
     

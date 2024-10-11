@@ -112,11 +112,11 @@ a = {
 }
 
 
-# Executed upon receiving collision callback -- NPC is expected to drive through colliding objects
+#Executed upon receiving collision callback -- NPC is expected to drive through colliding objects
 def on_collision(agent1, agent2, contact):
     name1 = a[agent1]
     name2 = a[agent2] if agent2 is not None else "OBSTACLE"
-    print("{} collided with {}".format(name1, name2))
+    # print("{} collided with {}".format(name1, name2))
     #sys.exit()
 
 

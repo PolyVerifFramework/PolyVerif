@@ -62,12 +62,12 @@ right = lgsvl.utils.transform_to_right(spawns[0])
 state = lgsvl.AgentState()
 state.transform.position = spawns[0].position - 2 * forward
 state.transform.rotation = spawns[0].rotation
-state.velocity = 10 * forward
+state.velocity = 5 * forward
 #ego = sim.add_agent(env.str("LGSVL__VEHICLE_0","3c0417f5-98d4-41ad-ad6d-10d2b0130f77"), lgsvl.AgentType.EGO, state)
 ego = sim.add_agent(env.str("LGSVL__VEHICLE_0","5ab8175f-e1f1-427c-a86e-e882fa842978"), lgsvl.AgentType.EGO, state)
 
 
-sim.add_random_agents(lgsvl.AgentType.PEDESTRIAN)
+# sim.add_random_agents(lgsvl.AgentType.PEDESTRIAN)
 sim.add_random_agents(lgsvl.AgentType.NPC)
 
 # An EGO will not connect to a bridge unless commanded to
@@ -91,5 +91,5 @@ state.transform.rotation = spawns[0].rotation + 60
 Sedan = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
 print("Bridge connected:", ego.bridge_connected)
 t0 = time.time()
-sim.run(time_limit=10, time_scale=1)
+sim.run(time_limit=20, time_scale=1)
 t1 = time.time()

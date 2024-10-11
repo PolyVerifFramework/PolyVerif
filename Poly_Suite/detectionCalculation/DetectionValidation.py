@@ -24,17 +24,13 @@ def Detection_Validation(gtd_data, auto_percep_data,file_path):
         title = Objects_Report("timestamp_sec" ,"timestamp_nanosec", "label", "position_x", "position_y", "position_z", "size_x", "size_y", "size_z", "match_found")
         writer.writerow(title)
     
-    #read only relevant data
-    # object_gtd_data = gtd_data[["timestamp_sec", "timestamp_nanosec", "label", "position_x", "position_y"]]
-    # object_percep_data = auto_percep_data[["timestamp_sec","timestamp_nanosec","vehicle_label","corner_1_x","corner_1_y","corner_2_x","corner_2_y","corner_3_x","corner_3_y","corner_4_x","corner_4_y",]]
     
     gtd_stamping = gp.TimeStamp_Mapping(gtd_data) 
     percep_stamping = gp.TimeStamp_Mapping(auto_percep_data)
-    
+
     # Call Object Detection_Rule based method 
     matching_report = pp.ObjectDetection_RuleBased(gtd_data, auto_percep_data, gtd_stamping, percep_stamping)
     
-    # matching_data = pd.DataFrame(columns=["timestamp_sec" ,"timestamp_nanosec", "label", "position_x", "position_y", "position_z", "size_x", "size_y", "size_z", "match_found"])
     #Save csv report
     with open(matching_report_File,'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -75,41 +71,77 @@ def ComputeParams(gtd_data, auto_percep_data,file_path):
     
     multirange_detection_rate = pp.ObjectDetection_Rate_MultiRange(matched_report, maxrange)
     
+    
+   # Calculate additional metrics
+    precision, missclassification ,false_negative_rate = pp.Calculate_Additional_Metrics(matched_report)
+    
     print("Max Range Object Detected by Autoware Detection : ", maxrange[0:2])
-    print("Max Range Object in LG GroundTruth : ", maxrange[2:4])
-    print("Object Detection Success Rate in Percentage : ", detectionRate)
-    #print("Object Detection Failure Rate in Rercentage : ", 100 - detectionRate)
+    # print("Max Range Object in LG GroundTruth : ", maxrange[2:4])
+    print("Object Detection Success Rate in Percentage/Recall : ", detectionRate)
+    print("Precision: ", precision)
+    # print("Recall (True Positive Rate): ", recall)
+    print("missclassification: ", missclassification)
+    print("False Negative Rate: ", false_negative_rate)
     
     auto_range = str(round(maxrange[0]))+ " to " +  str(round(maxrange[1]))
     lg_range = str(round(maxrange[2]))+ " to " +  str(round(maxrange[3]))
     
-    #line = [auto_range+"\n",lg_range+"\n", str(detectionRate)+"\n",str(100-detectionRate)+"\n"]
-    line = [auto_range+"\n",lg_range+"\n", str(detectionRate)+"\n"]
+    line = [
+        auto_range + "\n",
+        # lg_range + "\n",
+        str(detectionRate) + "\n",
+        str(precision) + "\n", 
+        str(missclassification) + "\n",
+        str(false_negative_rate) + "\n"
+    ]
 
     f = open(file_path +"/perception_stats.txt", "w+")
     f.writelines(line)
     f.close()
 
-    with open(file_path + "/rangeReport.csv",'w+', newline='') as csvfile:
-            writer = csv.writer(csvfile)
-            title = DetectionRangeReport_Multi("Range", "SuccessRate")
-            writer.writerow(title) 
-    with open(file_path + "/rangeReport.csv",'a', newline='') as csvfile:
+    # Prepare the CSV file
+    with open(file_path + "/rangeReport.csv", 'w+', newline='') as csvfile:
         writer = csv.writer(csvfile)
+        
+        # Write headers
+        title = DetectionRangeReport_Multi("Range", "SuccessRate", "Conclusion")
+        writer.writerow(title)
+        
+        # Write Front data section
+        writer.writerow(["Object present in front of ego vehicle"])
         for idx in range(len(multirange_detection_rate)):
-            print("minRange", multirange_detection_rate.MinRange[idx])
-            print("maxRange", multirange_detection_rate.MaxRange[idx])
-            print("multirange_detection_rate - Success" , multirange_detection_rate.SuccessRate[idx])
-            print("multirange_detection_rate - Failure" , multirange_detection_rate.FailureRate[idx])
-            DetectionRange =  str(multirange_detection_rate.MinRange[idx]) + " to " + str(multirange_detection_rate.MaxRange[idx])
-    
-            rangedata = DetectionRangeReport_Multi(DetectionRange,
-                                                   multirange_detection_rate.SuccessRate[idx])
+            if multirange_detection_rate.Heading[idx] == "Front":
+                DetectionRange = str(multirange_detection_rate.MinRange[idx]) + " to " + str(multirange_detection_rate.MaxRange[idx])
+                if multirange_detection_rate.SuccessRate[idx] == -9999:
+                    conclusion = "No object present in this range"
+                    rangedata = DetectionRangeReport_Multi(DetectionRange, 'NA', conclusion)
+                elif multirange_detection_rate.SuccessRate[idx] < 80:
+                    conclusion = "Object not reliably detected"
+                    rangedata = DetectionRangeReport_Multi(DetectionRange, str(multirange_detection_rate.SuccessRate[idx]) + "%", conclusion)
+                else:
+                    conclusion = "Object detected in this range"
+                    rangedata = DetectionRangeReport_Multi(DetectionRange, str(multirange_detection_rate.SuccessRate[idx]) + "%", conclusion)
                 
-            if(multirange_detection_rate.SuccessRate[idx] ==-9999):  #@shiv
-                    rangedata = DetectionRangeReport_Multi(DetectionRange, 'NA')#@shiv
-            writer.writerow(rangedata)
-            
+                # Write the data to the CSV file
+                writer.writerow(rangedata)
+
+        # Write Rear data section
+        writer.writerow(["Object present behind the ego vehicle"])
+        for idx in range(len(multirange_detection_rate)):
+            if multirange_detection_rate.Heading[idx] == "Rear":
+                DetectionRange = str(multirange_detection_rate.MinRange[idx]) + " to " + str(multirange_detection_rate.MaxRange[idx])
+                if multirange_detection_rate.SuccessRate[idx] == -9999:
+                    conclusion = "No object present in this range"
+                    rangedata = DetectionRangeReport_Multi(DetectionRange, 'NA', conclusion)
+                elif multirange_detection_rate.SuccessRate[idx] < 80:
+                    conclusion = "Object not reliably detected"
+                    rangedata = DetectionRangeReport_Multi(DetectionRange, str(multirange_detection_rate.SuccessRate[idx]) + "%", conclusion)
+                else:
+                    conclusion = "Object detected in this range"
+                    rangedata = DetectionRangeReport_Multi(DetectionRange, str(multirange_detection_rate.SuccessRate[idx]) + "%", conclusion)
+                
+                # Write the data to the CSV file
+                writer.writerow(rangedata)
     print("Check Computed Params")
     
 #function to read GT data using given filename

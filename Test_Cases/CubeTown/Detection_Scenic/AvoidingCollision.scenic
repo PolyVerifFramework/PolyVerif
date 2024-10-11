@@ -11,7 +11,7 @@ param lgsvl_map = 'CubeTown'
 model scenic.domains.driving.model
 
 #CONSTANTS
-EGO_SPEED = 10
+EGO_SPEED = 6
 LEAD_CAR_SPEED = 10
 
 BRAKE_ACTION = 1.0

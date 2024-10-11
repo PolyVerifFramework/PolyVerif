@@ -13,7 +13,7 @@ class GenericParams(object):
       print("Entering in TimeStampMatching function")
            
       stamping_LG = []
-      nano_id = 0;
+      nano_id = 0
       for idx in range(inputData_LG["timestamp_sec"].count()-1):     
           #for idx_nano in range(inputData_LG["timestamp_nanosec"].count()-1):
           stamping_LG.append(nano_id)
@@ -21,9 +21,9 @@ class GenericParams(object):
           # print("timestemp_nanosec", inputData_LG.timestamp_nanosec[idx])
           # print("nano_id", nano_id)
           if(inputData_LG.timestamp_nanosec[idx]!=inputData_LG.timestamp_nanosec[idx+1]):
-              nano_id = nano_id+1;
+              nano_id = nano_id+1
           if inputData_LG.timestamp_sec[idx] != inputData_LG.timestamp_sec[idx+1]:
-              nano_id = 0;
+              nano_id = 0
             
       print("Exiting from TimeStampMatching function")
       return stamping_LG

@@ -112,7 +112,7 @@ def on_collision(agent1, agent2, contact):
     name1 = a[agent1]
     name2 = a[agent2] if agent2 is not None else "OBSTACLE"
     print("{} collided with {}".format(name1, name2))
-    #sys.exit()
+    sys.exit()
 
 agents = []
 

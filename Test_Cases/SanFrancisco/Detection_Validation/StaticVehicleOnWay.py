@@ -64,13 +64,26 @@ ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGS
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
 state = lgsvl.AgentState()
-state.transform.position = spawns[0].position + (150 * forward) - (3 * right)
+state.transform.position = spawns[0].position + (50 * forward) - (3 * right)
 state.transform.rotation = spawns[0].rotation 
 jeep = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
 
+forward = lgsvl.utils.transform_to_forward(spawns[0])
+right = lgsvl.utils.transform_to_right(spawns[0])
+state = lgsvl.AgentState()
+state.transform.position = spawns[0].position + (30 * forward) - (3 * right)
+state.transform.rotation = spawns[0].rotation 
+jeep = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
+
+forward = lgsvl.utils.transform_to_forward(spawns[0])
+right = lgsvl.utils.transform_to_right(spawns[0])
+state = lgsvl.AgentState()
+state.transform.position = spawns[0].position + (70 * forward) - (3 * right)
+state.transform.rotation = spawns[0].rotation 
+jeep = sim.add_agent("Sedan", lgsvl.AgentType.NPC, state)
 
 t0 = time.time()
-sim.run(time_limit=25, time_scale=1)
+sim.run(time_limit=10, time_scale=1)
 t1 = time.time()
 
 

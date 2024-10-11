@@ -50,7 +50,7 @@ right = lgsvl.utils.transform_to_right(spawns[0])
 state = lgsvl.AgentState()
 #state.transform.position = spawns[1].position + 40 * forward
 #state.transform.rotation = spawns[1].rotation
-state.transform.position = spawns[0].position - 5 * right
+state.transform.position = spawns[0].position + 1.5 * right
 state.transform.rotation = spawns[0].rotation
 state.velocity = 5 * forward
 ego = sim.add_agent(env.str("LGSVL__VEHICLE_0", "5ab8175f-e1f1-427c-a86e-e882fa842978"), lgsvl.AgentType.EGO, state)
@@ -63,7 +63,7 @@ ego.connect_bridge(env.str("LGSVL__AUTOPILOT_0_HOST", "127.0.0.1"), env.int("LGS
 
 forward = lgsvl.utils.transform_to_forward(spawns[0])
 right = lgsvl.utils.transform_to_right(spawns[0])
-sim.add_random_agents(lgsvl.AgentType.PEDESTRIAN)
+# sim.add_random_agents(lgsvl.AgentType.PEDESTRIAN)
 sim.add_random_agents(lgsvl.AgentType.NPC)
 
 
