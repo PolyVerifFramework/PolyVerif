@@ -170,4 +170,4 @@ class Control_Val_Report(NamedTuple):
 class DetectionRangeReport_Multi(NamedTuple):
     Range               : str
     SuccessRate         : float 
-
+    Conclusion          : str
