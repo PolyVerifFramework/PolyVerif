@@ -1,1 +1,0 @@
-map_origin_error = [300,0,0]
