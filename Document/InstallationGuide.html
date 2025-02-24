@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+            position: relative;
+        }
+        button.copy {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: #0056b3;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+        button.copy:hover {
+            background: #003d80;
+        }
+    </style>
+</head>
+<body>
+    <h1>Installation Guide</h1>
+	<p>below you can find instructions on how to setup the self-driving demo of AWSIM simulation controlled by Autoware. The instruction assumes using the Ubuntu OS.</p>
+    <h2>Required PC Specs:</h2>
+    <ul>
+        <li><strong>OS:</strong> Ubuntu 22.04 jammy 64-bit</li>
+        <li><strong>CPU:</strong> 11th Gen Intel® Core™ i7-11700K @ 3.60GHz × 16</li>
+        <li><strong>GPU:</strong> NVIDIA GeForce RTX 4070</li>
+        <li><strong>Nvidia Driver (Ubuntu 22):</strong> 535.161.07</li>
+    </ul>
+
+    <h2>Localhost Settings</h2>
+    <p>The simulation is based on the appropriate network setting, which allows for trouble-free communication of the AWSIM simulation with the Autoware software. To apply required localhost settings please add the following lines to <code>~/.bashrc</code> file:</p>
+    <pre><code>if 
+    	[ ! -e /tmp/cycloneDDS_configured ]; then 
+    	sudo sysctl -w net.core.rmem_max=2147483647 
+    	sudo ip link set lo multicast on 
+    	touch /tmp/cycloneDDS_configured 
+fi</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    
+
+    <p>And add these lines to <code>~/.profile</code>, <code>~/.bash_profile</code>, or <code>~/.bash_login</code>:</p>
+    <pre><code>export ROS_LOCALHOST_ONLY=1
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+
+    <p><strong>Note:</strong> A system restart is required for these changes to work.</p>
+
+    <h2>Download and Run AWSIM Demo Binary</h2>
+    <h3>Install Vulkan Graphics Library</h3>
+    <pre><code>sudo apt update</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>sudo apt install libvulkan1</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+
+    <h3>Configure and Run the PolyVerif Framework</h3>
+    <pre><code>mkdir $HOME/adehome/ && git clone --single-branch --branch PolyVerif-AWSIM https://github.com/MaheshM99/PolyVerif.git $HOME/adehome/</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>wget --directory-prefix="$HOME/adehome" --content-disposition 'https://drive.usercontent.google.com/download?id=1tLrI0Q_5j5gYG3CGDNBPEsrgMHawWuUG&confirm=t&uuid=a8b3a20c-7bf4-4f3e-9a1d-e1713d611152' && unzip "$HOME/adehome/AWSIM_v1.2.0.zip" -d "$HOME/adehome/"</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+        <pre><code>sudo chmod -R 777 ~/adehome</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+	
+    <h3>Launch AWSIM</h3>
+    <pre><code>./adehome/AWSIM_v1.2.0/sim.x86_64</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <img src="https://tier4.github.io/AWSIM/GettingStarted/QuickStartDemo/Image_0.png" alt="AWSIM Demo Screenshot">
+
+    <h2>Launching Autoware</h2>
+    <h3>Download Map Files</h3>
+    <pre><code>wget --directory-prefix="$HOME/adehome" --content-disposition 'https://drive.usercontent.google.com/download?id=1fO7cHuESpbMDyorODL8eIQbJndRsDDic&confirm=t&uuid=a8b3a20c-7bf4-4f3e-9a1d-e1713d611152' && unzip "$HOME/adehome/nishishinjuku_autoware_map.zip" -d "$HOME/adehome/"</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    
+
+    <h3>Clone Autoware and Configure Environment</h3>
+    <pre><code>git clone https://github.com/autowarefoundation/autoware.git</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>cd autoware</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>git checkout awsim-stable</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>./setup-dev-env.sh</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>mkdir src</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>vcs import src < autoware.repos</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+
+    <h3>Build Autoware</h3>
+    <pre><code>source /opt/ros/humble/setup.bash</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>rosdep update</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-w"</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    
+    <h3>Launch Autoware</h3>
+    <pre><code>source install/setup.bash</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>ros2 launch autoware_launch e2e_simulator.launch.xml vehicle_model:=sample_vehicle sensor_model:=awsim_sensor_kit map_path:=your mapfile location</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <img src="https://tier4.github.io/AWSIM/GettingStarted/QuickStartDemo/Image_2.png" alt="Launch Autoware">
+    
+    <h2>Let's run the self-Driving simulation</h2>
+    <p>1.Launch AWSIM and Autoware according to the steps described earlier in this document.</P>
+    <img src="https://tier4.github.io/AWSIM/GettingStarted/QuickStartDemo/Image_top.png" alt="1">
+    
+    <p>2.The Autoware will automatically set its pose estimation as presented below.</P>
+    <img src="https://tier4.github.io/AWSIM/GettingStarted/QuickStartDemo/Image_Initial.png" alt="2">
+    
+    <p>3.Set the navigation goal for the vehicle.</P>
+    <img src="https://tier4.github.io/AWSIM/GettingStarted/QuickStartDemo/Image_goal_0.png" alt="3">
+    <img src="https://tier4.github.io/AWSIM/GettingStarted/QuickStartDemo/Image_goal_1.png" alt="4">
+    
+    <p>4.Optionally, you can define an intermediate point through which the vehicle will travel on its way to the destination.</P>
+    <img src="https://tier4.github.io/AWSIM/GettingStarted/QuickStartDemo/Image_checkpoint_0.png" alt="5">
+    
+    <p>The generated path can be seen on the image below. </P>
+    <img src="https://tier4.github.io/AWSIM/GettingStarted/QuickStartDemo/Image_path.png" alt="6">
+    
+    <p>5.Enable self-driving.</P>
+    <p>To make the vehicle start navigating please engage it's operation using the command below.</P>
+    
+    <pre><code>cd autoware</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>source install/setup.bash</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <pre><code>ros2 topic pub /autoware/engage autoware_auto_vehicle_msgs/msg/Engage '{engage: True}' -1</code><button class="copy" onclick="copyToClipboard(this)">Copy</button></pre>
+    <img src="https://tier4.github.io/AWSIM/GettingStarted/QuickStartDemo/Image_running.png" alt="7">
+    
+    <h3>Now refer PolyVerif Framework User Guide.</h3>
+    <a href="https://github.com/PolyVerifFramework/PolyVerif/blob/PolyVerif-AWSIM/Document/UserGuide.pdf" target="_blank">PolyVerif UserGuide</a>
+    
+    
+    
+    <script>
+        function copyToClipboard(button) {
+            const pre = button.previousElementSibling;
+            const text = pre.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => (button.textContent = 'Copy'), 2000);
+            });
+        }
+    </script>
+</body>
+</html>
+
