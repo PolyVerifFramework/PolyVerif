@@ -25,8 +25,8 @@ def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error, avp_dem
 
     #goalPose_stamping = gp.TimeStamp_Mapping(goalPose_loc) # Calculate timestamp
     #lg_ego_stamping = gp.TimeStamp_Mapping(lg_ego_loc) # Calculate timestamp
-    goal_pos_x = goalPose_loc.position_x[0]
-    goal_pos_y = goalPose_loc.position_y[0]
+    goal_pos_x = abs(goalPose_loc.position_x[0])
+    goal_pos_y = abs(goalPose_loc.position_y[0])
     # Calculate deviation for each frame
     with open(deviation_report,'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -41,11 +41,11 @@ def ComputeParams(goalPose_loc, lg_ego_loc, location, map_origion_error, avp_dem
           #   lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
           #   lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
 
-          lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
-          lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
+          lg_pos_x   = abs(lg_ego_loc.position_x[idx_LG] - map_origion_error[0])
+          lg_pos_y   = abs(lg_ego_loc.position_y[idx_LG] - map_origion_error[1])
     
            # Calculate Euclidean distance using x nad y values
-          deviation = math.sqrt((math.pow((goal_pos_x-lg_pos_x),2)) + (math.pow((goal_pos_y-lg_pos_y),2)))
+          deviation = math.sqrt((math.pow((goal_pos_x-lg_pos_y),2)) + (math.pow((goal_pos_y-lg_pos_x),2)))
           print("deviation", deviation)
            # Save data in to csv
 
