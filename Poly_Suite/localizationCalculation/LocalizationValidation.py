@@ -35,8 +35,8 @@ def ComputeParams(auto_loc, lg_ego_loc, location, map_origion_error, avp_demo_fl
                # print("idx_ctl", idx_ctl)
                if(auto_loc.timestamp_sec[idx_AUTO] == lg_ego_loc.timestamp_sec[idx_LG]):
                   if(auto_loc_stamping[idx_AUTO] == lg_ego_stamping[idx_LG]):
-                       auto_pos_x = auto_loc.position_x[idx_AUTO]
-                       auto_pos_y = auto_loc.position_y[idx_AUTO]
+                       auto_pos_x = abs(auto_loc.position_x[idx_AUTO])
+                       auto_pos_y = abs(auto_loc.position_y[idx_AUTO])
                        
                        # # Autonomous Stuff
                        # lg_pos_y   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
@@ -47,11 +47,11 @@ def ComputeParams(auto_loc, lg_ego_loc, location, map_origion_error, avp_demo_fl
                        #  lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
                        #  lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
                        
-                       lg_pos_x   = lg_ego_loc.position_x[idx_LG] - map_origion_error[0]
-                       lg_pos_y   = lg_ego_loc.position_y[idx_LG] - map_origion_error[1]
+                       lg_pos_x   = abs(lg_ego_loc.position_x[idx_LG] - map_origion_error[0])
+                       lg_pos_y   = abs(lg_ego_loc.position_y[idx_LG] - map_origion_error[1])
                     
                        # Calculate Euclidean distance using x nad y values
-                       deviation = math.sqrt((math.pow((auto_pos_x-lg_pos_x),2)) + (math.pow((auto_pos_y-lg_pos_y),2)))
+                       deviation = math.sqrt((math.pow((auto_pos_x-lg_pos_y),2)) + (math.pow((auto_pos_y-lg_pos_x),2)))
                        print("deviation", deviation)
     
                        # Save data in to csv
